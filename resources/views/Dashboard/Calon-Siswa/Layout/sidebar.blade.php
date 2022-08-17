@@ -33,9 +33,12 @@
             Formulir Pendaftaran
           </a>
           <ul class="sub-menu">
+            {{-- @if (date('Y-m-d H:i:s') > $afirmasi->tanggal_awal && date('Y-m-d H:i:s') < $afirmasi->tanggal_akhir) --}}
             <a href="/formulir-pendaftaran-siswa/afirmasi" class="dropdown-item" aria-labelledby="dropdownMenuButton">Afirmasi</a>
             <a href="/formulir-pendaftaran-siswa/prestasi" class="dropdown-item" aria-labelledby="dropdownMenuButton">Prestasi</a>
             <a href="/formulir-pendaftaran-siswa/zonasi" class="dropdown-item" aria-labelledby="dropdownMenuButton">Zonasi</a>
+            {{-- @endif --}}
+
           </ul>
         </li>
 

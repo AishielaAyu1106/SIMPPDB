@@ -27,6 +27,7 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/', function () {
     //     return view('welcome');
     // });
+    Route::post('/updateJadwal', [AdminController::class, 'updateData'])->name("updateJadwal");
 
     Route::get('/dashboard', function () {
         return view('dashboard');
@@ -43,8 +44,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/formulir-pendaftaran-siswa', [FormController::class, 'index']);
 
     Route::get('/formulir-pendaftaran-siswa/afirmasi', [FormController::class, 'afirmasi']);
-    Route::get('/formulir-pendaftaran-siswa/prestasi', [FormController::class, 'prestasi']);
-    Route::get('/formulir-pendaftaran-siswa/zonasi', [FormController::class, 'zonasi']);
+    Route::get('/formulir-pendaftaran-siswa/prestasi', [FormController::class, 'afirmasi']);
+    Route::get('/formulir-pendaftaran-siswa/zonasi', [FormController::class, 'afirmasi']);
 
     Route::post('/formulir-pendaftaran-siswa', [FormController::class, 'store']);
 
@@ -102,7 +103,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/jadwal-pendaftaran-tambah', [AdminController::class, 'jadwal'])->name('jadwalPendaftaran');
     Route::post('/jadwal-pendaftaran', [AdminController::class, 'store']);
-    Route::get('/jadwal-pendaftaran', [AdminController::class, 'kategori']);
+    Route::get('/jadwal-pendaftaran', [AdminController::class, 'kategori'])->name('lihatjadwal');
+    Route::get('/jadwal-pendaftaran/delete/{id}', [AdminController::class, 'destroy'])->name('hapusjadwal');
 });
 
 require __DIR__.'/auth.php';

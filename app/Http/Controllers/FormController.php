@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Form;
+use App\Models\Jadwal;
 
 class FormController extends Controller
 {
@@ -15,14 +16,10 @@ class FormController extends Controller
     }
 
     public function afirmasi(){
+        // $afirmasi = Jadwal::all($id);
         return view('Dashboard.Calon-Siswa.tambah_formulir');
     }
-    public function prestasi(){
-        return view('Dashboard.Calon-Siswa.tambah_formulir');
-    }
-    public function zonasi(){
-        return view('Dashboard.Calon-Siswa.tambah_formulir');
-    }
+
 
     public function store(Request $request)
     {
