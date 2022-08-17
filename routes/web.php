@@ -42,7 +42,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/formulir-pendaftaran-siswa', [FormController::class, 'index']);
 
-    Route::get('/formulir-pendaftaran-siswa/tambah', [FormController::class, 'form']);
+    Route::get('/formulir-pendaftaran-siswa/afirmasi', [FormController::class, 'afirmasi']);
+    Route::get('/formulir-pendaftaran-siswa/prestasi', [FormController::class, 'prestasi']);
+    Route::get('/formulir-pendaftaran-siswa/zonasi', [FormController::class, 'zonasi']);
 
     Route::post('/formulir-pendaftaran-siswa', [FormController::class, 'store']);
 

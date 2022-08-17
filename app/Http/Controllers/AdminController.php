@@ -31,7 +31,7 @@ class AdminController extends Controller
         ]);
 
         Jadwal::create($jadwal);
-        return redirect()->route('jadwalPendaftaran')->with('success', 'Pendaftaran Telah Dilakukan');
+        return redirect('/jadwal-pendaftaran')->with('success', 'Pendaftaran Telah Dilakukan');
 
             // $jadwal = jadwal::create([
             //     'kategori_pendaftaran' => $request->kategori_pendaftaran,

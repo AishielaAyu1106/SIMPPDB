@@ -14,7 +14,13 @@ class FormController extends Controller
         ]);
     }
 
-    public function form(){
+    public function afirmasi(){
+        return view('Dashboard.Calon-Siswa.tambah_formulir');
+    }
+    public function prestasi(){
+        return view('Dashboard.Calon-Siswa.tambah_formulir');
+    }
+    public function zonasi(){
         return view('Dashboard.Calon-Siswa.tambah_formulir');
     }
 

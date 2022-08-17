@@ -33,9 +33,9 @@
             Formulir Pendaftaran
           </a>
           <ul class="sub-menu">
-            <a href="" class="dropdown-item" aria-labelledby="dropdownMenuButton">Afirmasi</a>
-            <a href="" class="dropdown-item" aria-labelledby="dropdownMenuButton">Prestasi</a>
-            <a href="" class="dropdown-item" aria-labelledby="dropdownMenuButton">Zonasi</a>
+            <a href="/formulir-pendaftaran-siswa/afirmasi" class="dropdown-item" aria-labelledby="dropdownMenuButton">Afirmasi</a>
+            <a href="/formulir-pendaftaran-siswa/prestasi" class="dropdown-item" aria-labelledby="dropdownMenuButton">Prestasi</a>
+            <a href="/formulir-pendaftaran-siswa/zonasi" class="dropdown-item" aria-labelledby="dropdownMenuButton">Zonasi</a>
           </ul>
         </li>
 
