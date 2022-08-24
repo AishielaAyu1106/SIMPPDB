@@ -20,7 +20,6 @@
                 <th scope="col">Kategori pendaftaran</th>
                 <th scope="col">Tanggal Awal</th>
                 <th scope="col">Tanggal Akhir</th>
-
                 <th scope="col">Aksi</th>
               </tr>
             </thead>

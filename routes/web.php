@@ -43,9 +43,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/formulir-pendaftaran-siswa', [FormController::class, 'index']);
 
-    Route::get('/formulir-pendaftaran-siswa/afirmasi', [FormController::class, 'afirmasi']);
-    Route::get('/formulir-pendaftaran-siswa/prestasi', [FormController::class, 'afirmasi']);
-    Route::get('/formulir-pendaftaran-siswa/zonasi', [FormController::class, 'afirmasi']);
+    Route::get('/formulir-pendaftaran-siswa/formulir', [FormController::class, 'afirmasi']);
+    // Route::get('/formulir-pendaftaran-siswa/prestasi', [FormController::class, 'afirmasi']);
+    // Route::get('/formulir-pendaftaran-siswa/zonasi', [FormController::class, 'afirmasi']);
 
     Route::post('/formulir-pendaftaran-siswa', [FormController::class, 'store']);
 

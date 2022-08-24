@@ -15,9 +15,11 @@ class FormController extends Controller
         ]);
     }
 
-    public function afirmasi(){
-        // $afirmasi = Jadwal::all($id);
-        return view('Dashboard.Calon-Siswa.tambah_formulir');
+    public function afirmasi(Request $request){
+        // dd($request[0]);
+        $validasi = Jadwal::where('Jalur_pendaftaran',$request->id)->first();
+        // dd($validasi);
+        return view('Dashboard.Calon-Siswa.tambah_formulir',compact('validasi'));
     }
 
 
