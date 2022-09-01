@@ -2,9 +2,10 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                <img src="{{asset('css/Logo SMAN 1 Bengalon.PNG')}}" alt="" width="100">
+                <img src="{{asset('css/Logo SMAN 1 Bengalon.PNG')}}" alt="" width="200">
             </a>
+            <h4 class="text-center text-primary quicksand-font">Penerimaan Peserta Didik Baru</h4>
+            <h4 class="text-center text-primary quicksand-font">SMA NEGERI 1 Bengalon</h4>
         </x-slot>
 
         <!-- Session Status -->
@@ -48,7 +49,7 @@
                     </a>
                 @endif
 
-                <x-button class="ml-3">
+                <x-button class="ml-3 bg-success">
                     {{ __('Log in') }}
                 </x-button>
             </div>
