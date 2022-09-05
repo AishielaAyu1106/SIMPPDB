@@ -34,7 +34,7 @@
                                     <div class="form-group">
                                         <label for="Namasiswa" class="form-label">Nama Lengkap</label>
                                         <input type="text" name="nama_lengkap" class="form-control" id="Namasiswa"
-                                            value="{{ old('nama_lengkap') }}" placeholder value required>
+                                            value="{{ old('nama_lengkap') }}" placeholder="">
 
                                         <div class="invalid-feedback">Silahkan Isi nama dengan benar</div>
                                     </div>
@@ -53,7 +53,7 @@
                                         <div class="col-sm-6">
                                             <label for="NomorInduk" class="form-label">N I S N</label>
                                             <input type="text" name="NISN" class="form-control" id="NomorInduk"
-                                                value="{{ old('NISN') }}" placeholder value required>
+                                                value="{{ old('NISN') }}" placeholder="12345678">
                                             <small class="text-muted">Isi NISN dengan benar</small>
                                             <div class="invalid-feedback">Silahkan Isi NISN dengan benar</div>
                                         </div>
@@ -95,14 +95,14 @@
                                         <div class="col-sm-4">
                                             <label class="Sekolah_asal">Sekolah Asal</label>
                                             <input type="text" name="Sekolah_asal" class="form-control" id="Sekolah_asal"
-                                                value="{{ old('Sekolah_asal') }}" placeholder value required>
+                                                value="{{ old('Sekolah_asal') }}" placeholder="">
                                             <div class="invalid-feedback">Isi Dengan benar</div>
                                         </div>
 
                                         <div class="col-sm-4">
                                             <label class="lulus">Tahun Lulus</label>
                                             <input type="text" name="Tahun_lulus" class="form-control" id="Tahun_lulus"
-                                                value="{{ old('Tahun_lulus') }}" placeholder value required>
+                                                value="{{ old('Tahun_lulus') }}" placeholder="Cth. 2021">
                                             <div class="invalid-feedback">Isi Dengan benar</div>
                                         </div>
                                     </div>
@@ -115,21 +115,21 @@
                                         <div class="col-sm-4">
                                             <label class="form-label">Dusun</label>
                                             <input type="text" name="dusun" class="form-control" id="dusun"
-                                                value="{{ old('dusun') }}" placeholder value required>
+                                                value="{{ old('dusun') }}" placeholder>
                                             <div class="invalid-feedback">Alamat dibutuhkan</div>
                                         </div>
 
                                         <div class="col-sm-4">
                                             <label class="form-label">RT</label>
                                             <input type="text" name="Rt" class="form-control" id="rt"
-                                                value="{{ old('Rt') }}" placeholder value required>
+                                                value="{{ old('Rt') }}" placeholder="Cth. 008">
                                             <div class="invalid-feedback">Isi Dengan benar</div>
                                         </div>
 
                                         <div class="col-sm-4">
                                             <label class="form-label">RW</label>
                                             <input type="text" name="rw" class="form-control" id="rw"
-                                                value="{{ old('rw') }}" placeholder value required>
+                                                value="{{ old('rw') }}" placeholder="Cth. 008">
                                             <div class="invalid-feedback">Isi Dengan benar</div>
                                         </div>
                                     </div>
@@ -146,7 +146,7 @@
                                         <div class="col-sm-6">
                                             <label class="form-label">Kode Pos</label>
                                             <input type="text" name="kode_pos" class="form-control" id="kodepos"
-                                                value="{{ old('kode_pos') }}" placeholder value required>
+                                                value="{{ old('kode_pos') }}" placeholder="Cth. 12345">
                                             <div class="invalid-feedback">Isi Dengan benar</div>
                                         </div>
                                     </div>
@@ -179,8 +179,7 @@
                                         <div class="col-sm-6">
                                             <label class="form-label">Nomor Hp</label>
                                             <input type="text" name="nomor_hp_siswa" class="form-control"
-                                                id="nohp" value="{{ old('nomor_hp_siswa') }}" placeholder value
-                                                required>
+                                                id="nohp" value="{{ old('nomor_hp_siswa') }}" placeholder="123456789012">
                                             <div class="invalid-feedback">Isi Dengan benar</div>
                                         </div>
 
@@ -223,7 +222,7 @@
                                         <div class="col-sm-4">
                                             <label class="form-label">NIK Ayah</label>
                                             <input type="text" name="NIK_ayah" class="form-control" id="NIK"
-                                                value="{{ old('NIK_ayah') }}" placeholder value required>
+                                                value="{{ old('NIK_ayah') }}" placeholder="Cth. 1234567890123456">
                                             <div class="invalid-feedback">Isi Dengan benar</div>
                                         </div>
 
@@ -238,8 +237,7 @@
                                         <div class="col-sm-4">
                                             <label class="form-label">Nomor HP</label>
                                             <input type="text" name="nomor_hp_ayah" class="form-control"
-                                                id="nohpayah" value="{{ old('nomor_hp_ayah') }}" placeholder value
-                                                required>
+                                                id="nohpayah" value="{{ old('nomor_hp_ayah') }}" placeholder="Cth. 123456789012">
                                             <div class="invalid-feedback">Isi Dengan benar</div>
                                         </div>
                                     </div>
@@ -277,7 +275,7 @@
                                         <div class="col-sm-4">
                                             <label class="form-label">NIK Ibu</label>
                                             <input type="text" name="NIK_ibu" class="form-control" id="NIK"
-                                                value="{{ old('NIK_ibu') }}" placeholder value required>
+                                                value="{{ old('NIK_ibu') }}" placeholder="Cth. 1234567890123456">
                                             <div class="invalid-feedback">Isi Dengan benar</div>
                                         </div>
 
@@ -292,8 +290,7 @@
                                         <div class="col-sm-4">
                                             <label class="form-label">Nomor HP</label>
                                             <input type="text" name="nomor_hp_ibu" class="form-control"
-                                                id="nohpibu" value="{{ old('nomor_hp_ibu') }}" placeholder value
-                                                required>
+                                                id="nohpibu" value="{{ old('nomor_hp_ibu') }}" placeholder="Cth. 123456789012">
                                             <div class="invalid-feedback">Isi Dengan benar</div>
                                         </div>
 
@@ -304,20 +301,20 @@
                                             <div class="col-sm-4">
                                                 <label class="form-label">Pendidikan Agama</label>
                                                 <input type="text" name="p_agama" class="form-control" id="p_agama"
-                                                    placeholder value required>
+                                                    placeholder="Cth. 00.00">
                                                 <div class="invalid-feedback">Isi Dengan benar</div>
                                             </div>
                                             <div class="col-sm-4">
                                                 <label class="form-label">PPKn</label>
                                                 <input type="text" name="ppkn" class="form-control" id="ppkn"
-                                                    placeholder value required>
+                                                    placeholder="Cth. 00.00">
                                                 <div class="invalid-feedback">Isi Dengan benar</div>
                                             </div>
 
                                             <div class="col-sm-4">
                                                 <label class="form-label">Bahasa Indonesia</label>
                                                 <input type="text" name="B_indo" class="form-control" id="b_indo"
-                                                    placeholder value required>
+                                                    placeholder="Cth. 00.00">
                                                 <div class="invalid-feedback">Isi Dengan benar</div>
                                             </div>
                                         </div>
@@ -326,27 +323,27 @@
                                             <div class="col-sm-3">
                                                 <label class="form-label">Matematika</label>
                                                 <input type="text" name="mtk" class="form-control" id="mtk"
-                                                    placeholder value required>
+                                                    placeholder="Cth. 00.00">
                                                 <div class="invalid-feedback">Isi Dengan benar</div>
                                             </div>
                                             <div class="col-sm-3">
                                                 <label class="form-label">Ilmu Pengetahuan Alam</label>
                                                 <input type="text" name="ipa" class="form-control" id="ipa"
-                                                    placeholder value required>
+                                                    placeholder="Cth. 00.00">
                                                 <div class="invalid-feedback">Isi Dengan benar</div>
                                             </div>
 
                                             <div class="col-sm-3">
                                                 <label class="form-label">Ilmu Pengetahuan Sosial</label>
                                                 <input type="text" name="ips" class="form-control" id="ips"
-                                                    placeholder value required>
+                                                    placeholder="Cth. 00.00">
                                                 <div class="invalid-feedback">Isi Dengan benar</div>
                                             </div>
 
                                             <div class="col-sm-3">
                                                 <label class="form-label">Bahasa Inggris</label>
                                                 <input type="text" name="basing" class="form-control" id="basing"
-                                                    placeholder value required>
+                                                    placeholder="Cth. 00.00">
                                                 <div class="invalid-feedback">Isi Dengan benar</div>
                                             </div>
                                         </div>

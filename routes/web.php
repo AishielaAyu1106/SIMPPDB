@@ -24,9 +24,9 @@ use App\Http\Controllers\AdminController;
 // })->middleware(['auth'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
-    // Route::get('/', function () {
-    //     return view('welcome');
-    // });
+    Route::get('/', function () {
+        return view('auth.login2');
+    });
     Route::post('/updateJadwal', [AdminController::class, 'updateData'])->name("updateJadwal");
 
     Route::get('/dashboard', function () {

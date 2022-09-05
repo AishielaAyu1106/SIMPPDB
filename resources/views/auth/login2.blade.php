@@ -1,56 +1,84 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.98.0">
-    <title>Signin Template · Bootstrap v5.2</title>
+@extends('auth.layout.main')
+@section('container')
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+    <div class="session">
+      <div class="left">
+
+      </div>
+
+      <form method="POST" action="{{ route('login') }}">
+        @csrf
+        <img class="mb-4" src="{{asset('css/Logo SMAN 1 Bengalon.PNG')}}" alt="" width="150" height="150">
+        <h4><span>Selamat Datang Calon Peserta Didik Baru</span></h4>
+        {{-- <p>Login and start a productive day!</p> --}}
+        <div class="floating-label">
+          {{-- <input placeholder="Email" type="email" name="email" id="email" autocomplete="off" @if(Cookie::has('loginemail')) value="{{Cookie::get('loginemail')}}"@endif> --}}
+          <input placeholder="Email" type="email" name="email" id="email" class="@error('email')
+              is-invalid
+          @enderror" @if(Cookie::has('loginemail')) value="{{Cookie::get('loginemail')}}"@endif autocomplete="off">
+          <label for="email">Email:</label>
+          @error('email')
+              <div class="invalid-feedback">
+                {{ $message }}
+              </div>
+          @enderror
+        </div>
+        <div class="floating-label">
+          {{-- <input placeholder="Password" type="password" name="password" id="password" autocomplete="off" @if(Cookie::has('loginpassword')) value="{{Cookie::get('loginpassword')}}"@endif> --}}
+          <input placeholder="Password" type="password" name="password" id="password" @if(Cookie::has('loginpassword')) value="{{Cookie::get('loginpassword')}}"@endif autocomplete="off">
+          <label for="password">Password:</label>
+        </div>
+
+        {{-- <div class="row mb-4"> --}}
+            <div class="col d-flex justify-content-center">
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" @if(Cookie::has('loginemail')) checked @endif id="form1Example3" name="rememberme" checked />
+                <label class="form-check-label" for="form1Example3"> Remember me </label>
+              </div>
+            </div>
 
 
 
-
-
-{{-- <link href="{{asset('bootstrap/assets/dist/css/bootstrap.min.css')}}" rel="stylesheet"> --}}
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-{{-- <link rel="stylesheet" href="{{asset('bootstrap/sign-in/signin.css')}}"> --}}
-<link rel="stylesheet" href="{{asset('bootstrap/sign-in/registrasi.css')}}">
-
-
-    <!-- Custom styles for this template -->
-    <link href="{{asset('bootsrap/sign-in/signin.css')}}" rel="stylesheet">
-  </head>
-  <body class="text-center">
-
-<main class="form-signin w-101 m-auto">
-  <form>
-    <img class="mb-4" src="{{asset('bootstrap/assets/brand/bootstrap-logo.svg')}}" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email address</label>
+        <button type="submit" >Log in</button>
+        <small class="d-block text-center mt-3">Belum Memiliki akun? <a href="/register">Daftar Sekarang!</a></small>
+      </form>
     </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
+
+{{-- <main class="form-signin w-100 m-auto">
+
+
+
+
+<div class="card">
+    <div class=" card-body">
+        <form action="/">
+            <img class="mb-4" src="{{asset('css/login-ilustrasi')}}" alt="" width="150" height="150">
+        </form>
     </div>
 
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
-  </form>
-</main>
-<script src="{{asset('bootstrap/assets/dist/js/bootstrap.bundle.min.js')}}"></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="{{asset('bootstrap/dashboard/dashboard.js')}}"></script>
+
+  <div class=" card-body">
+    <form action="/" method="post">
+      @csrf
+      <img class="mb-4" src="{{asset('css/Logo SMAN 1 Bengalon.PNG')}}" alt="" width="150" height="150">
+      <h1 class="h3 mb-3 fw-normal">Login</h1>
+
+      <div class="form-floating">
+        <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" autofocus>
+        <label for="floatingInput">Masukkan Email</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" autofocus>
+        <label for="floatingPassword">Masukkan Password</label>
+      </div>
 
 
-  </body>
-</html>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Masuk</button>
+      <div class="checkbox mb-3">
+          {{-- <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label> --
+
+{{-- </main> --}}
+@endsection
