@@ -23,6 +23,15 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
+                if (Auth::user()->role == 'admin') {
+                    return redirect('dashboard');
+                }
+                elseif (Auth::user()->role == 'calon-siswa') {
+                    return redirect('dashboard-siswa');
+                }
+                else{
+                    return $next($request);
+                }
                 return redirect(RouteServiceProvider::HOME);
             }
         }

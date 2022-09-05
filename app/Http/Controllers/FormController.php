@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Form;
 use App\Models\Jadwal;
+use Illuminate\Support\Facades\Auth;
 
 class FormController extends Controller
 {
@@ -17,9 +18,13 @@ class FormController extends Controller
 
     public function afirmasi(Request $request){
         // dd($request[0]);
-        $validasi = Jadwal::where('Jalur_pendaftaran',$request->id)->first();
-        // dd($validasi);
-        return view('Dashboard.Calon-Siswa.tambah_formulir',compact('validasi'));
+        $cekData = Jadwal::where('Jalur_pendaftaran',$request->id)->where('users_id',Auth::user()->id)->first();
+        if($cekData){
+            return back();
+        }else{
+            $validasi = Jadwal::where('Jalur_pendaftaran',$request->id)->first();
+            return view('Dashboard.Calon-Siswa.tambah_formulir',compact('validasi'));
+        }
     }
 
 

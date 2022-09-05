@@ -63,6 +63,7 @@ return new class extends Migration
             $table->string('fcKIP')->nullable();
             $table->string('fcKPS')->nullable();
             $table->string('fcPKH')->nullable();
+            $table->foreignId('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
