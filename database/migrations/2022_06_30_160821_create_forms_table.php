@@ -63,7 +63,13 @@ return new class extends Migration
             $table->string('fcKIP')->nullable();
             $table->string('fcKPS')->nullable();
             $table->string('fcPKH')->nullable();
-            $table->foreignId('users_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('jenis_prestasi')->nullable();
+            $table->string('tingkat')->nullable();
+            $table->string('nama_prestasi')->nullable();
+            $table->string('tahun')->nullable();
+            $table->string('penyelenggara')->nullable();
+            $table->string('piagam')->nullable();
+            // $table->foreignId('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

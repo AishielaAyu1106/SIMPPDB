@@ -294,7 +294,7 @@
                                             <div class="invalid-feedback">Isi Dengan benar</div>
                                         </div>
 
-                                        <div class="row g-3">
+                                        {{-- <div class="row g-3">
                                             <h6 align="center">
                                                 <hr>Nilai Rata-Rata Mapel Kelompok A semester 1 - 5
                                             </h6>
@@ -346,7 +346,7 @@
                                                     placeholder="Cth. 00.00">
                                                 <div class="invalid-feedback">Isi Dengan benar</div>
                                             </div>
-                                        </div>
+                                        </div> --}}
 
                                         {{-- upload file --}}
 

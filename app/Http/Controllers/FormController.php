@@ -17,14 +17,17 @@ class FormController extends Controller
     }
 
     public function afirmasi(Request $request){
-        // dd($request[0]);
-        $cekData = Jadwal::where('Jalur_pendaftaran',$request->id)->where('users_id',Auth::user()->id)->first();
-        if($cekData){
-            return back();
-        }else{
-            $validasi = Jadwal::where('Jalur_pendaftaran',$request->id)->first();
+
+        $validasi = Jadwal::where('Jalur_pendaftaran',$request->id)->first();
             return view('Dashboard.Calon-Siswa.tambah_formulir',compact('validasi'));
-        }
+        // dd($request[0]);
+        // $cekData = Jadwal::where('Jalur_pendaftaran',$request->id)->where('users_id',Auth::user()->id)->first();
+        // if($cekData){
+        //     return back();
+        // }else{
+        //     $validasi = Jadwal::where('Jalur_pendaftaran',$request->id)->first();
+        //     return view('Dashboard.Calon-Siswa.tambah_formulir',compact('validasi'));
+        // }
     }
 
 
@@ -64,13 +67,6 @@ class FormController extends Controller
             'NIK_ibu'  => ['required','size:16'],
             'pekerjaan_ibu'  => ['required'],
             'nomor_hp_ibu'  => ['required','max:13'],
-            'p_agama'  => ['required'],
-            'ppkn'  => ['required'],
-            'B_indo'  => ['required'],
-            'mtk'  => ['required'],
-            'ipa'  => ['required'],
-            'ips'  => ['required'],
-            'basing'  => ['required'],
             'fcakta' => ['file', 'required'],
             'SKLasli' => ['file' , 'required'],
             'fcSTTB' => ['file' , 'required'],
@@ -152,5 +148,24 @@ class FormController extends Controller
         $edit = Form::find($id);
         $edit->update($request->all());
         return redirect('/formulir-pendaftaran-siswa')->with('success', 'Pendaftaran Telah Dilakukan');
+    }
+
+    public function rekap(){
+        return view('Dashboard.Calon-Siswa.rekap-nilai');
+    }
+
+    public function tambahRekap(Request $request){
+        $rekap = $request->validate([
+            'mtk'  => ['required'],
+            'ipa'  => ['required'],
+            'ips'  => ['required'],
+            'basing'  => ['required'],
+            'jenis_prestasi'  => ['required'],
+            'tingkat'  => ['required'],
+            'nama_prestasi'  => ['required'],
+            'tahun'  => ['required'],
+            'penyelenggara'  => ['required'],
+            'piagam' => ['file', 'required']
+        ]);
     }
 }

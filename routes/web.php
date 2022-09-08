@@ -59,6 +59,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/formulir-pendaftaran-siswa/show/{id}', [FormController::class, 'show']);
 
+    Route::get('/rekap-nilai-siswa', [FormController::class, 'rekap']);
+
+    Route::post('/rekap-nilai-siswa', [FormController::class, 'tambahRekap']);
+
     // Route::get('/info-pendaftaran', [InfodaftarController::class, 'index']);
 
     Route::get('/dashboard', function () {
@@ -93,9 +97,9 @@ Route::middleware(['auth'])->group(function () {
         return view('Dashboard.Calon-Siswa.cetak-bukti');
     });
 
-    Route::get('/rekap-nilai-siswa', function () {
-        return view('Dashboard.Calon-Siswa.rekap-nilai');
-    });
+    // Route::get('/rekap-nilai-siswa', function () {
+    //     return view('Dashboard.Calon-Siswa.rekap-nilai');
+    // });
 
     Route::get('/download-panduan-siswa', function () {
         return view('Dashboard.Calon-Siswa.download-panduan');

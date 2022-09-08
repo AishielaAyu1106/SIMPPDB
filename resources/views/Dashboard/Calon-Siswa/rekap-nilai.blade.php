@@ -18,26 +18,7 @@
                                             <h6 align="center">
                                                 <hr>Nilai Rata-Rata Mapel Kelompok A semester 1 - 5
                                             </h6>
-                                            <div class="col-sm-4">
-                                                <label class="form-label">Pendidikan Agama</label>
-                                                <input type="text" name="p_agama" class="form-control" id="p_agama"
-                                                    placeholder="0.00">
-                                                <div class="invalid-feedback">Isi Dengan benar</div>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <label class="form-label">PPKn</label>
-                                                <input type="text" name="ppkn" class="form-control" id="ppkn"
-                                                    placeholder="0.00">
-                                                <div class="invalid-feedback">Isi Dengan benar</div>
-                                            </div>
-
-                                            <div class="col-sm-4">
-                                                <label class="form-label">Bahasa Indonesia</label>
-                                                <input type="text" name="B_indo" class="form-control" id="b_indo"
-                                                    placeholder="0.00">
-                                                <div class="invalid-feedback">Isi Dengan benar</div>
-                                            </div>
-                                        </div>
+                                            
 
                                         <div class="row g-3">
                                             <div class="col-sm-3">

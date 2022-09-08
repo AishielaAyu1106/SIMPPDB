@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\Jadwal;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+use \App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,8 +18,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\User::factory(1)->create();
-        user::create([
-            
+        User::create([
+            'name' => 'siswa',
+            'email' => 'siswa@gmail.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('123123123'), // password
+            'role' => 'calon-siswa',
+            'remember_token' => Str::random(10),
         ]);
         Jadwal::create([
             'id' => '1',
