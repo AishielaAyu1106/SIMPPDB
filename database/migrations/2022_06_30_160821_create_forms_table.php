@@ -47,13 +47,7 @@ return new class extends Migration
             $table->string('NIK_ibu')->nullable();
             $table->string('pekerjaan_ibu')->nullable();
             $table->string('nomor_hp_ibu')->nullable();
-            $table->float('p_agama')->nullable();
-            $table->float('ppkn')->nullable();
-            $table->float('B_indo')->nullable();
-            $table->float('mtk')->nullable();
-            $table->float('ipa')->nullable();
-            $table->float('ips')->nullable();
-            $table->float('basing')->nullable();
+
             $table->string('fcakta')->nullable();
             $table->string('SKLasli')->nullable();
             $table->string('fcSTTB')->nullable();
@@ -63,12 +57,7 @@ return new class extends Migration
             $table->string('fcKIP')->nullable();
             $table->string('fcKPS')->nullable();
             $table->string('fcPKH')->nullable();
-            $table->string('jenis_prestasi')->nullable();
-            $table->string('tingkat')->nullable();
-            $table->string('nama_prestasi')->nullable();
-            $table->string('tahun')->nullable();
-            $table->string('penyelenggara')->nullable();
-            $table->string('piagam')->nullable();
+           
             // $table->foreignId('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

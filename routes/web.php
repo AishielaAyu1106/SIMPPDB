@@ -59,9 +59,17 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/formulir-pendaftaran-siswa/show/{id}', [FormController::class, 'show']);
 
-    Route::get('/rekap-nilai-siswa', [FormController::class, 'rekap']);
+    Route::get('/rekap-nilai-siswa/formulir', [FormController::class, 'rekap']);
 
     Route::post('/rekap-nilai-siswa', [FormController::class, 'tambahRekap']);
+
+    Route::get('/rekap-nilai-siswa', [FormController::class, 'lihatRekap']);
+
+    Route::get('/rekap-nilai-siswa/show/{id}', [FormController::class, 'showRekap']);
+
+    Route::post('/edit-rekap-nilai-siswa/{id}', [FormController::class, 'editRekap']);
+
+    Route::get('/rekap-nilai-siswa/delete/{id}', [FormController::class, 'hapusRekap']);
 
     // Route::get('/info-pendaftaran', [InfodaftarController::class, 'index']);
 

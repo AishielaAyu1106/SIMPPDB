@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Form;
 use App\Models\Jadwal;
+use App\Models\Rekap;
 use Illuminate\Support\Facades\Auth;
 
 class FormController extends Controller
@@ -150,6 +151,10 @@ class FormController extends Controller
         return redirect('/formulir-pendaftaran-siswa')->with('success', 'Pendaftaran Telah Dilakukan');
     }
 
+
+
+#Rekap Nilai Siswa
+
     public function rekap(){
         return view('Dashboard.Calon-Siswa.rekap-nilai');
     }
@@ -167,5 +172,34 @@ class FormController extends Controller
             'penyelenggara'  => ['required'],
             'piagam' => ['file', 'required']
         ]);
+
+        Rekap::create($rekap);
+        return redirect('/rekap-nilai-siswa');
+    }
+
+    public function lihatRekap(Request $request){
+        $submit = Rekap::all();
+        return view('Dashboard.Calon-Siswa.rekap-nilai-tambah',compact('submit'));
+    }
+
+    public function showRekap($id)
+    {
+        $showrekap = Rekap::find($id);
+        return view('Dashboard.Calon-Siswa.lihat-rekap-siswa', compact('showrekap')
+            );
+    }
+
+    public function editRekap($id)
+    {
+        $editRekap = Form::find($id);
+        return view('Dashboard.Calon-Siswa.edit-rekap-siswa', compact('editRekap'));
+        // return $edit;
+    }
+
+    public function hapusRekap($id)
+    {
+        $hapus=Rekap::find($id);
+        $hapus->delete();
+        return redirect('/rekap-nilai-siswa');
     }
 }

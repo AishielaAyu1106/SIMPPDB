@@ -1,7 +1,7 @@
 @extends('Dashboard.Calon-Siswa.Layout.index')
 
 @section('container')
-        <form action="/formulir-pendaftaran-siswa" method="post" enctype="multipart/form-data">
+        <form action="/rekap-nilai-siswa" method="post" enctype="multipart/form-data">
             @csrf
             <div class="container">
                 <div class="row justify-content-center">
@@ -18,7 +18,7 @@
                                             <h6 align="center">
                                                 <hr>Nilai Rata-Rata Mapel Kelompok A semester 1 - 5
                                             </h6>
-                                            
+
 
                                         <div class="row g-3">
                                             <div class="col-sm-3">
