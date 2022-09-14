@@ -13,4 +13,8 @@ class Rekap extends Model
         'mtk', 'ipa','ips','basing','jenis_prestasi','tingkat','nama_prestasi','tahun','penyelenggara','piagam'
     ];
     protected $guarded= ['id'];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

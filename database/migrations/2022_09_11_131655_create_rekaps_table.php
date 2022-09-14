@@ -15,9 +15,7 @@ class CreateRekapsTable extends Migration
     {
         Schema::create('rekaps', function (Blueprint $table) {
             $table->id();
-            // $table->float('p_agama')->nullable();
-            // $table->float('ppkn')->nullable();
-            // $table->float('B_indo')->nullable();
+            // $table->foreignId('user_id');
             $table->float('mtk')->nullable();
             $table->float('ipa')->nullable();
             $table->float('ips')->nullable();
