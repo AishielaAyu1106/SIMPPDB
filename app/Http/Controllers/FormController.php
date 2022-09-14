@@ -191,9 +191,16 @@ class FormController extends Controller
 
     public function editRekap($id)
     {
-        $editRekap = Form::find($id);
+        $editRekap = Rekap::find($id);
         return view('Dashboard.Calon-Siswa.edit-rekap-siswa', compact('editRekap'));
         // return $edit;
+    }
+
+    public function updateRekap(Request $request, $id)
+    {
+        $edit = Rekap::find($id);
+        $edit->update($request->all());
+        return redirect('/rekap-nilai-siswa')->with('success', 'Pendaftaran Telah Dilakukan');
     }
 
     public function hapusRekap($id)

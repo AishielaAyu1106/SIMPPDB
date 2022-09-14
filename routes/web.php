@@ -42,36 +42,22 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::get('/formulir-pendaftaran-siswa', [FormController::class, 'index']);
-
     Route::get('/formulir-pendaftaran-siswa/formulir', [FormController::class, 'afirmasi']);
-    // Route::get('/formulir-pendaftaran-siswa/prestasi', [FormController::class, 'afirmasi']);
-    // Route::get('/formulir-pendaftaran-siswa/zonasi', [FormController::class, 'afirmasi']);
-
     Route::post('/formulir-pendaftaran-siswa', [FormController::class, 'store']);
-
     Route::get('/formulir-pendaftaran-siswa/delete/{id}', [FormController::class, 'destroy']);
-
-    // Route::post('/formulir-pendaftaran-siswa/delete/{id}', [FormController::class, 'destroy']);
-
     Route::get('/edit-formulir-pendaftaran/{id}', [FormController::class, 'edit']);
-
     Route::post('/edit-formulir-pendaftaran/{id}', [FormController::class, 'update']);
-
     Route::get('/formulir-pendaftaran-siswa/show/{id}', [FormController::class, 'show']);
 
     Route::get('/rekap-nilai-siswa/formulir', [FormController::class, 'rekap']);
-
     Route::post('/rekap-nilai-siswa', [FormController::class, 'tambahRekap']);
-
     Route::get('/rekap-nilai-siswa', [FormController::class, 'lihatRekap']);
-
     Route::get('/rekap-nilai-siswa/show/{id}', [FormController::class, 'showRekap']);
-
-    Route::post('/edit-rekap-nilai-siswa/{id}', [FormController::class, 'editRekap']);
-
+    Route::get('/edit-rekap-nilai-siswa/{id}', [FormController::class, 'editRekap']);
+    Route::post('/edit-rekap-nilai-siswa/{id}', [FormController::class, 'updateRekap']);
     Route::get('/rekap-nilai-siswa/delete/{id}', [FormController::class, 'hapusRekap']);
 
-    // Route::get('/info-pendaftaran', [InfodaftarController::class, 'index']);
+
 
     Route::get('/dashboard', function () {
         return view('Dashboard.Admin.main');
