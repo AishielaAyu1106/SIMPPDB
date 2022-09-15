@@ -7,6 +7,7 @@ use App\Models\Form;
 use App\Models\Jadwal;
 use App\Models\Rekap;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 class FormController extends Controller
 {
@@ -16,6 +17,8 @@ class FormController extends Controller
             'forms' => Form::all()
         ]);
     }
+
+    
 
     public function afirmasi(Request $request){
 
@@ -29,6 +32,8 @@ class FormController extends Controller
         //     $validasi = Jadwal::where('Jalur_pendaftaran',$request->id)->first();
         //     return view('Dashboard.Calon-Siswa.tambah_formulir',compact('validasi'));
         // }
+
+
     }
 
 

@@ -17,26 +17,24 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">No</th>
-              <th scope="col">Nilai</th>
-              <th scope="col">Jenis Prestasi</th>
-              <th scope="col">tingkat</th>
-              <th scope="col">Aksi</th>
+              <th scope="col" class="text-center">No</th>
+              <th scope="col" class="text-center">Nilai</th>
+              <th scope="col" class="text-center">Jenis Prestasi</th>
+              <th scope="col" class="text-center">Tingkat</th>
+              <th scope="col" class="text-center">Aksi</th>
             </tr>
           </thead>
           <tbody>
             @foreach ($submit as $rekap)
             <tr>
               <td>{{ $loop->iteration }}</td>
-              <td style="width: 200px" >{{ $rekap->basing}}</td>
-              <td style="width: 500px" >{{ $rekap->jenis_prestasi}}</td>
-              <td style="width: 500px" >{{ $rekap->tingkat}}</td>
-              {{-- <td style="width: 500px" >{{ $rekap->NISN}}</td> --}}
-              <td style="width: 100px"><a href="/rekap-nilai-siswa/show/{{$rekap->id}}" class="btn btn-success">Lihat</a></td>
-              <td style="width: 100px"><a href="/edit-rekap-nilai-siswa/{{$rekap->id}}" class="btn btn-primary">Edit</a></td>
-              <td style="width: 100px"><a href="/rekap-nilai-siswa/delete/{{$rekap->id}}" class="btn btn-danger">Hapus</a></td>
+              <td style="width: 200px" class="text-center" >{{ $rekap->basing}}</td>
+              <td style="width: 500px" class="text-center" >{{ $rekap->jenis_prestasi}}</td>
+              <td style="width: 500px" class="text-center" >{{ $rekap->tingkat}}</td>
 
-
+              <td style="width: 100px"><a href="/rekap-nilai-siswa/show/{{$rekap->id}}" class="btn btn-outline-primary btn-sm"><i class="fa fa-eye"></i>Lihat</a></td>
+              <td style="width: 100px"><a href="/edit-rekap-nilai-siswa/{{$rekap->id}}" class="btn btn-outline-success btn-sm"><i class="fa fa-pencil-square"></i>Edit</a></td>
+              <td style="width: 100px"><a href="/rekap-nilai-siswa/delete/{{$rekap->id}}" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i>Hapus</a></td>
             </tr>
 
 
