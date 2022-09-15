@@ -1,7 +1,7 @@
 <!-- Navbar -->
-{{-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> --}}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- Container wrapper -->
-    {{-- <div class="container-fluid">
+    <div class="container-fluid">
       <!-- Toggle button -->
       <button
         class="navbar-toggler"
@@ -71,7 +71,7 @@
       <!-- Right elements -->
     </div>
     <!-- Container wrapper -->
-  </nav> --}}
+  </nav>
   <!-- Navbar -->
 
 

@@ -1,4 +1,4 @@
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse" style="background-color:aliceblue">
     <div class="position-sticky pt-10">
         <span class="logo text-center">
             <img src="{{ asset('css/Logo SMAN 1 Bengalon.PNG') }}" alt="" width="100">
