@@ -8,17 +8,7 @@
             <h6 class="text-center">Sistem Informasi PPDB</h6>
             <h6 class="text-center ">SMAN 1 Bengalon</h6>
 
-            {{-- @penghuni
-                @include('layout.sidebar.mahasiswa')
-            @else
-                @include('layout.sidebar.internal')
-            @endif --}}
-
         </nav>
-        {{-- <span class="logo text-center">
-            <img src="{{ asset('css/Logo SMAN 1 Bengalon.PNG') }}" alt="" width="100">
-            <h4>SIM PPDB</h4>
-        </span> --}}
 
         <ul class="nav flex-column">
             <li class="nav-item">
@@ -52,10 +42,6 @@
                     <span data-feather="file-text" class="align-text-bottom"></span>
                     Formulir Pendaftaran
                 </a>
-                {{-- <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Action
-                </button> --}}
                 <div class="dropdown-menu">
                     <a href="/formulir-pendaftaran-siswa/formulir?id=Afirmasi" class="dropdown-item"
                         aria-labelledby="dropdownMenuButton">Afirmasi</a>

@@ -1,9 +1,20 @@
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse">
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse" style="background-color:rgb(255, 243, 245)">
     <div class="position-sticky pt-10">
-        <span class="logo text-center">
-            <img src="{{asset('css/Logo SMAN 1 Bengalon.PNG')}}" alt="" width="100">
-            <h4>SIM PPDB</h4>
-        </span>
+        <nav id="sidebar">
+            <a href="#">
+                <img src="{{url('css/Logo SMAN 1 Bengalon.PNG')}}" alt="itk" class="d-block w-50 m-auto">
+            </a>
+
+            <h6 class="text-center">Sistem Informasi PPDB</h6>
+            <h6 class="text-center ">SMAN 1 Bengalon</h6>
+
+            {{-- @penghuni
+                @include('layout.sidebar.mahasiswa')
+            @else
+                @include('layout.sidebar.internal')
+            @endif --}}
+
+        </nav>
     <div class="position-sticky pt-3">
       <ul class="nav flex-column">
         <li class="nav-item">

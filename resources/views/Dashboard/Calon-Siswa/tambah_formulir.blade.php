@@ -6,7 +6,7 @@
         <div class="row mb-3">
             <div class="col-md-6">
                 <div class="card card-body text-center">
-                    <h4>{{($no->Nomor_Pendaftaran)}}</h4>
+                    {{-- <h4>{{($no->Nomor_Pendaftaran)}}</h4> --}}
                     <p class="mb-0"> <span class="badge" style="background-color:rgb(255, 147, 163)">Nomor
                             Pendaftaran</span></p>
                 </div>
@@ -20,28 +20,18 @@
                 </div>
             </div>
         </div>
+
         <div class="card card-body">
 
             <form action="/formulir-pendaftaran-siswa" method="post" enctype="multipart/form-data">
                 @csrf
-                <div class="container">
+                <div class="container ">
                     <div class="card-body">
                         <div class="form-group">
                             <label class="agama text-dark"> Nomor Pendaftaran</label>
                             <input type="text" name="Nomor_Pendaftaran" class="form-control" id="nodaftar"
                                 value="{{ old('Nomor_Pendaftaran') }}" placeholder value required>
                         </div>
-
-                        {{-- <div class="form-group">
-                            <label for="exampleFormControlInput1" class="form-label">Jalur Pendaftaran</label>
-                            <select class="form-select" name="Jalur_pendaftaran" id="exampleFormControlInput1" required>
-                                <option selected>Pilih Jalur Pendaftaran</option>
-                                <option value="Afirmasi">Prestasi</option>
-                                <option value="Afirmasi">Afirmasi</option>
-                                <option value="Zonasi">Zonasi</option>
-                            </select>
-                            <div class="invalid-feedback">Silahkan Pilih Jalur Pendaftaran Yang Benar</div>
-                        </div> --}}
 
                         <div class="form-group">
                             <label for="Namasiswa" class="form-label text-dark">Nama Lengkap</label>
@@ -540,15 +530,17 @@
         </form>
         </div>
     @else
-
-        <div class="row mb-3 ">
+    <div class="card m-auto" style="width: 18rem; ">
+        <div class="card-body">
+            <h5>Pendaftaran Belum Dibuka</h5>
+        </div>
+      </div>
+        {{-- <div class="row mb-3 ">
             <div class="col-md-6 m-auto">
                 <div class="card card-body text-center " >
                     <h4>Pendaftaran Belum Dibuka</h4>
                 </div>
             </div>
-        </div>
-
-
+        </div> --}}
     @endif
 @endsection

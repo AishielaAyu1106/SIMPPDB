@@ -1,13 +1,12 @@
-@extends('Dashboard.Admin.Layout.index')
+{{-- @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
 <form action="/jadwal-pendaftaran" method="POST">
     @csrf
-    {{-- <h2>Section title</h2> --}}
 
     <div class="content mb-3">
 
-            {{-- <a href="/formulir-pendaftaran-siswa/tambah" class="btn btn-primary btn-rounded fs-18">Daftar Seleksi</a> --}}
+
 
     </div>
 
@@ -30,7 +29,7 @@
                 <td style="width: 200px" >{{ $item->Jalur_pendaftaran}}</td>
                 <td style="width: 500px" >{{ $item->tanggal_awal}}</td>
                 <td style="width: 500px" >{{ $item->tanggal_akhir}}</td>
-                {{-- <td style="width: 500px" >{{ $form->NISN}}</td> --}}
+
                 <td style="width: 100px"><a href="/formulir-pendaftaran-siswa/show/{{$item->id}}" class="btn btn-success">Lihat</a></td>
                 <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$item->id}}" class="btn btn-primary">Edit</a></td>
                 <td style="width: 100px"><a href="/formulir-pendaftaran-siswa/delete/{{$item->id}}" class="btn btn-danger">Hapus</a></td>
@@ -46,6 +45,6 @@
 
   </form>
 
-@endsection
+@endsection --}}
 
 

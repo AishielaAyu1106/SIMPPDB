@@ -112,7 +112,7 @@
                                         </div>
 
                                         <div class="row g-3">
-                                            <button class="btn btn-primary btn-lg btn-block mt-4"
+                                            <button class="btn btn-lg btn-block mt-4 text-light" style="background-color: rgb(255, 147, 163)"
                                                 type="submit">Submit</button>
                                         </div>
 
