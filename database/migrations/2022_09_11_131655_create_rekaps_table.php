@@ -15,17 +15,11 @@ class CreateRekapsTable extends Migration
     {
         Schema::create('rekaps', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('user_id');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->float('mtk')->nullable();
             $table->float('ipa')->nullable();
             $table->float('ips')->nullable();
             $table->float('basing')->nullable();
-            $table->string('jenis_prestasi')->nullable();
-            $table->string('tingkat')->nullable();
-            $table->string('nama_prestasi')->nullable();
-            $table->string('tahun')->nullable();
-            $table->string('penyelenggara')->nullable();
-            $table->string('piagam')->nullable();
             $table->timestamps();
         });
     }

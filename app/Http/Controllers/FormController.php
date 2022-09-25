@@ -18,12 +18,13 @@ class FormController extends Controller
         ]);
     }
 
-    
 
-    public function afirmasi(Request $request){
 
-        $validasi = Jadwal::where('Jalur_pendaftaran',$request->id)->first();
-            return view('Dashboard.Calon-Siswa.tambah_formulir',compact('validasi'));
+    public function afirmasi(Request $request)
+    {
+
+        $validasi = Jadwal::where('Jalur_pendaftaran', $request->id)->first();
+        return view('Dashboard.Calon-Siswa.tambah_formulir', compact('validasi'));
         // dd($request[0]);
         // $cekData = Jadwal::where('Jalur_pendaftaran',$request->id)->where('users_id',Auth::user()->id)->first();
         // if($cekData){
@@ -39,13 +40,14 @@ class FormController extends Controller
 
     public function store(Request $request)
     {
-        // return $request->file('fcakta')->store('berkas');
-        $form = $request -> validate([
+        // dd($request->all());
+        // return $request->file('fcakta')->store('public/berkas');
+        $form = $request->validate([
             'Nomor_Pendaftaran'  => ['required'],
-            'Jalur_pendaftaran'  => ['required'],
+            // 'Jalur_pendaftaran'  => ['required'],
             'nama_lengkap'  => ['required'],
             'Jenis_kelamin'  => ['required'],
-            'NISN'  => ['required','size:8'],
+            'NISN'  => ['required', 'size:8'],
             'tempat_lahir_siswa'  => ['required'],
             'tanggal_lahir_siswa'  => ['required'],
             'agama_siswa'  => ['required'],
@@ -64,70 +66,77 @@ class FormController extends Controller
             'nama_ayah'  => ['required'],
             'tempat_lahir_ayah'  => ['required'],
             'tanggal_lahir_ayah'  => ['required'],
-            'NIK_ayah'  => ['required','size:16'],
+            'NIK_ayah'  => ['required', 'size:16'],
             'pekerjaan_ayah'  => ['required'],
-            'nomor_hp_ayah'  => ['required','max:13'],
+            'nomor_hp_ayah'  => ['required', 'max:13'],
             'nama_ibu'  => ['required'],
             'tempat_lahir_ibu'  => ['required'],
             'tanggal_lahir_ibu'  => ['required'],
-            'NIK_ibu'  => ['required','size:16'],
+            'NIK_ibu'  => ['required', 'size:16'],
             'pekerjaan_ibu'  => ['required'],
-            'nomor_hp_ibu'  => ['required','max:13'],
+            'nomor_hp_ibu'  => ['required', 'max:13'],
             'fcakta' => ['file', 'required'],
-            'SKLasli' => ['file' , 'required'],
-            'fcSTTB' => ['file' , 'required'],
-            'fcRaport' => ['file' , 'required'],
-            'suratnarkoba' => ['file' , 'required'],
-            'Foto' => ['file' , 'required'],
+            'SKLasli' => ['file', 'required'],
+            'fcSTTB' => ['file', 'required'],
+            'fcRaport' => ['file', 'required'],
+            'suratnarkoba' => ['file', 'required'],
+            'Foto' => ['file', 'required'],
             'fcKIP' => ['file'],
             'fcKPS' => ['file'],
-            'fcPKH' => ['file']
+            'fcPKH' => ['file'],
+            'jenis_prestasi'  => ['required'],
+            'tingkat'  => ['required'],
+            'nama_prestasi'  => ['required'],
+            'tahun'  => ['required'],
+            'penyelenggara'  => ['required'],
+            'piagam' => ['file', 'required']
         ]);
 
-        if($request->file('fcakta')) {
+        if ($request->file('fcakta')) {
             $form['fcakta'] = $request->file('fcakta')->store('berkas');
         }
 
-        if($request->file('SKLasli')) {
+        if ($request->file('SKLasli')) {
             $form['SKLasli'] = $request->file('SKLasli')->store('berkas');
         }
 
-        if($request->file('fcSTTB')) {
+        if ($request->file('fcSTTB')) {
             $form['fcSTTB'] = $request->file('fcSTTB')->store('berkas');
         }
 
-        if($request->file('fcRaport')) {
+        if ($request->file('fcRaport')) {
             $form['fcRaport'] = $request->file('fcRaport')->store('berkas');
         }
 
-        if($request->file('suratnarkoba')) {
+        if ($request->file('suratnarkoba')) {
             $form['suratnarkoba'] = $request->file('suratnarkoba')->store('berkas');
         }
 
-        if($request->file('Foto')) {
+        if ($request->file('Foto')) {
             $form['Foto'] = $request->file('Foto')->store('berkas');
         }
 
-        if($request->file('fcKIP')) {
+        if ($request->file('fcKIP')) {
             $form['fcKIP'] = $request->file('fcKIP')->store('berkas');
         }
 
-        if($request->file('fcKPS')) {
+        if ($request->file('fcKPS')) {
             $form['fcKPS'] = $request->file('fcKPS')->store('berkas');
         }
 
-        if($request->file('fcPKH')) {
+        if ($request->file('fcPKH')) {
             $form['fcPKH'] = $request->file('fcPKH')->store('berkas');
         }
-
-        Form::create($form);
+        if ($request->file('piagam')) {
+            $form['piagam'] = $request->file('piagam')->store('berkas');
+        }
+        Form::create($form + ['user_id' => Auth::user()->id]);
         return redirect('/formulir-pendaftaran-siswa')->with('success', 'Pendaftaran Telah Dilakukan');
-        // dd ('sukses');
     }
 
     public function destroy($id)
     {
-        $form=Form::find($id);
+        $form = Form::find($id);
         $form->delete();
         return redirect('/formulir-pendaftaran-siswa');
     }
@@ -158,40 +167,48 @@ class FormController extends Controller
 
 
 
-#Rekap Nilai Siswa
+    #Rekap Nilai Siswa
 
-    public function rekap(){
-        return view('Dashboard.Calon-Siswa.rekap-nilai');
+    public function rekap()
+    {
+        $rekap = Rekap::where('user_id', Auth::user()->id)->first();
+        return view('Dashboard.Calon-Siswa.rekap-nilai', compact('rekap'));
     }
 
-    public function tambahRekap(Request $request){
+    public function tambahRekap(Request $request)
+    {
         $rekap = $request->validate([
             'mtk'  => ['required'],
             'ipa'  => ['required'],
             'ips'  => ['required'],
             'basing'  => ['required'],
-            'jenis_prestasi'  => ['required'],
-            'tingkat'  => ['required'],
-            'nama_prestasi'  => ['required'],
-            'tahun'  => ['required'],
-            'penyelenggara'  => ['required'],
-            'piagam' => ['file', 'required']
         ]);
 
-        Rekap::create($rekap);
-        return redirect('/rekap-nilai-siswa');
+        $rekap = Rekap::where('user_id', Auth::user()->id)->first();
+        if($rekap){
+            $rekap->update($request->all());
+        }else{
+            Rekap::create($request->all() + ['user_id' => Auth::user()->id]);
+        }
+        // $data->save();
+        // dd($data);
+        return back();
+        // return redirect('/rekap-nilai-siswa');
     }
 
-    public function lihatRekap(Request $request){
+    public function lihatRekap(Request $request)
+    {
         $submit = Rekap::all();
-        return view('Dashboard.Calon-Siswa.rekap-nilai-tambah',compact('submit'));
+        return view('Dashboard.Calon-Siswa.rekap-nilai-tambah', compact('submit'));
     }
 
     public function showRekap($id)
     {
         $showrekap = Rekap::find($id);
-        return view('Dashboard.Calon-Siswa.lihat-rekap-siswa', compact('showrekap')
-            );
+        return view(
+            'Dashboard.Calon-Siswa.lihat-rekap-siswa',
+            compact('showrekap')
+        );
     }
 
     public function editRekap($id)
@@ -210,7 +227,7 @@ class FormController extends Controller
 
     public function hapusRekap($id)
     {
-        $hapus=Rekap::find($id);
+        $hapus = Rekap::find($id);
         $hapus->delete();
         return redirect('/rekap-nilai-siswa');
     }

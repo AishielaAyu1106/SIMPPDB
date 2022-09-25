@@ -96,7 +96,7 @@
                                 <p class="mb-0">Fotocopy Akta kelahiran :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset('storage/app/public'. $lihat->fcakta)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset('storage/' . $lihat->fcakta)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -105,7 +105,7 @@
                                 <p class="mb-0">Surat Keterangan Lulus Asli :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset('storage/app/public'. $lihat->SKLasli)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset($lihat->SKLasli)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -114,7 +114,7 @@
                                 <p class="mb-0">Fotocopy STTB Legalisir :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset('storage/app/public'. $lihat->fcSTTB)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset($lihat->fcSTTB)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -123,7 +123,7 @@
                                 <p class="mb-0">Fotocopy raport Semester 1-5 :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset('storage/app/public'. $lihat->fcRaport)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset($lihat->fcRaport)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -132,7 +132,7 @@
                                 <p class="mb-0">Surat Keterangan Bebas Narkoba :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset('storage/app/public'. $lihat->suratnarkoba)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset($lihat->suratnarkoba)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -141,7 +141,7 @@
                                 <p class="mb-0">Pas Foto Ukuran 3 x 4 :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset('storage/app/public'. $lihat->Foto)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset($lihat->Foto)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -157,7 +157,7 @@
                                 <p class="mb-0">Fotocopy Kartu Indonesia Pintar :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset('storage/app/public'. $lihat->fcKIP)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset($lihat->fcKIP)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -166,7 +166,7 @@
                                 <p class="mb-0">Fotocopy Kartu Pelindung Sosial :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset('storage/app/public'. $lihat->fcKPS)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset($lihat->fcKPS)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -175,7 +175,7 @@
                                 <p class="mb-0">Fotocopy Program Keluarga Harapan :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset('storage/app/public'. $lihat->fcPKH)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset($lihat->fcPKH)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>

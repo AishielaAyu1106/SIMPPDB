@@ -30,7 +30,7 @@
                         <div class="form-group">
                             <label class="agama text-dark"> Nomor Pendaftaran</label>
                             <input type="text" name="Nomor_Pendaftaran" class="form-control" id="nodaftar"
-                                value="{{ old('Nomor_Pendaftaran') }}" placeholder value required>
+                                value="{{ old('Nomor_Pendaftaran') }}" placeholder value >
                         </div>
 
                         <div class="form-group">
@@ -45,7 +45,7 @@
                             <div class="col-sm-6">
                                 <label for="exampleFormControlInput1" class="form-label text-dark">Jenis Kelamin</label>
                                 <select class="form-select" name="Jenis_kelamin" id="exampleFormControlInput1"
-                                    value="{{ old('Jenis_kelamin') }}" required>
+                                    value="{{ old('Jenis_kelamin') }}">
                                     <option selected>Pilih Jenis Kelamin</option>
                                     <option value="Laki-Laki">Laki-Laki</option>
                                     <option value="Perempuan">Perempuan</option>
@@ -65,14 +65,14 @@
                             <div class="col-sm-6">
                                 <label for="address" class="form-label text-dark">Tempat Lahir</label>
                                 <input type="address" name="tempat_lahir_siswa" class="form-control" id="address"
-                                    value="{{ old('tempat_lahir_siswa') }}" placeholder value required>
+                                    value="{{ old('tempat_lahir_siswa') }}" placeholder value>
                                 <div class="invalid-feedback">Tempat Lahir Dibutuhkan</div>
                             </div>
 
                             <div class="col-sm-6">
                                 <label for="date" class="form-label text-dark">Tanggal Lahir</label>
                                 <input type="date" name="tanggal_lahir_siswa" class="form-control" id="date"
-                                    value="{{ old('tanggal_lahir_siswa') }}" placeholder value required>
+                                    value="{{ old('tanggal_lahir_siswa') }}" placeholder value>
                                 <div class="invalid-feedback">Tanggal Lahir Dibutuhkan</div>
                             </div>
                         </div>
@@ -138,7 +138,7 @@
                             <div class="col-sm-6">
                                 <label class="form-label text-dark">Kelurahan/Desa</label>
                                 <input type="text" name="kelurahan_desa" class="form-control" id="kelurahan"
-                                    value="{{ old('kelurahan_desa') }}" placeholder value required>
+                                    value="{{ old('kelurahan_desa') }}" placeholder value>
                                 <div class="invalid-feedback">Isi Dengan benar</div>
                             </div>
 
@@ -154,21 +154,21 @@
                             <div class="col-sm-4">
                                 <label class="form-label text-dark">Kecamatan</label>
                                 <input type="text" name="kecamatan" class="form-control" id="kecamatan"
-                                    value="{{ old('kecamatan') }}" placeholder value required>
+                                    value="{{ old('kecamatan') }}" placeholder value>
                                 <div class="invalid-feedback">Isi Dengan benar</div>
                             </div>
 
                             <div class="col-sm-4">
                                 <label class="form-label text-dark">Kabupaten/Kota</label>
                                 <input type="text" name="kabupaten_kota" class="form-control" id="kota"
-                                    value="{{ old('kabupaten_kota') }}" placeholder value required>
+                                    value="{{ old('kabupaten_kota') }}" placeholder value>
                                 <div class="invalid-feedback">Isi Dengan benar</div>
                             </div>
 
                             <div class="col-sm-4">
                                 <label class="form-label text-dark">Provinsi</label>
                                 <input type="text" name="provinsi" class="form-control" id="provinsi"
-                                    value="{{ old('provinsi') }}" placeholder value required>
+                                    value="{{ old('provinsi') }}" placeholder value>
                                 <div class="invalid-feedback">Isi Dengan benar</div>
                             </div>
                         </div>
@@ -227,7 +227,7 @@
                             <div class="col-sm-4">
                                 <label class="form-label text-dark">Pekerjaan</label>
                                 <input type="text" name="pekerjaan_ayah" class="form-control" id="Pekerjaan"
-                                    value="{{ old('pekerjaan_ayah') }}" placeholder value required>
+                                    value="{{ old('pekerjaan_ayah') }}" placeholder value>
                                 <div class="invalid-feedback">Isi Dengan benar</div>
                             </div>
 
@@ -248,20 +248,20 @@
                             <div class="form-group">
                                 <label for="name" class="form-label text-dark">Nama Ibu</label>
                                 <input type="text" name="nama_ibu" class="form-control" id="address"
-                                    value="{{ old('nama_ibu') }}" placeholder value required>
+                                    value="{{ old('nama_ibu') }}" placeholder value>
                                 <div class="invalid-feedback">Tempat Lahir Dibutuhkan</div>
                             </div>
                             <div class="col-sm-6">
                                 <label for="address" class="form-label text-dark">Tempat Lahir</label>
                                 <input type="address" name="tempat_lahir_ibu" class="form-control" id="address"
-                                    value="{{ old('tempat_lahir_ibu') }}" placeholder value required>
+                                    value="{{ old('tempat_lahir_ibu') }}" placeholder value>
                                 <div class="invalid-feedback">Tempat Lahir Dibutuhkan</div>
                             </div>
 
                             <div class="col-sm-6">
                                 <label for="date" class="form-label text-dark">Tanggal Lahir</label>
                                 <input type="date" name="tanggal_lahir_ibu" class="form-control" id="date"
-                                    value="{{ old('tanggal_lahir_ibu') }}" placeholder value required>
+                                    value="{{ old('tanggal_lahir_ibu') }}" placeholder value>
                                 <div class="invalid-feedback">Tanggal Lahir Dibutuhkan</div>
                             </div>
                         </div>
@@ -277,7 +277,7 @@
                             <div class="col-sm-4">
                                 <label class="form-label text-dark">Pekerjaan</label>
                                 <input type="text" name="pekerjaan_ibu" class="form-control" id="Pekerjaan"
-                                    value="{{ old('pekerjaan_ibu') }}" placeholder value required>
+                                    value="{{ old('pekerjaan_ibu') }}" placeholder value>
                                 <div class="invalid-feedback">Isi Dengan benar</div>
                             </div>
 
@@ -452,7 +452,7 @@
 
 
 
-                            @if ($validasi->Jalur_pendaftaran == 'afirmasi')
+                            {{-- @if ($validasi->Jalur_pendaftaran == 'afirmasi') --}}
                                 <div class="row g-3">
                                     <h6>
                                         <hr>Bagi Jalur Afirmasi
@@ -511,30 +511,96 @@
                                         @enderror
                                     </div>
                                 </div>
-                            @else
-                            @endif
+                            {{-- @else
+                            @endif --}}
+
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <h6 align="center">
+                                        <hr>Catatan Prestasi
+                                    </h6>
+                                    <div class="col-sm-6">
+                                        <label class="form-label">Jenis Prestasi</label>
+                                        <input type="text" name="jenis_prestasi" class="form-control"
+                                            id="jenisprestasi" value="{{ old('jenis_prestasi') }}"
+                                            placeholder="Cth. OSN">
+                                        <div class="invalid-feedback">Isi Dengan benar</div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <label for="email" class="form-label">Tingkat</label>
+                                        <input type="text" name="tingkat" class="form-control" id="tingkat"
+                                            value="{{ old('tingkat') }}" placeholder="Cth.Kabupaten">
+                                        <div class="invalid-feedback">Isi Dengan benar</div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row g-3">
+                                    <div class="col-sm-4">
+                                        <label class="form-label">Nama Prestasi</label>
+                                        <input type="text" name="nama_prestasi" class="form-control"
+                                            id="nama_prestasi" value="{{ old('nama_prestasi') }}"
+                                            placeholder="Cth. Olimpiade Sains">
+                                        <div class="invalid-feedback">Isi Dengan benar</div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <label for="email" class="form-label">Tahun</label>
+                                        <input type="text" name="tahun" class="form-control" id="tahun"
+                                            value="{{ old('tahun') }}" placeholder="Cth. 2021">
+                                        <div class="invalid-feedback">Isi Dengan benar</div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <label for="email" class="form-label">Penyelenggara</label>
+                                        <input type="text" name="penyelenggara" class="form-control"
+                                            id="penyelenggara" value="{{ old('penyelenggara') }}"
+                                            placeholder="Cth. Kabupaten">
+                                        <div class="invalid-feedback">Isi Dengan benar</div>
+                                    </div>
+
+                                </div>
 
 
-                            <div class="row g-3">
 
-                                <hr class="mb-4">
-                                <button class="btn btn-lg btn-block text-light" type="submit"
-                                    style="background-color:rgb(255, 147, 163)">Daftar</button>
+
+                                <div class="row g-3">
+                                    <div class="col">
+                                        <label for="form-label" for="personal-data">Piagam Prestasi</label>
+                                        <div class="input-group">
+                                            <div class="form-file">
+                                                <input type="file" class="form-file-input form-control"
+                                                    name="piagam">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
-
                         </div>
+
+
+                        <div class="row g-3">
+
+                            <hr class="mb-4">
+                            <button class="btn btn-lg btn-block text-light" type="submit"
+                                style="background-color:rgb(255, 147, 163)">Daftar</button>
+                        </div>
+
                     </div>
                 </div>
+        </div>
         </div>
         </div>
         </form>
         </div>
     @else
-    <div class="card m-auto" style="width: 18rem; ">
-        <div class="card-body">
-            <h5>Pendaftaran Belum Dibuka</h5>
+        <div class="card m-auto" style="width: 18rem; ">
+            <div class="card-body">
+                <h5>Pendaftaran Belum Dibuka</h5>
+            </div>
         </div>
-      </div>
         {{-- <div class="row mb-3 ">
             <div class="col-md-6 m-auto">
                 <div class="card card-body text-center " >

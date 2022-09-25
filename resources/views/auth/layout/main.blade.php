@@ -14,7 +14,7 @@
 
 
 
-<link href="bootstrap/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{asset('bootstrap/assets/dist/css/bootstrap.min.css')}}" rel="stylesheet">
 
 
 
