@@ -2,7 +2,7 @@
 
 @section('container')
 
-{{-- <form action="/data-pendaftar" method="POST">
+<form action="/data-pendaftar" method="POST">
     @csrf
 
 
@@ -47,6 +47,6 @@
         </div>
       </div>
 
-  </form> --}}
+  </form>
 
 @endsection

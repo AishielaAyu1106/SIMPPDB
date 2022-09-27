@@ -4,7 +4,7 @@
     <p class="mb-4">
     <h2 align='center' class="text-dark font-italic me-1">Rekap Nilai & Prestasi</h2>
     </p>
-    <div class="row mb-3">
+    <div class="row mb-9">
         <div class="col-md-6">
             <div class="card-body">
                 <p class="mb-4">
@@ -49,94 +49,6 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="card-body">
-                <p class="mb-4">
-                <h6 class="text-dark font-italic me-1">Catatan Prestasi</h6>
-                </p>
-                <div class="row">
-                    <div class="col-sm-9">
-                        <p class="mb-0">Jenis Prestasi</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <p class="text-muted mb-0">{{ $showrekap->jenis_prestasi }}</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-9">
-                        <p class="mb-0">Tingkat</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <p class="text-muted mb-0">{{ $showrekap->tingkat }}</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-9">
-                        <p class="mb-0">Nama Prestasi</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <p class="text-muted mb-0">{{ $showrekap->nama_prestasi }}</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-9">
-                        <p class="mb-0">Tahun</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <p class="text-muted mb-0">{{ $showrekap->tahun }}</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-9">
-                        <p class="mb-0">Penyelenggara</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <p class="text-muted mb-0">{{ $showrekap->penyelenggara }}</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="card-body">
-                    <p class="mb-4">
-                    <h6 class="text-dark font-italic me-1">Piagam Prestasi</h6>
-                    </p>
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <p class="mb-0">Scan Piagam :</p>
-                        </div>
-                        <div class="col-sm-3">
-                            <a href="{{ asset('storage/app/public/' . $showrekap->piagam) }}"
-                                class="btn btn-outline-success">Lihat Berkas</a>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-            </div>
-        </div>
+
     </div>
-    {{-- <section style="background-color: rgb(255, 255, 255);">
-
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="card mb-4 sm-lg-4">
-
-                    </div>
-
-                    <div class="col lg-8">
-                        <div class="card mb-3">
-
-                        </div>
-                    </div>
-
-                    <div class="card mb-4 sm-lg-4">
-
-                    </div>
-
-                </div>
-            </div>
-    </section> --}}
 @endsection

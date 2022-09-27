@@ -19,71 +19,64 @@
 
                 <div class="card mb-4 sm-lg-4">
                     <div class="card-body">
-                        <p class="mb-4"><h6 class="text-primary font-italic me-1">Nilai Rata-Rata Semester 1 - 5</h6>
+                        <p class="mb-4"><h6 class="text-primary font-italic me-1">Catatan Prestasi</h6>
                         </p>
                         <div class="row">
                             <div class="col-sm-9">
-                              <p class="mb-0">Pendidikan Agama</p>
+                              <p class="mb-0">Jenis Prestasi</p>
                             </div>
                             <div class="col-sm-3">
-                              <p class="text-muted mb-0">{{$lihat->p_agama}}</p>
+                              <p class="text-muted mb-0">{{$lihat->jenis_prestasi}}</p>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-9">
-                              <p class="mb-0">PPKN</p>
+                              <p class="mb-0">Tingkat</p>
                             </div>
                             <div class="col-sm-3">
-                              <p class="text-muted mb-0">{{$lihat->ppkn}}</p>
+                              <p class="text-muted mb-0">{{$lihat->tingkat}}</p>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-9">
-                              <p class="mb-0">Bahasa Indonesia</p>
+                              <p class="mb-0">Nama Prestasi</p>
                             </div>
                             <div class="col-sm-3">
-                              <p class="text-muted mb-0">{{$lihat->B_indo}}</p>
+                              <p class="text-muted mb-0">{{$lihat->nama_prestasi}}</p>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-9">
-                              <p class="mb-0">Matematika</p>
+                              <p class="mb-0">Tahun</p>
                             </div>
                             <div class="col-sm-3">
-                              <p class="text-muted mb-0">{{$lihat->mtk}}</p>
+                              <p class="text-muted mb-0">{{$lihat->tahun}}</p>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
                             <div class="col-sm-9">
-                              <p class="mb-0">Ilmu Pengetahuan Alam</p>
+                              <p class="mb-0">Penyelenggara</p>
                             </div>
                             <div class="col-sm-3">
-                              <p class="text-muted mb-0">{{$lihat->ipa}}</p>
+                              <p class="text-muted mb-0">{{$lihat->penyelenggara}}</p>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
-                            <div class="col-sm-9">
-                              <p class="mb-0">Ilmu Pengetahuan Sosial</p>
+                            <div class="col-sm-6">
+                                <p class="mb-0">Piagam Prestasi :</p>
                             </div>
-                            <div class="col-sm-3">
-                              <p class="text-muted mb-0">{{$lihat->ips}}</p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="col-sm-9">
-                              <p class="mb-0">Bahasa Inggris</p>
-                            </div>
-                            <div class="col-sm-3">
-                              <p class="text-muted mb-0">{{$lihat->basing}}</p>
+                            <div class="col-sm-6">
+                                <a href="{{asset('storage/' . $lihat->piagam)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
+
+
                     </div>
                 </div>
 
@@ -105,7 +98,7 @@
                                 <p class="mb-0">Surat Keterangan Lulus Asli :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset($lihat->SKLasli)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset('storage/' . $lihat->SKLasli)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -114,7 +107,7 @@
                                 <p class="mb-0">Fotocopy STTB Legalisir :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset($lihat->fcSTTB)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset('storage/' . $lihat->fcSTTB)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -123,7 +116,7 @@
                                 <p class="mb-0">Fotocopy raport Semester 1-5 :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset($lihat->fcRaport)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset('storage/' . $lihat->fcRaport)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -132,7 +125,7 @@
                                 <p class="mb-0">Surat Keterangan Bebas Narkoba :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset($lihat->suratnarkoba)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset('storage/' . $lihat->suratnarkoba)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -141,7 +134,7 @@
                                 <p class="mb-0">Pas Foto Ukuran 3 x 4 :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset($lihat->Foto)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset('storage/' . $lihat->Foto)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -157,7 +150,7 @@
                                 <p class="mb-0">Fotocopy Kartu Indonesia Pintar :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset($lihat->fcKIP)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset('storage/' . $lihat->fcKIP)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -166,7 +159,7 @@
                                 <p class="mb-0">Fotocopy Kartu Pelindung Sosial :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset($lihat->fcKPS)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset('storage/' . $lihat->fcKPS)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
@@ -175,12 +168,11 @@
                                 <p class="mb-0">Fotocopy Program Keluarga Harapan :</p>
                             </div>
                             <div class="col-sm-6">
-                                <a href="{{asset($lihat->fcPKH)}}" class="btn btn-outline-success">Lihat Berkas</a>
+                                <a href="{{asset('storage/' . $lihat->fcPKH)}}" class="btn btn-outline-success">Lihat Berkas</a>
                             </div>
                         </div>
                         <hr>
 
-                        
                     </div>
                 </div>
 
@@ -210,7 +202,7 @@
 </--------------------------------------------------------------------Jalur Pendaftaran-----------------------------------------------------------------------------------*/>
                 <div class="row">
                   <div class="col-sm-3">
-                    <p class="mb-0">Jalur Pendaftaran</p>
+                    <p class="mb-0">Jalur Pendaftaran </p>
                   </div>
                   <div class="col-sm-9">
                     <p class="text-muted mb-0">{{$lihat->Jalur_pendaftaran}}</p>

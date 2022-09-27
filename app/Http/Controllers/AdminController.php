@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Jadwal;
+use App\Models\Form;
 
 class AdminController extends Controller
 {
@@ -64,5 +65,13 @@ class AdminController extends Controller
         $item = Jadwal::find($id);
         $item->delete();
         return redirect('/jadwal-pendaftaran');
+    }
+
+
+
+// data pendaftaran
+
+    public function dataPendaftar(){
+        Form::
     }
 }

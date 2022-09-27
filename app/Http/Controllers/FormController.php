@@ -80,7 +80,7 @@ class FormController extends Controller
             'fcSTTB' => ['file', 'required'],
             'fcRaport' => ['file', 'required'],
             'suratnarkoba' => ['file', 'required'],
-            'Foto' => ['file', 'required'],
+            'Foto' => ['file'],
             'fcKIP' => ['file'],
             'fcKPS' => ['file'],
             'fcPKH' => ['file'],
@@ -89,7 +89,7 @@ class FormController extends Controller
             'nama_prestasi'  => ['required'],
             'tahun'  => ['required'],
             'penyelenggara'  => ['required'],
-            'piagam' => ['file', 'required']
+            'piagam' => ['file']
         ]);
 
         if ($request->file('fcakta')) {
@@ -130,6 +130,8 @@ class FormController extends Controller
         if ($request->file('piagam')) {
             $form['piagam'] = $request->file('piagam')->store('berkas');
         }
+        // dd($form);
+        // Form::create($form);
         Form::create($form + ['user_id' => Auth::user()->id]);
         return redirect('/formulir-pendaftaran-siswa')->with('success', 'Pendaftaran Telah Dilakukan');
     }
