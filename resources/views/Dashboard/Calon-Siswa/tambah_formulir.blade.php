@@ -6,7 +6,7 @@
         <div class="row mb-3">
             <div class="col-md-6">
                 <div class="card card-body text-center">
-                    {{-- <h4>{{($no->Nomor_Pendaftaran)}}</h4> --}}
+                    {{-- <h4>{{($form->id)}}</h4> --}}
                     <p class="mb-0"> <span class="badge" style="background-color:rgb(255, 147, 163)">Nomor
                             Pendaftaran</span></p>
                 </div>
