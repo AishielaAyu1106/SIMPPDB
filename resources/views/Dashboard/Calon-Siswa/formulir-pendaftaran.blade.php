@@ -4,13 +4,6 @@
 
 <form action="/formulir-pendaftaran-siswa" method="POST">
   @csrf
-  {{-- <h2>Section title</h2> --}}
-
-  {{-- <div class="content mb-3">
-
-          <a href="/formulir-pendaftaran-siswa/tambah" class="btn btn-primary btn-rounded fs-18 mt-100">Daftar Seleksi</a>
-
-  </div> --}}
 
     <div class="card">
       <div class="table-responsive">

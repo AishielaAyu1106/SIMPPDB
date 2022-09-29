@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Jadwal;
 use App\Models\Form;
+use App\Models\kuota_kelas;
+use App\Models\SiswaKelas;
 
 class AdminController extends Controller
 {
@@ -22,7 +24,7 @@ class AdminController extends Controller
         $afirmasi = Jadwal::where('Jalur_pendaftaran', 'Afirmasi')->first();
         $zonasi = Jadwal::where('Jalur_pendaftaran', 'zonasi')->first();
         $prestasi = Jadwal::where('Jalur_pendaftaran', 'prestasi')->first();
-        return view('Dashboard.Admin.Jadwal', compact('jadwal', 'afirmasi','zonasi','prestasi'));
+        return view('Dashboard.Admin.Jadwal', compact('jadwal', 'afirmasi', 'zonasi', 'prestasi'));
     }
 
     public function updateData(Request $request)
@@ -69,9 +71,39 @@ class AdminController extends Controller
 
 
 
-// data pendaftaran
+    // data pendaftaran
 
-    public function dataPendaftar(){
-        Form::
+    public function dataPendaftar()
+    {
+        $data = Form::all();
+        return view('Dashboard.Admin.data-pendaftar', compact('data'));
+    }
+
+    public function showData($id)
+    {
+        $lihatdata = Form::find($id);
+        return view('Dashboard.Admin.data-pendaftar-tolak-terima', compact('lihatdata'));
+    }
+
+    public function kelas()
+    {
+        $kelas = kuota_kelas::all();
+        foreach ($kelas as $item) {
+            $jumlahSiswa = SiswaKelas::where('kuota_kelas_id', $item->id)->count();
+            $siswaKelas[] = [
+                'nama_kelas' => $item->Nama_Kelas,
+                'kuota' => $item->Kuota_kelas,
+                'siswa_kuota' => $item->Kuota_kelas - $jumlahSiswa
+            ];
+        }
+        // dd($siswaKelas);
+        // $kuota_kelas =
+        return view('Dashboard.Admin.kelas-pendaftar',compact('siswaKelas'));
+    }
+
+    public function cekKuota($data)
+    {
+        // $KuotaKelas = kuota_kelas::where('');
+
     }
 }

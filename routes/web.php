@@ -57,7 +57,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/edit-rekap-nilai-siswa/{id}', [FormController::class, 'updateRekap']);
     Route::get('/rekap-nilai-siswa/delete/{id}', [FormController::class, 'hapusRekap']);
 
-
+    Route::get('/data-pendaftar' , [AdminController::class, 'dataPendaftar']);
+    Route::get('/data-pendaftar/show/{id}', [AdminController::class, 'showData']);
+    Route::get('/kelas-pendaftar', [AdminController::class, 'kelas']);
 
     Route::get('/dashboard', function () {
         return view('Dashboard.Admin.main');
@@ -67,9 +69,9 @@ Route::middleware(['auth'])->group(function () {
         return view('Dashboard.Admin.pengumuman');
     });
 
-    Route::get('/data-pendaftar', function () {
-        return view('Dashboard.Admin.data-pendaftar');
-    });
+    // Route::get('/data-pendaftar', function () {
+    //     return view('Dashboard.Admin.data-pendaftar');
+    // });
 
     Route::get('/data-admin', function () {
         return view('Dashboard.Admin.data-admin');

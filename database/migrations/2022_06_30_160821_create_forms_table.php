@@ -63,6 +63,7 @@ return new class extends Migration
             $table->string('penyelenggara')->nullable();
             $table->string('piagam')->nullable();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->enum('status',['Terima berkas' , 'Tolak Berkas' , 'Sedang diproses'])->default('Sedang diproses');
             $table->timestamps();
         });
     }

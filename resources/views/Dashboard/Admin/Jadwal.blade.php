@@ -81,10 +81,12 @@
                                     <td style="width: 100px">
                                         <div class="form-group text-center">
                                             <button class="btn btn-outline-success" class="form-control"
-                                                type="submit">Submit</button>
+                                                type="submit">Update</button>
                                         </div>
                                     </td>
                                 </tr>
+
+
                             </form>
 
                             <form action="{{ url('updateJadwal') }}" method="post">
@@ -114,9 +116,11 @@
                                         </div>
                                     </td>
                                 </tr>
+
+                                </td>
                             </form>
 
-                            {{-- <form action="{{ url('updateJadwal') }}" method="post">
+                            <form action="{{ url('updateJadwal') }}" method="post">
                                 @csrf
                                 <tr>
                                     <td style="width: 200px">{{ $zonasi->Jalur_pendaftaran }}</td>
@@ -139,11 +143,11 @@
                                     <td style="width: 100px">
                                         <div class="form-group text-center">
                                             <button class="btn btn-outline-success" class="form-control"
-                                                type="submit">Submit</button>
+                                                type="submit">Update</button>
                                         </div>
                                     </td>
                                 </tr>
-                            </form> --}}
+                            </form>
                         </tbody>
                     </table>
                 </div>
