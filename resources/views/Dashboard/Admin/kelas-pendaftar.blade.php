@@ -1,8 +1,8 @@
 @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
+<div class="card" style="width: 20rem;">
+    <div class="card-body ">
       <h5 class="card-title">Kuota Kelas</h5>
       @foreach ($siswaKelas as $key => $item)
             <div class="form-check">
@@ -16,7 +16,7 @@
 
         <div class="form-group text-center">
             <button class="btn btn-outline-success" class="form-control"
-                type="submit">Submit</button>
+                type="submit">Pilih</button>
         </div>
   </div>
 
