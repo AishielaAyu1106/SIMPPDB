@@ -15,12 +15,22 @@
 
                             <div class="row mb-4">
                                 <div class="col-sm-6">
-                                    <a href="/kelas-pendaftar" class="btn btn-outline-success">Terima Berkas</a>
+                                    <form action="{{url('status-berkas',request()->route()->parameters)}}" method="post">
+                                        @csrf
+                                        <input name="status" type="hidden" value="Terima berkas">
+                                        <button type="submit" class="btn btn-outline-success">Terima
+                                            Berkas</button>
+                                    </form>
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <button type="button" class="btn btn-outline-danger" data-toggle="modal"
-                                        data-target="#exampleModal" data-whatever="Tolak Berkas Pendaftaran">Tolak Berkas</button>
+                                    <form action="{{url('status-berkas',request()->route()->parameters)}}" method="post">
+                                        @csrf
+                                    <button type="submit" class="btn btn-outline-danger" data-toggle="modal"
+                                        data-target="#exampleModal" data-whatever="Tolak Berkas Pendaftaran">Tolak
+                                        Berkas</button>
+                                    </form>
+
                                 </div>
 
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -38,15 +48,20 @@
                                                 <form>
 
                                                     <div class="form-group">
-                                                        <label for="message-text" class="col-form-label">Catatan Perbaikan:</label>
+                                                        <label for="message-text" class="col-form-label">Catatan
+                                                            Perbaikan:</label>
                                                         <textarea class="form-control" id="message-text"></textarea>
                                                     </div>
                                                 </form>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-danger">Tolak</button>
+                                                <form action="{{ url('status-berkas') }}" method="post">
+                                                    @csrf
+                                                    <input name="status" type="hidden" value="Tolak Berkas">
+                                                    <button type="submit" class="btn btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-danger">Tolak</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -237,8 +252,7 @@
 
 
 
-                </-------------------------------------------------------------------------Nomor
-                    Pendaftaran-----------------------------------------------------------------------------------* />
+
 
                 <div class="col-lg-8">
                     <div class="card mb-3">
@@ -255,8 +269,7 @@
                                 </div>
                             </div>
                             <hr>
-                            </--------------------------------------------------------------------Jalur
-                                Pendaftaran-----------------------------------------------------------------------------------* />
+
                             <div class="row">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Jalur Pendaftaran </p>
@@ -266,8 +279,7 @@
                                 </div>
                             </div>
                             <hr>
-                            </---------------------------------------------------------------------------Nama
-                                lengkap-----------------------------------------------------------------------------------* />
+
                             <div class="row">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Nama Lengkap</p>
@@ -277,8 +289,7 @@
                                 </div>
                             </div>
                             <hr>
-                            </------------------------------------------------------------------------Jenis
-                                Kelamin-----------------------------------------------------------------------------------* />
+
                             <div class="row">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Jenis Kelamin</p>
@@ -288,8 +299,7 @@
                                 </div>
                             </div>
                             <hr>
-                            </------------------------------------------------------------------------------------N I S
-                                N-----------------------------------------------------------------------------------* />
+
                             <div class="row">
                                 <div class="col-sm-3">
                                     <p class="mb-0">N I S N</p>
@@ -299,8 +309,7 @@
                                 </div>
                             </div>
                             <hr>
-                            </------------------------------------------------------------------------------Tempat
-                                Lahir-----------------------------------------------------------------------------------* />
+
                             <div class="row">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Tempat Lahir</p>
@@ -310,8 +319,7 @@
                                 </div>
                             </div>
                             <hr>
-                            </-------------------------------------------------------------------------------------Tanggal
-                                Lahir-----------------------------------------------------------------------------------* />
+
                             <div class="row">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Tanggal Lahir</p>

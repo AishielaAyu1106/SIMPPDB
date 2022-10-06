@@ -14,9 +14,13 @@ class FormController extends Controller
 {
     public function index()
     {
-        return view('Dashboard.Calon-Siswa.formulir-pendaftaran', [
-            'forms' => Form::all()
-        ]);
+        if(Auth::user()->role == "calon-siswa"){
+            $forms = Form::where('user_id',Auth::id())->get();
+        }else {
+            $forms =  Form::all();
+        }
+
+        return view('Dashboard.Calon-Siswa.formulir-pendaftaran',compact('forms'));
     }
 
 
@@ -46,7 +50,7 @@ class FormController extends Controller
         // return $request->file('fcakta')->store('public/berkas');
         $form = $request->validate([
             'Nomor_Pendaftaran'  => ['required'],
-            // 'Jalur_pendaftaran'  => ['required'],
+            'Jalur_pendaftaran'  => ['required'],
             'nama_lengkap'  => ['required'],
             'Jenis_kelamin'  => ['required'],
             'NISN'  => ['required', 'size:8'],

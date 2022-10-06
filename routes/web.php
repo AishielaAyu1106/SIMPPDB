@@ -60,6 +60,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/data-pendaftar' , [AdminController::class, 'dataPendaftar']);
     Route::get('/data-pendaftar/show/{id}', [AdminController::class, 'showData']);
     Route::get('/kelas-pendaftar', [AdminController::class, 'kelas']);
+    Route::get('/data-pendaftar/delete/{id}', [AdminController::class, 'hapusdata']);
+
+    Route::get('/rekap-nilai-admin', [AdminController::class, 'rekapAdmin']);
+
+    Route::post('/status-berkas/{id}', [AdminController::class, 'statusBerkas']);
+    // Route::post('/tolak-berkas', [AdminController::class, 'tolak']);
 
     Route::get('/dashboard', function () {
         return view('Dashboard.Admin.main');

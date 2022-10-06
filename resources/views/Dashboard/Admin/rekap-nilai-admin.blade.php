@@ -29,24 +29,24 @@
                         <th scope="col">Aksi</th>
                       </tr>
                     </thead>
-                    {{-- <tbody>
-                      @foreach ($data as $form)
-                      <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td style="width: 200px" >{{ $form->Nomor_Pendaftaran}}</td>
-                        <td style="width: 500px" >{{ $form->nama_lengkap}}</td>
-                        <td style="width: 500px" >{{ $form->Jalur_pendaftaran}}</td>
-                        <td style="width: 500px" >{{ $form->NISN}}</td>
-                        <td style="width: 100px"><a href="/data-pendaftar/show/{{$form->id}}" class="btn btn-success">Lihat</a></td>
-                        {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
-                        {{-- <td style="width: 100px"><a href="/data-pendaftar/delete/{{$form->id}}" class="btn btn-danger">Hapus</a></td>
+                    <tbody>
+                        @foreach ($rekap as $rekap)
+                        <tr>
+                          <td>{{ $loop->iteration }}</td>
+                          <td style="width: 200px" >{{ $rekap->mtk??0}}</td>
+                          <td style="width: 500px" >{{ $rekap->ipa??0}}</td>
+                          <td style="width: 500px" >{{ $rekap->ips??0}}</td>
+                          <td style="width: 500px" >{{ $rekap->basing??0}}</td>
+                          <td style="width: 100px"><a href="/data-pendaftar/show/{{$rekap->id??0}}" class="btn btn-success">Lihat</a></td>
+
+                          <td style="width: 100px"><a href="/data-pendaftar/delete/{{$rekap->id??0}}" class="btn btn-danger">Hapus</a></td>
 
 
-                      </tr>
+                        </tr>
 
 
-                      @endforeach
-                    </tbody> --}}
+                        @endforeach
+                      </tbody>
                   </table>
                 </div>
               </div>
@@ -70,24 +70,24 @@
                         <th scope="col">Aksi</th>
                       </tr>
                     </thead>
-                    {{-- <tbody>
-                      @foreach ($data as $form)
-                      <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td style="width: 200px" >{{ $form->Nomor_Pendaftaran}}</td>
-                        <td style="width: 500px" >{{ $form->nama_lengkap}}</td>
-                        <td style="width: 500px" >{{ $form->Jalur_pendaftaran}}</td>
-                        <td style="width: 500px" >{{ $form->NISN}}</td>
-                        <td style="width: 100px"><a href="/data-pendaftar/show/{{$form->id}}" class="btn btn-success">Lihat</a></td>
-                        {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
-                        {{-- <td style="width: 100px"><a href="/data-pendaftar/delete/{{$form->id}}" class="btn btn-danger">Hapus</a></td>
+                    <tbody>
+                        @foreach ($rekap as $item)
+                        <tr>
+                          <td>{{ $loop->iteration }}</td>
+                          <td style="width: 200px" >{{ $item->mtk??0}}</td>
+                          <td style="width: 500px" >{{ $item->ipa??0}}</td>
+                          <td style="width: 500px" >{{ $item->ips??0}}</td>
+                          <td style="width: 500px" >{{ $item->basing??0}}</td>
+                          <td style="width: 100px"><a href="/data-pendaftar/show/{{$item->id??0}}" class="btn btn-success">Lihat</a></td>
+
+                          <td style="width: 100px"><a href="/data-pendaftar/delete/{{$item->id??0}}" class="btn btn-danger">Hapus</a></td>
 
 
-                      </tr>
+                        </tr>
 
 
-                      @endforeach
-                    </tbody> --}}
+                        @endforeach
+                      </tbody>
                   </table>
                 </div>
               </div>
@@ -111,25 +111,24 @@
                         <th scope="col">Aksi</th>
                       </tr>
                     </thead>
-                    {{-- <tbody>
-                      @foreach ($data as $form)
-                      <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td style="width: 200px" >{{ $form->Nomor_Pendaftaran}}</td>
-                        <td style="width: 500px" >{{ $form->nama_lengkap}}</td>
-                        <td style="width: 500px" >{{ $form->Jalur_pendaftaran}}</td>
-                        <td style="width: 500px" >{{ $form->NISN}}</td>
-                        <td style="width: 100px"><a href="/data-pendaftar/show/{{$form->id}}" class="btn btn-success">Lihat</a></td>
-                        {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
-                        {{-- <td style="width: 100px"><a href="/data-pendaftar/delete/{{$form->id}}" class="btn btn-danger">Hapus</a></td>
+                    <tbody>
+                        @foreach ($rekap as $item)
+                        <tr>
+                          <td>{{ $loop->iteration }}</td>
+                          <td style="width: 200px" >{{ $item->mtk??0}}</td>
+                          <td style="width: 500px" >{{ $item->ipa??0}}</td>
+                          <td style="width: 500px" >{{ $item->ips??0}}</td>
+                          <td style="width: 500px" >{{ $item->basing??0}}</td>
+                          <td style="width: 100px"><a href="/data-pendaftar/show/{{$item->id??0}}" class="btn btn-success">Lihat</a></td>
+
+                          <td style="width: 100px"><a href="/data-pendaftar/delete/{{$item->id??0}}" class="btn btn-danger">Hapus</a></td>
 
 
-                      </tr>
+                        </tr>
 
 
-                      @endforeach
-                    </tbody> --}}
-                  </table>
+                        @endforeach
+                      </tbody>
                 </div>
               </div>
 

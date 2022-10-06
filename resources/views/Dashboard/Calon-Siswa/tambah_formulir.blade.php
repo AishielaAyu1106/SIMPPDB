@@ -2,7 +2,7 @@
 
 @section('container')
     @if (date('Y-m-d H:i:s') > $validasi->tanggal_awal && date('Y-m-d H:i:s') < $validasi->tanggal_akhir)
-        <h3 align='center'>Formulir Pendaftaran</h3>
+        <h3 align='center'>Formulir Pendaftaran  </h3>
         <div class="row mb-3">
             <div class="col-md-6">
                 <div class="card card-body text-center">
@@ -29,6 +29,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label class="agama text-dark"> Nomor Pendaftaran</label>
+                            <input value="{{request()->id}}" name="Jalur_pendaftaran" type="hidden">
                             <input type="text" name="Nomor_Pendaftaran" class="form-control" id="nodaftar"
                                 value="{{ old('Nomor_Pendaftaran') }}" placeholder value >
                         </div>

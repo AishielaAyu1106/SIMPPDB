@@ -42,7 +42,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{Request::is('rekap-nilai') ? 'active' : ''}}" href="/rekap-nilai">
+          <a class="nav-link {{Request::is('rekap-nilai') ? 'active' : ''}}" href="/rekap-nilai-admin">
             <span data-feather="bar-chart-2" class="align-text-bottom"></span>
             Rekap Nilai
           </a>

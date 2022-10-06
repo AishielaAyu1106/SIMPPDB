@@ -16,7 +16,7 @@
         <form action="/formulir-pendaftaran-siswa" method="POST">
             @csrf
 
-              <div class="card">
+              <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-sm">
                     <thead>
@@ -30,10 +30,10 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($data as $form)
+                      @foreach ($data->where('Jalur_pendaftaran','Afirmasi') as $form)
                       <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td style="width: 200px" >{{ $form->Nomor_Pendaftaran}}</td>
+                        <td style="width: 300px" >{{ $form->Nomor_Pendaftaran}}</td>
                         <td style="width: 500px" >{{ $form->nama_lengkap}}</td>
                         <td style="width: 500px" >{{ $form->Jalur_pendaftaran}}</td>
                         <td style="width: 500px" >{{ $form->NISN}}</td>
@@ -57,7 +57,7 @@
         <form action="/formulir-pendaftaran-siswa" method="POST">
             @csrf
 
-              <div class="card">
+              <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-sm">
                     <thead>
@@ -71,7 +71,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($data as $form)
+                      @foreach ($data->where('Jalur_pendaftaran','Prestasi') as $form)
                       <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td style="width: 200px" >{{ $form->Nomor_Pendaftaran}}</td>
@@ -98,7 +98,7 @@
         <form action="/formulir-pendaftaran-siswa" method="POST">
             @csrf
 
-              <div class="card">
+              <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-sm">
                     <thead>
@@ -112,7 +112,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($data as $form)
+                      @foreach ($data->where('Jalur_pendaftaran','Zonasi') as $form)
                       <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td style="width: 200px" >{{ $form->Nomor_Pendaftaran}}</td>

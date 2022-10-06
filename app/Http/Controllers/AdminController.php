@@ -7,6 +7,7 @@ use App\Models\Jadwal;
 use App\Models\Form;
 use App\Models\kuota_kelas;
 use App\Models\SiswaKelas;
+use App\Models\Rekap;
 
 class AdminController extends Controller
 {
@@ -106,4 +107,30 @@ class AdminController extends Controller
         // $KuotaKelas = kuota_kelas::where('');
 
     }
+
+    public function hapusdata($id)
+    {
+        $form = Form::find($id);
+        $form->delete();
+        return redirect('/data-pendaftar');
+    }
+
+    public function rekapAdmin(){
+        $rekap = Rekap::all();
+        return view('Dashboard.Admin.rekap-nilai-admin', compact('rekap'));
+    }
+
+    public function statusBerkas(Request $request, $id){
+        $status = Form::find($id);
+        // $this->request[validate(
+        //     'status'->[]
+        // )]
+        dd($request->all());
+        $status->status = $request->status;
+        $status->Save();
+        dd('BERHASIL');
+        // return redirect('/status-berkas');
+    }
+
+
 }
