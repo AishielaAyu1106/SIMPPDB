@@ -7,11 +7,17 @@ use App\Models\Form;
 use App\Models\Jadwal;
 use App\Models\Rekap;
 use Illuminate\Support\Facades\Auth;
+use Avatar;
 use DB;
 use Illuminate\Support\Facades\Date;
 
 class FormController extends Controller
 {
+    public function dashboard()
+    {
+        return view ('Dashboard.Calon-Siswa.main');
+    }
+
     public function index()
     {
         if(Auth::user()->role == "calon-siswa"){

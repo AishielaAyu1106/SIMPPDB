@@ -33,9 +33,7 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     });
 
-    Route::get('/dashboard-siswa', function () {
-        return view('Dashboard.Calon-Siswa.main');
-    });
+    Route::get('/dashboard-siswa', [FormController::class, 'dashboard'])->name('dashboard');
 
     Route::get('/pengumuman-siswa', function () {
         return view('Dashboard.Calon-Siswa.pengumuman');
