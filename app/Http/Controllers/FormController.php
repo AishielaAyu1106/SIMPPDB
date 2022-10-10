@@ -7,15 +7,17 @@ use App\Models\Form;
 use App\Models\Jadwal;
 use App\Models\Rekap;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use Avatar;
 use DB;
 use Illuminate\Support\Facades\Date;
 
 class FormController extends Controller
 {
-    public function dashboard()
+    public function dashboardSiswa()
     {
-        return view ('Dashboard.Calon-Siswa.main');
+        $main = User::all();
+        return view ('Dashboard.Calon-Siswa.main', compact('main'));
     }
 
     public function index()
@@ -29,16 +31,11 @@ class FormController extends Controller
         return view('Dashboard.Calon-Siswa.formulir-pendaftaran',compact('forms'));
     }
 
-
-
     public function afirmasi(Request $request)
     {
-        // $cekData = Jadwal::where('user_id',Auth::user()->id)-;
-        // $validasi = Jadwal::where('Jalur_pendaftaran', $request->id)->first();
-        // return view('Dashboard.Calon-Siswa.tambah_formulir', compact('validasi'));
-        // dd($request[0]);
+
         $cekData = Form::whereYear('created_at',date('Y'))->where('user_id',Auth::user()->id)->first();
-        // DD($cekData);
+
         if($cekData){
             return back();
         }else{
@@ -142,8 +139,7 @@ class FormController extends Controller
         if ($request->file('piagam')) {
             $form['piagam'] = $request->file('piagam')->store('berkas');
         }
-        // dd($form);
-        // Form::create($form);
+
         Form::create($form + ['user_id' => Auth::user()->id]);
         return redirect('/formulir-pendaftaran-siswa')->with('success', 'Pendaftaran Telah Dilakukan');
     }
@@ -152,7 +148,7 @@ class FormController extends Controller
     {
         $form = Form::find($id);
         $form->delete();
-        return redirect('/formulir-pendaftaran-siswa');
+        return redirect('/formulir-pendaftaran-siswa')->with('success', 'Berhasil Menghapus');
     }
 
     public function show($id)
@@ -162,14 +158,14 @@ class FormController extends Controller
             'lihat' => $lihat
         ]);
 
-        // return $lihat;
+
     }
 
     public function edit($id)
     {
         $edit = Form::find($id);
         return view('Dashboard.Calon-Siswa.edit-formulir', compact('edit'));
-        // return $edit;
+
     }
 
     public function update(Request $request, Form $form, $id)
@@ -181,7 +177,7 @@ class FormController extends Controller
 
 
 
-    #Rekap Nilai Siswa
+    // REKAP NILAI SISWA
 
     public function rekap()
     {
@@ -204,10 +200,8 @@ class FormController extends Controller
         }else{
             Rekap::create($request->all() + ['user_id' => Auth::user()->id]);
         }
-        // $data->save();
-        // dd($data);
         return back();
-        // return redirect('/rekap-nilai-siswa');
+
     }
 
     public function lihatRekap(Request $request)
@@ -229,7 +223,7 @@ class FormController extends Controller
     {
         $editRekap = Rekap::find($id);
         return view('Dashboard.Calon-Siswa.edit-rekap-siswa', compact('editRekap'));
-        // return $edit;
+
     }
 
     public function updateRekap(Request $request, $id)
@@ -245,4 +239,33 @@ class FormController extends Controller
         $hapus->delete();
         return redirect('/rekap-nilai-siswa');
     }
+
+
+    // PROFILE SISWA
+
+
+
+    public function profileSiswa(Request $request, $id)
+    {
+        $profile = Form::find($id);
+        return view('Dashboard.Calon-Siswa.profile_siswa', compact('profile'));
+    }
+
+    public function profilelihat($id)
+    {
+        $lihatprofile = Form::find($id);
+        return view('Dashboard.Calon-Siswa.edit-profile-siswa', [
+            'profilelihat' => $lihatprofile
+        ]);
+
+
+    }
+
+    public function editProfile($id)
+    {
+        $editProfile = Form::find($id);
+        return view('Dashboard.Calon-Siswa.edit-profile-siswa', compact('editProfile'));
+
+    }
+
 }

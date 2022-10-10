@@ -583,7 +583,6 @@
 
 
                         <div class="row g-3">
-
                             <hr class="mb-4">
                             <button class="btn btn-lg btn-block text-light" type="submit"
                                 style="background-color:rgb(255, 147, 163)">Daftar</button>
