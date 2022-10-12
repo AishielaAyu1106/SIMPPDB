@@ -1,7 +1,7 @@
 @extends('Dashboard.Calon-Siswa.Layout.index')
 
 @section('container')
-    <h3 align='center'>Rekap Nilai & Prestasi</h3>
+    <h3 align='center'>Rekap Nilai</h3>
     <div class="card card-body">
         <form action="/rekap-nilai-siswa" method="post" enctype="multipart/form-data">
             @csrf

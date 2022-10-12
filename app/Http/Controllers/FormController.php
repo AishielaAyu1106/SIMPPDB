@@ -14,10 +14,15 @@ use Illuminate\Support\Facades\Date;
 
 class FormController extends Controller
 {
-    public function dashboardSiswa()
+    // public function dashboardSiswa()
+    // {
+    //     $main = User::all();
+    //     return view ('Dashboard.Calon-Siswa.main', compact('main'));
+    // }
+
+    public function dashboard()
     {
-        $main = User::all();
-        return view ('Dashboard.Calon-Siswa.main', compact('main'));
+        return view('Dashboard.Calon-Siswa.main');
     }
 
     public function index()
@@ -245,21 +250,21 @@ class FormController extends Controller
 
 
 
-    public function profileSiswa(Request $request, $id)
+    public function profileSiswa(Request $request)
     {
-        $profile = Form::find($id);
+        $profile = Form::All();
         return view('Dashboard.Calon-Siswa.profile_siswa', compact('profile'));
     }
 
-    public function profilelihat($id)
-    {
-        $lihatprofile = Form::find($id);
-        return view('Dashboard.Calon-Siswa.edit-profile-siswa', [
-            'profilelihat' => $lihatprofile
-        ]);
+    // public function profilelihat($id)
+    // {
+    //     $lihatprofile = Form::find($id);
+    //     return view('Dashboard.Calon-Siswa.edit-profile-siswa', [
+    //         'profilelihat' => $lihatprofile
+    //     ]);
 
 
-    }
+    // }
 
     public function editProfile($id)
     {

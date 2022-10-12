@@ -1,4 +1,4 @@
-@extends('Dashboard.Calon-Siswa.Layout.index')
+@extends('Dashboard.Admin.Layout.index')
 
 @section('container')
     {{-- <form action="{{ url('profile-siswa') }}" method="POST"> --}}
@@ -12,12 +12,12 @@
                                     style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem; background-color:rgb(255, 243, 245)">
                                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
                                         alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
-                                    <h5>{{ auth()->user()->name }}</h5>
+                                    <h5>Aishiela</h5>
                                     <p>Jalur Pendaftaran:</p>
-                                    <button type="submit" class="btn btn-outline-secondary" data-toggle="modal"
+                                    {{-- <button type="submit" class="btn btn-outline-secondary" data-toggle="modal"
                                         data-target="#exampleModal" data-whatever="Tolak Berkas Pendaftaran"><i
                                             class="far fa-edit mb-0">Edit</i>
-                                    </button>
+                                    </button> --}}
 
                                 </div>
                                 <div class="col-md-8">

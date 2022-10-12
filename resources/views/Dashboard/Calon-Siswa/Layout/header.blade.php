@@ -12,7 +12,8 @@
                         <div class="dropdown-menu dropdown-menu-end text-end" aria-labelledby="dropdownUser">
                             <small class="dropdown-item-text text-muted font-weight-bold">{{ Auth::user()->email }}</small>
 
-                            <a class="dropdown-item" href="{{url('profile-siswa/'.$main->id)}}">My Profil <i
+                            {{-- <a class="dropdown-item" href="{{url('profile-siswa/'.$main->id)}}">My Profil <i --}}
+                            <a class="dropdown-item" href="{{url('profile-siswa')}}">My Profil <i
                                     class="fas fa-share"></i></a>
                             <form action="{{ url('logout') }}" method="GET">
                                 @csrf

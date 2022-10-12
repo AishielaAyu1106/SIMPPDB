@@ -33,7 +33,8 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard');
     });
 
-    Route::get('/dashboard-siswa', [FormController::class, 'dashboardSiswa'])->name('dashboard');
+    // Route::get('/dashboard-siswa', [FormController::class, 'dashboardSiswa'])->name('dashboard');
+    Route::get('/dashboard-siswa', [FormController::class, 'dashboard'])->name('dashboard');
 
     Route::get('/pengumuman-siswa', function () {
         return view('Dashboard.Calon-Siswa.pengumuman');
@@ -105,7 +106,7 @@ Route::middleware(['auth'])->group(function () {
         return view('Dashboard.Calon-Siswa.download-panduan');
     });
 
-    Route::get('/profile-siswa/{id}', [FormController::class, 'profileSiswa']);
+    Route::get('/profile-siswa', [FormController::class, 'profileSiswa']);
     Route::get('/edit-profile-siswa', [FormController::class, 'editProfile']);
 
     // Route::get('/profile-siswa', function () {

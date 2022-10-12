@@ -2,9 +2,8 @@
     <div class="position-sticky pt-10">
         <nav id="sidebar">
             <a href="#">
-                <img src="{{url('css/Logo SMAN 1 Bengalon.PNG')}}" alt="itk" class="d-block w-50 m-auto">
+                <img src="{{url('css/Logo SMAN 1 Bengalon.PNG')}}" alt="sma" class="d-block w-50 m-auto">
             </a>
-
             <h6 class="text-center">Sistem Informasi PPDB</h6>
             <h6 class="text-center ">SMAN 1 Bengalon</h6>
 
@@ -67,16 +66,16 @@
                     Formulir Pendaftaran
                 </a>
                 <ul class="sub-menu"> --}}
-                    {{-- @if (date('Y-m-d H:i:s') > $afirmasi->tanggal_awal && date('Y-m-d H:i:s') < $afirmasi->tanggal_akhir) --}}
-                    {{-- <a href="/formulir-pendaftaran-siswa/formulir?id=Afirmasi" class="dropdown-item"
+            {{-- @if (date('Y-m-d H:i:s') > $afirmasi->tanggal_awal && date('Y-m-d H:i:s') < $afirmasi->tanggal_akhir) --}}
+            {{-- <a href="/formulir-pendaftaran-siswa/formulir?id=Afirmasi" class="dropdown-item"
                         aria-labelledby="dropdownMenuButton">Afirmasi</a>
                     <a href="/formulir-pendaftaran-siswa/formulir?id=Prestasi" class="dropdown-item"
                         aria-labelledby="dropdownMenuButton">Prestasi</a>
                     <a href="/formulir-pendaftaran-siswa/formulir?id=Zonasi" class="dropdown-item"
                         aria-labelledby="dropdownMenuButton">Zonasi</a> --}}
-                    {{-- @endif --}}
+            {{-- @endif --}}
 
-                {{-- </ul>
+            {{-- </ul>
             </li> --}}
 
             <li class="nav-item">
@@ -86,7 +85,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('rekap-nilai-siswa') ? 'active' : '' }}" href="/rekap-nilai-siswa/formulir">
+                <a class="nav-link {{ Request::is('rekap-nilai-siswa') ? 'active' : '' }}"
+                    href="/rekap-nilai-siswa/formulir">
                     <span data-feather="bar-chart-2" class="align-text-bottom"></span>
                     Rekap Nilai
                 </a>
