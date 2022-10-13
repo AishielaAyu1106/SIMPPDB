@@ -73,9 +73,7 @@ Route::middleware(['auth'])->group(function () {
         return view('Dashboard.Admin.main');
     });
 
-    Route::get('/pengumuman', function () {
-        return view('Dashboard.Admin.pengumuman');
-    });
+    Route::get('/pengumuman', [AdminController::class, 'pengumuman']);
 
     Route::get('/pengumuman-admin-diterima', [AdminController::class, 'pengumumanditerima'])->name('pengumumanditerima');
     Route::get('/pengumuman-admin-ditolak', [AdminController::class, 'pengumumanditolak'])->name('pengumumanditolak');

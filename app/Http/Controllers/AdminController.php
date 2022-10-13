@@ -98,7 +98,7 @@ class AdminController extends Controller
                 'siswa_kuota' => $item->Kuota_kelas - $jumlahSiswa
             ];
         }
-        dd($kelas);
+        // dd($kelas);
         // $kuota_kelas =
         return view('Dashboard.Admin.kelas-pendaftar',compact('siswaKelas'));
     }
@@ -120,6 +120,11 @@ class AdminController extends Controller
         $rekap = Rekap::all();
         return view('Dashboard.Admin.rekap-nilai-admin', compact('rekap'));
     }
+
+    // public function pengumuman(Request $request){
+    //     $tambahkelas = Pengumuman::all();
+    //     return view('Dashboard.Admin.pengumuman', compact('tambahkelas'));
+    // }
 
     public function pengumumanditerima(){
         $pengumumanditerima = Pengumuman::all();
