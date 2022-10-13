@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KelasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,10 +24,10 @@ use App\Http\Controllers\AdminController;
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
 
+Route::get('/', function () {
+    return view('auth.login2');
+});
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', function () {
-        return view('auth.login2');
-    });
     Route::post('/updateJadwal', [AdminController::class, 'updateData'])->name("updateJadwal");
 
     Route::get('/dashboard', function () {
@@ -34,11 +35,13 @@ Route::middleware(['auth'])->group(function () {
     });
 
     // Route::get('/dashboard-siswa', [FormController::class, 'dashboardSiswa'])->name('dashboard');
-    Route::get('/dashboard-siswa', [FormController::class, 'dashboard'])->name('dashboard');
+    Route::get('/dashboard-siswa', [FormController::class, 'dashboardsiswa'])->name('dashboardsiswa');
 
     Route::get('/pengumuman-siswa', function () {
         return view('Dashboard.Calon-Siswa.pengumuman');
     });
+
+
 
     Route::get('/formulir-pendaftaran-siswa', [FormController::class, 'index']);
     Route::get('/formulir-pendaftaran-siswa/formulir', [FormController::class, 'afirmasi']);
@@ -58,7 +61,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/data-pendaftar' , [AdminController::class, 'dataPendaftar']);
     Route::get('/data-pendaftar/show/{id}', [AdminController::class, 'showData']);
-    Route::get('/kelas-pendaftar', [AdminController::class, 'kelas']);
+    Route::get('/kelas-pendaftar', [AdminController::class, 'kelas'])->name('kelas');
     Route::get('/data-pendaftar/delete/{id}', [AdminController::class, 'hapusdata']);
 
     Route::get('/rekap-nilai-admin', [AdminController::class, 'rekapAdmin']);
@@ -74,6 +77,9 @@ Route::middleware(['auth'])->group(function () {
         return view('Dashboard.Admin.pengumuman');
     });
 
+    Route::get('/pengumuman-admin-diterima', [AdminController::class, 'pengumumanditerima'])->name('pengumumanditerima');
+    Route::get('/pengumuman-admin-ditolak', [AdminController::class, 'pengumumanditolak'])->name('pengumumanditolak');
+
     // Route::get('/data-pendaftar', function () {
     //     return view('Dashboard.Admin.data-pendaftar');
     // });
@@ -81,6 +87,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/data-admin', function () {
         return view('Dashboard.Admin.data-admin');
     });
+
+    Route::resource('kuota-kelas', KelasController::class);
+
+    // Route::get('/kuota-kelas', [KelasController::class, 'Kelas']);
+    Route::get('kuota-kelas-lihat', [KelasController::class, 'tambahkelas'])->name('tambahkelas');
+
 
     Route::get('/rekap-nilai', function () {
         return view('Dashboard.Admin.rekap-nilai');

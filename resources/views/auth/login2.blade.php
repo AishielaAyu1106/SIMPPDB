@@ -11,7 +11,7 @@
             <h4><span>Selamat Datang Calon Peserta Didik Baru</span></h4>
 
             <div class="floating-label">
-                <input placeholder="Email" type="email" name="email" id="email"
+                <input placeholder="Email" type="email" name="email" id="email" required
                     class="@error('email')
               is-invalid
           @enderror"
@@ -24,7 +24,7 @@
                 @enderror
             </div>
             <div class="floating-label">
-                <input placeholder="Password" type="password" name="password" id="password"
+                <input placeholder="Password" type="password" name="password" id="password" required
                     @if (Cookie::has('loginpassword')) value="{{ Cookie::get('loginpassword') }}" @endif autocomplete="off">
                 <label for="password">Password:</label>
             </div>

@@ -20,7 +20,7 @@ class FormController extends Controller
     //     return view ('Dashboard.Calon-Siswa.main', compact('main'));
     // }
 
-    public function dashboard()
+    public function dashboardsiswa()
     {
         return view('Dashboard.Calon-Siswa.main');
     }

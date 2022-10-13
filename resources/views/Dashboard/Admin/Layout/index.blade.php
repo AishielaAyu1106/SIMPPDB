@@ -51,6 +51,37 @@
         integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous">
     </script>
     <script src="{{ asset('bootstrap/dashboard/dashboard.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            $('.delete-data-swift-allert-example').bind('submit', function(e) {
+                var form = this;
+
+                e.preventDefault(); // <--- prevent form from submitting
+
+                swal({
+                    title: "Apakah anda yakin?",
+                    text: "Data Anda Akan Terhapus!",
+                    icon: "warning",
+                    buttons: [
+                        'Tidak, Kembali',
+                        'Ya, Hapus'
+                    ],
+                    dangerMode: true,
+                }).then(function(isConfirm) {
+                    if (isConfirm) {
+                        swal({
+                            title: 'Sukses',
+                            text: 'Data Anda Telah Terhapus!',
+                            icon: 'success'
+                        }).then(function() {
+                            form.submit(); // <--- submit form programmatically
+                        });
+                    } else {
+                        swal("Cancelled", "Your imaginary file is safe :)", "error");
+                    }
+                })
+            });
+        </script>
     @stack('scripts')
 </body>
 

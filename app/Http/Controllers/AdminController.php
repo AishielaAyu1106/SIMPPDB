@@ -8,6 +8,7 @@ use App\Models\Form;
 use App\Models\kuota_kelas;
 use App\Models\SiswaKelas;
 use App\Models\Rekap;
+use App\Models\Pengumuman;
 
 class AdminController extends Controller
 {
@@ -97,12 +98,12 @@ class AdminController extends Controller
                 'siswa_kuota' => $item->Kuota_kelas - $jumlahSiswa
             ];
         }
-        // dd($siswaKelas);
+        dd($kelas);
         // $kuota_kelas =
         return view('Dashboard.Admin.kelas-pendaftar',compact('siswaKelas'));
     }
 
-    public function cekKuota($data)
+    public function Kuota($data)
     {
         // $KuotaKelas = kuota_kelas::where('');
 
@@ -120,15 +121,30 @@ class AdminController extends Controller
         return view('Dashboard.Admin.rekap-nilai-admin', compact('rekap'));
     }
 
+    public function pengumumanditerima(){
+        $pengumumanditerima = Pengumuman::all();
+        return view('Dashboard.Admin.pengumuman', compact('pengumumanditerima'));
+    }
+
+    public function pengumumanditolak(){
+        $pengumumanditolak = Pengumuman::all();
+        return view('Dashboard.Admin.pengumuman', compact('pengumumanditolak'));
+    }
+
     public function statusBerkas(Request $request, $id){
         $status = Form::find($id);
         // $this->request[validate(
         //     'status'->[]
         // )]
-        dd($request->all());
+        // dd($request->all());
         $status->status = $request->status;
         $status->Save();
-        dd('BERHASIL');
+        // dd('BERHASIL');
+        if($status->status == "Terima berkas"){
+            return redirect()->route('kelas');
+        }else{
+            return redirect()->route('pengumumanditolak');
+        }
         // return redirect('/status-berkas');
     }
 

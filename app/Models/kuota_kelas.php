@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class kuota_kelas extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        "Nama_Kelas",
+        "Kuota_kelas",
+    ];
+
     protected $guarded = [];
 
- 
+
 }

@@ -14,7 +14,7 @@
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-        <form action="/formulir-pendaftaran-siswa" method="POST">
+        <form action="/pengumuman-admin-diterima" method="POST">
             @csrf
 
               <div class="card">
@@ -54,7 +54,7 @@
           </form>
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <form action="/formulir-pendaftaran-siswa" method="POST">
+        <form action="/pengumuman-admin-ditolak" method="POST">
             @csrf
 
               <div class="card">

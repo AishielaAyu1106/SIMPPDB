@@ -42,6 +42,12 @@
           </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link {{Request::is('kuota-kelas') ? 'active' : ''}}" href="/kuota-kelas">
+              <span data-feather="save" class="align-text-bottom"></span>
+              Kuota Kelas
+            </a>
+          </li>
+        <li class="nav-item">
           <a class="nav-link {{Request::is('rekap-nilai') ? 'active' : ''}}" href="/rekap-nilai-admin">
             <span data-feather="bar-chart-2" class="align-text-bottom"></span>
             Rekap Nilai
