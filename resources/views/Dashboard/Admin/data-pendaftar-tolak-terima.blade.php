@@ -12,7 +12,12 @@
                             <h5 class="my-3">{{ $lihatdata->nama_lengkap }}</h5>
                             <p class="text-muted mb-1">Jalur Pendaftaran : {{ $lihatdata->Jalur_pendaftaran }}</p>
                             <p class="text-muted mb-4">N I S N : {{ $lihatdata->NISN }}</p>
+                            @if ($lihatdata->status == "Terima berkas")
 
+                            <span class="badge text-black badge-primary">Diterima</span>
+                            @elseif ($lihatdata->status == "Tolak Berkas")
+                                <span class="badge text-black badge-danger">Ditolak</span>
+                            @elseif ($lihatdata->status == "Sedang diproses")
                             <div class="row mb-4">
                                 <div class="col-sm-6">
                                     <form action="{{url('status-berkas',request()->route()->parameters)}}" method="post">
@@ -67,6 +72,7 @@
                                     </div>
                                 </div>
                             </div>
+                            @endif
                         </div>
 
                     </div>

@@ -8,8 +8,9 @@
                 <h5 class="card-title">Kuota Kelas</h5>
                 @foreach ($siswaKelas as $key => $item)
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="exampleRadios"
-                            @if ($item['siswa_kuota'] < 1) disabled @endif id="exampleRadios1" value="option1">
+                        <input type="hidden" value="{{request()->route()->parameters["id"]}}" name="id">
+                        <input class="form-check-input" type="radio" name="kuota_kelas_id"
+                            @if ($item['siswa_kuota'] < 1) disabled @endif id="exampleRadios1" value="{{$item['id']}}">
                         <label class="form-check-label" for="exampleRadios1">
                             {{ $item['nama_kelas'] }} ({{ $item['siswa_kuota'] }}/{{ $item['kuota'] }})
                         </label>

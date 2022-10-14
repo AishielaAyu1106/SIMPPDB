@@ -61,7 +61,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/data-pendaftar' , [AdminController::class, 'dataPendaftar']);
     Route::get('/data-pendaftar/show/{id}', [AdminController::class, 'showData']);
-    Route::get('/kelas-pendaftar', [AdminController::class, 'kelas'])->name('kelas');
+    Route::get('/kelas-pendaftar/{id}', [AdminController::class, 'kelas'])->name('kelas');
     Route::get('/data-pendaftar/delete/{id}', [AdminController::class, 'hapusdata']);
 
     Route::get('/rekap-nilai-admin', [AdminController::class, 'rekapAdmin']);
@@ -73,9 +73,9 @@ Route::middleware(['auth'])->group(function () {
         return view('Dashboard.Admin.main');
     });
 
-    Route::get('/pengumuman', [AdminController::class, 'pengumuman']);
+    Route::get('/pengumuman', [AdminController::class, 'pengumuman'])->name('pengumuman');
 
-    Route::get('/pengumuman-admin-diterima', [AdminController::class, 'pengumumanditerima'])->name('pengumumanditerima');
+    Route::post('/pengumuman-admin-diterima', [AdminController::class, 'pengumumanditerima'])->name('pengumumanditerima');
     Route::get('/pengumuman-admin-ditolak', [AdminController::class, 'pengumumanditolak'])->name('pengumumanditolak');
 
     // Route::get('/data-pendaftar', function () {

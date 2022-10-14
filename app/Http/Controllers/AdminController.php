@@ -10,7 +10,7 @@ use App\Models\SiswaKelas;
 use App\Models\Rekap;
 use App\Models\Pengumuman;
 
-class AdminController extends Controller
+ class AdminController extends Controller
 {
     // public function jadwal()
     // {
@@ -87,12 +87,13 @@ class AdminController extends Controller
         return view('Dashboard.Admin.data-pendaftar-tolak-terima', compact('lihatdata'));
     }
 
-    public function kelas()
+    public function kelas($id)
     {
         $kelas = kuota_kelas::all();
         foreach ($kelas as $item) {
             $jumlahSiswa = SiswaKelas::where('kuota_kelas_id', $item->id)->count();
             $siswaKelas[] = [
+                'id' => $item->id,
                 'nama_kelas' => $item->Nama_Kelas,
                 'kuota' => $item->Kuota_kelas,
                 'siswa_kuota' => $item->Kuota_kelas - $jumlahSiswa
@@ -121,14 +122,24 @@ class AdminController extends Controller
         return view('Dashboard.Admin.rekap-nilai-admin', compact('rekap'));
     }
 
-    // public function pengumuman(Request $request){
-    //     $tambahkelas = Pengumuman::all();
-    //     return view('Dashboard.Admin.pengumuman', compact('tambahkelas'));
-    // }
+    public function pengumuman(Request $request){
+        $tambahkelas = Pengumuman::all();
+        return view('Dashboard.Admin.pengumuman', compact('tambahkelas'));
+    }
 
-    public function pengumumanditerima(){
-        $pengumumanditerima = Pengumuman::all();
-        return view('Dashboard.Admin.pengumuman', compact('pengumumanditerima'));
+
+    public function pengumumanditerima(Request $request){
+        $siswa = Form::findOrFail($request->id);
+        $pengumumanditerima = SiswaKelas::create([
+            "kuota_kelas_id" => $request->kuota_kelas_id,
+            "user_id" => $siswa->user_id
+        ]);
+        Pengumuman::create([
+            'nama_lengkap' => $siswa->nama_lengkap,
+            'Jalur_pendaftaran' =>$siswa->Jalur_pendaftaran,
+            'kelas' => $request->kuota_kelas_id
+        ]);
+        return redirect()->route('pengumuman');
     }
 
     public function pengumumanditolak(){
@@ -146,7 +157,7 @@ class AdminController extends Controller
         $status->Save();
         // dd('BERHASIL');
         if($status->status == "Terima berkas"){
-            return redirect()->route('kelas');
+            return redirect()->route('kelas',$id);
         }else{
             return redirect()->route('pengumumanditolak');
         }

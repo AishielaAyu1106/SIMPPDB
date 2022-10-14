@@ -29,8 +29,8 @@
                         <th scope="col">Aksi</th>
                       </tr>
                     </thead>
-                    {{-- <tbody>
-                      @foreach ($data as $form)
+                    <tbody>
+                      @foreach ($tambahkelas as $form)
                       <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td style="width: 200px" >{{ $form->Nomor_Pendaftaran}}</td>
@@ -39,14 +39,14 @@
                         <td style="width: 500px" >{{ $form->NISN}}</td>
                         <td style="width: 100px"><a href="/data-pendaftar/show/{{$form->id}}" class="btn btn-success">Lihat</a></td>
                         {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
-                        {{-- <td style="width: 100px"><a href="/data-pendaftar/delete/{{$form->id}}" class="btn btn-danger">Hapus</a></td>
+                        {{-- <td style="width: 100px"><a href="/data-pendaftar/delete/{{$form->id}}" class="btn btn-danger">Hapus</a></td> --}}
 
 
                       </tr>
 
 
                       @endforeach
-                    </tbody> --}}
+                    </tbody>
                   </table>
                 </div>
               </div>
