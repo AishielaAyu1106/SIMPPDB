@@ -137,7 +137,7 @@ use App\Models\Pengumuman;
         Pengumuman::create([
             'nama_lengkap' => $siswa->nama_lengkap,
             'Jalur_pendaftaran' =>$siswa->Jalur_pendaftaran,
-            'kelas' => $request->kuota_kelas_id
+            'kelas' => $request->Nama_Kelas
         ]);
         return redirect()->route('pengumuman');
     }

@@ -205,7 +205,7 @@ class FormController extends Controller
         }else{
             Rekap::create($request->all() + ['user_id' => Auth::user()->id]);
         }
-        return back();
+        return back()->with('success', 'Pendaftaran Telah Dilakukan');
 
     }
 
