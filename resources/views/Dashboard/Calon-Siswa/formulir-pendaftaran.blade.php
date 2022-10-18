@@ -3,7 +3,7 @@
 @section('container')
     <form action="/formulir-pendaftaran-siswa" method="POST">
         @csrf
-
+        <h3 align='center'>Formulir Pendaftaran</h3>
         <div class="card">
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
@@ -29,8 +29,10 @@
                                         class="btn btn-success">Lihat</a></td>
                                 <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{ $form->id }}"
                                         class="btn btn-primary">Edit</a></td>
+
+
                                 <td style="width: 100px"><a href="/formulir-pendaftaran-siswa/delete/{{ $form->id }}"
-                                        class="btn btn-danger">Hapus</a></td>
+                                        class="btn btn-danger ">Hapus</a></td>
                                 @if (session()->has('message'))
                                     <div class="alert alert-success">
                                         {{ session()->get('message') }}

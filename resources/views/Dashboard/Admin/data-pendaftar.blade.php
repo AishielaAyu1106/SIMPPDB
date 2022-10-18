@@ -38,20 +38,21 @@
                                 @foreach ($data->where('Jalur_pendaftaran', 'Afirmasi') as $form)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td style="width: 300px">{{ $form->Nomor_Pendaftaran }}</td>
+                                        <td style="width: 200px">{{ $form->Nomor_Pendaftaran }}</td>
                                         <td style="width: 500px">{{ $form->nama_lengkap }}</td>
                                         <td style="width: 500px">{{ $form->Jalur_pendaftaran }}</td>
                                         <td style="width: 500px">{{ $form->NISN }}</td>
                                         {{-- <td style="width: 100px"><a href="/data-pendaftar/show/{{$form->id}}" class="btn btn-success">Lihat</a></td> --}}
                                         {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
-                                        <td style="width: 100px">
+                                        <td style="width: 200px">
                                             <div class="row">
                                                 <form class="delete-data-swift-allert-example"
                                                     action="/data-pendaftar/delete/{{ $form->id }} " method="post">
+                                                    @csrf
                                                     <a href="/data-pendaftar/show/{{ $form->id }}"
                                                         class="col btn btn-success">lihat</a>
                                                     {{-- @method('DELETE') --}}
-                                                    @csrf
+
                                                     <button class="col btn btn-danger">hapus</button>
                                                 </form>
 

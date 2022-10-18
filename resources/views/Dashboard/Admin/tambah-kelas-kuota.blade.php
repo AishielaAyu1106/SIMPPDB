@@ -4,7 +4,7 @@
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         {{-- <form action="/kuota-kelas-lihat" method="POST"> --}}
             {{-- @csrf --}}
-
+            <h3 align='center'>Tambah Kelas</h3>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
@@ -26,7 +26,7 @@
                                             class="btn btn-success">Lihat</a></td> --}}
                                     {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
                                     <td style="width: 100px"><a href="/kuota-kelas-lihat"
-                                            class="btn btn-danger">Hapus</a></td>
+                                            class="btn btn-danger delete-data-swift-allert-example">Hapus</a></td>
 
 
                                 </tr>

@@ -1,11 +1,16 @@
 @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
+    <h3 align='center'>Kuota Kelas</h3>
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         {{-- <form action="/kuota-kelas-lihat" method="POST"> --}}
         {{-- @csrf --}}
 
         <div class="card-body">
+            <div class="btn-list  pt-2 pb-2">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-modal">Tambah
+                    Kelas</button>
+            </div>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
@@ -27,8 +32,10 @@
                                 {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
                                 <td style="width: 200px">
                                     <div class="row">
-                                        <form class="delete-data-swift-allert-example" action="{{ route('kuota-kelas.destroy', $item->id) }}" method="post">
-                                        <a href="{{ route('kuota-kelas.edit', $item->id) }}" class="col btn btn-warning">edit</a>
+                                        <form class="delete-data-swift-allert-example"
+                                            action="{{ route('kuota-kelas.destroy', $item->id) }}" method="post">
+                                            <a href="{{ route('kuota-kelas.edit', $item->id) }}"
+                                                class="col btn btn-warning">edit</a>
                                             @method('DELETE')
                                             @csrf
                                             <button class="col btn btn-danger">hapus</button>
