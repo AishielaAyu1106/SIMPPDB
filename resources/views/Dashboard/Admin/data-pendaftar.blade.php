@@ -18,8 +18,8 @@
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <form action="/formulir-pendaftaran-siswa" method="POST">
-                @csrf
+            {{-- <form action="/formulir-pendaftaran-siswa" method="POST">
+                @csrf --}}
 
                 <div class="card-body">
                     <div class="table-responsive">
@@ -45,18 +45,18 @@
                                         {{-- <td style="width: 100px"><a href="/data-pendaftar/show/{{$form->id}}" class="btn btn-success">Lihat</a></td> --}}
                                         {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
                                         <td style="width: 200px">
-                                            <div class="row">
+
+
                                                 <form class="delete-data-swift-allert-example"
                                                     action="/data-pendaftar/delete/{{ $form->id }} " method="post">
                                                     @csrf
                                                     <a href="/data-pendaftar/show/{{ $form->id }}"
                                                         class="col btn btn-success">lihat</a>
                                                     {{-- @method('DELETE') --}}
-
                                                     <button class="col btn btn-danger">hapus</button>
                                                 </form>
 
-                                            </div>
+                                            {{-- </div> --}}
                                             {{-- <a href="/data-pendaftar/delete/{{$form->id}}" class="btn btn-danger">Hapus</a> --}}
                                         </td>
 
@@ -68,11 +68,11 @@
                     </div>
                 </div>
 
-            </form>
+            {{-- </form> --}}
         </div>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-            <form action="/formulir-pendaftaran-siswa" method="POST">
-                @csrf
+            {{-- <form action="/formulir-pendaftaran-siswa" method="POST">
+                @csrf --}}
 
                 <div class="card-body">
                     <div class="table-responsive">
@@ -109,11 +109,11 @@
                     </div>
                 </div>
 
-            </form>
+            {{-- </form> --}}
         </div>
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-            <form action="/formulir-pendaftaran-siswa" method="POST">
-                @csrf
+            {{-- <form action="/formulir-pendaftaran-siswa" method="POST">
+                @csrf --}}
 
                 <div class="card-body">
                     <div class="table-responsive">
@@ -150,7 +150,7 @@
                     </div>
                 </div>
 
-            </form>
+            {{-- </form> --}}
         </div>
     </div>
 @endsection

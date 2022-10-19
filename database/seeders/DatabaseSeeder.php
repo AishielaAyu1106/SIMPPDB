@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Jadwal;
+use App\Models\kuota_kelas;
+use App\Models\SiswaKelas;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -43,6 +45,12 @@ class DatabaseSeeder extends Seeder
             'Jalur_pendaftaran' => 'Zonasi',
             'tanggal_awal' => Carbon::now(),
             'tanggal_akhir' => Carbon::now()
+        ]);
+
+        kuota_kelas::create([
+           
+            'Nama_Kelas' =>  'Kelas A',
+            'Kuota_kelas' => '8',
         ]);
     }
 }

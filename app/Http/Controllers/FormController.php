@@ -27,28 +27,26 @@ class FormController extends Controller
 
     public function index()
     {
-        if(Auth::user()->role == "calon-siswa"){
-            $forms = Form::where('user_id',Auth::id())->get();
-        }else {
+        if (Auth::user()->role == "calon-siswa") {
+            $forms = Form::where('user_id', Auth::id())->get();
+        } else {
             $forms =  Form::all();
         }
 
-        return view('Dashboard.Calon-Siswa.formulir-pendaftaran',compact('forms'));
+        return view('Dashboard.Calon-Siswa.formulir-pendaftaran', compact('forms'));
     }
 
     public function afirmasi(Request $request)
     {
 
-        $cekData = Form::whereYear('created_at',date('Y'))->where('user_id',Auth::user()->id)->first();
+        $cekData = Form::whereYear('created_at', date('Y'))->where('user_id', Auth::user()->id)->first();
 
-        if($cekData){
+        if ($cekData) {
             return back();
-        }else{
-            $validasi = Jadwal::where('Jalur_pendaftaran',$request->id)->first();
-            return view('Dashboard.Calon-Siswa.tambah_formulir',compact('validasi'));
+        } else {
+            $validasi = Jadwal::where('Jalur_pendaftaran', $request->id)->first();
+            return view('Dashboard.Calon-Siswa.tambah_formulir', compact('validasi'));
         }
-
-
     }
 
 
@@ -162,15 +160,12 @@ class FormController extends Controller
         return view('Dashboard.Calon-Siswa.lihat-formulir', [
             'lihat' => $lihat
         ]);
-
-
     }
 
     public function edit($id)
     {
         $edit = Form::find($id);
         return view('Dashboard.Calon-Siswa.edit-formulir', compact('edit'));
-
     }
 
     public function update(Request $request, Form $form, $id)
@@ -187,6 +182,7 @@ class FormController extends Controller
     public function rekap()
     {
         $rekap = Rekap::where('user_id', Auth::user()->id)->first();
+        // dd($rekap);
         return view('Dashboard.Calon-Siswa.rekap-nilai', compact('rekap'));
     }
 
@@ -198,15 +194,15 @@ class FormController extends Controller
             'ips'  => ['required'],
             'basing'  => ['required'],
         ]);
-
+        $cariForm = Form::where('user_id', Auth::id())->latest()->first();
+        // dd($cariForm->id);
         $rekap = Rekap::where('user_id', Auth::user()->id)->first();
-        if($rekap){
-            $rekap->update($request->all());
-        }else{
-            Rekap::create($request->all() + ['user_id' => Auth::user()->id]);
+        if ($rekap) {
+            $rekap->update($request->all() + ['form_id' => $cariForm->id]);
+        } else {
+            Rekap::create($request->all() + ['user_id' => Auth::user()->id, 'form_id' => $cariForm->id]);
         }
         return back()->with('success', 'Pendaftaran Telah Dilakukan');
-
     }
 
     public function lihatRekap(Request $request)
@@ -218,6 +214,7 @@ class FormController extends Controller
     public function showRekap($id)
     {
         $showrekap = Rekap::find($id);
+
         return view(
             'Dashboard.Calon-Siswa.lihat-rekap-siswa',
             compact('showrekap')
@@ -228,7 +225,6 @@ class FormController extends Controller
     {
         $editRekap = Rekap::find($id);
         return view('Dashboard.Calon-Siswa.edit-rekap-siswa', compact('editRekap'));
-
     }
 
     public function updateRekap(Request $request, $id)
@@ -270,7 +266,5 @@ class FormController extends Controller
     {
         $editProfile = Form::find($id);
         return view('Dashboard.Calon-Siswa.edit-profile-siswa', compact('editProfile'));
-
     }
-
 }

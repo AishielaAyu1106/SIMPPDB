@@ -10,8 +10,12 @@ use App\Models\SiswaKelas;
 use App\Models\Rekap;
 use App\Models\Pengumuman;
 
- class AdminController extends Controller
+class AdminController extends Controller
 {
+    public function dashboardadmin()
+    {
+        return view('Dashboard.Admin.main');
+    }
     // public function jadwal()
     // {
     //     $jadwal = Jadwal::all();
@@ -84,6 +88,7 @@ use App\Models\Pengumuman;
     public function showData($id)
     {
         $lihatdata = Form::find($id);
+        // dd($lihatdata);
         return view('Dashboard.Admin.data-pendaftar-tolak-terima', compact('lihatdata'));
     }
 
@@ -101,7 +106,7 @@ use App\Models\Pengumuman;
         }
         // dd($kelas);
         // $kuota_kelas =
-        return view('Dashboard.Admin.kelas-pendaftar',compact('siswaKelas'));
+        return view('Dashboard.Admin.kelas-pendaftar', compact('siswaKelas'));
     }
 
     public function Kuota($data)
@@ -117,18 +122,39 @@ use App\Models\Pengumuman;
         return redirect('/data-pendaftar');
     }
 
-    public function rekapAdmin(){
-        $rekap = Rekap::all();
-        return view('Dashboard.Admin.rekap-nilai-admin', compact('rekap'));
+    public function rekapAdmin()
+    {
+        $Afirmasi = Rekap::select('rekaps.*', 'forms.Jalur_pendaftaran')
+            ->join('forms', 'forms.id', '=', 'rekaps.form_id')
+            ->where('forms.Jalur_pendaftaran', 'Afirmasi')->get();
+
+        $Prestasi = Rekap::select('rekaps.*', 'forms.Jalur_pendaftaran')
+            ->join('forms', 'forms.id', '=', 'rekaps.form_id')
+            ->where('forms.Jalur_pendaftaran', 'Prestasi')->get();
+
+        $Zonasi = Rekap::select('rekaps.*', 'forms.Jalur_pendaftaran')
+            ->join('forms', 'forms.id', '=', 'rekaps.form_id')
+            ->where('forms.Jalur_pendaftaran', 'Zonasi')->get();
+
+        return view('Dashboard.Admin.rekap-nilai-admin', compact('Afirmasi', 'Prestasi', 'Zonasi'));
     }
 
-    public function pengumuman(Request $request){
+    public function hapusrekapadmin($id)
+    {
+        $rekap = Rekap::Find($id);
+        $rekap->delete();
+        return redirect('/rekap-nilai-admin');
+    }
+
+    public function pengumuman(Request $request)
+    {
         $tambahkelas = Pengumuman::all();
         return view('Dashboard.Admin.pengumuman', compact('tambahkelas'));
     }
 
 
-    public function pengumumanditerima(Request $request){
+    public function pengumumanditerima(Request $request)
+    {
         $siswa = Form::findOrFail($request->id);
         $pengumumanditerima = SiswaKelas::create([
             "kuota_kelas_id" => $request->kuota_kelas_id,
@@ -136,18 +162,20 @@ use App\Models\Pengumuman;
         ]);
         Pengumuman::create([
             'nama_lengkap' => $siswa->nama_lengkap,
-            'Jalur_pendaftaran' =>$siswa->Jalur_pendaftaran,
-            'kelas' => $request->Nama_Kelas
+            'Jalur_pendaftaran' => $siswa->Jalur_pendaftaran,
+            'kelas' => $request->kuota_kelas_id
         ]);
         return redirect()->route('pengumuman');
     }
 
-    public function pengumumanditolak(){
+    public function pengumumanditolak()
+    {
         $pengumumanditolak = Pengumuman::all();
         return view('Dashboard.Admin.pengumuman', compact('pengumumanditolak'));
     }
 
-    public function statusBerkas(Request $request, $id){
+    public function statusBerkas(Request $request, $id)
+    {
         $status = Form::find($id);
         // $this->request[validate(
         //     'status'->[]
@@ -156,13 +184,17 @@ use App\Models\Pengumuman;
         $status->status = $request->status;
         $status->Save();
         // dd('BERHASIL');
-        if($status->status == "Terima berkas"){
-            return redirect()->route('kelas',$id);
-        }else{
+        if ($status->status == "Terima berkas") {
+            return redirect()->route('kelas', $id);
+        } else {
             return redirect()->route('pengumumanditolak');
         }
         // return redirect('/status-berkas');
     }
-
-
+    public function deletePengumuman($id)
+    {
+        $hapuskelas = Pengumuman::find($id);
+        $hapuskelas->delete();
+        return redirect('/pengumuman');
+    }
 }

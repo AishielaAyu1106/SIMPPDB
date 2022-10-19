@@ -14,8 +14,8 @@
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-        <form action="/pengumuman-admin-diterima" method="POST">
-            @csrf
+        {{-- <form action="/pengumuman-admin-diterima" method="POST">
+            @csrf --}}
 
               <div class="card">
                 <div class="table-responsive">
@@ -39,7 +39,12 @@
                         {{-- <td style="width: 500px" >{{ $form->NISN}}</td> --}}
                         <td style="width: 100px"><a href="/data-pendaftar/show/{{$form->id}}" class="btn btn-success">Lihat</a></td>
                         {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
-                        {{-- <td style="width: 100px"><a href="/data-pendaftar/delete/{{$form->id}}" class="btn btn-danger">Hapus</a></td> --}}
+                        <form action="/pengumuman-delete/{{$form->id}}" method="POST">
+                            @method('post')
+                            @csrf
+                            <td style="width: 100px"><button class="btn btn-danger">Hapus</button></td>
+                        </form>
+
 
 
                       </tr>
@@ -51,11 +56,11 @@
                 </div>
               </div>
 
-          </form>
+          {{-- </form> --}}
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <form action="/pengumuman-admin-ditolak" method="POST">
-            @csrf
+        {{-- <form action="/pengumuman-admin-ditolak" method="POST">
+            @csrf --}}
 
               <div class="card">
                 <div class="table-responsive">
@@ -91,7 +96,7 @@
                 </div>
               </div>
 
-          </form>
+          {{-- </form> --}}
     </div>
     {{-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
         <form action="/formulir-pendaftaran-siswa" method="POST">
@@ -131,7 +136,7 @@
                 </div>
               </div>
 
-          </form>
+          {{-- </form> --}}
     </div>
   </div>
 

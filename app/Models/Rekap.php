@@ -9,12 +9,13 @@ class Rekap extends Model
 {
     use HasFactory;
     protected $table = 'rekaps';
-    protected $fillable = [
-        'mtk', 'ipa','ips','basing','jenis_prestasi','tingkat','nama_prestasi','tahun','penyelenggara','piagam','user_id'
-    ];
     protected $guarded= ['id'];
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function form(){
+        return $this->belongsTo(Form::class, 'form_id','id');
     }
 }

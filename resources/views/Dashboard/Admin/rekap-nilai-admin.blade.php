@@ -13,8 +13,8 @@
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-        <form action="/formulir-pendaftaran-siswa" method="POST">
-            @csrf
+        {{-- <form action="/formulir-pendaftaran-siswa" method="POST">
+            @csrf --}}
 
               <div class="card">
                 <div class="table-responsive">
@@ -22,6 +22,7 @@
                     <thead>
                       <tr>
                         <th scope="col">No</th>
+                        {{-- <th scope="col">Nama</th> --}}
                         <th scope="col">Matematika</th>
                         <th scope="col">Ilmu Pengetahuan Alam</th>
                         <th scope="col">Ilmu Pengetahuan Sosial</th>
@@ -30,16 +31,22 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($rekap as $rekap)
+                        @foreach ($Afirmasi as $item)
                         <tr>
                           <td>{{ $loop->iteration }}</td>
-                          <td style="width: 200px" >{{ $rekap->mtk??0}}</td>
-                          <td style="width: 500px" >{{ $rekap->ipa??0}}</td>
-                          <td style="width: 500px" >{{ $rekap->ips??0}}</td>
-                          <td style="width: 500px" >{{ $rekap->basing??0}}</td>
-                          <td style="width: 100px"><a href="/data-pendaftar/show/{{$rekap->id??0}}" class="btn btn-success">Lihat</a></td>
+                          {{-- <td style="width: 200px" >{{ $item->}}</td> --}}
+                          <td style="width: 200px" >{{ $item->mtk??0}}</td>
+                          <td style="width: 500px" >{{ $item->ipa??0}}</td>
+                          <td style="width: 500px" >{{ $item->ips??0}}</td>
+                          <td style="width: 500px" >{{ $item->basing??0}}</td>
+                          <td style="width: 100px"><a href="/data-pendaftar/show/{{$item->id}}" class="btn btn-success">Lihat</a></td>
+                          <form action="/rekap-nilai-admin/delete/{{$item->id}}" method="POST">
+                            @csrf
+                            <td style="width: 100px"><button class="btn btn-danger">Hapus</button></td>
+                          </form>
 
-                          <td style="width: 100px"><a href="/data-pendaftar/delete/{{$rekap->id??0}}" class="btn btn-danger">Hapus</a></td>
+
+
 
 
                         </tr>
@@ -51,11 +58,11 @@
                 </div>
               </div>
 
-          </form>
+          {{-- </form> --}}
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <form action="/formulir-pendaftaran-siswa" method="POST">
-            @csrf
+        {{-- <form action="/formulir-pendaftaran-siswa" method="POST">
+            @csrf --}}
 
               <div class="card">
                 <div class="table-responsive">
@@ -71,16 +78,19 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($rekap as $item)
+                        @foreach ($Prestasi as $item1)
                         <tr>
                           <td>{{ $loop->iteration }}</td>
-                          <td style="width: 200px" >{{ $item->mtk??0}}</td>
-                          <td style="width: 500px" >{{ $item->ipa??0}}</td>
-                          <td style="width: 500px" >{{ $item->ips??0}}</td>
-                          <td style="width: 500px" >{{ $item->basing??0}}</td>
-                          <td style="width: 100px"><a href="/data-pendaftar/show/{{$item->id??0}}" class="btn btn-success">Lihat</a></td>
+                          <td style="width: 200px" >{{ $item1->mtk??0}}</td>
+                          <td style="width: 500px" >{{ $item1->ipa??0}}</td>
+                          <td style="width: 500px" >{{ $item1->ips??0}}</td>
+                          <td style="width: 500px" >{{ $item1->basing??0}}</td>
+                          <td style="width: 100px"><a href="/data-pendaftar/show/{{$item1->id??0}}" class="btn btn-success">Lihat</a></td>
 
-                          <td style="width: 100px"><a href="/data-pendaftar/delete/{{$item->id??0}}" class="btn btn-danger">Hapus</a></td>
+                          <form action="/rekap-nilai-admin/delete/{{$item1->id??0}}" method="POST">
+                            @csrf
+                            <td style="width: 100px"><button class="btn btn-danger">Hapus</button></td>
+                          </form>
 
 
                         </tr>
@@ -92,11 +102,11 @@
                 </div>
               </div>
 
-          </form>
+          {{-- </form> --}}
     </div>
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        <form action="/formulir-pendaftaran-siswa" method="POST">
-            @csrf
+        {{-- <form action="/formulir-pendaftaran-siswa" method="POST">
+            @csrf --}}
 
               <div class="card">
                 <div class="table-responsive">
@@ -104,6 +114,7 @@
                     <thead>
                       <tr>
                         <th scope="col">No</th>
+                        {{-- <th scope="col">Nama</th> --}}
                         <th scope="col">Matematika</th>
                         <th scope="col">Ilmu Pengetahuan Alam</th>
                         <th scope="col">Ilmu Pengetahuan Sosial</th>
@@ -112,17 +123,21 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($rekap as $item)
+                        @foreach ($Zonasi as $item3)
                         <tr>
                           <td>{{ $loop->iteration }}</td>
-                          <td style="width: 200px" >{{ $item->mtk??0}}</td>
-                          <td style="width: 500px" >{{ $item->ipa??0}}</td>
-                          <td style="width: 500px" >{{ $item->ips??0}}</td>
-                          <td style="width: 500px" >{{ $item->basing??0}}</td>
-                          <td style="width: 100px"><a href="/data-pendaftar/show/{{$item->id??0}}" class="btn btn-success">Lihat</a></td>
+                          {{-- <td style="width: 200px" >{{ $item3->user_id}}</td> --}}
+                          <td style="width: 200px" >{{ $item3->mtk??0}}</td>
+                          <td style="width: 500px" >{{ $item3->ipa??0}}</td>
+                          <td style="width: 500px" >{{ $item3->ips??0}}</td>
+                          <td style="width: 500px" >{{ $item3->basing??0}}</td>
 
-                          <td style="width: 100px"><a href="/data-pendaftar/delete/{{$item->id??0}}" class="btn btn-danger">Hapus</a></td>
+                          <td style="width: 100px"><a href="/data-pendaftar/show/{{$item3->id??0}}" class="btn btn-success">Lihat</a></td>
 
+                          <form action="/rekap-nilai-admin/delete/{{$item3->id??0}}" method="POST">
+                            @csrf
+                            <td style="width: 100px"><button class="btn btn-danger">Hapus</button></td>
+                          </form>
 
                         </tr>
 
@@ -132,7 +147,7 @@
                 </div>
               </div>
 
-          </form>
+          {{-- </form> --}}
     </div>
   </div>
 

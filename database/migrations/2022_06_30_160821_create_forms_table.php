@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('forms', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('Nomor_Pendaftaran')->nullable();
             $table->string('Jalur_pendaftaran')->nullable();
             $table->string('nama_lengkap')->nullable();
@@ -62,7 +63,6 @@ return new class extends Migration
             $table->string('tahun')->nullable();
             $table->string('penyelenggara')->nullable();
             $table->string('piagam')->nullable();
-            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->enum('status',['Terima berkas' , 'Tolak Berkas' , 'Sedang diproses'])->default('Sedang diproses');
             $table->timestamps();
         });

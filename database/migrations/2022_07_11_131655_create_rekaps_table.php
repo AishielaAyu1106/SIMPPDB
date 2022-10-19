@@ -16,12 +16,14 @@ class CreateRekapsTable extends Migration
         Schema::create('rekaps', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('form_id')->references('id')->on('forms')->onDelete('cascade');
             $table->float('mtk')->nullable();
             $table->float('ipa')->nullable();
             $table->float('ips')->nullable();
             $table->float('basing')->nullable();
             $table->timestamps();
         });
+
     }
 
     /**
