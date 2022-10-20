@@ -79,10 +79,13 @@
                                     </td>
 
                                     <td style="width: 100px">
-                                        <div class="form-group text-center">
-                                            <button class="btn btn-outline-success" class="form-control"
-                                                type="submit">Update</button>
-                                        </div>
+
+                                            <div class="form-group text-center ">
+                                                <button class="btn btn-outline-success" class="form-control"
+                                                    type="submit">Update</button>
+                                            </div>
+                                
+
                                     </td>
                                 </tr>
 

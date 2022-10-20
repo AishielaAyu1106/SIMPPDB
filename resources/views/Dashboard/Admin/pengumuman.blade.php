@@ -17,7 +17,7 @@
         {{-- <form action="/pengumuman-admin-diterima" method="POST">
             @csrf --}}
 
-              <div class="card">
+              <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-sm">
                     <thead>
@@ -62,7 +62,7 @@
         {{-- <form action="/pengumuman-admin-ditolak" method="POST">
             @csrf --}}
 
-              <div class="card">
+              <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-sm">
                     <thead>

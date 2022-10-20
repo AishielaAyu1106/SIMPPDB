@@ -21,7 +21,7 @@
                 <div class="table-responsive">
                   <table class="table table-striped table-sm">
                     <thead>
-                      <tr>
+                        <tr style="background-color:rgb(255, 147, 163)" class="text-light">
                         <th scope="col">No</th>
                         {{-- <th scope="col">Nama</th> --}}
                         <th scope="col">Matematika</th>
@@ -69,7 +69,7 @@
                 <div class="table-responsive">
                   <table class="table table-striped table-sm">
                     <thead>
-                      <tr>
+                        <tr style="background-color:rgb(255, 147, 163)" class="text-light">
                         <th scope="col">No</th>
                         <th scope="col">Matematika</th>
                         <th scope="col">Ilmu Pengetahuan Alam</th>
@@ -113,7 +113,7 @@
                 <div class="table-responsive">
                   <table class="table table-striped table-sm">
                     <thead>
-                      <tr>
+                        <tr style="background-color:rgb(255, 147, 163)" class="text-light">
                         <th scope="col">No</th>
                         {{-- <th scope="col">Nama</th> --}}
                         <th scope="col">Matematika</th>

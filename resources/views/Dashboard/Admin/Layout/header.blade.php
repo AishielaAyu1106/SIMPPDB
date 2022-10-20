@@ -1,8 +1,14 @@
 <!-- Navbar -->
-<div class="card mb-4 sm-lg-4">
-    <div class="card-body ">
+<div class="card">
+
+
+
+    {{-- <div class="card-body mb-4"> --}}
         <nav class="navbar navbar-expand-lg navbar-light bg-white" id="navbarMain">
+
             <ul class="navbar-nav ms-auto">
+
+                
                 <div class="dropdown">
                     <span type="button" class="d-flex align-items-center" id="dropdownUser" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false"> <img
@@ -12,7 +18,7 @@
                     <div class="dropdown-menu dropdown-menu-end text-end" aria-labelledby="dropdownUser">
                         <small class="dropdown-item-text text-muted font-weight-bold">{{ Auth::user()->email }}</small>
 
-                        {{-- <a class="dropdown-item" href="{{url('profile-siswa/'.$main->id)}}">My Profil <i --}}
+
                         <a class="dropdown-item" href="{{url('profile-admin')}}">My Profil <i
                                 class="fas fa-share"></i></a>
                         <form action="{{ url('logout') }}" method="GET">
@@ -22,6 +28,10 @@
                     </div>
                 </div>
             </ul>
+
         </nav>
     </div>
 </div>
+
+
+

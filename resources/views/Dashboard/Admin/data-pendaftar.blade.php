@@ -25,7 +25,7 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-sm">
                             <thead>
-                                <tr>
+                                <tr style="background-color:rgb(255, 147, 163)" class="text-light">
                                     <th scope="col">No</th>
                                     <th scope="col">Nomor Pendaftaran</th>
                                     <th scope="col">Nama Lengkap</th>
@@ -78,7 +78,7 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-sm">
                             <thead>
-                                <tr>
+                                <tr style="background-color:rgb(255, 147, 163)" class="text-light">
                                     <th scope="col">No</th>
                                     <th scope="col">Nomor Pendaftaran</th>
                                     <th scope="col">Nama Lengkap</th>
@@ -119,7 +119,7 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-sm">
                             <thead>
-                                <tr>
+                                <tr style="background-color:rgb(255, 147, 163)" class="text-light">
                                     <th scope="col">No</th>
                                     <th scope="col">Nomor Pendaftaran</th>
                                     <th scope="col">Nama Lengkap</th>

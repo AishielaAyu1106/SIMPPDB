@@ -67,6 +67,39 @@
 
     <script src="https://kit.fontawesome.com/c2ff6e34d8.js" crossorigin="anonymous"></script>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            $('.delete-data-swift-allert-example').bind('submit', function(e) {
+                var form = this;
+
+                e.preventDefault(); // <--- prevent form from submitting
+
+                swal({
+                    title: "Apakah anda yakin?",
+                    text: "Data Anda Akan Terhapus!",
+                    icon: "warning",
+                    buttons: [
+                        'Tidak, Kembali',
+                        'Ya, Hapus'
+                    ],
+                    dangerMode: true,
+                }).then(function(isConfirm) {
+                    if (isConfirm) {
+                        swal({
+                            title: 'Sukses',
+                            text: 'Data Anda Telah Terhapus!',
+                            icon: 'success'
+                        }).then(function() {
+                            form.submit(); // <--- submit form programmatically
+                        });
+                    } else {
+                        swal("Dibatalkan", "Data Anda Tersimpan :)", "error");
+                    }
+                })
+            });
+        </script>
+    @stack('scripts')
+
 </body>
 
 </html>
