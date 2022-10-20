@@ -17,7 +17,7 @@ class Pengumuman extends Migration
             $table->id();
             $table->string('nama_lengkap');
             $table->string('Jalur_pendaftaran');
-            $table->string('Nama_Kelas');
+            $table->string('kelas');
             $table->timestamps();
         });
     }

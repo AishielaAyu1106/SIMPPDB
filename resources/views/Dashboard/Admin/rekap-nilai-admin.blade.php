@@ -1,5 +1,6 @@
 @extends('Dashboard.Admin.Layout.index')
 @section('container')
+<h3 align='center'>Rekap Nilai</h3><hr>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Afirmasi</button>
@@ -16,7 +17,7 @@
         {{-- <form action="/formulir-pendaftaran-siswa" method="POST">
             @csrf --}}
 
-              <div class="card">
+              <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-sm">
                     <thead>
@@ -64,7 +65,7 @@
         {{-- <form action="/formulir-pendaftaran-siswa" method="POST">
             @csrf --}}
 
-              <div class="card">
+              <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-sm">
                     <thead>
@@ -108,7 +109,7 @@
         {{-- <form action="/formulir-pendaftaran-siswa" method="POST">
             @csrf --}}
 
-              <div class="card">
+              <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-sm">
                     <thead>
