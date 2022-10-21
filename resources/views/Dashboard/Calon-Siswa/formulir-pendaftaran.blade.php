@@ -1,8 +1,8 @@
 @extends('Dashboard.Calon-Siswa.Layout.index')
 
 @section('container')
-    <form action="/formulir-pendaftaran-siswa" method="POST">
-        @csrf
+    {{-- <form action="/formulir-pendaftaran-siswa" method="POST">
+        @csrf --}}
         <h3 align='center'>Formulir Pendaftaran</h3>
         <div class="card">
             <div class="table-responsive">
@@ -29,15 +29,17 @@
                                         class="btn btn-success">Lihat</a></td>
                                 <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{ $form->id }}"
                                         class="btn btn-primary">Edit</a></td>
+                                <form action="/formulir-pendaftaran-siswa/delete/{{ $form->id }}" method="POST" class="delete-data-swift-allert-example">
+                                    @csrf
+                                    <td style="width: 100px"><button
+                                        class="btn btn-danger ">Hapus</button></td>
+                                </form>
 
-
-                                <td style="width: 100px"><a href="/formulir-pendaftaran-siswa/delete/{{ $form->id }}"
-                                        class="btn btn-danger ">Hapus</a></td>
-                                @if (session()->has('message'))
+                                {{-- @if (session()->has('message'))
                                     <div class="alert alert-success">
                                         {{ session()->get('message') }}
                                     </div>
-                                @endif
+                                @endif --}}
 
 
 
@@ -48,5 +50,5 @@
             </div>
         </div>
 
-    </form>
+    {{-- </form> --}}
 @endsection

@@ -46,7 +46,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/formulir-pendaftaran-siswa', [FormController::class, 'index']);
     Route::get('/formulir-pendaftaran-siswa/formulir', [FormController::class, 'afirmasi']);
     Route::post('/formulir-pendaftaran-siswa', [FormController::class, 'store']);
-    Route::get('/formulir-pendaftaran-siswa/delete/{id}', [FormController::class, 'destroy']);
+    Route::post('/formulir-pendaftaran-siswa/delete/{id}', [FormController::class, 'destroy']);
     Route::get('/edit-formulir-pendaftaran/{id}', [FormController::class, 'edit']);
     Route::post('/edit-formulir-pendaftaran/{id}', [FormController::class, 'update']);
     Route::get('/formulir-pendaftaran-siswa/show/{id}', [FormController::class, 'show']);
