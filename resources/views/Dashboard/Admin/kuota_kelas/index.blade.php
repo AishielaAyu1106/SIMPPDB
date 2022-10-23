@@ -6,10 +6,9 @@
 
 
         <div class="card-body">
-
                 <div class="btn-list  pt-2 pb-2">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#signup-modal">Tambah
-                        Kelas</button>
+                    <a href="/kuota-kelas/create" class="btn btn-primary">Tambah
+                        Kelas</a>
                 </div>
 
                 <div class="table-responsive">

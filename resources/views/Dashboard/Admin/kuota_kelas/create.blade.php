@@ -3,11 +3,12 @@
 @section('container')
     <form action="{{route('kuota-kelas.store') }}" method="post" enctype="multipart/form-data">
         @csrf
+        <h3 align='center'>Tambah Kelas</h3>
         <div class="col-lg-13 ">
             <div class="card mb-3 shadow-inner">
                 <div class="card-body ">
                     <div class="row g-3">
-                        <h3 align='center'>Tambah Kelas</h3>
+
                         <div class="col-sm-4">
                             <label for="form-label" for="personal-data" class="text-dark mb-2">Nama Kelas</label>
                             <input type="text" class="form-file-input form-control" name="Nama_Kelas">

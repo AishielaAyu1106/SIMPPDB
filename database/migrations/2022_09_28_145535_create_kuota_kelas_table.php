@@ -15,7 +15,7 @@ class CreateKuotaKelasTable extends Migration
     {
         Schema::create('kuota_kelas', function (Blueprint $table) {
             $table->id();
-            $table->string('Nama_Kelas');
+            $table->string('Nama_Kelas')->unique();
             $table->integer('Kuota_kelas');
             $table->timestamps();
         });

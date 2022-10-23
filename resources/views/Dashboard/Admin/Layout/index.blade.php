@@ -38,12 +38,18 @@
 
 
 
-    
+
 
     <script src="{{ asset('bootstrap/assets/dist/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
         integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
     </script>
@@ -53,37 +59,53 @@
     <script src="{{ asset('bootstrap/dashboard/dashboard.js') }}"></script>
     <script src="https://kit.fontawesome.com/c2ff6e34d8.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script>
-            $('.delete-data-swift-allert-example').bind('submit', function(e) {
-                var form = this;
+    <script>
+        $('.delete-data-swift-allert-example').bind('submit', function(e) {
+            var form = this;
 
-                e.preventDefault(); // <--- prevent form from submitting
+            e.preventDefault(); // <--- prevent form from submitting
 
-                swal({
-                    title: "Apakah anda yakin?",
-                    text: "Data Anda Akan Terhapus!",
-                    icon: "warning",
-                    buttons: [
-                        'Tidak, Kembali',
-                        'Ya, Hapus'
-                    ],
-                    dangerMode: true,
-                }).then(function(isConfirm) {
-                    if (isConfirm) {
-                        swal({
-                            title: 'Sukses',
-                            text: 'Data Anda Telah Terhapus!',
-                            icon: 'success'
-                        }).then(function() {
-                            form.submit(); // <--- submit form programmatically
-                        });
-                    } else {
-                        swal("Dibatalkan", "Data Anda Tersimpan :)", "error");
-                    }
-                })
-            });
-        </script>
+            swal({
+                title: "Apakah anda yakin?",
+                text: "Data Anda Akan Terhapus!",
+                icon: "warning",
+                buttons: [
+                    'Tidak, Kembali',
+                    'Ya, Hapus'
+                ],
+                dangerMode: true,
+            }).then(function(isConfirm) {
+                if (isConfirm) {
+                    swal({
+                        title: 'Sukses',
+                        text: 'Data Anda Telah Terhapus!',
+                        icon: 'success'
+                    }).then(function() {
+                        form.submit(); // <--- submit form programmatically
+                    });
+                } else {
+                    swal("Dibatalkan", "Data Anda Tersimpan :)", "error");
+                }
+            })
+        });
+    </script>
     @stack('scripts')
+
+    <script>
+        $('.submit-button-swift-allert-example').bind('submit', function(e) {
+                    var form = this;
+                    // e.preventDefault(); // <--- prevent form from submitting
+
+                    swal({
+                        title: "Submit Data",
+                        text: "Submit Data Anda!",
+                        icon: "success",
+                        button: "Selamat Data Anda Tersimpan!",
+                    })
+                });
+    </script>
+    @stack('scripts')
+
 
 </body>
 

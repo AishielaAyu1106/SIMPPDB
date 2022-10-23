@@ -39,7 +39,7 @@
                         {{-- <td style="width: 500px" >{{ $form->NISN}}</td> --}}
                         <td style="width: 100px"><a href="/data-pendaftar/show/{{$form->id}}" class="btn btn-success">Lihat</a></td>
                         {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
-                        <form action="/pengumuman-delete/{{$form->id}}" method="POST">
+                        <form action="/pengumuman-delete/{{$form->id}}" method="POST" class="delete-data-swift-allert-example">
                             @method('post')
                             @csrf
                             <td style="width: 100px"><button class="btn btn-danger">Hapus</button></td>

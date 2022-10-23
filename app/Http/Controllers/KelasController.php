@@ -38,7 +38,7 @@ class KelasController extends Controller
             'Kuota_kelas' => 'required',
         ]);
         kuota_kelas::create($tambahkuota);
-        return view('Dashboard\Admin\tambah-kelas-kuota');
+        return redirect('/kuota-kelas');
         // return redirect('/kuota-kelas')->with('success', 'Pendaftaran Telah Dilakukan');
     }
 

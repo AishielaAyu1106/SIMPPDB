@@ -42,7 +42,7 @@ class FormController extends Controller
         $cekData = Form::whereYear('created_at', date('Y'))->where('user_id', Auth::user()->id)->first();
 
         if ($cekData) {
-            return back();
+            return redirect('/formulir-pendaftaran-siswa');
         } else {
             $validasi = Jadwal::where('Jalur_pendaftaran', $request->id)->first();
             return view('Dashboard.Calon-Siswa.tambah_formulir', compact('validasi'));

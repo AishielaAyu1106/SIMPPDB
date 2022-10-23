@@ -5,7 +5,7 @@
     <form action="/edit-formulir-pendaftaran/{{ $edit->id }}" method="post" enctype="multipart/form-data">
         {{-- @method('put') --}}
         @csrf
-        <h1 align="center">Formulir Pendaftaran</h1>
+        <h1 align="center">Edit Formulir Pendaftaran</h1>
         <div class="row mb-3">
             <div class="col-md-6">
                 <div class="card card-body text-center">

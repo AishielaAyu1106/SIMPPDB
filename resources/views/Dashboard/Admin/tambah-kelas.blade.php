@@ -1,7 +1,7 @@
 @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
-    <form action="/kuota-kelas-lihat" method="post" enctype="multipart/form-data">
+    <form action="/kuota-kelas-lihat" method="post" enctype="multipart/form-data" class="submit-button-swift-allert-example">
         @csrf
         <div class="col-lg-13 ">
             <div class="card mb-3 shadow-inner">
@@ -30,7 +30,7 @@
                             @enderror
                         </div>
                         <div class="col-sm-4-mb-4">
-                            <input name="status" type="hidden" value="uploadberkas">
+                            <input name="status" type="hidden" value="uploadberkas" >
                             <button type="submit" class="btn btn-outline-success">Submit</button>
                         </div>
                     </div>
