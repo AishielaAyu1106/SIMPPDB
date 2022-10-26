@@ -1,7 +1,7 @@
 @extends('Dashboard.Calon-Siswa.Layout.index')
 
 @section('container')
-    <h3 align='center'>Rekap Nilai</h3>
+    <h3 align='center' class="p-4">Rekap Nilai</h3>
     <div class="card card-body">
         <form action="/rekap-nilai-siswa" method="post" enctype="multipart/form-data">
             @csrf
@@ -48,9 +48,11 @@
                                             </div>
                                         </div>
 
-                                        <div class="row mb-4 ">
-                                            <button class="btn btn-lg btn-block mt-4 text-light" style="background-color: rgb(255, 147, 163)"
-                                                type="submit">Submit</button>
+
+
+                                        <div class="col-sm-4-mb-4">
+                                            <input name="status" type="hidden" value="uploadberkas">
+                                            <button type="submit" class="btn btn-outline-light" style="background-color: rgb(255, 147, 163)">Submit</button>
                                         </div>
 
                                     </div>

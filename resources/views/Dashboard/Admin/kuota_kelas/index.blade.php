@@ -1,7 +1,7 @@
 @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
-    <h3 align='center'>Kuota Kelas</h3>
+    <h3 align='center' class="p-4">Kuota Kelas</h3>
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
 
@@ -35,10 +35,10 @@
                                             <form class="delete-data-swift-allert-example"
                                                 action="{{ route('kuota-kelas.destroy', $item->id) }}" method="post">
                                                 <a href="{{ route('kuota-kelas.edit', $item->id) }}"
-                                                    class="col btn btn-warning">edit</a>
+                                                    class="col btn btn-warning"><i class="fa fa-pen"></i></a>
                                                 @method('DELETE')
                                                 @csrf
-                                                <button class="col btn btn-danger">hapus</button>
+                                                <button class="col btn btn-danger"><i class="fa fa-trash"></i></button>
                                             </form>
 
                                         </div>

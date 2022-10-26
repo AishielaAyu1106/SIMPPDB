@@ -2,11 +2,11 @@
 
 @section('container')
     @if (date('Y-m-d H:i:s') > $validasi->tanggal_awal && date('Y-m-d H:i:s') < $validasi->tanggal_akhir)
-        <h3 align='center'>Formulir Pendaftaran  </h3>
+        <h3 align='center'>Formulir Pendaftaran </h3>
         <div class="row mb-3">
             <div class="col-md-6">
                 <div class="card card-body text-center">
-                    {{-- <h4>{{($form->id)}}</h4> --}}
+                    <h4>{{ $validasi->Nomor_Pendaftaran }}</h4>
                     <p class="mb-0"> <span class="badge" style="background-color:rgb(255, 147, 163)">Nomor
                             Pendaftaran</span></p>
                 </div>
@@ -29,9 +29,9 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label class="agama text-dark"> Nomor Pendaftaran</label>
-                            <input value="{{request()->id}}" name="Jalur_pendaftaran" type="hidden">
+                            <input value="{{ request()->id }}" name="Jalur_pendaftaran" type="hidden">
                             <input type="text" name="Nomor_Pendaftaran" class="form-control" id="nodaftar"
-                                value="{{ old('Nomor_Pendaftaran') }}" placeholder value >
+                                value="{{ old('Nomor_Pendaftaran') }}" placeholder value>
                         </div>
 
                         <div class="form-group">
@@ -454,64 +454,61 @@
 
 
                             {{-- @if ($validasi->Jalur_pendaftaran == 'afirmasi') --}}
-                                <div class="row g-3">
-                                    <h6>
-                                        <hr>Bagi Jalur Afirmasi
-                                    </h6>
-                                    <div class="col-sm-4">
-                                        <label for="form-label" for="personal-data" class="text-dark">Fotocopy Kartu
-                                            Indonesia
-                                            Pintar <small>(KIP)</small></label>
-                                        <div class="input-group">
-                                            <div class="form-file">
-                                                <input type="file" class="form-file-input form-control"
-                                                    name="fcKIP">
-                                            </div>
+                            <div class="row g-3">
+                                <h6>
+                                    <hr>Bagi Jalur Afirmasi
+                                </h6>
+                                <div class="col-sm-4">
+                                    <label for="form-label" for="personal-data" class="text-dark">Fotocopy Kartu
+                                        Indonesia
+                                        Pintar <small>(KIP)</small></label>
+                                    <div class="input-group">
+                                        <div class="form-file">
+                                            <input type="file" class="form-file-input form-control" name="fcKIP">
                                         </div>
-                                        @error('fcKIP')
-                                            <div class="alert alert-warning" role="alert">
-                                                <strong>Peringatan!</strong>
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
                                     </div>
-
-                                    <div class="col-sm-4">
-                                        <label for="form-label" for="personal-data" class="text-dark">Fotocopy Kartu
-                                            Pelindung
-                                            Sosial <small>(KPS)</small></label>
-                                        <div class="input-group">
-                                            <div class="form-file">
-                                                <input type="file" class="form-file-input form-control"
-                                                    name="fcKPS">
-                                            </div>
+                                    @error('fcKIP')
+                                        <div class="alert alert-warning" role="alert">
+                                            <strong>Peringatan!</strong>
+                                            {{ $message }}
                                         </div>
-                                        @error('fcKPS')
-                                            <div class="alert alert-warning" role="alert">
-                                                <strong>Peringatan!</strong>
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-
-                                    <div class="col-sm-4">
-                                        <label for="form-label" for="personal-data" class="text-dark">Fotocopy Program
-                                            Keluarga
-                                            Harapan <small>(PKH)</small></label>
-                                        <div class="input-group">
-                                            <div class="form-file">
-                                                <input type="file" class="form-file-input form-control"
-                                                    name="fcPKH">
-                                            </div>
-                                        </div>
-                                        @error('fcPKH')
-                                            <div class="alert alert-warning" role="alert">
-                                                <strong>Peringatan!</strong>
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
+                                    @enderror
                                 </div>
+
+                                <div class="col-sm-4">
+                                    <label for="form-label" for="personal-data" class="text-dark">Fotocopy Kartu
+                                        Pelindung
+                                        Sosial <small>(KPS)</small></label>
+                                    <div class="input-group">
+                                        <div class="form-file">
+                                            <input type="file" class="form-file-input form-control" name="fcKPS">
+                                        </div>
+                                    </div>
+                                    @error('fcKPS')
+                                        <div class="alert alert-warning" role="alert">
+                                            <strong>Peringatan!</strong>
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label for="form-label" for="personal-data" class="text-dark">Fotocopy Program
+                                        Keluarga
+                                        Harapan <small>(PKH)</small></label>
+                                    <div class="input-group">
+                                        <div class="form-file">
+                                            <input type="file" class="form-file-input form-control" name="fcPKH">
+                                        </div>
+                                    </div>
+                                    @error('fcPKH')
+                                        <div class="alert alert-warning" role="alert">
+                                            <strong>Peringatan!</strong>
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
                             {{-- @else
                             @endif --}}
 
@@ -596,17 +593,25 @@
         </form>
         </div>
     @else
-        <div class="card m-auto" style="width: 18rem; ">
-            <div class="card-body">
-                <h5>Pendaftaran Belum Dibuka</h5>
-            </div>
-        </div>
-        {{-- <div class="row mb-3 ">
-            <div class="col-md-6 m-auto">
-                <div class="card card-body text-center " >
-                    <h4>Pendaftaran Belum Dibuka</h4>
+        <section  style="background-color: #ffffff;">
+            <div class="container p-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col col-lg-6 mb-4 mb-lg-0">
+                        <div class="card mb-3" style="border-radius: .20rem;">
+                            <div class="row g-0">
+                                {{-- <div class="card m-auto" style="width: 18rem; ">
+                                    <div class="card-body"> --}}
+                                        <h5 align='center'>Mohon Maaf {{ auth()->user()->name }}</h5>
+                                        <h5 align='center'>Pendaftaran Belum Dibuka</h5>
+                                        {{-- <h5 align='center'>Pendaftaran akan dibuka pada {{$jadwal->zonasi}</h5> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div> --}}
+        </section>
+
     @endif
 @endsection

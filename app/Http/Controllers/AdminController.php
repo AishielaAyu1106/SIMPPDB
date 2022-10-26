@@ -197,4 +197,6 @@ class AdminController extends Controller
         $hapuskelas->delete();
         return redirect('/pengumuman');
     }
+
+    
 }

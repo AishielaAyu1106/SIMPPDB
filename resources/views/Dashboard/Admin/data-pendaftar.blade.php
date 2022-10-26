@@ -51,9 +51,9 @@
                                                     action="/data-pendaftar/delete/{{ $form->id }} " method="post">
                                                     @csrf
                                                     <a href="/data-pendaftar/show/{{ $form->id }}"
-                                                        class="col btn btn-success">lihat</a>
+                                                        class="col btn btn-success"><i class="fa fa-eye"></i></a>
                                                     {{-- @method('DELETE') --}}
-                                                    <button class="col btn btn-danger">hapus</button>
+                                                    <button class="col btn btn-danger"><i class="fa fa-trash"></i></button>
                                                 </form>
 
                                             {{-- </div> --}}
@@ -96,10 +96,10 @@
                                         <td style="width: 500px">{{ $form->Jalur_pendaftaran }}</td>
                                         <td style="width: 500px">{{ $form->NISN }}</td>
                                         <td style="width: 100px"><a href="/data-pendaftar/show/{{ $form->id }}"
-                                                class="btn btn-success">Lihat</a></td>
+                                                class="btn btn-success"><i class="fa fa-eye"></i></a></td>
                                         {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
                                         <td style="width: 100px"><a href="/data-pendaftar/delete/{{ $form->id }}"
-                                                class="btn btn-danger">Hapus</a></td>
+                                                class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
 
 
                                     </tr>
@@ -137,10 +137,10 @@
                                         <td style="width: 500px">{{ $form->Jalur_pendaftaran }}</td>
                                         <td style="width: 500px">{{ $form->NISN }}</td>
                                         <td style="width: 100px"><a href="/data-pendaftar/show/{{ $form->id }}"
-                                                class="btn btn-success">Lihat</a></td>
+                                                class="btn btn-success"><i class="fa fa-eye"></i></a></td>
                                         {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
                                         <td style="width: 100px"><a href="/data-pendaftar/delete/{{ $form->id }}"
-                                                class="btn btn-danger">Hapus</a></td>
+                                                class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
 
 
                                     </tr>
