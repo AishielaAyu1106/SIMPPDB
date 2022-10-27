@@ -123,6 +123,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile-siswa', [FormController::class, 'profileSiswa']);
     Route::get('/edit-profile-siswa', [FormController::class, 'editProfile']);
 
+    Route::get('/profile-admin', [AdminController::class, 'profileAdmin']);
+
     // Route::get('/profile-siswa', function () {
     //     return view('Dashboard.Calon-Siswa.profile_siswa');
     // });

@@ -5,8 +5,8 @@
         @csrf
         <h3 align='center' class="p-4">Tambah Kelas</h3>
         <div class="col-lg-13 p-2">
-            <div class="card mb-3 shadow-inner">
-                <span class="border border-success"></span>
+            <div class="card mb-3 shadow-sm">
+                {{-- <span class="border border-success"></span> --}}
                 <div class="card-body ">
                     <div class="row g-3">
 

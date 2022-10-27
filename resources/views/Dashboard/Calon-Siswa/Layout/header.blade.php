@@ -1,13 +1,14 @@
 <!-- Navbar -->
+
 <div class="card mb-4 sm-lg-4">
         <div class="card-body ">
             <nav class="navbar navbar-expand-lg navbar-light bg-white" id="navbarMain">
                 <ul class="navbar-nav ms-auto">
                     <div class="dropdown">
                         <span type="button" class="d-flex align-items-center" id="dropdownUser" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false"> <img src="{{ ::create(Auth::role('calon-siswa')->user()->name)->toBase64() }}" width="35" class="mr-1" />
-                            <span class="mx-1 fw-bold">{{Str::of(
-                                Auth::role('calon-siswa')->user()->name)->words('2', '')}}</span> <i class="fas fa-caret-down fa-fw"></i>
+                            aria-haspopup="true" aria-expanded="false"> <img
+                                src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" width="35" class="me-1" />
+                            <span class="mx-1 fw-bold"></span> <i class="fas fa-caret-down fa-fw"></i>
                         </span>
                         <div class="dropdown-menu dropdown-menu-end text-end" aria-labelledby="dropdownUser">
                             <small class="dropdown-item-text text-muted font-weight-bold">{{ Auth::user()->email }}</small>

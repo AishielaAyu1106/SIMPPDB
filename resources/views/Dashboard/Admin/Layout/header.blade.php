@@ -8,7 +8,7 @@
 
             <ul class="navbar-nav ms-auto">
 
-                
+
                 <div class="dropdown">
                     <span type="button" class="d-flex align-items-center" id="dropdownUser" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false"> <img

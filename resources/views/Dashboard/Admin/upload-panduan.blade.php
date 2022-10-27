@@ -1,13 +1,13 @@
 @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
-
+<h3 align='center' class="p-4" >Upload Panduan Pendaftaran </h3>
     <div class="col-lg-13 ">
-        <div class="card mb-3 shadow-inner">
+        <div class="card mb-4 shadow-sm">
             <div class="card-body ">
                 <div class="row g-3">
-                    <h3 align='center'>Upload Panduan Pendaftaran </h3>
-                    <div class="col-sm-4">
+
+                    <div class="col-sm-6">
                         <label for="form-label" for="personal-data" class="text-dark mb-2">Nama Berkas</label>
                         <input type="text" class="form-file-input form-control" name="nama_berkas">
                         @error('nama_berkas')
@@ -18,7 +18,7 @@
                         @enderror
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <label for="form-label" for="personal-data" class="text-dark mb-2">Upload Berkas</label>
                         <div class="input-group">
                             <div class="form-file">
@@ -41,10 +41,10 @@
         </div>
     </div>
 
-
+<hr>
     <div class=" mt-4">
         <div class="table-responsive">
-            <table class="table table-sm">
+            <table class="table table-sm shadow-sm">
                 <thead>
                     <tr style="background-color:rgb(255, 147, 163)" class="text-light">
                         <th scope="col">No</th>

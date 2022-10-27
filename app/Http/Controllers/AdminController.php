@@ -9,6 +9,7 @@ use App\Models\kuota_kelas;
 use App\Models\SiswaKelas;
 use App\Models\Rekap;
 use App\Models\Pengumuman;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -198,5 +199,9 @@ class AdminController extends Controller
         return redirect('/pengumuman');
     }
 
-    
+    public function profileAdmin(Request $request)
+    {
+        $profile = User::All();
+        return view('Dashboard.Admin.profile-admin', compact('profile'));
+    }
 }
