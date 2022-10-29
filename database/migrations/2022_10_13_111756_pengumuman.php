@@ -18,6 +18,7 @@ class Pengumuman extends Migration
             $table->string('nama_lengkap');
             $table->string('Jalur_pendaftaran');
             $table->string('kelas');
+            $table->foreignId('form_id')->references('id')->on('forms')->onDelete('cascade');
             $table->timestamps();
         });
     }

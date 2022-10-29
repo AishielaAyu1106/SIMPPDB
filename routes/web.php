@@ -78,8 +78,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/pengumuman', [AdminController::class, 'pengumuman'])->name('pengumuman');
 
     Route::post('/pengumuman-admin-diterima', [AdminController::class, 'pengumumanditerima'])->name('pengumumanditerima');
-    Route::get('/pengumuman-admin-ditolak', [AdminController::class, 'pengumumanditolak'])->name('pengumumanditolak');
-    Route::post('/pengumuman-delete/{id}', [AdminController::class, 'deletePengumuman'])->name('pengumumanditolak');
+    Route::post('/pengumuman-admin-ditolak', [AdminController::class, 'pengumumanditolak'])->name('pengumumanditolak');
+    Route::post('/pengumuman-delete/{id}', [AdminController::class, 'deletePengumuman'])->name('deletePengumuman');
 
 
     // Route::get('/data-pendaftar', function () {

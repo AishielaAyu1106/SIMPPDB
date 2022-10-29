@@ -86,10 +86,14 @@ class AdminController extends Controller
         return view('Dashboard.Admin.data-pendaftar', compact('data'));
     }
 
-    public function showData($id)
+    public function showData(Request $request, $id)
     {
+        // $lihatdata = Form::where('nama_lengkap', $request->nama_lengkap)->first();
         $lihatdata = Form::find($id);
         // dd($lihatdata);
+        // return view('Dashboard.Admin.data-pendaftar-tolak-terima', [
+        //     'lihatdata' => $lihatdata
+        // ]);
         return view('Dashboard.Admin.data-pendaftar-tolak-terima', compact('lihatdata'));
     }
 
@@ -164,15 +168,27 @@ class AdminController extends Controller
         Pengumuman::create([
             'nama_lengkap' => $siswa->nama_lengkap,
             'Jalur_pendaftaran' => $siswa->Jalur_pendaftaran,
-            'kelas' => $request->kuota_kelas_id
+            'kelas' => $request->kuota_kelas_id,
+            'form_id' => $pengumumanditerima->id
         ]);
         return redirect()->route('pengumuman');
     }
 
-    public function pengumumanditolak()
+    public function pengumumanditolak(Request $request)
     {
-        $pengumumanditolak = Pengumuman::all();
-        return view('Dashboard.Admin.pengumuman', compact('pengumumanditolak'));
+        $siswa = Form::findOrFail($request->id);
+        $pengumumanditolak = SiswaKelas::create([
+            "kuota_kelas_id" => $request->kuota_kelas_id,
+            "user_id" => $siswa->user_id
+        ]);
+        Pengumuman::create([
+            'nama_lengkap' => $siswa->nama_lengkap,
+            'Jalur_pendaftaran' => $siswa->Jalur_pendaftaran,
+            'kelas' => $request->kuota_kelas_id,
+            'form_id' => $pengumumanditolak->id
+        ]);
+        return redirect()->route('pengumuman');
+        // return view('Dashboard.Admin.pengumuman', compact('pengumumanditolak'));
     }
 
     public function statusBerkas(Request $request, $id)
@@ -188,6 +204,7 @@ class AdminController extends Controller
         if ($status->status == "Terima berkas") {
             return redirect()->route('kelas', $id);
         } else {
+            // return redirect('/pengumuman-admin-diterima');
             return redirect()->route('pengumumanditolak');
         }
         // return redirect('/status-berkas');

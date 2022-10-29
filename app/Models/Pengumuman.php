@@ -10,8 +10,11 @@ class Pengumuman extends Model
     use HasFactory;
     protected $table = 'pengumuman';
     protected $fillable = [
-        'id', 'nama_lengkap', 'Jalur_pendaftaran','kelas'
+        'id', 'nama_lengkap', 'Jalur_pendaftaran','kelas','form_id'
     ];
 
+    public function form(){
+        return $this->belongsTo(Form::class, 'id');
+    }
     protected $primaryKey = 'id';
 }

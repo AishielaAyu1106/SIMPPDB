@@ -28,15 +28,28 @@
                                     </form>
                                 </div>
 
+
                                 <div class="col-sm-6">
                                     <form action="{{url('status-berkas',request()->route()->parameters)}}" method="post">
+                                        @method('POST')
                                         @csrf
-                                    <button type="submit" class="btn btn-outline-danger" data-toggle="modal"
+                                        <input name="status" type="hidden" value="Tolak Berkas">
+                                        <button type="submit" class="btn btn-outline-danger">Tolak
+                                            Berkas</button>
+                                    </form>
+                                </div>
+                                {{-- <div class="col-sm-6"> --}}
+                                    {{-- <form action="{{url('status-berkas',request()->route()->parameters)}}" method="post">
+                                        @csrf
+                                        <input name="status" type="hidden" value="Tolak Berkas"> --}}
+                                    {{-- <button type="submit" class="btn btn-outline-danger" data-toggle="modal"
                                         data-target="#exampleModal" data-whatever="Tolak Berkas Pendaftaran">Tolak
                                         Berkas</button>
                                     </form>
 
-                                </div>
+                                </div> --}}
+
+
 
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -60,9 +73,10 @@
                                                 </form>
                                             </div>
                                             <div class="modal-footer">
-                                                <form action="{{ url('status-berkas') }}" method="post">
+                                                <form action="{{url('status-berkas',request()->route()->parameters)}}" method="post">
                                                     @csrf
                                                     <input name="status" type="hidden" value="Tolak Berkas">
+                                                    {{-- <input name="status" type="hidden" value="Tolak Berkas"> --}}
                                                     <button type="submit" class="btn btn-secondary"
                                                         data-dismiss="modal">Close</button>
                                                     <button type="submit" class="btn btn-danger">Tolak</button>

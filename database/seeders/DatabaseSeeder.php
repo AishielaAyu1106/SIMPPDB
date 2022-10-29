@@ -38,7 +38,7 @@ class DatabaseSeeder extends Seeder
             'id' => '2',
             'Jalur_pendaftaran' => 'Afirmasi',
             'tanggal_awal' => Carbon::now(),
-            'tanggal_akhir' => Carbon::now()
+            'tanggal_akhir' => '2022-12-29'
         ]);
         Jadwal::create([
             'id' => '3',
@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         kuota_kelas::create([
-           
+
             'Nama_Kelas' =>  'Kelas A',
             'Kuota_kelas' => '8',
         ]);
