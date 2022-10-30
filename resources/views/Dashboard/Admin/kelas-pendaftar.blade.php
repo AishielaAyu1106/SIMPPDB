@@ -1,6 +1,7 @@
 @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
+
     <form action="/pengumuman-admin-diterima" method="POST">
         @csrf
         <div class="card" style="width: 20rem;">
