@@ -14,7 +14,7 @@ class Pengumuman extends Model
     ];
 
     public function form(){
-        return $this->belongsTo(Form::class, 'id');
+        return $this->belongsTo(Form::class, 'form_id','id');
     }
     protected $primaryKey = 'id';
 }

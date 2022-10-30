@@ -31,7 +31,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($tambahkelas as $form)
+                      @foreach ($pengumumanDiterima as $form)
                       <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td style="width: 200px" >{{ $form->nama_lengkap}}</td>
@@ -78,7 +78,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($tambahkelas as $form)
+                        @foreach ($pengumumanDitolak as $form)
                         <tr>
                           <td>{{ $loop->iteration }}</td>
                           <td style="width: 200px" >{{ $form->nama_lengkap}}</td>

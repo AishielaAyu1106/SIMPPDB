@@ -12,80 +12,72 @@
                             <h5 class="my-3">{{ $lihatdata->nama_lengkap }}</h5>
                             <p class="text-muted mb-1">Jalur Pendaftaran : {{ $lihatdata->Jalur_pendaftaran }}</p>
                             <p class="text-muted mb-4">N I S N : {{ $lihatdata->NISN }}</p>
-                            @if ($lihatdata->status == "Terima berkas")
-
-                            <span class="badge text-black badge-primary">Diterima</span>
-                            @elseif ($lihatdata->status == "Tolak Berkas")
+                            @if ($lihatdata->status == 'Terima berkas')
+                                <span class="badge text-black badge-primary">Diterima</span>
+                            @elseif ($lihatdata->status == 'Tolak Berkas')
                                 <span class="badge text-black badge-danger">Ditolak</span>
-                            @elseif ($lihatdata->status == "Sedang diproses")
-                            <div class="row mb-4">
-                                <div class="col-sm-6">
-                                    <form action="{{url('status-berkas',request()->route()->parameters)}}" method="post">
-                                        @csrf
-                                        <input name="status" type="hidden" value="Terima berkas">
-                                        <button type="submit" class="btn btn-outline-success">Terima
-                                            Berkas</button>
-                                    </form>
-                                </div>
+                            @elseif ($lihatdata->status == 'Sedang diproses')
+                                <div class="row mb-4">
+                                    <div class="col-sm-6">
+                                        <form action="{{ url('status-berkas', request()->route()->parameters) }}"
+                                            method="post">
+                                            @csrf
+                                            <input name="status" type="hidden" value="Terima berkas">
+                                            <button type="submit" class="btn btn-outline-success">Terima
+                                                Berkas</button>
+                                        </form>
+                                    </div>
 
 
-                                <div class="col-sm-6">
-                                    <form action="{{url('status-berkas',request()->route()->parameters)}}" method="post">
-                                        @method('POST')
-                                        @csrf
-                                        <input name="status" type="hidden" value="Tolak Berkas">
-                                        <button type="submit" class="btn btn-outline-danger">Tolak
-                                            Berkas</button>
-                                    </form>
-                                </div>
-                                {{-- <div class="col-sm-6"> --}}
-                                    {{-- <form action="{{url('status-berkas',request()->route()->parameters)}}" method="post">
-                                        @csrf
-                                        <input name="status" type="hidden" value="Tolak Berkas"> --}}
-                                    {{-- <button type="submit" class="btn btn-outline-danger" data-toggle="modal"
-                                        data-target="#exampleModal" data-whatever="Tolak Berkas Pendaftaran">Tolak
-                                        Berkas</button>
-                                    </form>
-
-                                </div> --}}
+                                    <div class="col-sm-6">
+                                        <form action="{{ url('status-berkas', request()->route()->parameters) }}"
+                                            method="post">
+                                            @method('POST')
+                                            @csrf
+                                            <input name="status" type="hidden" value="Tolak Berkas">
+                                            <button type="submit" class="btn btn-outline-danger">Tolak
+                                                Berkas</button>
+                                        </form>
+                                    </div>
+                                
 
 
 
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Tolak Berkas</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Tolak Berkas</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form>
 
-                                                    <div class="form-group">
-                                                        <label for="message-text" class="col-form-label">Catatan
-                                                            Perbaikan:</label>
-                                                        <textarea class="form-control" id="message-text"></textarea>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <div class="modal-footer">
+                                                        <div class="form-group">
+                                                            <label for="message-text" class="col-form-label">Catatan
+                                                                Perbaikan:</label>
+                                                            <textarea class="form-control" id="message-text"></textarea>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                {{-- <div class="modal-footer">
                                                 <form action="{{url('status-berkas',request()->route()->parameters)}}" method="post">
                                                     @csrf
                                                     <input name="status" type="hidden" value="Tolak Berkas">
-                                                    {{-- <input name="status" type="hidden" value="Tolak Berkas"> --}}
+                                                    <input name="status" type="hidden" value="Tolak Berkas">
                                                     <button type="submit" class="btn btn-secondary"
                                                         data-dismiss="modal">Close</button>
                                                     <button type="submit" class="btn btn-danger">Tolak</button>
                                                 </form>
+                                            </div> --}}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             @endif
                         </div>
 
@@ -613,14 +605,14 @@
                                                 <p class="mb-0">Matematika :</p>
                                             </div>
                                             <div class="col-sm-2">
-                                                <p class="text-muted mb-0">{{ $lihatdata->rekap->mtk??0 }}</p>
+                                                <p class="text-muted mb-0">{{ $lihatdata->rekap->mtk ?? 0 }}</p>
                                             </div>
 
                                             <div class="col-sm-4">
                                                 <p class="mb-0">Ilmu Pengetahuan Alam :</p>
                                             </div>
                                             <div class="col-sm-2">
-                                                <p class="text-muted mb-0">{{ $lihatdata->rekap->ipa??0 }}</p>
+                                                <p class="text-muted mb-0">{{ $lihatdata->rekap->ipa ?? 0 }}</p>
                                             </div>
                                         </div>
                                         <hr>
@@ -630,13 +622,13 @@
                                                 <p class="mb-0">Ilmu Pengetahuan Sosial :</p>
                                             </div>
                                             <div class="col-sm-2">
-                                                <p class="text-muted mb-0">{{ $lihatdata->rekap->ips??0 }}</p>
+                                                <p class="text-muted mb-0">{{ $lihatdata->rekap->ips ?? 0 }}</p>
                                             </div>
                                             <div class="col-sm-3">
                                                 <p class="mb-0">Bahasa Inggris :</p>
                                             </div>
                                             <div class="col-sm-3">
-                                                <p class="text-muted mb-0">{{ $lihatdata->rekap->basing??0 }}</p>
+                                                <p class="text-muted mb-0">{{ $lihatdata->rekap->basing ?? 0 }}</p>
                                             </div>
                                         </div>
                                         <hr>

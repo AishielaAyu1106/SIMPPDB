@@ -29,7 +29,7 @@ Route::get('/', function () {
 });
 Route::middleware(['auth'])->group(function () {
     Route::post('/updateJadwal', [AdminController::class, 'updateData'])->name("updateJadwal");
-    Route::get('/dashboard', [AdminController::class, 'dashboardadmin'])->name('dashboardadmin');
+    // Route::get('/dashboard', [AdminController::class, 'dashboardadmin'])->name('dashboardadmin');
     // Route::get('/dashboard', function () {
     //     return view('Dashboard.Admin.main')->name('dashboard');
     // });
@@ -37,10 +37,11 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/dashboard-siswa', [FormController::class, 'dashboardSiswa'])->name('dashboard');
     Route::get('/dashboard-siswa', [FormController::class, 'dashboardsiswa'])->name('dashboardsiswa');
 
-    Route::get('/pengumuman-siswa', function () {
-        return view('Dashboard.Calon-Siswa.pengumuman');
-    });
+    // Route::get('/pengumuman-siswa', function () {
+    //     return view('Dashboard.Calon-Siswa.pengumuman');
+    // });
 
+    Route::get('/pengumuman-siswa', [FormController::class, 'PegumumanSiswa']);
 
 
     Route::get('/formulir-pendaftaran-siswa', [FormController::class, 'index']);
@@ -71,9 +72,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/status-berkas/{id}', [AdminController::class, 'statusBerkas']);
     // Route::post('/tolak-berkas', [AdminController::class, 'tolak']);
 
-    Route::get('/dashboard', function () {
-        return view('Dashboard.Admin.main');
-    });
+    // Route::get('/dashboard', function () {
+    //     return view('Dashboard.Admin.main');
+    // });
+
+    Route::get('/dashboard', [AdminController::class, 'datapendaftarDashboard']);
 
     Route::get('/pengumuman', [AdminController::class, 'pengumuman'])->name('pengumuman');
 

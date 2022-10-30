@@ -153,8 +153,10 @@ class AdminController extends Controller
 
     public function pengumuman(Request $request)
     {
-        $tambahkelas = Pengumuman::all();
-        return view('Dashboard.Admin.pengumuman', compact('tambahkelas'));
+        $pengumumanDiterima = Pengumuman::join('forms','forms.id','pengumuman.form_id')->where('forms.status','Terima berkas')->get();
+        $pengumumanDitolak = Pengumuman::join('forms','forms.id','pengumuman.form_id')->where('forms.status','Tolak Berkas')->get();
+
+        return view('Dashboard.Admin.pengumuman', compact('pengumumanDiterima','pengumumanDitolak'));
     }
 
 
@@ -165,47 +167,35 @@ class AdminController extends Controller
             "kuota_kelas_id" => $request->kuota_kelas_id,
             "user_id" => $siswa->user_id
         ]);
-        Pengumuman::create([
-            'nama_lengkap' => $siswa->nama_lengkap,
-            'Jalur_pendaftaran' => $siswa->Jalur_pendaftaran,
-            'kelas' => $request->kuota_kelas_id,
-            'form_id' => $pengumumanditerima->id
-        ]);
-        return redirect()->route('pengumuman');
-    }
 
-    public function pengumumanditolak(Request $request)
-    {
-        $siswa = Form::findOrFail($request->id);
-        $pengumumanditolak = SiswaKelas::create([
-            "kuota_kelas_id" => $request->kuota_kelas_id,
-            "user_id" => $siswa->user_id
-        ]);
+        // dd($siswa);
         Pengumuman::create([
             'nama_lengkap' => $siswa->nama_lengkap,
             'Jalur_pendaftaran' => $siswa->Jalur_pendaftaran,
             'kelas' => $request->kuota_kelas_id,
-            'form_id' => $pengumumanditolak->id
+            'form_id' => $siswa->id
         ]);
         return redirect()->route('pengumuman');
-        // return view('Dashboard.Admin.pengumuman', compact('pengumumanditolak'));
     }
 
     public function statusBerkas(Request $request, $id)
     {
         $status = Form::find($id);
-        // $this->request[validate(
-        //     'status'->[]
-        // )]
-        // dd($request->all());
         $status->status = $request->status;
         $status->Save();
+
         // dd('BERHASIL');
         if ($status->status == "Terima berkas") {
             return redirect()->route('kelas', $id);
         } else {
+            Pengumuman::create([
+                'nama_lengkap' => $status->nama_lengkap,
+                'Jalur_pendaftaran' => $status->Jalur_pendaftaran,
+                'kelas' => null,
+                'form_id' => $status->id
+            ]);
             // return redirect('/pengumuman-admin-diterima');
-            return redirect()->route('pengumumanditolak');
+            return redirect()->route('pengumuman');
         }
         // return redirect('/status-berkas');
     }
@@ -220,5 +210,11 @@ class AdminController extends Controller
     {
         $profile = User::All();
         return view('Dashboard.Admin.profile-admin', compact('profile'));
+    }
+
+    public function datapendaftarDashboard()
+    {
+        $dashboardData = Form::all();
+        return view('Dashboard.Admin.main', compact('dashboardData'));
     }
 }

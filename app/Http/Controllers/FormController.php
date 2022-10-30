@@ -267,4 +267,10 @@ class FormController extends Controller
         $editProfile = Form::find($id);
         return view('Dashboard.Calon-Siswa.edit-profile-siswa', compact('editProfile'));
     }
+
+    public function PegumumanSiswa(Request $request)
+    {
+       $pengumumansiswa = Form::where('user_id',Auth::id())->first();
+       return view('Dashboard.Calon-Siswa.pengumuman', compact('pengumumansiswa'));
+    }
 }
