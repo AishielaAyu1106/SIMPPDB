@@ -1,7 +1,7 @@
 @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
-    <section style="background-color: #eee;">
+    <section style="background-color: #eee;" class="p-4 mt-4">
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-4">
@@ -39,7 +39,7 @@
                                                 Berkas</button>
                                         </form>
                                     </div>
-                                
+
 
 
 

@@ -1,5 +1,5 @@
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse" style="background-color:rgb(255, 243, 245)">
-    <div class="position-sticky pt-10">
+    <div class="position-sticky pt-20">
         <nav id="sidebar">
             <a href="#">
                 <img src="{{ url('css/Logo SMAN 1 Bengalon.PNG') }}" alt="itk" class="d-block w-50 m-auto p-2">

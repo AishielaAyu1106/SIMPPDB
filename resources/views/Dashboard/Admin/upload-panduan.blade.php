@@ -41,23 +41,29 @@
         </div>
     </div>
 
-<hr>
-    <div class=" mt-4">
-        <div class="table-responsive">
-            <table class="table table-sm shadow-sm">
-                <thead>
-                    <tr style="background-color:rgb(255, 147, 163)" class="text-light">
-                        <th scope="col">No</th>
-                        <th scope="col">Nama Berkas</th>
-                        <th scope="col">Berkas</th>
-                        <th scope="col">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{-- @foreach ($item as $item)
-                    @endforeach --}}
-                </tbody>
-            </table>
+<hr class="mb-4">
+<div class="card shadow-sm">
+    <h5 class="p-4 mb-0" >List Berkas</h5>
+    <div class="card-body">
+        <div class=" mt-">
+            <div class="table-responsive">
+                <table class="table table-sm shadow-sm">
+                    <thead>
+                        <tr style="background-color:rgb(255, 147, 163)" class="text-light">
+                            <th scope="col">No</th>
+                            <th scope="col">Nama Berkas</th>
+                            <th scope="col">Berkas</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{-- @foreach ($item as $item)
+                        @endforeach --}}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+</div>
+
 @endsection

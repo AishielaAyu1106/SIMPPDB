@@ -78,12 +78,12 @@
             {{-- </ul>
             </li> --}}
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link {{ Request::is('cetak-bukti-siswa') ? 'active' : '' }}" href="/cetak-bukti-siswa">
                     <span data-feather="save" class="align-text-bottom"></span>
                     Cetak Bukti Pendaftaran
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('rekap-nilai-siswa') ? 'active' : '' }}"
                     href="/rekap-nilai-siswa/formulir">
