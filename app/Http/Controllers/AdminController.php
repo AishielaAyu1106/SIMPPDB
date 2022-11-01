@@ -217,4 +217,12 @@ class AdminController extends Controller
         $dashboardData = Form::all();
         return view('Dashboard.Admin.main', compact('dashboardData'));
     }
+
+    public function uploadpanduan(Request $request)
+    {
+        $panduan = $request->validate([
+            'nama_berkas' => ['required'],
+            'berkas' => ['required']
+        ]);
+    }
 }

@@ -6,8 +6,8 @@
         <div class="card ">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
-                        role="tab" aria-controls="home" aria-selected="true">Afirmasi</button>
+                    <button class="nav-link active " id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                        role="tab" aria-controls="home" aria-selected="true" >Afirmasi</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
@@ -80,7 +80,7 @@
                         <div class="table-responsive">
                             <table class="table table-striped table-sm">
                                 <thead>
-                                    <tr  class="text-light">
+                                    <tr  class="text-dark">
                                         <th scope="col">No</th>
                                         <th scope="col">Nomor Pendaftaran</th>
                                         <th scope="col">Nama Lengkap</th>
@@ -122,7 +122,7 @@
                         <div class="table-responsive">
                             <table class="table table-striped table-sm">
                                 <thead>
-                                    <tr  class="text-light">
+                                    <tr  class="text-dark">
                                         <th scope="col">No</th>
                                         <th scope="col">Nomor Pendaftaran</th>
                                         <th scope="col">Nama Lengkap</th>

@@ -8,7 +8,7 @@
 
             <div class="card-body">
                 <div class="btn-list  pt-2 pb-2">
-                    <a href="/kuota-kelas/create" class="btn btn-success"><i class="fa fa-download"></i> Cetak Bukti Pendaftaran</a>
+                    <a href="" class="btn btn-success"><i class="fa fa-download"></i> Cetak Bukti Pendaftaran</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
