@@ -33,7 +33,7 @@
                                         <th scope="col">Nama Lengkap</th>
                                         <th scope="col">Jalur Pendaftaran</th>
                                         <th scope="col">N I S N</th>
-                                        <th scope="col">Aksi</th>
+                                        <th width="150px" class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -9,6 +9,7 @@ use App\Models\kuota_kelas;
 use App\Models\SiswaKelas;
 use App\Models\Rekap;
 use App\Models\Pengumuman;
+use App\Models\Panduan;
 use App\Models\User;
 
 class AdminController extends Controller
@@ -218,11 +219,40 @@ class AdminController extends Controller
         return view('Dashboard.Admin.main', compact('dashboardData'));
     }
 
+    public function panduanpendaftaran(){
+        $panduandaftar = Panduan::all();
+        return view('Dashboard.Admin.upload-panduan', compact('panduandaftar'));
+    }
+
+
+    // UPLOAD PANDUAN
+
     public function uploadpanduan(Request $request)
     {
-        $panduan = $request->validate([
+        $panduandaftar = $request->validate([
             'nama_berkas' => ['required'],
-            'berkas' => ['required']
+            'upload_panduan' => ['file']
         ]);
+
+        if ($request->file('upload_panduan')) {
+            $panduandaftar['upload_panduan'] = $request->file('upload_panduan')->store('berkas');
+        }
+
+        Panduan::create($request->all());
+        // dd("");
+        return redirect('/upload-panduan');
+    }
+
+    public function showpanduan($id)
+    {
+        $lihatpanduan = Panduan::find($id);
+        return view('Dashboard.Admin.lihat-upload-berkas', compact('lihatpanduan'));
+    }
+
+    public function deletepanduan($id)
+    {
+        $hapuspanduan = Panduan::find($id);
+        $hapuspanduan->delete();
+        return redirect('/upload-panduan');
     }
 }

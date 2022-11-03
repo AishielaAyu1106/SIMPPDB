@@ -103,9 +103,16 @@ Route::middleware(['auth'])->group(function () {
         return view('Dashboard.Admin.rekap-nilai');
     });
 
-    Route::get('/upload-panduan', function () {
-        return view('Dashboard.Admin.upload-panduan');
-    });
+    // Route::get('/upload-panduan', function () {
+    //     return view('Dashboard.Admin.upload-panduan');
+    // });
+
+    Route::get('/upload-panduan', [AdminController::class, 'panduanpendaftaran'])->name('panduanpendaftaran');
+    Route::post('/upload-panduan/store', [AdminController::class, 'uploadpanduan'])->name('uploadpanduan');
+    Route::get('/upload-panduan/show/{id}', [AdminController::class, 'showpanduan']);
+    Route::post('/upload-panduan/delete/{id}', [AdminController::class, 'deletepanduan']);
+
+
 
     Route::get('/info-pendaftaran', function () {
         return view('Dashboard.Admin.Informasi-Pendaftaran');
@@ -125,7 +132,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/profile-siswa', [FormController::class, 'profileSiswa']);
     Route::get('/edit-profile-siswa', [FormController::class, 'editProfile']);
-
     Route::get('/profile-admin', [AdminController::class, 'profileAdmin']);
 
     // Route::get('/profile-siswa', function () {
