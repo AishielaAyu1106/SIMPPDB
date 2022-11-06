@@ -15,7 +15,7 @@
     <div class="card card-body">
         <h3>Tambah User</h3>
 
-        <form method="POST" action="{{url('data-admin-create')}}">
+        <form method="POST" action="/data-admin-create">
             @csrf
 
             <div class="row mb-3 g-3">

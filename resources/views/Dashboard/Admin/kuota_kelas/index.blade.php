@@ -1,22 +1,26 @@
 @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
-    <section style="background-color: #eee;" class="p-4 mt-4">
+    <section class="p-4 mt-4">
 
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <div class="card">
-                <h3 align='center'  class="mt-4 mb-0">Kuota Kelas</h3>
+        {{-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> --}}
+            <div class="card card-body mt-5 p-4 shadow-sm">
                 <div class="card-body">
-
-                    <div class="btn-list mb-2">
-                        <a href="/kuota-kelas/create" class="btn btn-success">Tambah
-                            Kelas</a>
+                    <h3 class=" mb-2">Kuota Kelas</h3>
+                    <div class="row my-3">
+                        <div class="col-md text-end">
+                            <a href="/kuota-kelas/create" class="btn btn-success">Tambah Kelas</a>
+                        </div>
                     </div>
+                    {{-- <div class="btn-list mb-2" >
+                        <a href="" class="btn btn-success">Tambah
+                            Kelas</a>
+                    </div> --}}
 
                     <div class="table-responsive">
-                        <table class="table table-striped table-sm">
+                        <table class="table table-sm">
                             <thead>
-                                <tr style="background-color:rgb(255, 147, 163)" class="text-light">
+                                <tr  class="text-dark">
                                     <th scope="col">No</th>
                                     <th scope="col">Nama Kelas</th>
                                     <th scope="col">Kuota Kelas</th>

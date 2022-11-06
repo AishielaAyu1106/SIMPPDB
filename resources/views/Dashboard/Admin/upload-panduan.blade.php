@@ -1,12 +1,14 @@
 @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
+<section class="p-4 mt-4">
     <form action="/upload-panduan/store" method="POST" enctype="multipart/form-data">
         @csrf
-        <h3 align='center' class="p-4">Upload Panduan Pendaftaran </h3>
+
         <div class="col-lg-13 ">
-            <div class="card mb-4 shadow-sm">
+            <div class="card card-body mt-5 p-4 shadow-sm">
                 <div class="card-body ">
+                    <h3 >Upload Panduan Pendaftaran </h3>
                     <div class="row g-3">
 
                         <div class="col-sm-6">
@@ -45,7 +47,7 @@
 
     </form>
 
-    <hr class="mb-4">
+    <hr class="mb-4 mt-5       ">
     <div class="card shadow-sm">
         <h5 class="p-4 mb-0">List Berkas</h5>
         <div class="card-body">
@@ -53,7 +55,7 @@
                 <div class="table-responsive">
                     <table class="table table-sm shadow-sm">
                         <thead>
-                            <tr style="background-color:rgb(255, 147, 163)" class="text-light">
+                            <tr class="text-dark">
                                 <th scope="col">No</th>
                                 <th scope="col">Nama Berkas</th>
                                 <th scope="col">Tanggal Berkas</th>
@@ -89,4 +91,5 @@
         </div>
     </div>
     </div>
+</section>
 @endsection

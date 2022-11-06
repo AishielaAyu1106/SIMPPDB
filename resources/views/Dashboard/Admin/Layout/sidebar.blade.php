@@ -1,15 +1,15 @@
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse" style="background-color:rgb(255, 243, 245)">
+
+
+<nav id="sidebarMenu" class=" col-lg-2 d-md-block sidebar collapse" style="background-color:rgb(255, 243, 245)">
+    <nav id="sidebar">
+        <a href="#">
+            <img src="{{ url('css/Logo SMAN 1 Bengalon.PNG') }}" alt="itk" class="d-block w-50 m-auto p-2">
+        </a>
+
+        <h6 class="text-center">Sistem Informasi PPDB</h6>
+        <h6 class="text-center ">SMAN 1 Bengalon</h6>
+    </nav>
     <div class="position-sticky pt-20">
-        <nav id="sidebar">
-            <a href="#">
-                <img src="{{ url('css/Logo SMAN 1 Bengalon.PNG') }}" alt="itk" class="d-block w-50 m-auto p-2">
-            </a>
-
-            <h6 class="text-center">Sistem Informasi PPDB</h6>
-            <h6 class="text-center ">SMAN 1 Bengalon</h6>
-
-
-        </nav>
         <div class="position-sticky pt-3">
             <ul class="nav flex-column">
                 <li class="nav-item">
@@ -44,7 +44,7 @@
                         Rekap Nilai
                     </a>
                 </li>
-                <hr class="width=35">
+
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('pengumuman') ? 'active' : '' }}" href="/pengumuman">
                         <span data-feather="file" class="align-text-bottom"></span>
@@ -67,12 +67,12 @@
                     </a>
                 </li>
 
-                {{-- <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link {{ Request::is('info-pendaftaran') ? 'active' : '' }}" href="/info-pendaftaran">
                         <span data-feather="clipboard" class="align-text-bottom"></span>
                         Informasi Pendaftaran
                     </a>
-                </li> --}}
+                </li>
             </ul>
 
             </li>

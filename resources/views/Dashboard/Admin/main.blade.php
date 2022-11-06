@@ -4,21 +4,22 @@
 @section('container')
     {{-- <section style="background-color: #eee;" class="p-4 mt-4"> --}}
         <div class="container-fluid">
-            {{-- {{ Breadcrumbs::render('dashboard') }} --}}
-            <!-- Page Heading -->
-            <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-4">
-                <h1 class="h3 mb-0 text-gray-800 ">Dashboard</h1>
-                {{-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                    class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> --}}
+            <div class="card card-body mt-5 p-4 shadow-sm">
+                <div class="card-body">
+                    <div class="d-sm-flex align-items-center justify-content-between ">
+                        <h1 class="h3 mb-0 text-gray-800 ">Dashboard</h1>
+                    </div>
+
+                    <div class="d-sm-flex align-items-center justify-content-between mt-2">
+                        <h6 class="d-sm-mb-0 text-gray-500">Selamat Datang {{ auth()->user()->role }} di Halaman, Dashboard</h6>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="d-sm-flex align-items-center justify-content-between mb-5">
-                <h6 class="d-sm-mb-0 text-gray-500">Selamat Datang {{ auth()->user()->role }} di Halaman, Dashboard</h6>
-            </div>
 
-            <div class="row mb-4 p-4">
 
-                <!-- Earnings (Monthly) Card Example -->
+            <div class="row mb-4 p-4 mt-4">
                 <div class="col-xl-3 col-md-6 mb-4 mr-3">
                     <div class="card border-outline-primary shadow-sm h-100 py-2 border border-dark">
                         <div class="card-body">
@@ -60,7 +61,7 @@
                 </div>
 
                 <div class="col-xl-3 col-md-6 mb-4 mr-3">
-                    <div class="card border-left-success shadow-sm h-100 py-2 border border-dark">
+                    <div class="card border-bottom-success shadow-sm h-100 py-2 border border-dark">
                         <div class="card-body">
                             <div class="row no-gutters align-items-center">
                                 <div class="col mr-5">
@@ -94,11 +95,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="card mt-5">
-                    <h5 class=" mb-2 mt-2">Data Pendaftar</h5>
+                <div class="card mt-4 shadow-sm">
+                    <h5 class=" mb-2 mt-2">Data Pendaftar
+
+                        {{-- <div class="btn-list  pt-2 pb-2">
+                            <a href="" class="btn btn-success"><i class="fa fa-download"></i> Cetak Data Pendaftar</a>
+                        </div> --}}
+                    </h5>
+
                     <hr>
-                    <div class="table-responsive">
-                        <table class="table table-sm">
+
+                    <div class="table-responsive ">
+                        <table class="table table-sm ">
                             <thead>
                                 <tr class="text-dark" style="background-color:rgb(255, 243, 245)">
                                     <th scope="col">NO</th>

@@ -255,4 +255,11 @@ class AdminController extends Controller
         $hapuspanduan->delete();
         return redirect('/upload-panduan');
     }
+
+
+    // Manajemen User
+    // public function manajemenuser()
+    // {
+    //     $manajemenuser
+    // }
 }
