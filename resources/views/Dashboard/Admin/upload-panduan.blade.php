@@ -9,6 +9,7 @@
             <div class="card card-body mt-5 p-4 shadow-sm">
                 <div class="card-body ">
                     <h3 >Upload Panduan Pendaftaran </h3>
+                    <hr class="mb-4">
                     <div class="row g-3">
 
                         <div class="col-sm-6">
@@ -36,7 +37,7 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="col-sm-4-mb-4 ">
+                        <div class=" text-end">
                             <input name="status" type="hidden" value="uploadberkas">
                             <button type="submit" class="btn btn-outline-success">Upload</button>
                         </div>

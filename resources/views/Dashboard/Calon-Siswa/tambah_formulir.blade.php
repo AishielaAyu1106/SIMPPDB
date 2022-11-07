@@ -593,7 +593,7 @@
         </form>
         </div>
     @else
-        <section  style="background-color: #ffffff;">
+        <section style="background-color: #ffffff;">
             <div class="container p-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center">
                     <div class="col col-lg-6 mb-4 mb-lg-0">
@@ -601,17 +601,16 @@
                             <div class="row g-0">
                                 {{-- <div class="card m-auto" style="width: 18rem; ">
                                     <div class="card-body"> --}}
-                                        <h5 align='center'>Mohon Maaf {{ auth()->user()->name }}</h5>
-                                        <h5 align='center'>Pendaftaran Belum Dibuka</h5>
-                                        {{-- <h5 align='center'>Pendaftaran akan dibuka pada {{$jadwal->zonasi}</h5> --}}
-                                    </div>
-                                </div>
+                                <h5 align='center'>Mohon Maaf {{ auth()->user()->name }}</h5>
+                                <h5 align='center'>Pendaftaran Belum Dibuka</h5>
+                                {{-- <h5 align='center'>Pendaftaran akan dibuka pada {{$jadwal->zonasi}</h5> --}}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            </div>
+            </div>
         </section>
-
     @endif
 @endsection

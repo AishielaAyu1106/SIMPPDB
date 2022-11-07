@@ -1,10 +1,11 @@
 @extends('Dashboard.Calon-Siswa.Layout.index')
 
 @section('container')
-<h3 align='center'>Formulir Pendaftaran</h3><hr>
-    <section style="background-color: #eee;">
 
-        <div class="container py-5">
+<section class="p-4 mt-4">
+    <div class="card card-body mt-5 p-4 shadow-sm">
+        <div class="card-body">
+            <h3 align='center'>Formulir Pendaftaran</h3><hr>
             <div class="row">
                 <div class="col-lg-4">
                     <div class="card mb-4">
@@ -15,11 +16,11 @@
                             <p class="text-muted mb-1">Jalur Pendaftaran : {{ $lihat->Jalur_pendaftaran }}</p>
                             <p class="text-muted mb-4">N I S N : {{ $lihat->NISN }}</p>
                             @if ($lihat->status == 'Terima berkas')
-                            <span class="badge text-black badge-primary">Diterima</span>
+                            <span class="badge text-black badge-primary" style="background-color:green">Diterima</span>
                             @elseif($lihat->status == 'Tolak Berkas')
-                            <span class="badge text-black badge-danger">Ditolak</span>
+                            <span class="badge text-black badge-danger" style="background-color:red">Ditolak</span>
                             @else
-                            <span class="badge text-black badge-danger">Sedang Diproses</span>
+                            <span class="badge text-black badge-danger"style="background-color:blue">Sedang Diproses</span>
                             @endif
                         </div>
                     </div>

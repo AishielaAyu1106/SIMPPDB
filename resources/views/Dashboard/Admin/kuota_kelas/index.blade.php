@@ -7,6 +7,7 @@
             <div class="card card-body mt-5 p-4 shadow-sm">
                 <div class="card-body">
                     <h3 class=" mb-2">Kuota Kelas</h3>
+                    <hr>
                     <div class="row my-3">
                         <div class="col-md text-end">
                             <a href="/kuota-kelas/create" class="btn btn-success">Tambah Kelas</a>

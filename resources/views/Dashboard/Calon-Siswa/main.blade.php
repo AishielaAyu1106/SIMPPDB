@@ -10,14 +10,17 @@
     <div class="container-fluid mt-4">
         {{-- {{ Breadcrumbs::render('dashboard') }} --}}
         <!-- Page Heading -->
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Pendaftaran Peserta Didik Baru SMAN 1 Bengalon</h1>
-            {{-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                    class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> --}}
-        </div>
+        <div class="card card-body mt-5 p-4 shadow-sm">
+            <div class="card-body">
+                <div class="d-sm-flex align-items-center justify-content-between ">
+                    <h1 class="h3 mb-0 text-gray-800 ">Dashboard</h1>
+                </div>
 
-        <div class="d-sm-flex align-items-center justify-content-between mb-5">
-            <h6 class="d-sm-mb-0 text-gray-500">Selamat Datang {{auth()->user()->name}} di Halaman, Dashboard</h6>
+                <div class="d-sm-flex align-items-center justify-content-between mt-2">
+                    <h6 class="d-sm-mb-0 text-gray-500">Selamat Datang {{ auth()->user()->name }} di Halaman, Dashboard</h6>
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -25,11 +28,11 @@
 
     {{-- <div class="card"> --}}
         <hr>
-        <h5 class=" mb-2 mt-2" align='center'>INFORMASI PENDAFTARAN</h5>
-        <h6 class=" mb-2 mt-4" align='center'>Jadwal Penerimaan Peserta Didik Baru</h6>
+
+
         {{-- <hr> --}}
-        <div class="row mb-4 p-4 mt-5">
-            <!-- Earnings (Monthly) Card Example -->
+        {{-- <h6 >Jadwal Penerimaan Peserta Didik Baru</h6> --}}
+        <div class="row d-flex p-5 justify-content-center align-items-center ">
             <div class="col-xl-3 col-md-6 mb-4 me-5">
                 <div class="card border-outline-primary shadow-sm h-100 py-2 border border-dark">
                     <div class="card-body">
@@ -86,8 +89,28 @@
                     </div>
                 </div>
             </div>
+
+            {{-- <div class="col-xl-3 col-md-5 mb-4 me-5">
+                <div class="card border-outline-primary shadow-sm h-100 py-2 border border-dark">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-uppercase mb-1 badge"
+                                    style="background-color:rgb(255, 147, 163)">
+                                    Pengumuman
+                                </div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
         </div>
     {{-- </div> --}}
+    <h5 class=" mb-2 mt-2" align='center'>INFORMASI PENDAFTARAN</h5>
 
 
 

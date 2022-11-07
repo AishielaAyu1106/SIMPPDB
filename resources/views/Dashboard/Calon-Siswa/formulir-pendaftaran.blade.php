@@ -1,12 +1,12 @@
 @extends('Dashboard.Calon-Siswa.Layout.index')
 
 @section('container')
-    <section style="background-color: #eee;" class="p-4 mt-4">
-        <h3 align='center' class="p-4 ">Formulir Pendaftaran</h3>
+<section class="p-4 mt-4">
+    <div class="card card-body mt-5 p-4 shadow-sm">
+        <div class="card-body">
+        <h3 class="mt-4 ">Formulir Pendaftaran</h3>
         <hr class="mt-0">
-        <div class="card">
 
-            <div class="card-body">
                 <div class="btn-list  pt-2 pb-2">
                     <a href="" class="btn btn-success"><i class="fa fa-download"></i> Cetak Bukti Pendaftaran</a>
                 </div>
@@ -26,7 +26,7 @@
                             @foreach ($forms as $form)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td style="width: 200px">{{ $form->Nomor_Pendaftaran }}</td>
+                                    <td style="width: 300px">{{ $form->Nomor_Pendaftaran }}</td>
                                     <td style="width: 500px">{{ $form->nama_lengkap }}</td>
                                     <td style="width: 500px">{{ $form->Jalur_pendaftaran }}</td>
                                     <td style="width: 500px">{{ $form->NISN }}</td>
