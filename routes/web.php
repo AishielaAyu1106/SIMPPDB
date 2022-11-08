@@ -77,7 +77,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-    // Route::get('/dashboard', [AdminController::class, 'datapendaftarDashboard']);
+    Route::get('/dashboard', [AdminController::class, 'datapendaftarDashboard']); 
 
 
 
@@ -93,7 +93,7 @@ Route::middleware(['auth'])->group(function () {
         return view('Dashboard.Admin.data-admin');
     });
 
-    Route::get('/data-admin', ManajemenUserController::class, 'manajemenuser');
+    // Route::get('/data-admin', ManajemenUserController::class, 'manajemenuser');
 
 
 
