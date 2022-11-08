@@ -20,7 +20,7 @@
                             @elseif($lihat->status == 'Tolak Berkas')
                             <span class="badge text-black badge-danger" style="background-color:red">Ditolak</span>
                             @else
-                            <span class="badge text-black badge-danger"style="background-color:blue">Sedang Diproses</span>
+                            <span class="badge text-light badge-danger"style="background-color:blue">Sedang Diproses</span>
                             @endif
                         </div>
                     </div>

@@ -28,10 +28,10 @@
                 <div class="container ">
                     <div class="card-body">
                         <div class="form-group">
-                            <label class="agama text-dark"> Nomor Pendaftaran</label>
+                            {{-- <label class="agama text-dark"> Nomor Pendaftaran</label> --}}
                             <input value="{{ request()->id }}" name="Jalur_pendaftaran" type="hidden">
-                            <input type="text" name="Nomor_Pendaftaran" class="form-control" id="nodaftar"
-                                value="{{ old('Nomor_Pendaftaran') }}" placeholder value>
+                            {{-- <input type="text" name="Nomor_Pendaftaran" class="form-control" id="nodaftar"
+                                value="{{ old('Nomor_Pendaftaran') }}" placeholder value> --}}
                         </div>
 
                         <div class="form-group">

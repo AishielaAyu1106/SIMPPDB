@@ -6,6 +6,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\InfoDaftarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,9 +115,12 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-    Route::get('/info-pendaftaran', function () {
-        return view('Dashboard.Admin.Informasi-Pendaftaran');
-    });
+
+
+    Route::get('/info-pendaftaran',[InfoDaftarController::class, 'index']);
+    Route::post('/informasi-pendaftaran',[InfoDaftarController::class, 'store']);
+    Route::get('/informasi-pendaftaran',[InfoDaftarController::class, 'showInfo']);
+    Route::post('/info-pendaftaran/delete/{id}',[InfoDaftarController::class, 'deleteinfo']);
 
     Route::get('/cetak-bukti-siswa', function () {
         return view('Dashboard.Calon-Siswa.cetak-bukti');
@@ -126,9 +130,13 @@ Route::middleware(['auth'])->group(function () {
     //     return view('Dashboard.Calon-Siswa.rekap-nilai');
     // });
 
-    Route::get('/download-panduan-siswa', function () {
-        return view('Dashboard.Calon-Siswa.download-panduan');
-    });
+    // Route::get('/download-panduan-siswa', function () {
+    //     return view('Dashboard.Calon-Siswa.download-panduan');
+    // });
+
+    Route::get('/download-panduan-siswa', [FormController::class, 'downloadpanduan']);
+
+
 
     Route::get('/profile-siswa', [FormController::class, 'profileSiswa']);
     Route::get('/edit-profile-siswa', [FormController::class, 'editProfile']);

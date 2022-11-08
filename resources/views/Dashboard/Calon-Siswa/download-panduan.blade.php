@@ -17,7 +17,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($panduandaftar as $panduan)
+                            @foreach ($downloadpanduan as $panduan)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td style="width: 300px">{{ $panduan->nama_berkas }}</td>
@@ -25,14 +25,14 @@
 
 
                                 <td style="width: 200px">
-                                    <a href="{{ url('/data-pendaftar/show/{id}') }}">
+                                    <a href="{{ asset('storage/' . $panduan->upload_panduan) }}">
                                         <i class="col btn btn-outline-success">Download</i>
                                     </a>
                                 </td>
 
 
                             </tr>
-                        @endforeach --}}
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

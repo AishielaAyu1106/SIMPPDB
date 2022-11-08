@@ -216,6 +216,7 @@ class AdminController extends Controller
     public function datapendaftarDashboard()
     {
         $dashboardData = Form::all();
+        // dd($dashboardData->where('Jalur_pendafataran', 'Afirmasi'));
         return view('Dashboard.Admin.main', compact('dashboardData'));
     }
 
@@ -233,12 +234,13 @@ class AdminController extends Controller
             'nama_berkas' => ['required'],
             'upload_panduan' => ['file']
         ]);
+        // dd($request->all());
 
         if ($request->file('upload_panduan')) {
-            $panduandaftar['upload_panduan'] = $request->file('upload_panduan')->store('berkas');
+            $panduandaftar['upload_panduan'] = $request->file('upload_panduan')->store('panduan');
         }
 
-        Panduan::create($request->all());
+        Panduan::create($panduandaftar);
         // dd("");
         return redirect('/upload-panduan');
     }

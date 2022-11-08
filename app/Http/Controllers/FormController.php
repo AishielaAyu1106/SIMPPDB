@@ -8,6 +8,7 @@ use App\Models\Jadwal;
 use App\Models\Rekap;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Panduan;
 use Avatar;
 use DB;
 use Illuminate\Support\Facades\Date;
@@ -49,7 +50,7 @@ class FormController extends Controller
         }
     }
 
-    
+
     public function store(Request $request)
     {
 
@@ -59,7 +60,7 @@ class FormController extends Controller
             'Jalur_pendaftaran'  => [''],
             'nama_lengkap'  => [''],
             'Jenis_kelamin'  => [''],
-            'NISN'  => ['', 'size:8'],
+            'NISN'  => ['', ''],
             'tempat_lahir_siswa'  => [''],
             'tanggal_lahir_siswa'  => [''],
             'agama_siswa'  => [''],
@@ -73,20 +74,20 @@ class FormController extends Controller
             'kecamatan'  => [''],
             'kabupaten_kota'  => [''],
             'provinsi'  => [''],
-            'nomor_hp_siswa'  => ['', 'max:13'],
+            'nomor_hp_siswa'  => ['', ''],
             'email_siswa'  => [''],
             'nama_ayah'  => [''],
             'tempat_lahir_ayah'  => [''],
             'tanggal_lahir_ayah'  => [''],
-            'NIK_ayah'  => ['', 'size:16'],
+            'NIK_ayah'  => ['', ''],
             'pekerjaan_ayah'  => [''],
-            'nomor_hp_ayah'  => ['', 'max:13'],
+            'nomor_hp_ayah'  => ['', ''],
             'nama_ibu'  => [''],
             'tempat_lahir_ibu'  => [''],
             'tanggal_lahir_ibu'  => [''],
-            'NIK_ibu'  => ['', 'size:16'],
+            'NIK_ibu'  => ['', ''],
             'pekerjaan_ibu'  => [''],
-            'nomor_hp_ibu'  => ['', 'max:13'],
+            'nomor_hp_ibu'  => ['', ''],
             'fcakta' => ['file'],
             'SKLasli' => ['file'],
             'fcSTTB' => ['file'],
@@ -143,7 +144,11 @@ class FormController extends Controller
             $form['piagam'] = $request->file('piagam')->store('berkas');
         }
 
-        Form::create($form + ['user_id' => Auth::user()->id]);
+
+        $latestOrder = User::orderBy('created_at', 'DESC')->first();
+        $Nomor_Pendaftaran = '' . str_pad($latestOrder->id ?? 1, 3, "0", STR_PAD_LEFT);
+
+        Form::create($form + ['user_id' => Auth::user()->id, 'Nomor_Pendaftaran' => $Nomor_Pendaftaran]);
         return redirect('/formulir-pendaftaran-siswa')->with('success', 'Pendaftaran Telah Dilakukan');
     }
 
@@ -170,8 +175,20 @@ class FormController extends Controller
 
     public function update(Request $request, Form $form, $id)
     {
+        // dd($request->all());
         $edit = Form::find($id);
-        $edit->update($request->all());
+        $edit->Nomor_Pendaftaran = $request->Nomor_Pendaftaran;
+        // $edit->Jalur_pendaftaran = $request->Jalur_pendaftaran;
+        $edit->nama_lengkap = $request->nama_lengkap;
+        $edit->Jenis_kelamin = $request->Jenis_kelamin;
+        $edit->NISN = $request->NISN;
+        $edit->tempat_lahir_siswa = $request->tempat_lahir_siswa;
+        $edit->tanggal_lahir_siswa = $request->tanggal_lahir_siswa;
+        $edit->agama_siswa = $request->agama_siswa;
+        $edit->Sekolah_asal = $request->Sekolah_asal;
+        $edit->status = $request->status;
+        $edit->save();
+        // $edit->update($request->all());
         return redirect('/formulir-pendaftaran-siswa')->with('success', 'Pendaftaran Telah Dilakukan');
     }
 
@@ -270,7 +287,15 @@ class FormController extends Controller
 
     public function PegumumanSiswa(Request $request)
     {
-       $pengumumansiswa = Form::where('user_id',Auth::id())->first();
-       return view('Dashboard.Calon-Siswa.pengumuman', compact('pengumumansiswa'));
+        $pengumumansiswa = Form::where('user_id', Auth::id())->first();
+        return view('Dashboard.Calon-Siswa.pengumuman', compact('pengumumansiswa'));
+    }
+
+    // Download Panduan
+
+    public function downloadpanduan(Request $request)
+    {
+        $downloadpanduan = Panduan::all();
+        return view('Dashboard.Calon-Siswa.download-panduan', compact('downloadpanduan'));
     }
 }

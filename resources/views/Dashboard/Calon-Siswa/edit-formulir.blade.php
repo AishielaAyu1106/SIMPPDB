@@ -18,6 +18,7 @@
                 <div class="col-md-6">
                     <div class="card card-body text-center">
                         <h4>{{ $edit->Jalur_pendaftaran }}</h4>
+                        {{-- <input name="Jalur_pendaftaran" type="hidden" value="{{old($edit->Jalur_pendaftaran)}}"> --}}
                         <p class="mb-0"> <span class="badge" style="background-color:rgb(255, 147, 163)">Jalur
                                 Pendaftaran
                             </span> </p>
@@ -596,7 +597,7 @@
 
                             <div class="row g-3">
                                 <div class="col-sm-4-mb-4">
-                                    <input name="status" type="hidden" value="uploadberkas">
+                                    <input name="status" type="hidden" value="Sedang diproses">
                                     <button type="submit" class="btn btn-success">Update</button>
                                 </div>
                             </div>

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('forms', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('Nomor_Pendaftaran')->unique()->nullable();
+            $table->string('Nomor_Pendaftaran')->unique()->nullable();
             $table->string('Jalur_pendaftaran')->nullable();
             $table->string('nama_lengkap')->nullable();
             $table->string('Jenis_kelamin')->nullable();

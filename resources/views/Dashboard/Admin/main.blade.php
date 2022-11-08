@@ -29,7 +29,7 @@
                                         style="background-color:rgb(255, 147, 163)">
                                         Data Pendaftar
                                     </div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800"> {{$dashboardData->count()}}</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>
@@ -50,7 +50,7 @@
                                     <div class="text-xs font-weight-bold text-uppercase mb-1 badge"
                                         style="background-color:rgb(255, 147, 163)">
                                         Afirmasi</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboardData->where('Jalur_pendaftaran','Afirmasi')->count()}}</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-thin fa-school fa-2x text-gray-300"></i>
@@ -68,7 +68,7 @@
                                     <div class="text-xs font-weight-bold text-uppercase mb-1 badge"
                                         style="background-color:rgb(255, 147, 163)">
                                         Prestasi</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboardData->where('Jalur_pendaftaran','Prestasi')->count()}}</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-thin fa-city fa-2x text-gray-300"></i>
@@ -86,7 +86,7 @@
                                     <div class="text-xs font-weight-bold text-uppercase mb-1 badge"
                                         style="background-color:rgb(255, 147, 163)">
                                         Zonasi</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboardData->where('Jalur_pendaftaran','Zonasi')->count()}}</div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>
