@@ -43,7 +43,7 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td style="width: 200px">{{ $form->nama_lengkap }}</td>
                                                 <td style="width: 500px">{{ $form->Jalur_pendaftaran }}</td>
-                                                <td style="width: 500px">{{ $form->kelas }}</td>
+                                                <td style="width: 500px">{{ $form->Nama_kelas}}</td>
                                                 <td style="width: 500px">{{ $form->form->status }}</td>
                                                 {{-- <td style="width: 500px" >{{ $form->NISN}}</td> --}}
                                                 <td style="width: 100px"><a href="/data-pendaftar/show/{{ $form->id }}"

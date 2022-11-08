@@ -57,7 +57,7 @@
         {{-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> --}}
             <div class="card card-body mt-5 p-4 shadow-sm">
                 <div class="card-body">
-                    <h3 class=" mb-2">Informasi Pendafatran</h3>
+                    <h3 class=" mb-2">Informasi Pendafataran</h3>
                     <hr>
 
                     {{-- <div class="btn-list mb-2" >

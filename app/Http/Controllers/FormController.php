@@ -9,6 +9,7 @@ use App\Models\Rekap;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Panduan;
+use App\Models\Infodaftar;
 use Avatar;
 use DB;
 use Illuminate\Support\Facades\Date;
@@ -23,7 +24,8 @@ class FormController extends Controller
 
     public function dashboardsiswa()
     {
-        return view('Dashboard.Calon-Siswa.main');
+        $dashboardsiswa = Jadwal::all();
+        return view('Dashboard.Calon-Siswa.main', compact('dashboardsiswa'));
     }
 
     public function index()
@@ -298,4 +300,7 @@ class FormController extends Controller
         $downloadpanduan = Panduan::all();
         return view('Dashboard.Calon-Siswa.download-panduan', compact('downloadpanduan'));
     }
+
+
+    
 }
