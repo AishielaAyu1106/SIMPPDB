@@ -43,19 +43,23 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td style="width: 200px">{{ $form->nama_lengkap }}</td>
                                                 <td style="width: 500px">{{ $form->Jalur_pendaftaran }}</td>
-                                                <td style="width: 500px">{{ $form->Nama_kelas}}</td>
+                                                <td style="width: 500px">{{ $form->Nama_kelas }}</td>
                                                 <td style="width: 500px">{{ $form->form->status }}</td>
                                                 {{-- <td style="width: 500px" >{{ $form->NISN}}</td> --}}
-                                                <td style="width: 100px"><a href="/data-pendaftar/show/{{ $form->id }}"
-                                                        class="btn btn-success">Lihat</a></td>
-                                                {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
-                                                <form action="/pengumuman-delete/{{ $form->id }}" method="POST"
-                                                    class="delete-data-swift-allert-example">
-                                                    @method('post')
-                                                    @csrf
-                                                    <td style="width: 100px"><button class="btn btn-danger">Hapus</button>
-                                                    </td>
-                                                </form>
+                                                <td style="width: 200px">
+                                                    <div class="row">
+                                                        <form action="/pengumuman-delete/{{ $form->id }}" method="POST"
+                                                            class="delete-data-swift-allert-example">
+                                                            @method('post')
+                                                            @csrf
+                                                            <a href="/data-pendaftar/show/{{ $form->id }}"
+                                                                class="btn btn-success"><i class="fa fa-eye"></i></a>
+                                                            <button class="btn btn-danger"><i
+                                                                    class="fa fa-trash"></i></button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+
 
 
 

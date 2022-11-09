@@ -55,7 +55,7 @@
 
 
 
-                                    <div class="col-sm-4-mb-4">
+                                    <div class=" text-end">
                                         <input name="status" type="hidden" value="uploadberkas">
                                         <button type="submit" class="btn btn-outline-light"
                                             style="background-color: rgb(255, 147, 163)">Submit</button>

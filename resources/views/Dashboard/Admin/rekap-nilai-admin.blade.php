@@ -49,13 +49,20 @@
                                                 <td style="width: 500px">{{ $item->ipa ?? 0 }}</td>
                                                 <td style="width: 500px">{{ $item->ips ?? 0 }}</td>
                                                 <td style="width: 500px">{{ $item->basing ?? 0 }}</td>
-                                                <td style="width: 100px"><a href="/data-pendaftar/show/{{ $item->id }}"
-                                                        class="btn btn-success">Lihat</a></td>
-                                                <form action="/rekap-nilai-admin/delete/{{ $item->id }}" method="POST">
-                                                    @csrf
-                                                    <td style="width: 100px"><button class="btn btn-danger">Hapus</button>
-                                                    </td>
-                                                </form>
+
+                                                <td style="width: 200px">
+                                                    <div class="row">
+                                                        <form action="/rekap-nilai-admin/delete/{{ $item->id }}" method="POST"  class="delete-data-swift-allert-example">
+                                                            @csrf
+                                                        <a href="/data-pendaftar/show/{{ $item->id }}"
+                                                            class="btn btn-success"><i class="fa fa-eye"></i></a>
+
+                                                        <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+
+                                                    </form>
+                                                    </div>
+                                                </td>
+
 
 
 

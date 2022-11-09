@@ -6,6 +6,23 @@
     <div class="card card-body mt-5 p-4 shadow-sm">
         <div class="card-body">
             <h3 align='center'>Formulir Pendaftaran</h3><hr>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <div class="card card-body text-center">
+                        <h4>{{ $lihat->Nomor_Pendaftaran }}</h4>
+                        <p class="mb-0"> <span class="badge" style="background-color:rgb(255, 147, 163)">Nomor
+                                Pendaftaran</span></p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card card-body text-center">
+                        <h4>{{ $lihat->Jalur_pendaftaran }}</h4>
+                        <p class="mb-0"> <span class="badge" style="background-color:rgb(255, 147, 163)">Jalur Pendaftaran
+                            </span> </p>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-lg-4">
                     <div class="card mb-4">
