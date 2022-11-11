@@ -2,7 +2,6 @@
 @section('container')
     <div class="session">
         <div class="left">
-
         </div>
 
         <form method="POST" action="{{ route('login') }}">
@@ -30,14 +29,18 @@
             </div>
 
 
-            <div class="col d-flex m-auto">
+            <div class="col d-flex m-auto ">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" @if (Cookie::has('loginemail')) checked @endif
-                        id="form1Example3" name="rememberme" />
+                    <input class="form-check-input" type="checkbox"
+                        id="form1Example3" name="rememberme"/>
                     <label class="form-check-label" for="form1Example3"> Remember me </label>
                 </div>
-                <button type="submit">Log in</button>
+                <div class="text-end">
+                    <button type="submit">Log in</button>
+                </div>
             </div>
+
+
 
 
 

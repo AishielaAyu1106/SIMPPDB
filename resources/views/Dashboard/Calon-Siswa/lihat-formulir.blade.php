@@ -27,13 +27,13 @@
                 <div class="col-lg-4">
                     <div class="card mb-4">
                         <div class="card-body text-center">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                            <img src="{{ asset('css/profile.svg')}}"
                                 alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
                             <h5 class="my-3">{{ $lihat->nama_lengkap }}</h5>
                             <p class="text-muted mb-1">Jalur Pendaftaran : {{ $lihat->Jalur_pendaftaran }}</p>
                             <p class="text-muted mb-4">N I S N : {{ $lihat->NISN }}</p>
                             @if ($lihat->status == 'Terima berkas')
-                            <span class="badge text-black badge-primary" style="background-color:green">Diterima</span>
+                            <span class="badge text-light badge-primary" style="background-color:green">Diterima</span>
                             @elseif($lihat->status == 'Tolak Berkas')
                             <span class="badge text-black badge-danger" style="background-color:red">Ditolak</span>
                             @else

@@ -40,6 +40,25 @@ h3 {
     opacity: 0.85;
 }
 
+.button{
+    -webkit-appearance: none;
+    width: auto;
+    min-width: 100px;
+    border-radius: 24px;
+    text-align: center;
+    padding: 15px 40px;
+    margin-top: 5px;
+    background-color: #e981ad;
+    color: #fff;
+    font-size: 14px;
+    margin-left: 50px;
+    font-weight: 500;
+    box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.13);
+    border: none;
+    transition: all 0.3s ease;
+    outline: 0;
+}
+
 .form-registration .form-floating:focus-within {
   z-index: 2;
 }

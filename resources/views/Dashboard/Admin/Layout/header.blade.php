@@ -20,7 +20,7 @@
                         <div class="dropdown mt-2">
                             <span type="button" class="d-flex align-items-center" id="dropdownUser"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img
-                                    src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" width="35"
+                                    src="{{ asset('css/profile.svg') }}" width="35"
                                     class="me-1" />
                                 <span class="mx-1 fw-bold me">{{ Str::of(Auth::user()->name)->words('2', '') }}</span>
                                 <i class="fas fa-caret-down fa-fw me-2"></i>

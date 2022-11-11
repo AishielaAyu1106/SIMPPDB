@@ -2,11 +2,11 @@
 
 @section('container')
     @if (date('Y-m-d H:i:s') > $validasi->tanggal_awal && date('Y-m-d H:i:s') < $validasi->tanggal_akhir)
-        <h3 align='center'>Formulir Pendaftaran </h3>
+        <h3 align='center' class="mb-4 mt-4">Formulir Pendaftaran </h3>
         <div class="row mb-3">
             <div class="col-md-6">
                 <div class="card card-body text-center">
-                    <h4>{{ $validasi->Nomor_Pendaftaran }}</h4>
+                    <p>Akan Terisi Setelah Melakukan pendaftaran {{$validasi->Nomor_Pendaftaran}}</p>
                     <p class="mb-0"> <span class="badge" style="background-color:rgb(255, 147, 163)">Nomor
                             Pendaftaran</span></p>
                 </div>

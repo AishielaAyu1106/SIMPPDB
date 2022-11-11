@@ -55,41 +55,39 @@ class FormController extends Controller
 
     public function store(Request $request)
     {
-
-        // return $request->file('fcakta')->store('public/berkas');
         $form = $request->validate([
             'Nomor_Pendaftaran'  => [''],
             'Jalur_pendaftaran'  => [''],
-            'nama_lengkap'  => [''],
-            'Jenis_kelamin'  => [''],
-            'NISN'  => ['', ''],
-            'tempat_lahir_siswa'  => [''],
-            'tanggal_lahir_siswa'  => [''],
-            'agama_siswa'  => [''],
-            'Sekolah_asal' => [''],
-            'Tahun_lulus' => [''],
-            'dusun'  => [''],
-            'Rt'  => [''],
-            'rw'  => [''],
-            'kelurahan_desa'  => [''],
-            'kode_pos'  => [''],
-            'kecamatan'  => [''],
-            'kabupaten_kota'  => [''],
-            'provinsi'  => [''],
-            'nomor_hp_siswa'  => ['', ''],
-            'email_siswa'  => [''],
-            'nama_ayah'  => [''],
-            'tempat_lahir_ayah'  => [''],
-            'tanggal_lahir_ayah'  => [''],
-            'NIK_ayah'  => ['', ''],
-            'pekerjaan_ayah'  => [''],
-            'nomor_hp_ayah'  => ['', ''],
-            'nama_ibu'  => [''],
-            'tempat_lahir_ibu'  => [''],
-            'tanggal_lahir_ibu'  => [''],
-            'NIK_ibu'  => ['', ''],
-            'pekerjaan_ibu'  => [''],
-            'nomor_hp_ibu'  => ['', ''],
+            'nama_lengkap'  => ['required'],
+            'Jenis_kelamin'  => ['required'],
+            'NISN'  => ['required'],
+            'tempat_lahir_siswa'  => ['required'],
+            'tanggal_lahir_siswa'  => ['required'],
+            'agama_siswa'  => ['required'],
+            'Sekolah_asal' => ['required'],
+            'Tahun_lulus' => ['required'],
+            'dusun'  => ['required'],
+            'Rt'  => ['required'],
+            'rw'  => ['required'],
+            'kelurahan_desa'  => ['required'],
+            'kode_pos'  => ['required'],
+            'kecamatan'  => ['required'],
+            'kabupaten_kota'  => ['required'],
+            'provinsi'  => ['required'],
+            'nomor_hp_siswa'  => ['required'],
+            'email_siswa'  => ['required'],
+            'nama_ayah'  => ['required'],
+            'tempat_lahir_ayah'  => ['required'],
+            'tanggal_lahir_ayah'  => ['required'],
+            'NIK_ayah'  => ['required'],
+            'pekerjaan_ayah'  => ['required'],
+            'nomor_hp_ayah'  => ['required'],
+            'nama_ibu'  => ['required'],
+            'tempat_lahir_ibu'  => ['required'],
+            'tanggal_lahir_ibu'  => ['required'],
+            'NIK_ibu'  => ['required'],
+            'pekerjaan_ibu'  => ['required'],
+            'nomor_hp_ibu'  => ['required'],
             'fcakta' => ['file'],
             'SKLasli' => ['file'],
             'fcSTTB' => ['file'],
@@ -106,7 +104,6 @@ class FormController extends Controller
             'penyelenggara'  => [''],
             'piagam' => ['file']
         ]);
-        // dd($request->all());
         if ($request->file('fcakta')) {
             $form['fcakta'] = $request->file('fcakta')->store('berkas');
         }
@@ -148,7 +145,7 @@ class FormController extends Controller
 
 
         $latestOrder = User::orderBy('created_at', 'DESC')->first();
-        $Nomor_Pendaftaran = '' . str_pad($latestOrder->id ?? 1, 3, "0", STR_PAD_LEFT);
+        $Nomor_Pendaftaran = '' . str_pad($latestOrder->id ??0 + 1, 3, "0", STR_PAD_LEFT);
 
         Form::create($form + ['user_id' => Auth::user()->id, 'Nomor_Pendaftaran' => $Nomor_Pendaftaran]);
         return redirect('/formulir-pendaftaran-siswa')->with('success', 'Pendaftaran Telah Dilakukan');
@@ -201,7 +198,6 @@ class FormController extends Controller
     public function rekap()
     {
         $rekap = Rekap::where('user_id', Auth::user()->id)->first();
-        // dd($rekap);
         return view('Dashboard.Calon-Siswa.rekap-nilai', compact('rekap'));
     }
 
@@ -302,5 +298,5 @@ class FormController extends Controller
     }
 
 
-    
+
 }

@@ -37,8 +37,6 @@ class AdminController extends Controller
 
     public function updateData(Request $request)
     {
-        // dd($request->all());
-        // return ("helo");
         $getID = Jadwal::where('Jalur_pendaftaran', $request->Jalur_pendaftaran)->first();
         $getID->tanggal_awal = $request->tanggal_awal;
         $getID->tanggal_akhir = $request->tanggal_akhir;
@@ -55,7 +53,7 @@ class AdminController extends Controller
         ]);
 
         Jadwal::create($jadwal);
-        return redirect('/jadwal-pendaftaran')->with('success', 'Pendaftaran Telah Dilakukan');
+        return redirect('/jadwal-pendaftaran');
 
         // $jadwal = jadwal::create([
         //     'kategori_pendaftaran' => $request->kategori_pendaftaran,
