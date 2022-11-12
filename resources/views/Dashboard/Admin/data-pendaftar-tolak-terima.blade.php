@@ -27,7 +27,7 @@
                                                     method="post">
                                                     @csrf
                                                     <input name="status" type="hidden" value="Terima berkas">
-                                                    <button type="submit" class="btn btn-outline-success">Terima
+                                                    <button type="submit" class="btn btn-outline-success btn-sm">Terima
                                                         Berkas</button>
                                                 </form>
                                             </div>
@@ -39,7 +39,7 @@
                                                     @method('POST')
                                                     @csrf
                                                     <input name="status" type="hidden" value="Tolak Berkas">
-                                                    <button type="submit" class="btn btn-outline-danger">Tolak
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm">Tolak
                                                         Berkas</button>
                                                 </form>
                                             </div>
@@ -145,7 +145,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <a href="{{ asset('storage/' . $lihatdata->piagam) }}"
-                                                class="btn btn-outline-success">Lihat Berkas</a>
+                                                class="btn btn-outline-success btn-sm">Lihat Berkas</a>
                                         </div>
                                     </div>
                                     <hr>
@@ -165,7 +165,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <a href="{{ asset('storage/' . $lihatdata->fcakta) }}"
-                                                class="btn btn-outline-success">Lihat Berkas</a>
+                                                class="btn btn-outline-success btn-sm">Lihat Berkas</a>
                                         </div>
                                     </div>
                                     <hr>
@@ -175,7 +175,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <a href="{{ asset('storage/' . $lihatdata->SKLasli) }}"
-                                                class="btn btn-outline-success">Lihat Berkas</a>
+                                                class="btn btn-outline-success btn-sm">Lihat Berkas</a>
                                         </div>
                                     </div>
                                     <hr>
@@ -185,7 +185,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <a href="{{ asset('storage/' . $lihatdata->fcSTTB) }}"
-                                                class="btn btn-outline-success">Lihat Berkas</a>
+                                                class="btn btn-outline-success btn-sm">Lihat Berkas</a>
                                         </div>
                                     </div>
                                     <hr>
@@ -195,7 +195,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <a href="{{ asset('storage/' . $lihatdata->fcRaport) }}"
-                                                class="btn btn-outline-success">Lihat Berkas</a>
+                                                class="btn btn-outline-success btn-sm">Lihat Berkas</a>
                                         </div>
                                     </div>
                                     <hr>
@@ -205,7 +205,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <a href="{{ asset('storage/' . $lihatdata->suratnarkoba) }}"
-                                                class="btn btn-outline-success">Lihat Berkas</a>
+                                                class="btn btn-outline-success btn-sm">Lihat Berkas</a>
                                         </div>
                                     </div>
                                     <hr>
@@ -215,7 +215,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <a href="{{ asset('storage/' . $lihatdata->Foto) }}"
-                                                class="btn btn-outline-success">Lihat Berkas</a>
+                                                class="btn btn-outline-success btn-sm">Lihat Berkas</a>
                                         </div>
                                     </div>
                                     <hr>
@@ -233,7 +233,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <a href="{{ asset('storage/' . $lihatdata->fcKIP) }}"
-                                                class="btn btn-outline-success">Lihat Berkas</a>
+                                                class="btn btn-outline-success btn-sm">Lihat Berkas</a>
                                         </div>
                                     </div>
                                     <hr>
@@ -243,7 +243,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <a href="{{ asset('storage/' . $lihatdata->fcKPS) }}"
-                                                class="btn btn-outline-success">Lihat Berkas</a>
+                                                class="btn btn-outline-success btn-sm">Lihat Berkas</a>
                                         </div>
                                     </div>
                                     <hr>
@@ -253,7 +253,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <a href="{{ asset('storage/' . $lihatdata->fcPKH) }}"
-                                                class="btn btn-outline-success">Lihat Berkas</a>
+                                                class="btn btn-outline-success btn-sm">Lihat Berkas</a>
                                         </div>
                                     </div>
                                     <hr>

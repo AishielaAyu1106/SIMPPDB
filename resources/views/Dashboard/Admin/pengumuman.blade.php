@@ -34,7 +34,7 @@
                                             <th scope="col">Jalur Pendaftaran</th>
                                             <th scope="col">Kelas</th>
                                             <th scope="col">Status</th>
-                                            <th scope="col">Aksi</th>
+                                            <th class="text-center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -46,15 +46,15 @@
                                                 <td style="width: 500px">{{ $form->kelas }}</td>
                                                 <td style="width: 500px">{{ $form->form->status }}</td>
                                                 {{-- <td style="width: 500px" >{{ $form->NISN}}</td> --}}
-                                                <td style="width: 200px">
+                                                <td class="text-center" style="width: 200px">
                                                     <div class="row">
                                                         <form action="/pengumuman-delete/{{ $form->id }}" method="POST"
                                                             class="delete-data-swift-allert-example">
                                                             @method('post')
                                                             @csrf
                                                             <a href="/data-pendaftar/show/{{ $form->id }}"
-                                                                class="btn btn-success"><i class="fa fa-eye"></i></a>
-                                                            <button class="btn btn-danger"><i
+                                                                class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
+                                                            <button class="btn btn-danger btn-sm"><i
                                                                     class="fa fa-trash"></i></button>
                                                         </form>
                                                     </div>

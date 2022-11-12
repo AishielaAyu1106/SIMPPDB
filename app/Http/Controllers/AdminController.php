@@ -87,12 +87,8 @@ class AdminController extends Controller
 
     public function showData(Request $request, $id)
     {
-        // $lihatdata = Form::where('nama_lengkap', $request->nama_lengkap)->first();
+       
         $lihatdata = Form::find($id);
-        // dd($lihatdata);
-        // return view('Dashboard.Admin.data-pendaftar-tolak-terima', [
-        //     'lihatdata' => $lihatdata
-        // ]);
         return view('Dashboard.Admin.data-pendaftar-tolak-terima', compact('lihatdata'));
     }
 

@@ -28,7 +28,7 @@
                                         @endforeach
 
                                         <div class="form-group text-center">
-                                            <button class="btn btn-outline-success" class="form-control"
+                                            <button class="btn btn-outline-success btn-sm" class="form-control"
                                                 type="submit">Pilih</button>
                                         </div>
                                     </div>

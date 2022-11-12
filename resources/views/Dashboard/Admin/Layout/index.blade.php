@@ -67,7 +67,7 @@
 
             swal({
                 title: "Apakah anda yakin?",
-                text: "Data Anda Akan Terhapus!",
+                text: "Data anda akan terhapus!",
                 icon: "warning",
                 buttons: [
                     'Tidak, Kembali',
@@ -78,13 +78,13 @@
                 if (isConfirm) {
                     swal({
                         title: 'Sukses',
-                        text: 'Data Anda Telah Terhapus!',
+                        text: 'Data anda telah terhapus!',
                         icon: 'success'
                     }).then(function() {
                         form.submit(); // <--- submit form programmatically
                     });
                 } else {
-                    swal("Dibatalkan", "Data Anda Tersimpan :)", "error");
+                    swal("Dibatalkan", "Data anda tersimpan :)", "error");
                 }
             })
         });

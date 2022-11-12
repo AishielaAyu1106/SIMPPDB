@@ -32,34 +32,32 @@
                                     <thead>
                                         <tr class="text-dark">
                                             <th scope="col">No</th>
-                                            <th scope="col">Nomor Pendaftaran</th>
-                                            <th scope="col">Nama Lengkap</th>
-                                            <th scope="col">Jalur Pendaftaran</th>
-                                            <th scope="col">N I S N</th>
-                                            <th width="150px" class="text-center">Aksi</th>
+                                            <th class="text-center">Nomor Pendaftaran</th>
+                                            <th class="text-center">Nama Lengkap</th>
+                                            <th class="text-center">Jalur Pendaftaran</th>
+                                            <th class="text-center">N I S N</th>
+                                            <th class="text-center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($data->where('Jalur_pendaftaran', 'Afirmasi') as $form)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td style="width: 500px">{{ $form->Nomor_Pendaftaran }}</td>
-                                                <td style="width: 500px">{{ $form->nama_lengkap }}</td>
-                                                <td style="width: 500px">{{ $form->Jalur_pendaftaran }}</td>
-                                                <td style="width: 500px">{{ $form->NISN }}</td>
-                                                {{-- <td style="width: 200px"></td> --}}
-                                                {{-- <td style="width: 100px"><a href="/data-pendaftar/show/{{$form->id}}" class="btn btn-success">Lihat</a></td> --}}
-                                                {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
-                                                <td style="width: 200px">
+                                                <td class="text-center">{{ $form->Nomor_Pendaftaran }}</td>
+                                                <td class="text-center">{{ $form->nama_lengkap }}</td>
+                                                <td class="text-center">{{ $form->Jalur_pendaftaran }}</td>
+                                                <td class="text-center">{{ $form->NISN }}</td>
+
+                                                <td class="text-center" style="width: 200px">
                                                     <div class="row">
-                                                        <form action="/data-pendaftar/delete/{{ $form->id }}"
+                                                        <form class="delete-data-swift-allert-example" action="/data-pendaftar/delete/{{ $form->id }}"
                                                             method="POST">
                                                             @csrf
                                                             <a href="/data-pendaftar/show/{{ $form->id }}"
-                                                                class="btn btn-success"><i class="fa fa-eye"></i></a>
+                                                                class="btn btn-success btn-sm"><i class="fa fa-info"></i></a>
 
-                                                            <button class="btn btn-danger"><i
-                                                                    class="fa fa-trash"></i></button>
+                                                            <button class="btn btn-danger btn-sm"><i
+                                                                    class="fa fa-trash "></i></button>
                                                         </form>
                                                     </div>
                                                 </td>
@@ -72,11 +70,10 @@
                             </div>
                         </div>
 
-                        {{-- </form> --}}
+
                     </div>
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        {{-- <form action="/formulir-pendaftaran-siswa" method="POST">
-                    @csrf --}}
+
 
                         <div class="card-body">
                             <div class="table-responsive">
@@ -84,36 +81,35 @@
                                     <thead>
                                         <tr class="text-dark">
                                             <th scope="col">No</th>
-                                            <th scope="col">Nomor Pendaftaran</th>
-                                            <th scope="col">Nama Lengkap</th>
-                                            <th scope="col">Jalur Pendaftaran</th>
-                                            <th scope="col">N I S N</th>
-                                            <th scope="col">Aksi</th>
+                                            <th class="text-center">Nomor Pendaftaran</th>
+                                            <th class="text-center">Nama Lengkap</th>
+                                            <th class="text-center">Jalur Pendaftaran</th>
+                                            <th class="text-center">N I S N</th>
+                                            <th class="text-center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($data->where('Jalur_pendaftaran', 'Prestasi') as $form)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td style="width: 200px">{{ $form->Nomor_Pendaftaran }}</td>
-                                                <td style="width: 500px">{{ $form->nama_lengkap }}</td>
-                                                <td style="width: 500px">{{ $form->Jalur_pendaftaran }}</td>
-                                                <td style="width: 2000px">{{ $form->NISN }}</td>
-                                                <td style="width: 200px">
+                                                <td class="text-center">{{ $form->Nomor_Pendaftaran }}</td>
+                                                <td class="text-center">{{ $form->nama_lengkap }}</td>
+                                                <td class="text-center">{{ $form->Jalur_pendaftaran }}</td>
+                                                <td class="text-center">{{ $form->NISN }}</td>
+
+                                                <td class="text-center" style="width: 200px">
                                                     <div class="row">
-                                                        <form action="/data-pendaftar/delete/{{ $form->id }}"
+                                                        <form class="delete-data-swift-allert-example" action="/data-pendaftar/delete/{{ $form->id }}"
                                                             method="POST">
                                                             @csrf
                                                             <a href="/data-pendaftar/show/{{ $form->id }}"
-                                                                class="btn btn-success"><i class="fa fa-eye"></i></a>
+                                                                class="btn btn-success btn-sm"><i class="fa fa-info"></i></a>
 
-                                                            <button class="btn btn-danger"><i
-                                                                    class="fa fa-trash"></i></button>
+                                                            <button class="btn btn-danger btn-sm"><i
+                                                                    class="fa fa-trash "></i></button>
                                                         </form>
                                                     </div>
                                                 </td>
-
-
 
 
                                             </tr>
@@ -132,35 +128,38 @@
                                     <thead>
                                         <tr class="text-dark">
                                             <th scope="col">No</th>
-                                            <th scope="col">Nomor Pendaftaran</th>
-                                            <th scope="col">Nama Lengkap</th>
-                                            <th scope="col">Jalur Pendaftaran</th>
-                                            <th scope="col">N I S N</th>
-                                            <th scope="col">Aksi</th>
+                                            <th class="text-center">Nomor Pendaftaran</th>
+                                            <th class="text-center">Nama Lengkap</th>
+                                            <th class="text-center">Jalur Pendaftaran</th>
+                                            <th class="text-center">N I S N</th>
+                                            <th class="text-center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($data->where('Jalur_pendaftaran', 'Zonasi') as $form)
-                                            <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td style="width: 200px">{{ $form->Nomor_Pendaftaran }}</td>
-                                                <td style="width: 500px">{{ $form->nama_lengkap }}</td>
-                                                <td style="width: 500px">{{ $form->Jalur_pendaftaran }}</td>
-                                                <td style="width: 500px">{{ $form->NISN }}</td>
-                                                <td style="width: 200px">
-                                                    <div class="row">
-                                                        <form action="/data-pendaftar/delete/{{ $form->id }}"
-                                                            method="POST">
-                                                            @csrf
-                                                            <a href="/data-pendaftar/show/{{ $form->id }}"
-                                                                class="btn btn-success"><i class="fa fa-eye"></i></a>
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td class="text-center">{{ $form->Nomor_Pendaftaran }}</td>
+                                            <td class="text-center">{{ $form->nama_lengkap }}</td>
+                                            <td class="text-center">{{ $form->Jalur_pendaftaran }}</td>
+                                            <td class="text-center">{{ $form->NISN }}</td>
 
-                                                            <button class="btn btn-danger"><i
-                                                                    class="fa fa-trash"></i></button>
-                                                        </form>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            <td class="text-center" style="width: 200px">
+                                                <div class="row">
+                                                    <form class="delete-data-swift-allert-example" action="/data-pendaftar/delete/{{ $form->id }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        <a href="/data-pendaftar/show/{{ $form->id }}"
+                                                            class="btn btn-success btn-sm"><i class="fa fa-info"></i></a>
+
+                                                        <button class="btn btn-danger btn-sm"><i
+                                                                class="fa fa-trash "></i></button>
+                                                    </form>
+                                                </div>
+                                            </td>
+
+
+                                        </tr>
                                         @endforeach
                                     </tbody>
                                 </table>

@@ -581,7 +581,7 @@
 
                         <div class=" text-end">
                             <hr class="mb-4">
-                            <button class="btn btn-lg btn-block text-light" type="submit"
+                            <button class="btn btn-lg btn-block text-light btn-md" type="submit"
                                 style="background-color:rgb(255, 147, 163)">Daftar</button>
                         </div>
 

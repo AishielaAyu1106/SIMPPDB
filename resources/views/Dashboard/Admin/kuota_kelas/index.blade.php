@@ -25,7 +25,7 @@
                                     <th scope="col">No</th>
                                     <th scope="col">Nama Kelas</th>
                                     <th scope="col">Kuota Kelas</th>
-                                    <th scope="col">Aksi</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -37,15 +37,15 @@
                                         {{-- <td style="width: 100px"><a href="/data-pendaftar/show/{{ $form->id }}"
                                                 class="btn btn-success">Lihat</a></td> --}}
                                         {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
-                                        <td style="width: 100px">
+                                        <td class="text-center" style="width: 100px">
                                             <div class="row">
                                                 <form class="delete-data-swift-allert-example"
                                                     action="{{ route('kuota-kelas.destroy', $item->id) }}" method="post">
                                                     <a href="{{ route('kuota-kelas.edit', $item->id) }}"
-                                                        class="col btn btn-warning"><i class="fa fa-pen"></i></a>
+                                                        class="col btn btn-warning btn-sm"><i class="fa fa-pen"></i></a>
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button class="col btn btn-danger"><i class="fa fa-trash"></i></button>
+                                                    <button class="col btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                                                 </form>
 
                                             </div>
