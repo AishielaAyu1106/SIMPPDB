@@ -42,7 +42,7 @@
                                     style="background-color:rgb(255, 147, 163)">
                                     Afirmasi
                                 </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboardsiswa->where('jalur_pendaftaran','Afirmasi')}}</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>

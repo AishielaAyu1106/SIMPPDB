@@ -9,6 +9,7 @@ use App\Models\Rekap;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Panduan;
+use App\Models\Pengumuman;
 use App\Models\Infodaftar;
 use Avatar;
 use DB;
@@ -24,7 +25,9 @@ class FormController extends Controller
 
     public function dashboardsiswa()
     {
-        $dashboardsiswa = Jadwal::all();
+        $dashboardsiswaAfirmasi = Jadwal::where('Jalur_pendaftaran','Afirmasi')->first();
+        $$dashboardsiswaPrestasi = Jadwal::where('Jalur_pendaftaran','Prestasi')->first();
+        $dashboardsiswaZonasi = Jadwal::where('Jalur_pendaftaran','Zonasi')->first();
         return view('Dashboard.Calon-Siswa.main', compact('dashboardsiswa'));
     }
 
@@ -172,6 +175,12 @@ class FormController extends Controller
         return view('Dashboard.Calon-Siswa.edit-formulir', compact('edit'));
     }
 
+    public function cetakbukti()
+    {
+        $cetakbukti = Form::where('user_id', Auth::id())->first();
+        return view('Dashboard.Calon-Siswa.cetak-bukti', compact('cetakbukti'));
+    }
+
     public function update(Request $request, Form $form, $id)
     {
         // dd($request->all());
@@ -285,7 +294,8 @@ class FormController extends Controller
 
     public function PegumumanSiswa(Request $request)
     {
-        $pengumumansiswa = Form::where('user_id', Auth::id())->first();
+        $pengumumansiswa = Pengumuman::join('forms','forms.id','pengumuman.form_id')->where('forms.status','Terima berkas')->first();
+        // $kelaspengumuman = ;
         return view('Dashboard.Calon-Siswa.pengumuman', compact('pengumumansiswa'));
     }
 

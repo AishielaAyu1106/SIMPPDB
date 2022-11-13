@@ -18,13 +18,12 @@ class AdminController extends Controller
     {
         return view('Dashboard.Admin.main');
     }
-    // public function jadwal()
-    // {
-    //     $jadwal = Jadwal::all();
-    //     return view('Dashboard.Admin.Jadwal-pendaftaran', compact('jadwal'))
-    //         ->with('i', (request()->input('page', 1)- 1) * 5);
 
-    // }
+    public function datapendaftarDashboard()
+    {
+        $dashboardData = Form::all();
+        return view('Dashboard.Admin.main', compact('dashboardData'));
+    }
 
     public function kategori()
     {
@@ -87,7 +86,7 @@ class AdminController extends Controller
 
     public function showData(Request $request, $id)
     {
-       
+
         $lihatdata = Form::find($id);
         return view('Dashboard.Admin.data-pendaftar-tolak-terima', compact('lihatdata'));
     }
@@ -207,12 +206,7 @@ class AdminController extends Controller
         return view('Dashboard.Admin.profile-admin', compact('profile'));
     }
 
-    public function datapendaftarDashboard()
-    {
-        $dashboardData = Form::all();
-        // dd($dashboardData->where('Jalur_pendafataran', 'Afirmasi'));
-        return view('Dashboard.Admin.main', compact('dashboardData'));
-    }
+
 
     public function panduanpendaftaran(){
         $panduandaftar = Panduan::all();

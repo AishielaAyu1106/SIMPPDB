@@ -98,15 +98,16 @@
                 <div class="card mt-4 shadow-sm">
                     <h5 class=" mb-2 mt-2">Data Pendaftar
 
-                        {{-- <div class="btn-list  pt-2 pb-2">
-                            <a href="" class="btn btn-success"><i class="fa fa-download"></i> Cetak Data Pendaftar</a>
-                        </div> --}}
                     </h5>
-
+                    <div class="btn-list  pt-2 pb-2 text-end">
+                        <a href="/cetak-data-pendaftaran" class="btn btn-success btn-sm"><i class="fa fa-download"></i> Cetak Data Pendaftaran</a>
+                    </div>
                     <hr>
 
                     <div class="table-responsive ">
+
                         <table class="table table-sm ">
+
                             <thead>
                                 <tr class="text-dark" style="background-color:rgb(255, 243, 245)">
                                     <th scope="col">NO</th>

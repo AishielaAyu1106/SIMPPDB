@@ -71,7 +71,7 @@
                                             <p class="mb-4">Kelas </p>
                                         </div>
                                         <div class="col-sm-8">
-                                            <p class="text-muted mb-0">: {{ $pengumumansiswa->kelas }}</p>
+                                            <p class="text-muted mb-0">: {{ $pengumumansiswa->kelass->kuota_kelass->Nama_Kelas }}</p>
                                         </div>
                                     </div>
                                 </div>

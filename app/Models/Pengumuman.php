@@ -16,5 +16,9 @@ class Pengumuman extends Model
     public function form(){
         return $this->belongsTo(Form::class, 'form_id','id');
     }
+
+    public function kelass(){
+        return $this->belongsTo(SiswaKelas::class, 'kelas','id');
+    }
     protected $primaryKey = 'id';
 }
