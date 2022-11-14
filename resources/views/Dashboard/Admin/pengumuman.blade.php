@@ -4,8 +4,11 @@
 
         {{-- <hr class="mt-0"> --}}
         <div class="card card-body mt-5 p-4 shadow-sm">
+            <div class="card-header py-3">
+                <h5 class="m-0 font-weight-bold text-dark">PENGUMUMAN</h5>
+            </div>
             <div class="card-body">
-                <h3 class=" mb-4">Pengumuman</h3>
+
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
@@ -43,7 +46,7 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td style="width: 200px">{{ $form->nama_lengkap }}</td>
                                                 <td style="width: 500px">{{ $form->Jalur_pendaftaran }}</td>
-                                                <td style="width: 500px">{{ $form->kelass->kuota_kelass->Nama_Kelas}}</td>
+                                                <td style="width: 500px">{{ $form->kelass->kuota_kelass->Nama_Kelas??0}}</td>
                                                 <td style="width: 500px">{{ $form->form->status }}</td>
                                                 {{-- <td style="width: 500px" >{{ $form->NISN}}</td> --}}
                                                 <td class="text-center" style="width: 200px">

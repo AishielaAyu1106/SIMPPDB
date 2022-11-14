@@ -13,14 +13,14 @@
                             <form class="d-flex me-4">
                                 <input class="form-control me-2" type="search" placeholder="Search"
                                     aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
+                                <button class="btn btn-outline-success btn-sm" type="submit">Search</button>
                             </form>
                         </div>
 
                         <div class="dropdown mt-2">
                             <span type="button" class="d-flex align-items-center" id="dropdownUser"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img
-                                    src="{{ asset('css/profile.svg') }}" width="35"
+                                    src="{{ asset('css/profile (1).svg') }}" width="35"
                                     class="me-1" />
                                 <span class="mx-1 fw-bold me">{{ Str::of(Auth::user()->name)->words('2', '') }}</span>
                                 <i class="fas fa-caret-down fa-fw me-2"></i>

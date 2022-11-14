@@ -26,7 +26,7 @@
 
                                 <td style="width: 200px">
                                     <a href="{{ asset('storage/' . $panduan->upload_panduan) }}">
-                                        <i class="col btn btn-outline-success">Download</i>
+                                        <i class="col btn btn-outline-success btn-sm"><i class="fa fa-download"></i> Download</i>
                                     </a>
                                 </td>
 

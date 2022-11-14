@@ -27,147 +27,100 @@
 
 
     {{-- <div class="card"> --}}
-        <hr>
+    <hr>
 
 
-        {{-- <hr> --}}
-        {{-- <h6 >Jadwal Penerimaan Peserta Didik Baru</h6> --}}
-        <div class="row d-flex p-5 justify-content-center align-items-center ">
-            <div class="col-xl-3 col-md-6 mb-4 me-5">
-                <div class="card border-outline-primary shadow-sm h-100 py-2 border border-dark">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-uppercase mb-1 badge"
-                                    style="background-color:rgb(255, 147, 163)">
-                                    Afirmasi
-                                </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+    {{-- <hr> --}}
+    {{-- <h6 >Jadwal Penerimaan Peserta Didik Baru</h6> --}}
+    <div class="row d-flex p-5 justify-content-center align-items-center ">
+        <div class="col-xl-3 col-md-6 mb-4 me-5">
+            <div class="card border-outline-primary shadow-sm h-100 py-2 border border-dark">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1 badge"
+                                style="background-color:rgb(255, 147, 163)">
+                                Afirmasi
                             </div>
-                            <div class="col-auto">
-                                <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>
-                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-xl-3 col-md-6 mb-4 me-5" >
-                <div class="card border-outline-primary shadow-sm h-100 py-2 border border-dark">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-uppercase mb-1 badge"
-                                    style="background-color:rgb(255, 147, 163)">
-                                    Prestasi
-                                </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"> </div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-5 mb-4 me-5">
-                <div class="card border-outline-primary shadow-sm h-100 py-2 border border-dark">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-uppercase mb-1 badge"
-                                    style="background-color:rgb(255, 147, 163)">
-                                    Zonasi
-                                </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"> </div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {{-- <div class="col-xl-3 col-md-5 mb-4 me-5">
-                <div class="card border-outline-primary shadow-sm h-100 py-2 border border-dark">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-uppercase mb-1 badge"
-                                    style="background-color:rgb(255, 147, 163)">
-                                    Pengumuman
-                                </div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800"> </div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-        </div>
-    {{-- </div> --}}
-    <h5 class=" mb-2 mt-2" align='center'>INFORMASI PENDAFTARAN</h5>
-
-    <section class="p-4 mt-4">
-        <div class="row d-flex  justify-content-center align-items-center h-100">
-            <div class="card card card-body mt-5 p-4 shadow-sm">
-                {{-- <div class="col col-lg-6 mb-4 mb-lg-0"> --}}
-                    {{-- @foreach ($lihatinfo as $lihatinfo) --}}
-                    <div class="card-body">
-                        <h3 >Informasi Pendaftaran</h3>
-
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <p class="mb-0">Syarat Usia</p>
-                            </div>
-                            <div class="col-sm-6">
-                                {{-- <p class="text-muted mb-0">{{ $lihatinfo->syarat_usia }}</p> --}}
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <p class="mb-0">Ijazah</p>
-                            </div>
-                            <div class="col-sm-6">
-                                {{-- <p class="text-muted mb-0">{{ $lihatinfo->ijazah }}</p> --}}
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <p class="mb-0">Surat</p>
-                            </div>
-                            <div class="col-sm-6">
-                                {{-- <p class="text-muted mb-0">{{ $lihatinfo->surat }}</p> --}}
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <p class="mb-0">Lainnya</p>
-                            </div>
-                            <div class="col-sm-6">
-                                {{-- <p class="text-muted mb-0">{{ $lihatinfo->surat_lainnya }}</p> --}}
-                            </div>
-                        </div>
-                    </div>
-                    {{-- @endforeach --}}
-
-                </div>
-            </div>
-
         </div>
 
+        <div class="col-xl-3 col-md-6 mb-4 me-5">
+            <div class="card border-outline-primary shadow-sm h-100 py-2 border border-dark">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1 badge"
+                                style="background-color:rgb(255, 147, 163)">
+                                Prestasi
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-5 mb-4 me-5">
+            <div class="card border-outline-primary shadow-sm h-100 py-2 border border-dark">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1 badge"
+                                style="background-color:rgb(255, 147, 163)">
+                                Zonasi
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboardsiswa->where('Jalur_pendaftaran', 'Zonasi', 'tanggal_akhir')}}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Illustrations -->
+    <div class="p-4 ">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-dark">INFORMASI PENDAFTARAN</h6>
+            </div>
+            <div class="card-body ">
+                @foreach ($item as $lihatinfo)
+                    <div class="card-body shadow-sm">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                        src="{{ asset('css/informasi pendaftaran.svg') }}" alt="...">
+                                </div>
+
+                                <div class="col-sm-6 mt-5">
+                                    <li class="text-muted mb-2">{{ $lihatinfo->syarat_usia }}</li>
+                                    <li class="text-muted mb-2">{{ $lihatinfo->ijazah }}</li>
+                                    <li class="text-muted mb-2">{{ $lihatinfo->surat }}</li>
+                                    <li class="text-muted mb-2">{{ $lihatinfo->surat_lainnya }}</li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
 
 
     </section>
-
-
-
-
 @endsection

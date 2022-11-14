@@ -63,7 +63,7 @@ return new class extends Migration
             $table->string('tahun')->nullable();
             $table->string('penyelenggara')->nullable();
             $table->string('piagam')->nullable();
-            $table->enum('status',['Terima berkas' , 'Tolak Berkas' , 'Sedang diproses'])->default('Sedang diproses');
+            $table->enum('status',['Berkas Diterima' , 'Berkas Ditolak' , 'Sedang diproses'])->default('Sedang diproses');
             $table->timestamps();
         });
     }

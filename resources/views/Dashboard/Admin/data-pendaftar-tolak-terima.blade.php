@@ -16,9 +16,9 @@
                                     <h5 class="my-3">{{ $lihatdata->nama_lengkap }}</h5>
                                     <p class="text-muted mb-1">Jalur Pendaftaran : {{ $lihatdata->Jalur_pendaftaran }}</p>
                                     <p class="text-muted mb-4">N I S N : {{ $lihatdata->NISN }}</p>
-                                    @if ($lihatdata->status == 'Terima berkas')
+                                    @if ($lihatdata->status == 'Berkas Diterima')
                                         <span class="badge text-black badge-primary">Diterima</span>
-                                    @elseif ($lihatdata->status == 'Tolak Berkas')
+                                    @elseif ($lihatdata->status == 'Berkas Ditolak')
                                         <span class="badge text-black badge-danger">Ditolak</span>
                                     @elseif ($lihatdata->status == 'Sedang diproses')
                                         <div class="row mb-4">
@@ -26,7 +26,7 @@
                                                 <form action="{{ url('status-berkas', request()->route()->parameters) }}"
                                                     method="post">
                                                     @csrf
-                                                    <input name="status" type="hidden" value="Terima berkas">
+                                                    <input name="status" type="hidden" value="Berkas Diterima">
                                                     <button type="submit" class="btn btn-outline-success btn-sm">Terima
                                                         Berkas</button>
                                                 </form>
@@ -38,7 +38,7 @@
                                                     method="post">
                                                     @method('POST')
                                                     @csrf
-                                                    <input name="status" type="hidden" value="Tolak Berkas">
+                                                    <input name="status" type="hidden" value="Berkas Ditolak">
                                                     <button type="submit" class="btn btn-outline-danger btn-sm">Tolak
                                                         Berkas</button>
                                                 </form>

@@ -8,14 +8,6 @@
             <div class="card-body">
                 {{-- @if (date('Y-m-d H:i:s') > $validasi->tanggal_awal && date('Y-m-d H:i:s') < $validasi->tanggal_akhir) --}}
                 <h3 class="mt-4">Rekap Nilai</h3> <hr>
-                {{-- <div class="card card-body"> --}}
-
-                        {{-- <div class="container"> --}}
-                            {{-- <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-header"> --}}
-
 
                             <div class="card-body">
                                 <div class="row g-3">

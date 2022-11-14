@@ -11,6 +11,7 @@ use App\Models\Rekap;
 use App\Models\Pengumuman;
 use App\Models\Panduan;
 use App\Models\User;
+use App\Models\Auth;
 
 class AdminController extends Controller
 {
@@ -23,6 +24,12 @@ class AdminController extends Controller
     {
         $dashboardData = Form::all();
         return view('Dashboard.Admin.main', compact('dashboardData'));
+    }
+
+    public function cetakdata()
+    {
+        $cetakdata = Form::All();
+        return view('Dashboard.Admin.cetak-data-pendaftaran', compact('cetakdata'));
     }
 
     public function kategori()
@@ -53,18 +60,6 @@ class AdminController extends Controller
 
         Jadwal::create($jadwal);
         return redirect('/jadwal-pendaftaran');
-
-        // $jadwal = jadwal::create([
-        //     'kategori_pendaftaran' => $request->kategori_pendaftaran,
-        //     'tanggal_awal' => $request->tanggal_awal,
-        //     'tanggal_akhir' => $request->tanggal_akhir,
-        // ]);
-
-        // return redirect()->route('lihatjadwal')
-        //     ->with('success', 'Jadwal Berhasil Ditambahkan');
-
-        // Jadwal::create($jadwal);
-        // return redirect('/jadwal-pendaftaran-tambah')->with('success', 'Pendaftaran Telah Dilakukan');
     }
 
     public function destroy($id)
@@ -147,8 +142,8 @@ class AdminController extends Controller
 
     public function pengumuman(Request $request)
     {
-        $pengumumanDiterima = Pengumuman::join('forms','forms.id','pengumuman.form_id')->where('forms.status','Terima berkas')->get();
-        $pengumumanDitolak = Pengumuman::join('forms','forms.id','pengumuman.form_id')->where('forms.status','Tolak Berkas')->get();
+        $pengumumanDiterima = Pengumuman::join('forms','forms.id','pengumuman.form_id')->where('forms.status','Berkas Diterima')->get();
+        $pengumumanDitolak = Pengumuman::join('forms','forms.id','pengumuman.form_id')->where('forms.status','Berkas Ditolak')->get();
 
         return view('Dashboard.Admin.pengumuman', compact('pengumumanDiterima','pengumumanDitolak'));
     }
@@ -179,7 +174,7 @@ class AdminController extends Controller
         $status->Save();
 
         // dd('BERHASIL');
-        if ($status->status == "Terima berkas") {
+        if ($status->status == "Berkas Diterima") {
             return redirect()->route('kelas', $id);
         } else {
             Pengumuman::create([
@@ -250,6 +245,6 @@ class AdminController extends Controller
     // Manajemen User
     // public function manajemenuser()
     // {
-    //     $manajemenuser
+    //     $manajemenuser =
     // }
 }

@@ -3,10 +3,12 @@
     <section class="p-4 mt-4">
 
         {{-- <hr> --}}
-        <div class="card card-body mt-5 p-4 shadow-sm">
+        <div class="card mt-5 p-4 shadow-sm">
+            <div class="card-header py-3">
+                <h5 class="m-0 font-weight-bold text-dark">DATA PENDAFTARAN</h5>
+            </div>
             <div class="card-body ">
-                <h3 >Data Pendaftaran Calon Siswa </h3>
-                <hr class="mb-4">
+
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active " id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
@@ -150,7 +152,9 @@
                                                         method="POST">
                                                         @csrf
                                                         <a href="/data-pendaftar/show/{{ $form->id }}"
-                                                            class="btn btn-success btn-sm"><i class="fa fa-info"></i></a>
+                                                            class="btn btn-success btn-sm"><i class="fa fa-info
+
+                                                            "></i> </a>
 
                                                         <button class="btn btn-danger btn-sm"><i
                                                                 class="fa fa-trash "></i></button>

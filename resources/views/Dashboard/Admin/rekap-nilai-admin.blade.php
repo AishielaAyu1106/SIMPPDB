@@ -4,9 +4,11 @@
 
         {{-- <hr> --}}
         <div class="card card-body mt-5 p-4 shadow-sm">
+            <div class="card-header py-3">
+                <h5 class="m-0 font-weight-bold text-dark">REKAP NILAI</h5>
+            </div>
             <div class="card-body ">
-                <h3 >Rekap Nilai</h3>
-                <hr>
+
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"

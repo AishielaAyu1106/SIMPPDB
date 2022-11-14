@@ -15,10 +15,10 @@ class CreateInfodaftarsTable extends Migration
     {
         Schema::create('infodaftars', function (Blueprint $table) {
             $table->id();
-            $table->string('syarat_usia');
-            $table->string('ijazah');
-            $table->string('surat');
-            $table->string('surat_lainnya');
+            $table->text('syarat_usia');
+            $table->text('ijazah');
+            $table->text('surat');
+            $table->text('surat_lainnya');
             $table->timestamps();
         });
     }

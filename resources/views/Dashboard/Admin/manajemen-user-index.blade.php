@@ -3,7 +3,10 @@
 @section('container')
 {{-- @section('internal-content') --}}
     <div class="card card-body mt-5 p-4 shadow-sm">
-        <h3>Daftar User</h3>
+        <div class="card-header py-3">
+            <h5 class="m-0 font-weight-bold text-dark">DAFTAR USER</h5>
+        </div>
+        {{-- <h3>Daftar User</h3> --}}
 
         <div class="row my-3">
             <div class="col-md text-end">

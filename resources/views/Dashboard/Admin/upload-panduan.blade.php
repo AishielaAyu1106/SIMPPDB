@@ -7,9 +7,11 @@
 
             <div class="col-lg-13 ">
                 <div class="card card-body mt-5 p-4 shadow-sm">
+                    <div class="card-header py-3">
+                        <h5 class="m-0 font-weight-bold text-dark">UPLOAD PANDUAN PENDAFTARAN</h5>
+                    </div>
                     <div class="card-body ">
-                        <h3>Upload Panduan Pendaftaran </h3>
-                        <hr class="mb-4">
+
                         <div class="row g-3">
 
                             <div class="col-sm-6">
@@ -49,9 +51,11 @@
 
         </form>
 
-        <hr class="mb-4 mt-5       ">
+        <hr class="mb-4 mt-5">
         <div class="card shadow-sm">
-            <h5 class="p-4 mb-0">List Berkas</h5>
+            <div class="card-header py-3">
+                <h5 class="m-0 font-weight-bold text-dark">LIST BERKAS</h5>
+            </div>
             <div class="card-body">
                 <div class=" mt-">
                     <div class="table-responsive">
@@ -71,16 +75,16 @@
                                         <td style="width: 500px">{{ $panduan->nama_berkas }}</td>
                                         <td style="width: 500px">{{ $panduan->created_at }}</td>
                                         <td style="width: 100px">
-                                            <div class="row">
+                                            <div class="row text-center">
                                                 <form class="delete-data-swift-allert-example"
                                                     action="/upload-panduan/delete/{{ $panduan->id }}" method="POST">
 
                                                     @csrf
                                                     <a href="{{ asset('storage/' . $panduan->upload_panduan) }}"
-                                                        class="col btn btn-success"><i class="fa fa-eye"></i></a>
+                                                        class="col btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
 
 
-                                                    <button class="col btn btn-danger"><i class="fa fa-trash"></i></button>
+                                                    <button class="col btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                                                 </form>
                                             </div>
                                         </td>

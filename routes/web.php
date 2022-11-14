@@ -120,12 +120,10 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-
-    // Route::get('/cetak-bukti-siswa', function () {
-    //     return view('Dashboard.Calon-Siswa.cetak-bukti');
-    // });
-
     Route::get('/cetak-bukti-siswa', [FormController::class, 'cetakbukti']);
+
+
+    Route::get('/cetak-data-pendaftaran', [AdminController::class, 'cetakdata']);
 
 
     Route::get('/download-panduan-siswa', [FormController::class, 'downloadpanduan']);

@@ -129,7 +129,7 @@
 
                                         <td style="width: 200px">
                                             <a href="/data-pendaftar/show/{{ $item->id }}">
-                                                <i class="col btn btn-outline-success">Detail</i>
+                                                <i class="col btn btn-outline-success btn-sm"><i class="fa fa-info-circle"></i> Detail</i>
                                             </a>
                                         </td>
 

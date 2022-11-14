@@ -25,10 +25,15 @@ class FormController extends Controller
 
     public function dashboardsiswa()
     {
-        $dashboardsiswaAfirmasi = Jadwal::where('Jalur_pendaftaran','Afirmasi')->first();
-        $$dashboardsiswaPrestasi = Jadwal::where('Jalur_pendaftaran','Prestasi')->first();
-        $dashboardsiswaZonasi = Jadwal::where('Jalur_pendaftaran','Zonasi')->first();
-        return view('Dashboard.Calon-Siswa.main', compact('dashboardsiswa'));
+        $dashboardsiswa = Jadwal::All();
+        $item = Infodaftar::All();
+        // $dashboardsiswaAfirmasi = Jadwal::where('Jalur_pendaftaran','Afirmasi')->first();
+        // $$dashboardsiswaPrestasi = Jadwal::where('Jalur_pendaftaran','Prestasi')->first();
+        // $dashboardsiswaZonasi = Jadwal::where('Jalur_pendaftaran','Zonasi')->first();
+        return view('Dashboard.Calon-Siswa.main', [
+            'dashboardsiswa' => $dashboardsiswa ,
+            'item' => $item
+        ]);
     }
 
     public function index()
@@ -294,7 +299,7 @@ class FormController extends Controller
 
     public function PegumumanSiswa(Request $request)
     {
-        $pengumumansiswa = Pengumuman::join('forms','forms.id','pengumuman.form_id')->where('forms.status','Terima berkas')->first();
+        $pengumumansiswa = Pengumuman::join('forms','forms.id','pengumuman.form_id')->where('forms.status','Berkas DIterima')->first();
         // $kelaspengumuman = ;
         return view('Dashboard.Calon-Siswa.pengumuman', compact('pengumumansiswa'));
     }
