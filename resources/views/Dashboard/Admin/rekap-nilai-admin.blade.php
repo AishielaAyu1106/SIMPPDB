@@ -40,7 +40,7 @@
                                             <th scope="col">Ilmu Pengetahuan Sosial</th>
                                             <th scope="col">Bahasa Inggris</th>
                                             <th scope="col">Jumlah</th>
-                                            <th scope="col">Aksi</th>
+                                            <th class="text-center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -55,22 +55,17 @@
                                                 <td >{{$item->total}}</td>
 
                                                 <td style="width: 100px">
-                                                    <div class="row">
+                                                    <div class="row text-center">
                                                         <form action="/rekap-nilai-admin/delete/{{ $item->id }}" method="POST"  class="delete-data-swift-allert-example">
                                                             @csrf
-                                                        <a href="/data-pendaftar/show/{{ $item->id }}"
-                                                            class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
+                                                        {{-- <a href="/data-pendaftar/show/{{ $item->id }}"
+                                                            class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a> --}}
 
-                                                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
 
                                                     </form>
                                                     </div>
                                                 </td>
-
-
-
-
-
 
                                             </tr>
                                         @endforeach
@@ -91,33 +86,40 @@
                                     <thead>
                                         <tr  class="text-dark">
                                             <th scope="col">No</th>
+                                            <th scope="col">Nama</th>
                                             <th scope="col">Matematika</th>
                                             <th scope="col">Ilmu Pengetahuan Alam</th>
                                             <th scope="col">Ilmu Pengetahuan Sosial</th>
                                             <th scope="col">Bahasa Inggris</th>
+                                            <th scope="col">Jumlah</th>
                                             <th scope="col">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($Prestasi as $item1)
-                                            <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td style="width: 200px">{{ $item1->mtk ?? 0 }}</td>
-                                                <td style="width: 500px">{{ $item1->ipa ?? 0 }}</td>
-                                                <td style="width: 500px">{{ $item1->ips ?? 0 }}</td>
-                                                <td style="width: 500px">{{ $item1->basing ?? 0 }}</td>
-                                                <td style="width: 100px"><a href="/data-pendaftar/show/{{ $item1->id ?? 0 }}"
-                                                        class="btn btn-success">Lihat</a></td>
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td  >{{ $item->name }}</td>
+                                            <td >{{ $item->mtk ?? 0 }}</td>
+                                            <td >{{ $item->ipa ?? 0 }}</td>
+                                            <td >{{ $item->ips ?? 0 }}</td>
+                                            <td >{{ $item->basing ?? 0 }}</td>
+                                            <td >{{$item->total}}</td>
 
-                                                <form action="/rekap-nilai-admin/delete/{{ $item1->id ?? 0 }}"
-                                                    method="POST">
-                                                    @csrf
-                                                    <td style="width: 100px"><button class="btn btn-danger">Hapus</button>
-                                                    </td>
+                                            <td style="width: 100px">
+                                                <div class="row text-center">
+                                                    <form action="/rekap-nilai-admin/delete/{{ $item->id }}" method="POST"  class="delete-data-swift-allert-example">
+                                                        @csrf
+                                                    {{-- <a href="/data-pendaftar/show/{{ $item->id }}"
+                                                        class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a> --}}
+
+                                                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
+
                                                 </form>
+                                                </div>
+                                            </td>
 
-
-                                            </tr>
+                                        </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -136,36 +138,40 @@
                                     <thead>
                                         <tr  class="text-dark">
                                             <th scope="col">No</th>
-                                            {{-- <th scope="col">Nama</th> --}}
+                                            <th scope="col">Nama</th>
                                             <th scope="col">Matematika</th>
                                             <th scope="col">Ilmu Pengetahuan Alam</th>
                                             <th scope="col">Ilmu Pengetahuan Sosial</th>
                                             <th scope="col">Bahasa Inggris</th>
+                                            <th scope="col">Jumlah</th>
                                             <th scope="col">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($Zonasi as $item3)
-                                            <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                {{-- <td style="width: 200px" >{{ $item3->user_id}}</td> --}}
-                                                <td style="width: 200px">{{ $item3->mtk ?? 0 }}</td>
-                                                <td style="width: 500px">{{ $item3->ipa ?? 0 }}</td>
-                                                <td style="width: 500px">{{ $item3->ips ?? 0 }}</td>
-                                                <td style="width: 500px">{{ $item3->basing ?? 0 }}</td>
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td  >{{ $item->name }}</td>
+                                            <td >{{ $item->mtk ?? 0 }}</td>
+                                            <td >{{ $item->ipa ?? 0 }}</td>
+                                            <td >{{ $item->ips ?? 0 }}</td>
+                                            <td >{{ $item->basing ?? 0 }}</td>
+                                            <td >{{$item->total}}</td>
 
-                                                <td style="width: 100px"><a
-                                                        href="/data-pendaftar/show/{{ $item3->id ?? 0 }}"
-                                                        class="btn btn-success">Lihat</a></td>
+                                            <td style="width: 100px">
+                                                <div class="row text-center">
+                                                    <form action="/rekap-nilai-admin/delete/{{ $item->id }}" method="POST"  class="delete-data-swift-allert-example">
+                                                        @csrf
+                                                    {{-- <a href="/data-pendaftar/show/{{ $item->id }}"
+                                                        class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a> --}}
 
-                                                <form action="/rekap-nilai-admin/delete/{{ $item3->id ?? 0 }}"
-                                                    method="POST">
-                                                    @csrf
-                                                    <td style="width: 100px"><button class="btn btn-danger">Hapus</button>
-                                                    </td>
+                                                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
+
                                                 </form>
+                                                </div>
+                                            </td>
 
-                                            </tr>
+                                        </tr>
                                         @endforeach
                                     </tbody>
                             </div>

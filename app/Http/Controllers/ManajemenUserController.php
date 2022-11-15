@@ -38,6 +38,6 @@ class ManajemenUserController extends Controller
 
         $user->roles()->sync($request->roles);
 
-        return redirect('')->with('success', 'User '.$user->name.' berhasil ditambahkan!');
+        return redirect('/data-admin')->with('success', 'User '.$user->name.' berhasil ditambahkan!');
     }
 }

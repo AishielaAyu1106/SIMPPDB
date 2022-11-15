@@ -52,7 +52,7 @@
 
             <div class="row">
                 <div class="col-md">
-                    {{-- <label class="mb-1">Roles</label>
+                    <label class="mb-1">Roles</label>
                     @foreach ($roles as $role)
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="roles[]" value="{{$role->id}}" id="roles{{$loop->iteration}}" {{(is_array(old('roles')) and in_array($role->id, old('roles'))) ? 'checked' : ''}}>
@@ -61,7 +61,7 @@
                         </label>
                     </div>
 
-                    @endforeach --}}
+                    @endforeach
                     @error('roles')
                     <small class="text-danger font-weight-bold">
                         {{ $message }}

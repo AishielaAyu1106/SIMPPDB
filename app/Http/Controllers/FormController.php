@@ -30,10 +30,7 @@ class FormController extends Controller
         // $dashboardsiswaAfirmasi = Jadwal::where('Jalur_pendaftaran','Afirmasi')->first();
         // $$dashboardsiswaPrestasi = Jadwal::where('Jalur_pendaftaran','Prestasi')->first();
         // $dashboardsiswaZonasi = Jadwal::where('Jalur_pendaftaran','Zonasi')->first();
-        return view('Dashboard.Calon-Siswa.main', [
-            'dashboardsiswa' => $dashboardsiswa ,
-            'item' => $item
-        ]);
+        return view('Dashboard.Calon-Siswa.main', compact('dashboardsiswa', 'item'));
     }
 
     public function index()

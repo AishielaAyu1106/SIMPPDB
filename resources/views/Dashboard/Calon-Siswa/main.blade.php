@@ -80,7 +80,7 @@
                                 style="background-color:rgb(255, 147, 163)">
                                 Zonasi
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboardsiswa->where('Jalur_pendaftaran', 'Zonasi', 'tanggal_akhir')}}</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboardsiswa->where('Jalur_pendaftaran','Afirmasi')->first()}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>
