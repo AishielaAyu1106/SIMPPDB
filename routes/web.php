@@ -7,6 +7,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\InfoDaftarController;
+use App\Http\Controllers\ManajemenUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -89,11 +90,12 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-    Route::get('/data-admin', function () {
-        return view('Dashboard.Admin.manajemen-user-index');
-    });
+    // Route::get('/data-admin', function () {
+    //     return view('Dashboard.Admin.manajemen-user-index');
+    // });
 
-    // Route::get('/data-admin', ManajemenUserController::class, 'manajemenuser');
+    Route::get('/data-admin', [ManajemenUserController::class, 'manajemenuser']);
+    Route::get('/data-admin-create', [ManajemenUserController::class, 'manajemenusercreate']);
 
 
 

@@ -118,17 +118,38 @@ class AdminController extends Controller
 
     public function rekapAdmin()
     {
-        $Afirmasi = Rekap::select('rekaps.*', 'forms.Jalur_pendaftaran')
+        $Afirmasi = Rekap::select('rekaps.*', 'forms.Jalur_pendaftaran', 'users.name')
+            ->join('users', 'users.id', '=', 'rekaps.user_id')
             ->join('forms', 'forms.id', '=', 'rekaps.form_id')
-            ->where('forms.Jalur_pendaftaran', 'Afirmasi')->get();
+            ->where('forms.Jalur_pendaftaran', 'Afirmasi')->get()->map(function($raw)
+            {
+                $raw->total = $raw->mtk + $raw->ipa + $raw->ips + $raw->basing;
+                return $raw;
+            })->sortBy([
+                ['total', 'desc'], //desc = descending Besar ke Kecil
+            ]);
 
-        $Prestasi = Rekap::select('rekaps.*', 'forms.Jalur_pendaftaran')
+            $Prestasi = Rekap::select('rekaps.*', 'forms.Jalur_pendaftaran', 'users.name')
+            ->join('users', 'users.id', '=', 'rekaps.user_id')
             ->join('forms', 'forms.id', '=', 'rekaps.form_id')
-            ->where('forms.Jalur_pendaftaran', 'Prestasi')->get();
+            ->where('forms.Jalur_pendaftaran', 'Afirmasi')->get()->map(function($raw)
+            {
+                $raw->total = $raw->mtk + $raw->ipa + $raw->ips + $raw->basing;
+                return $raw;
+            })->sortBy([
+                ['total', 'desc'], //desc = descending Besar ke Kecil
+            ]);
 
-        $Zonasi = Rekap::select('rekaps.*', 'forms.Jalur_pendaftaran')
+            $Zonasi = Rekap::select('rekaps.*', 'forms.Jalur_pendaftaran', 'users.name')
+            ->join('users', 'users.id', '=', 'rekaps.user_id')
             ->join('forms', 'forms.id', '=', 'rekaps.form_id')
-            ->where('forms.Jalur_pendaftaran', 'Zonasi')->get();
+            ->where('forms.Jalur_pendaftaran', 'Afirmasi')->get()->map(function($raw)
+            {
+                $raw->total = $raw->mtk + $raw->ipa + $raw->ips + $raw->basing;
+                return $raw;
+            })->sortBy([
+                ['total', 'desc'], //desc = descending Besar ke Kecil
+            ]);
 
         return view('Dashboard.Admin.rekap-nilai-admin', compact('Afirmasi', 'Prestasi', 'Zonasi'));
     }
@@ -224,7 +245,6 @@ class AdminController extends Controller
         }
 
         Panduan::create($panduandaftar);
-        // dd("");
         return redirect('/upload-panduan');
     }
 

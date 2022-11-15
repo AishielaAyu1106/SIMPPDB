@@ -1,6 +1,8 @@
 @extends('Dashboard.Calon-Siswa.Layout.index')
 
 @section('container')
+{{-- @dd(date('Y-m-d H:i:s'), $jadwal->tanggal_awal , $jadwal->tanggal_akhir); --}}
+@if (date('Y-m-d H:i:s') > $jadwal->tanggal_awal && date('Y-m-d H:i:s') < $jadwal->tanggal_akhir)
 <form action="/rekap-nilai-siswa" method="post" enctype="multipart/form-data">
     @csrf
     <section class="p-4 mt-4">
@@ -64,4 +66,31 @@
         </div>
     </section>
 </form>
+@else
+        <section style="background-color: #ffffff;">
+            <div class="container p-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col col-lg-6 mb-4 mb-lg-0">
+                        <div class="card mb-3" style="border-radius: .20rem;">
+                            <div class="row g-0">
+                                {{-- <div class="card m-auto" style="width: 18rem; ">
+                                    <div class="card-body"> --}}
+                                <h5 align='center'>Mohon Maaf {{ auth()->user()->name }}</h5>
+                                @if (date('Y-m-d H:i:s') < $jadwal->tanggal_awal)
+
+                                <h5 align='center'>Pendaftaran Belum Dibuka</h5>
+                                @else
+                                <h5 align='center'>Pendaftaran Sudah Ditutup</h5>
+
+                                @endif
+                                {{-- <h5 align='center'>Pendaftaran akan dibuka pada {{$jadwal->zonasi}</h5> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+    @endif
 @endsection

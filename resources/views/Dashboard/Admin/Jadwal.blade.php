@@ -29,14 +29,14 @@
 
                                     <td class="text-center" >
                                         <div class="col-sm-6">
-                                            <input type="date" name="tanggal_awal" class="form-control "
+                                            <input type="datetime-local" name="tanggal_awal" class="form-control "
                                                 value="{{ $afirmasi->tanggal_awal }}" placeholder value required>
                                         </div>
                                     </td>
 
                                     <td  class="text-center">
                                         <div class="col-sm-6 ">
-                                            <input type="date" name="tanggal_akhir" class="form-control "
+                                            <input type="datetime-local" name="tanggal_akhir" class="form-control "
                                                 value="{{ $afirmasi->tanggal_akhir }}" placeholder value required>
                                         </div>
                                     </td>
@@ -59,15 +59,16 @@
                                     <input type="hidden" name="Jalur_pendaftaran"
                                         value="{{ $prestasi->Jalur_pendaftaran }}">
                                     <td style="width: 500px">
+                                        {{-- @dd($prestasi->tanggal_awal) --}}
                                         <div class="col-sm-6">
-                                            <input type="date" name="tanggal_awal" class="form-control "
+                                            <input type="datetime-local" name="tanggal_awal" class="form-control "
                                                 value="{{ $prestasi->tanggal_awal }}" placeholder value required>
                                         </div>
                                     </td>
 
                                     <td style="width: 500px">
                                         <div class="col-sm-6">
-                                            <input type="date" name="tanggal_akhir" class="form-control "
+                                            <input type="datetime-local" name="tanggal_akhir" class="form-control "
                                                 value="{{ $prestasi->tanggal_akhir }}" placeholder value required>
                                         </div>
                                     </td>
@@ -91,14 +92,14 @@
                                         value="{{ $zonasi->Jalur_pendaftaran }}">
                                     <td style="width: 500px">
                                         <div class="col-sm-6">
-                                            <input type="date" name="tanggal_awal" class="form-control "
+                                            <input type="datetime-local" name="tanggal_awal" class="form-control "
                                                 value="{{ $zonasi->tanggal_awal }}" placeholder value required>
                                         </div>
                                     </td>
 
                                     <td style="width: 500px">
                                         <div class="col-sm-6">
-                                            <input type="date" name="tanggal_akhir" class="form-control "
+                                            <input type="datetime-local" name="tanggal_akhir" class="form-control "
                                                 value="{{ $zonasi->tanggal_akhir }}" placeholder value required>
                                         </div>
                                     </td>

@@ -602,7 +602,13 @@
                                 {{-- <div class="card m-auto" style="width: 18rem; ">
                                     <div class="card-body"> --}}
                                 <h5 align='center'>Mohon Maaf {{ auth()->user()->name }}</h5>
+                                @if (date('Y-m-d H:i:s') < $validasi->tanggal_awal)
+
                                 <h5 align='center'>Pendaftaran Belum Dibuka</h5>
+                                @else
+                                <h5 align='center'>Pendaftaran Sudah Ditutup</h5>
+
+                                @endif
                                 {{-- <h5 align='center'>Pendaftaran akan dibuka pada {{$jadwal->zonasi}</h5> --}}
                             </div>
                         </div>

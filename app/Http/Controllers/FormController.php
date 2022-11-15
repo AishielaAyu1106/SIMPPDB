@@ -154,6 +154,7 @@ class FormController extends Controller
 
         $latestOrder = User::orderBy('created_at', 'DESC')->first();
         $Nomor_Pendaftaran = '' . str_pad($latestOrder->id ??0 + 1, 3, "0", STR_PAD_LEFT);
+        // dd($Nomor_Pendaftaran);
 
         Form::create($form + ['user_id' => Auth::user()->id, 'Nomor_Pendaftaran' => $Nomor_Pendaftaran]);
         return redirect('/formulir-pendaftaran-siswa')->with('success', 'Pendaftaran Telah Dilakukan');
@@ -211,8 +212,12 @@ class FormController extends Controller
 
     public function rekap()
     {
+
         $rekap = Rekap::where('user_id', Auth::user()->id)->first();
-        return view('Dashboard.Calon-Siswa.rekap-nilai', compact('rekap'));
+        $cariForm = Form::where('user_id', Auth::id())->latest()->first();
+        // dd($cariForm, Auth::id());
+        $jadwal = Jadwal::where('Jalur_pendaftaran', $cariForm->Jalur_pendaftaran)->first();
+        return view('Dashboard.Calon-Siswa.rekap-nilai', compact('rekap', 'jadwal', 'cariForm'));
     }
 
     public function tambahRekap(Request $request)
@@ -227,6 +232,7 @@ class FormController extends Controller
         // dd($cariForm->id);
         $rekap = Rekap::where('user_id', Auth::user()->id)->first();
         if ($rekap) {
+
             $rekap->update($request->all() + ['form_id' => $cariForm->id]);
         } else {
             Rekap::create($request->all() + ['user_id' => Auth::user()->id, 'form_id' => $cariForm->id]);

@@ -34,11 +34,12 @@
                                     <thead>
                                         <tr  class="text-dark">
                                             <th scope="col">No</th>
-                                            {{-- <th scope="col">Nama</th> --}}
+                                            <th scope="col">Nama</th>
                                             <th scope="col">Matematika</th>
                                             <th scope="col">Ilmu Pengetahuan Alam</th>
                                             <th scope="col">Ilmu Pengetahuan Sosial</th>
                                             <th scope="col">Bahasa Inggris</th>
+                                            <th scope="col">Jumlah</th>
                                             <th scope="col">Aksi</th>
                                         </tr>
                                     </thead>
@@ -46,20 +47,21 @@
                                         @foreach ($Afirmasi as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                {{-- <td style="width: 200px" >{{ $item->}}</td> --}}
-                                                <td style="width: 200px">{{ $item->mtk ?? 0 }}</td>
-                                                <td style="width: 500px">{{ $item->ipa ?? 0 }}</td>
-                                                <td style="width: 500px">{{ $item->ips ?? 0 }}</td>
-                                                <td style="width: 500px">{{ $item->basing ?? 0 }}</td>
+                                                <td  >{{ $item->name }}</td>
+                                                <td >{{ $item->mtk ?? 0 }}</td>
+                                                <td >{{ $item->ipa ?? 0 }}</td>
+                                                <td >{{ $item->ips ?? 0 }}</td>
+                                                <td >{{ $item->basing ?? 0 }}</td>
+                                                <td >{{$item->total}}</td>
 
-                                                <td style="width: 200px">
+                                                <td style="width: 100px">
                                                     <div class="row">
                                                         <form action="/rekap-nilai-admin/delete/{{ $item->id }}" method="POST"  class="delete-data-swift-allert-example">
                                                             @csrf
                                                         <a href="/data-pendaftar/show/{{ $item->id }}"
-                                                            class="btn btn-success"><i class="fa fa-eye"></i></a>
+                                                            class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
 
-                                                        <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
 
                                                     </form>
                                                     </div>
