@@ -1,7 +1,7 @@
 @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
-    <form action="/pengumuman-admin-diterima" method="POST">
+    <form action="/pengumuman-admin-diterima" method="POST" class="submit-button-swift-allert-example">
         @csrf
         <section class="" style="background-color: #ffffff;">
             <div class="container p-5 h-100 mt-5">

@@ -19,6 +19,9 @@
                     <input placeholder="Password" type="password" name="password" id="password" autocomplete="off">
                     <label for="password">Password:</label>
                 </div>
+                <div class="form-group">
+                    <input type="hidden" name="role" value="calon-siswa">
+                </div>
                 <div class="button">
                     <button type="submit">Registrasi</button>
                 </div>

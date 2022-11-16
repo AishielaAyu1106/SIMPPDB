@@ -97,15 +97,80 @@
                     // e.preventDefault(); // <--- prevent form from submitting
 
                     swal({
-                        title: "Submit Data",
-                        text: "Submit Data Anda!",
+                        title: "Success",
+                        text: "Data anda berhasil disimpan!",
                         icon: "success",
-                        button: "Selamat Data Anda Tersimpan!",
-                    })
+                        button: "Oke!",
+                    }).then(function() {
+                        form.submit(); // <--- submit form programmatically
+                    });
                 });
     </script>
     @stack('scripts')
 
+    <script>
+        $('.update-data-swift-allert-example').bind('submit', function(e) {
+            var form = this;
+
+            e.preventDefault(); // <--- prevent form from submitting
+
+            swal({
+                title: "Apakah anda yakin?",
+                text: "Data anda akan di update!",
+                icon: "warning",
+                buttons: [
+                    'Tidak, Kembali',
+                    'Ya, Update'
+                ],
+                dangerMode: true,
+            }).then(function(isConfirm) {
+                if (isConfirm) {
+                    swal({
+                        title: 'Sukses',
+                        text: 'Data anda berhasil di update!',
+                        icon: 'success'
+                    }).then(function() {
+                        form.submit(); // <--- submit form programmatically
+                    });
+                } else {
+                    swal("Dibatalkan", "Data Anda Tersimpan :)", "error");
+                }
+            })
+        });
+    </script>
+    @stack('scripts')
+
+    <script>
+        $('.tolak-data-swift-allert-example').bind('submit', function(e) {
+            var form = this;
+
+            e.preventDefault(); // <--- prevent form from submitting
+
+            swal({
+                title: "Apakah anda yakin?",
+                text: "Berkas calon siswa akan ditolak!",
+                icon: "warning",
+                buttons: [
+                    'Tidak, Kembali',
+                    'Ya, Tolak'
+                ],
+                dangerMode: true,
+            }).then(function(isConfirm) {
+                if (isConfirm) {
+                    swal({
+                        title: 'Sukses',
+                        text: 'Data berhasil ditolak!',
+                        icon: 'success'
+                    }).then(function() {
+                        form.submit(); // <--- submit form programmatically
+                    });
+                } else {
+                    swal("Dibatalkan", "Data anda tersimpan :)", "error");
+                }
+            })
+        });
+    </script>
+    @stack('scripts')
 
 </body>
 

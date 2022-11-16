@@ -61,7 +61,7 @@
                                                         {{-- <a href="/data-pendaftar/show/{{ $item->id }}"
                                                             class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a> --}}
 
-                                                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
+                                                        <button class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
 
                                                     </form>
                                                     </div>
@@ -113,7 +113,7 @@
                                                     {{-- <a href="/data-pendaftar/show/{{ $item->id }}"
                                                         class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a> --}}
 
-                                                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
+                                                    <button class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
 
                                                 </form>
                                                 </div>
@@ -165,7 +165,7 @@
                                                     {{-- <a href="/data-pendaftar/show/{{ $item->id }}"
                                                         class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a> --}}
 
-                                                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
+                                                    <button class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
 
                                                 </form>
                                                 </div>

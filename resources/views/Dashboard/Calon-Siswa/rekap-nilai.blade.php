@@ -3,7 +3,7 @@
 @section('container')
 {{-- @dd(date('Y-m-d H:i:s'), $jadwal->tanggal_awal , $jadwal->tanggal_akhir); --}}
 @if (date('Y-m-d H:i:s') > $jadwal->tanggal_awal && date('Y-m-d H:i:s') < $jadwal->tanggal_akhir)
-<form action="/rekap-nilai-siswa" method="post" enctype="multipart/form-data">
+<form action="/rekap-nilai-siswa" method="post" enctype="multipart/form-data" class="submit-button-swift-allert-example">
     @csrf
     <section class="p-4 mt-4">
         <div class="card card-body mt-5 p-4 shadow-sm">

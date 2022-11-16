@@ -56,10 +56,10 @@
                                                             method="POST">
                                                             @csrf
                                                             <a href="/data-pendaftar/show/{{ $form->id }}"
-                                                                class="btn btn-success btn-sm"><i class="fa fa-info"></i></a>
+                                                                class="btn btn-outline-success btn-sm"><i class="fa fa-info"></i> Lihat</a>
 
-                                                            <button class="btn btn-danger btn-sm"><i
-                                                                    class="fa fa-trash "></i></button>
+                                                            <button class="btn btn-outline-danger btn-sm"><i
+                                                                    class="fa fa-trash "></i> Hapus</button>
                                                         </form>
                                                     </div>
                                                 </td>
@@ -105,10 +105,10 @@
                                                             method="POST">
                                                             @csrf
                                                             <a href="/data-pendaftar/show/{{ $form->id }}"
-                                                                class="btn btn-success btn-sm"><i class="fa fa-info"></i></a>
+                                                                class="btn btn-success btn-sm"><i class="fa fa-info"></i> Lihat</a>
 
                                                             <button class="btn btn-danger btn-sm"><i
-                                                                    class="fa fa-trash "></i></button>
+                                                                    class="fa fa-trash "></i> Hapus</button>
                                                         </form>
                                                     </div>
                                                 </td>
@@ -154,10 +154,10 @@
                                                         <a href="/data-pendaftar/show/{{ $form->id }}"
                                                             class="btn btn-success btn-sm"><i class="fa fa-info
 
-                                                            "></i> </a>
+                                                            "></i> Lihat</a>
 
                                                         <button class="btn btn-danger btn-sm"><i
-                                                                class="fa fa-trash "></i></button>
+                                                                class="fa fa-trash "></i> Hapus</button>
                                                     </form>
                                                 </div>
                                             </td>

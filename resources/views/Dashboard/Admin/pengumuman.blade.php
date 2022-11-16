@@ -46,19 +46,21 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td style="width: 200px">{{ $form->nama_lengkap }}</td>
                                                 <td style="width: 500px">{{ $form->Jalur_pendaftaran }}</td>
-                                                <td style="width: 500px">{{ $form->kelass->kuota_kelass->Nama_Kelas??0}}</td>
+                                                <td style="width: 500px">{{ $form->kelass->kuota_kelass->Nama_Kelas ?? 0 }}
+                                                </td>
                                                 <td style="width: 500px">{{ $form->form->status }}</td>
                                                 {{-- <td style="width: 500px" >{{ $form->NISN}}</td> --}}
-                                                <td class="text-center" style="width: 200px">
+                                                <td class="text-center" style="width: 300px">
                                                     <div class="row">
                                                         <form action="/pengumuman-delete/{{ $form->id }}" method="POST"
                                                             class="delete-data-swift-allert-example">
                                                             @method('post')
                                                             @csrf
                                                             <a href="/data-pendaftar/show/{{ $form->id }}"
-                                                                class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
-                                                            <button class="btn btn-danger btn-sm"><i
-                                                                    class="fa fa-trash"></i></button>
+                                                                class="btn btn-outline-success btn-sm"><i
+                                                                    class="fa fa-info"></i> Lihat</a>
+                                                            <button class="btn btn-outline-danger btn-sm"><i
+                                                                    class="fa fa-trash"></i> Hapus</button>
                                                         </form>
                                                     </div>
                                                 </td>
@@ -87,9 +89,9 @@
                                             <th scope="col">No</th>
                                             <th scope="col">Nama</th>
                                             <th scope="col">Jalur Pendaftaran</th>
-                                            <th scope="col">Kelas</th>
+                                            {{-- <th scope="col">Kelas</th> --}}
                                             <th scope="col">Status</th>
-                                            <th scope="col">Aksi</th>
+                                            <th class="text-center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -98,32 +100,43 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td style="width: 200px">{{ $form->nama_lengkap }}</td>
                                                 <td style="width: 500px">{{ $form->Jalur_pendaftaran }}</td>
-                                                <td style="width: 500px">{{ $form->kelas }}</td>
+                                                {{-- <td style="width: 500px">{{ $form->kelas }}</td> --}}
                                                 <td style="width: 500px">{{ $form->form->status }}</td>
                                                 {{-- <td style="width: 500px" >{{ $form->NISN}}</td> --}}
-                                                <td style="width: 100px"><a href="/data-pendaftar/show/{{ $form->id }}"
-                                                        class="btn btn-success">Lihat</a></td>
-                                                {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
-                                                <form action="/pengumuman-delete/{{ $form->id }}" method="POST"
-                                                    class="delete-data-swift-allert-example">
-                                                    @method('post')
-                                                    @csrf
-                                                    <td style="width: 100px"><button class="btn btn-danger">Hapus</button>
-                                                    </td>
-                                                </form>
+                                                <td style="width: 300px" class="text-center">
+                                                    <div class="row">
+                                                        <form action="/pengumuman-delete/{{ $form->id }}"
+                                                            method="POST" class="delete-data-swift-allert-example">
+                                                            @method('post')
+                                                            @csrf
+                                                            <a href="/data-pendaftar/show/{{ $form->id }}"
+                                                                class="btn btn-outline-success btn-sm"><i
+                                                                class="fa fa-info"></i> Lihat</a>
 
+                                                            <button class="btn btn-outline-danger btn-sm"><i
+                                                                class="fa fa-trash"></i> Hapus</button>
 
-
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                                        </form>
+                                                    </div>
+                                                </td>
                             </div>
-                        </div>
 
-                        {{-- </form> --}}
+
+                            {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
+
+
+
+
+                            </tr>
+                            @endforeach
+                            </tbody>
+                            </table>
+                        </div>
                     </div>
-                    {{-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+                    {{-- </form> --}}
+                </div>
+                {{-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
             <form action="/formulir-pendaftaran-siswa" method="POST">
                 @csrf
 
@@ -139,7 +152,7 @@
                             <th scope="col">Aksi</th>
                           </tr>
                         </thead> --}}
-                    {{-- <tbody>
+                {{-- <tbody>
                           @foreach ($data as $form)
                           <tr>
                             <td>{{ $loop->iteration }}</td>
@@ -149,7 +162,7 @@
                             <td style="width: 500px" >{{ $form->NISN}}</td>
                             <td style="width: 100px"><a href="/data-pendaftar/show/{{$form->id}}" class="btn btn-success">Lihat</a></td>
                             {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
-                    {{-- <td style="width: 100px"><a href="/data-pendaftar/delete/{{$form->id}}" class="btn btn-danger">Hapus</a></td>
+                {{-- <td style="width: 100px"><a href="/data-pendaftar/delete/{{$form->id}}" class="btn btn-danger">Hapus</a></td>
 
 
                           </tr>
@@ -157,11 +170,11 @@
 
                           @endforeach
                         </tbody> --}}
-                    </table>
-                </div>
+                </table>
             </div>
+        </div>
 
-            {{-- </form> --}}
+        {{-- </form> --}}
         </div>
         </div>
         </div>

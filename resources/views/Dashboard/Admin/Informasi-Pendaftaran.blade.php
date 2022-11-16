@@ -1,7 +1,7 @@
 @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
-    <form action="/informasi-pendaftaran" method="post" enctype="multipart/form-data">
+    <form action="/informasi-pendaftaran" method="post" enctype="multipart/form-data" class="submit-button-swift-allert-example">
         @csrf
         <section class="p-4 mt-4">
             <div class="card card-body mt-5 p-4 shadow-sm">
@@ -55,7 +55,7 @@
 
                             <div class="col-sm-4-mb-4 text-end">
                                 <input name="status" type="hidden" value="uploadberkas">
-                                <button type="submit" class="btn btn-outline-success">Submit</button>
+                                <button type="submit" class="btn btn-outline-success btn-sm">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -99,15 +99,15 @@
                                         {{-- <td style="width: 100px"><a href="/data-pendaftar/show/{{ $form->id }}"
                                                 class="btn btn-success">Lihat</a></td> --}}
                                         {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
-                                        <td style="width: 100px" class="text-center">
+                                        <td style="width: 200px" class="text-center">
                                             <div class="row">
                                                 <form class="delete-data-swift-allert-example"
                                                     action="/info-pendaftaran/delete/{{$item->id }}" method="post">
                                                     <a href="/informasi-pendaftaran"
-                                                        class="btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
+                                                        class="btn btn-outline-success btn-sm"><i class="fa fa-info"></i> Lihat</a>
                                                     {{-- @method('DELETE') --}}
                                                     @csrf
-                                                    <button class="col btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                    <button class="col btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
                                                 </form>
 
                                             </div>

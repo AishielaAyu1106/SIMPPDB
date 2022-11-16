@@ -7,7 +7,7 @@
                 <h5 class="m-0 font-weight-bold text-dark">TAMBAH USER</h5>
             </div>
 
-            <form method="POST" action="/data-admin-create">
+            <form method="POST" action="/data-admin-create" class="submit-button-swift-allert-example">
                 @csrf
 
                 <div class="row mb-3 g-3">
@@ -44,38 +44,46 @@
                             <input type="password" placeholder="password" name="password" id="password"
                                 class="form-control @error('password') is-invalid @endif">
 
-                        <span class="input-group-text bg-white"><i class="toggle-pass"></i></span>
+                            {{-- <span class="input-group-text bg-white"><i class="toggle-pass"></i></span> --}}
+                        </div>
+                        <small id="passHelper" class="form-text text-muted font-weight-bold">Isi password minimal 5
+                            karakter</small>
                     </div>
-                    <small id="passHelper" class="form-text text-muted font-weight-bold">Isi password minimal 5 karakter</small>
                 </div>
-            </div>
 
-            <div class="row">
+                <div class="form-group">
+                    {{-- <label class="agama text-dark"> Nomor Pendaftaran</label> --}}
+                    <input value="admin" name="role" type="hidden">
+                    {{-- <input type="text" name="Nomor_Pendaftaran" class="form-control" id="nodaftar"
+                    value="{{ old('Nomor_Pendaftaran') }}" placeholder value> --}}
+                </div>
+                {{-- <div class="row">
                 <div class="col-md">
                     <label class="mb-1">Roles</label>
-                    @foreach ($roles as $role)
+                    @foreach ($role as $roles)
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="roles[]" value="{{$role->id}}" id="roles{{$loop->iteration}}" {{(is_array(old('roles')) and in_array($role->id, old('roles'))) ? 'checked' : ''}}>
-                        <label class="form-check-label fw-normal text-dark" for="roles{{ $loop->iteration }}">
-                            {{ $role->name }}
+                        <input class="form-check-input" type="checkbox" name="role[]" value="{{$roles->role}}" id="" {{(is_array(old('role')) and in_array($roles->id, old('role'))) ? 'checked' : ''}}>
+                        <label class="form-check-label fw-normal text-dark" for="role">
+                            {{ $roles->role }}
                         </label>
                     </div>
 
-                    @endforeach
-                    @error('roles')
+                    @endforeach --}}
+                {{-- @error('roles')
                     <small class="text-danger font-weight-bold">
                         {{ $message }}
                     </small>
-                    @enderror
-                    {{-- <small id="roleHelper" class="form-text text-muted font-weight-bold">Pilih role sesuai dengan hak akses yang ingin diberikan</small> --}}
-                </div>
-            </div>
+                    @enderror --}}
+                {{-- <small id="roleHelper" class="form-text text-muted font-weight-bold">Pilih role sesuai dengan hak akses yang ingin diberikan</small> --}}
+                {{-- </div> --}}
+                {{-- </div> --}}
 
-            <div class="row">
-                            <div class="col-md text-end">
-                                <button class="btn btn-success">Simpan</button>
-                            </div>
-                        </div>
+
+                <div class="row">
+                    <div class="col-md text-end">
+                        <button class="btn btn-outline-success">Simpan</button>
+                    </div>
+                </div>
 
             </form>
         </div>

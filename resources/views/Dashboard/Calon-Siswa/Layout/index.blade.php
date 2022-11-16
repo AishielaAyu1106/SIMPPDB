@@ -68,38 +68,86 @@
     <script src="https://kit.fontawesome.com/c2ff6e34d8.js" crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script>
-            $('.delete-data-swift-allert-example').bind('submit', function(e) {
-                var form = this;
+    <script>
+        $('.delete-data-swift-allert-example').bind('submit', function(e) {
+            var form = this;
 
-                e.preventDefault(); // <--- prevent form from submitting
+            e.preventDefault(); // <--- prevent form from submitting
 
-                swal({
-                    title: "Apakah anda yakin?",
-                    text: "Data Anda Akan Terhapus!",
-                    icon: "warning",
-                    buttons: [
-                        'Tidak, Kembali',
-                        'Ya, Hapus'
-                    ],
-                    dangerMode: true,
-                }).then(function(isConfirm) {
-                    if (isConfirm) {
-                        swal({
-                            title: 'Sukses',
-                            text: 'Data Anda Telah Terhapus!',
-                            icon: 'success'
-                        }).then(function() {
-                            form.submit(); // <--- submit form programmatically
-                        });
-                    } else {
-                        swal("Dibatalkan", "Data Anda Tersimpan :)", "error");
-                    }
-                })
-            });
-        </script>
+            swal({
+                title: "Apakah anda yakin?",
+                text: "Data Anda Akan Terhapus!",
+                icon: "warning",
+                buttons: [
+                    'Tidak, Kembali',
+                    'Ya, Hapus'
+                ],
+                dangerMode: true,
+            }).then(function(isConfirm) {
+                if (isConfirm) {
+                    swal({
+                        title: 'Sukses',
+                        text: 'Data Anda Telah Terhapus!',
+                        icon: 'success'
+                    }).then(function() {
+                        form.submit(); // <--- submit form programmatically
+                    });
+                } else {
+                    swal("Dibatalkan", "Data Anda Tersimpan :)", "error");
+                }
+            })
+        });
+    </script>
     @stack('scripts')
 
+    <script>
+        $('.submit-button-swift-allert-example').bind('submit', function(e) {
+                    var form = this;
+                    // e.preventDefault(); // <--- prevent form from submitting
+
+                    swal({
+                        title: "Success",
+                        text: "Data anda berhasil disimpan!",
+                        icon: "success",
+                        button: "Oke!",
+                    }).then(function() {
+                        form.submit(); // <--- submit form programmatically
+                    });
+                });
+    </script>
+    @stack('scripts')
+
+    <script>
+        $('.update-data-swift-allert-example').bind('submit', function(e) {
+            var form = this;
+
+            e.preventDefault(); // <--- prevent form from submitting
+
+            swal({
+                title: "Apakah anda yakin?",
+                text: "Data anda akan diupdate!",
+                icon: "warning",
+                buttons: [
+                    'Tidak, Kembali',
+                    'Ya, Hapus'
+                ],
+                dangerMode: true,
+            }).then(function(isConfirm) {
+                if (isConfirm) {
+                    swal({
+                        title: 'Sukses',
+                        text: 'Data anda berhasil di update!',
+                        icon: 'success'
+                    }).then(function() {
+                        form.submit(); // <--- submit form programmatically
+                    });
+                } else {
+                    swal("Dibatalkan", "Data Anda Tersimpan :)", "error");
+                }
+            })
+        });
+    </script>
+    @stack('scripts')
 </body>
 
 </html>

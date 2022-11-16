@@ -96,6 +96,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/data-admin', [ManajemenUserController::class, 'manajemenuser']);
     Route::get('/data-admin-create', [ManajemenUserController::class, 'manajemenusercreate']);
+    Route::post('/data-admin-create', [ManajemenUserController::class, 'store']);
+    Route::get('/data-admin-edit/{id}', [ManajemenUserController::class, 'edit']);
+    Route::post('/data-admin-edit/{id}', [ManajemenUserController::class, 'update']);
+    Route::post('/data-admin-delete/{id}', [ManajemenUserController::class, 'destroy']);
 
 
 

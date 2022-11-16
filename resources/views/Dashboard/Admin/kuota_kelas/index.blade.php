@@ -32,20 +32,20 @@
                                 @foreach ($kelas as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td style="width: 300px">{{ $item->Nama_Kelas }}</td>
-                                        <td style="width: 500px">{{ $item->Kuota_kelas }}</td>
+                                        <td >{{ $item->Nama_Kelas }}</td>
+                                        <td >{{ $item->Kuota_kelas }}</td>
                                         {{-- <td style="width: 100px"><a href="/data-pendaftar/show/{{ $form->id }}"
                                                 class="btn btn-success">Lihat</a></td> --}}
                                         {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
-                                        <td class="text-center" style="width: 100px">
+                                        <td class="text-center" style="width: 200px">
                                             <div class="row">
                                                 <form class="delete-data-swift-allert-example"
                                                     action="{{ route('kuota-kelas.destroy', $item->id) }}" method="post">
                                                     <a href="{{ route('kuota-kelas.edit', $item->id) }}"
-                                                        class="col btn btn-warning btn-sm"><i class="fa fa-pen"></i></a>
+                                                        class="col btn btn-outline-warning btn-sm"><i class="fa fa-pen"></i> Edit</a>
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button class="col btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                    <button class="col btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
                                                 </form>
 
                                             </div>

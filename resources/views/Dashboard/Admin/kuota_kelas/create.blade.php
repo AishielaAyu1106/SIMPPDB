@@ -4,14 +4,10 @@
     <section style="p-4 mt-4">
         <div class="card card-body mt-5 p-4 shadow-sm">
             <div class="card-body">
-        <form action="{{ route('kuota-kelas.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('kuota-kelas.store') }}" method="post" enctype="multipart/form-data" class="submit-button-swift-allert-example">
             @csrf
 
                     <h3>Tambah Kelas</h3>
-                    {{-- <div class="col-lg-13 p-2"> --}}
-                        {{-- <div class="card mb-3 shadow-sm"> --}}
-                            {{-- <span class="border border-success"></span> --}}
-                            {{-- <div class="card-body "> --}}
                                 <div class="row g-3">
 
                                     <div class="col-sm-6">
@@ -35,7 +31,7 @@
                                             </div>
                                         @enderror
                                     </div>
-                                    <div class="col-sm-4-mb-4">
+                                    <div class="col-sm-4-mb-4 text-end">
                                         <input name="status" type="hidden" value="uploadberkas">
                                         <button type="submit" class="btn btn-outline-success">Submit</button>
                                     </div>

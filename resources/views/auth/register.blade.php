@@ -27,6 +27,9 @@
             <label for="password">Confirm Password:</label>
         </div>
 
+        <div class="form-group">
+            <input type="hidden" name="role" value="calon-siswa">
+        </div>
 
 
         <button type="submit">Registrasi</button>

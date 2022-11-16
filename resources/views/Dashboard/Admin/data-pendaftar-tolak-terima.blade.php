@@ -35,7 +35,7 @@
 
                                             <div class="col-sm-6">
                                                 <form action="{{ url('status-berkas', request()->route()->parameters) }}"
-                                                    method="post">
+                                                    method="post" class="tolak-data-swift-allert-example">
                                                     @method('POST')
                                                     @csrf
                                                     <input name="status" type="hidden" value="Berkas Ditolak">

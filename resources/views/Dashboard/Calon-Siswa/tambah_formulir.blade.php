@@ -23,7 +23,7 @@
 
         <div class="card card-body">
 
-            <form action="/formulir-pendaftaran-siswa" method="post" enctype="multipart/form-data">
+            <form action="/formulir-pendaftaran-siswa" method="post" enctype="multipart/form-data" class="submit-button-swift-allert-example">
                 @csrf
                 <div class="container ">
                     <div class="card-body">

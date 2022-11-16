@@ -211,8 +211,10 @@ class FormController extends Controller
     {
 
         $rekap = Rekap::where('user_id', Auth::user()->id)->first();
+
         $cariForm = Form::where('user_id', Auth::id())->latest()->first();
         // dd($cariForm, Auth::id());
+        
         $jadwal = Jadwal::where('Jalur_pendaftaran', $cariForm->Jalur_pendaftaran)->first();
         return view('Dashboard.Calon-Siswa.rekap-nilai', compact('rekap', 'jadwal', 'cariForm'));
     }

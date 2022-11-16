@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('jadwals', function (Blueprint $table) {
             $table->id();
-            $table->string('Jalur_pendaftaran');
+            $table->string('Jalur_pendaftaran')->nullable();
             $table->date('tanggal_awal');
             $table->date('tanggal_akhir');
             $table->timestamps();

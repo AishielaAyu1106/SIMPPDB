@@ -19,7 +19,7 @@
                         <tbody>
 
 
-                            <form action="{{ url('updateJadwal') }}" method="post">
+                            <form action="{{ url('updateJadwal') }}" method="post" class="update-data-swift-allert-example">
                                 @csrf
                                 <tr>
 
@@ -52,7 +52,7 @@
 
                             </form>
 
-                            <form action="{{ url('updateJadwal') }}" method="post">
+                            <form action="{{ url('updateJadwal') }}" method="post" class="update-data-swift-allert-example">
                                 @csrf
                                 <tr>
                                     <td style="width: 200px">{{ $prestasi->Jalur_pendaftaran }}</td>
@@ -84,7 +84,7 @@
                                 </td>
                             </form>
 
-                            <form action="{{ url('updateJadwal') }}" method="post">
+                            <form action="{{ url('updateJadwal') }}" method="post" class="update-data-swift-allert-example">
                                 @csrf
                                 <tr>
                                     <td style="width: 200px">{{ $zonasi->Jalur_pendaftaran }}</td>

@@ -1,7 +1,7 @@
 @extends('Dashboard.Calon-Siswa.Layout.index')
 
 @section('container')
-    <form action="/edit-formulir-pendaftaran/{{ $edit->id }}" method="post" enctype="multipart/form-data">
+    <form action="/edit-formulir-pendaftaran/{{ $edit->id }}" method="post" enctype="multipart/form-data" class="update-data-swift-allert-example">
         {{-- @method('put') --}}
         @csrf
         <section class="vh-100" style="background-color: #eee;">

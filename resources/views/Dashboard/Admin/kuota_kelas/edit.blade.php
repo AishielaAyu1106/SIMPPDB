@@ -1,7 +1,7 @@
 @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
-    <form action="{{route('kuota-kelas.update', $kuota_kela->id) }}" method="post" enctype="multipart/form-data">
+    <form action="{{route('kuota-kelas.update', $kuota_kela->id) }}" method="post" enctype="multipart/form-data" class="update-data-swift-allert-example">
         @method("PUT")
         @csrf
         <div class="col-lg-13 ">

@@ -2,7 +2,7 @@
 
 @section('container')
     <section class="p-4 mt-4">
-        <form action="/upload-panduan/store" method="POST" enctype="multipart/form-data">
+        <form action="/upload-panduan/store" method="POST" enctype="multipart/form-data" class="submit-button-swift-allert-example ">
             @csrf
 
             <div class="col-lg-13 ">
@@ -42,7 +42,7 @@
                             </div>
                             <div class=" text-end">
                                 <input name="status" type="hidden" value="uploadberkas">
-                                <button type="submit" class="btn btn-outline-success">Upload</button>
+                                <button type="submit" class="btn btn-outline-success btn-sm">Upload</button>
                             </div>
                         </div>
                     </div>
@@ -74,17 +74,17 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td style="width: 500px">{{ $panduan->nama_berkas }}</td>
                                         <td style="width: 500px">{{ $panduan->created_at }}</td>
-                                        <td style="width: 100px">
+                                        <td style="width: 200px">
                                             <div class="row text-center">
                                                 <form class="delete-data-swift-allert-example"
-                                                    action="/upload-panduan/delete/{{ $panduan->id }}" method="POST">
+                                                    action="/upload-panduan/delete/{{ $panduan->id }}" method="POST" class="delete-data-swift-allert-example">
 
                                                     @csrf
                                                     <a href="{{ asset('storage/' . $panduan->upload_panduan) }}"
-                                                        class="col btn btn-success btn-sm"><i class="fa fa-eye"></i></a>
+                                                        class="col btn btn-outline-success btn-sm"><i class="fa fa-info"></i> Lihat</a>
 
 
-                                                    <button class="col btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                    <button class="col btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
                                                 </form>
                                             </div>
                                         </td>
