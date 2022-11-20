@@ -64,13 +64,13 @@ class ManajemenFormulirPendaftaranTest extends TestCase
                 'status'=>'Berkas Ditolak'
 
             ]);
-        $response->assertStatus(500);
+        $response->assertStatus(200);
     }
 
     public function test_hapus_formulir_pendaftaran() {
         $calonsiswa = User::where('role', 'calon-siswa')->first();
 
         $response = $this->actingAs($calonsiswa)->post(url('/formulir-pendaftaran-siswa/delete/2'));
-        $response->assertStatus(500);
+        $response->assertStatus(200);
     }
 }
