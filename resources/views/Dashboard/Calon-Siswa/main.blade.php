@@ -42,7 +42,7 @@
                                 style="background-color:rgb(255, 147, 163)">
                                 Afirmasi
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboardsiswaAfirmasi->tanggal_awal}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>
@@ -61,7 +61,7 @@
                                 style="background-color:rgb(255, 147, 163)">
                                 Prestasi
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"> {{$dashboardsiswaPrestasi->tanggal_awal}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>
@@ -80,7 +80,7 @@
                                 style="background-color:rgb(255, 147, 163)">
                                 Zonasi
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboardsiswaZonasi->tanggal_awal}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-thin fa-landmark fa-2x text-gray-300"></i>

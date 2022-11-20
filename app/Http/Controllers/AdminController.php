@@ -43,6 +43,7 @@ class AdminController extends Controller
 
     public function updateData(Request $request)
     {
+        // dd('sukses ');
         $getID = Jadwal::where('Jalur_pendaftaran', $request->Jalur_pendaftaran)->first();
         $getID->tanggal_awal = $request->tanggal_awal;
         $getID->tanggal_akhir = $request->tanggal_akhir;

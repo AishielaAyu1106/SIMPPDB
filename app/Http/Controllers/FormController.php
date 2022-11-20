@@ -27,10 +27,11 @@ class FormController extends Controller
     {
         $dashboardsiswa = Jadwal::All();
         $item = Infodaftar::All();
-        // $dashboardsiswaAfirmasi = Jadwal::where('Jalur_pendaftaran','Afirmasi')->first();
-        // $$dashboardsiswaPrestasi = Jadwal::where('Jalur_pendaftaran','Prestasi')->first();
-        // $dashboardsiswaZonasi = Jadwal::where('Jalur_pendaftaran','Zonasi')->first();
-        return view('Dashboard.Calon-Siswa.main', compact('dashboardsiswa', 'item'));
+        $dashboardsiswaAfirmasi = Jadwal::where('Jalur_pendaftaran','Afirmasi')->first();
+        $dashboardsiswaPrestasi = Jadwal::where('Jalur_pendaftaran','Prestasi')->first();
+        $dashboardsiswaZonasi = Jadwal::where('Jalur_pendaftaran','Zonasi')->first();
+        // dd($dashboardsiswaAfirmasi);
+        return view('Dashboard.Calon-Siswa.main', compact('dashboardsiswa', 'item', 'dashboardsiswaAfirmasi', 'dashboardsiswaPrestasi', 'dashboardsiswaZonasi'));
     }
 
     public function index()
@@ -214,8 +215,11 @@ class FormController extends Controller
 
         $cariForm = Form::where('user_id', Auth::id())->latest()->first();
         // dd($cariForm, Auth::id());
-        
-        $jadwal = Jadwal::where('Jalur_pendaftaran', $cariForm->Jalur_pendaftaran)->first();
+        if($cariForm){
+            $jadwal = Jadwal::where('Jalur_pendaftaran', $cariForm->Jalur_pendaftaran)->first();
+        } else {
+            $jadwal = null;
+        }
         return view('Dashboard.Calon-Siswa.rekap-nilai', compact('rekap', 'jadwal', 'cariForm'));
     }
 

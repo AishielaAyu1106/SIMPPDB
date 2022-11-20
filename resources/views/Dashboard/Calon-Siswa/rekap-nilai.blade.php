@@ -2,6 +2,7 @@
 
 @section('container')
 {{-- @dd(date('Y-m-d H:i:s'), $jadwal->tanggal_awal , $jadwal->tanggal_akhir); --}}
+@if ($jadwal)
 @if (date('Y-m-d H:i:s') > $jadwal->tanggal_awal && date('Y-m-d H:i:s') < $jadwal->tanggal_akhir)
 <form action="/rekap-nilai-siswa" method="post" enctype="multipart/form-data" class="submit-button-swift-allert-example">
     @csrf
@@ -93,4 +94,27 @@
             </div>
         </section>
     @endif
+@else
+<section style="background-color: #ffffff;">
+    <div class="container p-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col col-lg-6 mb-4 mb-lg-0">
+                <div class="card mb-3" style="border-radius: .20rem;">
+                    <div class="row g-0">
+                        {{-- <div class="card m-auto" style="width: 18rem; ">
+                            <div class="card-body"> --}}
+                        <h5 align='center'>Mohon Maaf {{ auth()->user()->name }}</h5>
+                        <h5 align='center'>Rekap Nilai Belum Dapat Diakses</h5>
+
+
+                        {{-- <h5 align='center'>Pendaftaran akan dibuka pada {{$jadwal->zonasi}</h5> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</section>
+@endif
 @endsection
