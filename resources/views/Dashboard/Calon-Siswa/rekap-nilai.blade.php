@@ -1,16 +1,18 @@
 @extends('Dashboard.Calon-Siswa.Layout.index')
 
 @section('container')
-{{-- @dd(date('Y-m-d H:i:s'), $jadwal->tanggal_awal , $jadwal->tanggal_akhir); --}}
-@if ($jadwal)
-@if (date('Y-m-d H:i:s') > $jadwal->tanggal_awal && date('Y-m-d H:i:s') < $jadwal->tanggal_akhir)
-<form action="/rekap-nilai-siswa" method="post" enctype="multipart/form-data" class="submit-button-swift-allert-example">
-    @csrf
-    <section class="p-4 mt-4">
-        <div class="card card-body mt-5 p-4 shadow-sm">
-            <div class="card-body">
-                {{-- @if (date('Y-m-d H:i:s') > $validasi->tanggal_awal && date('Y-m-d H:i:s') < $validasi->tanggal_akhir) --}}
-                <h3 class="mt-4">Rekap Nilai</h3> <hr>
+    {{-- @dd(date('Y-m-d H:i:s'), $jadwal->tanggal_awal , $jadwal->tanggal_akhir); --}}
+    @if ($jadwal)
+        @if (date('Y-m-d H:i:s') > $jadwal->tanggal_awal && date('Y-m-d H:i:s') < $jadwal->tanggal_akhir)
+            <form action="/rekap-nilai-siswa" method="post" enctype="multipart/form-data"
+                class="submit-button-swift-allert-example">
+                @csrf
+                <section class="p-4 mt-4">
+                    <div class="card card-body mt-5 p-4 shadow-sm">
+                        <div class="card-body">
+                            {{-- @if (date('Y-m-d H:i:s') > $validasi->tanggal_awal && date('Y-m-d H:i:s') < $validasi->tanggal_akhir) --}}
+                            <h3 class="mt-4">Rekap Nilai</h3>
+                            <hr>
 
                             <div class="card-body">
                                 <div class="row g-3">
@@ -59,62 +61,65 @@
                                 </div>
                             </div>
                         </div>
-                </div>
-            </div>
+                    </div>
+                    </div>
 
-        </div>
-        </div>
-        </div>
-    </section>
-</form>
-@else
-        <section style="background-color: #ffffff;">
-            <div class="container p-5 h-100">
-                <div class="row d-flex justify-content-center align-items-center">
-                    <div class="col col-lg-6 mb-4 mb-lg-0">
-                        <div class="card mb-3" style="border-radius: .20rem;">
-                            <div class="row g-0">
-                                {{-- <div class="card m-auto" style="width: 18rem; ">
+                    </div>
+                    </div>
+                    </div>
+                </section>
+            </form>
+        @else
+            <section style="background-color: #ffffff;">
+                <div class="container p-5 h-100">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <div class="col col-lg-6 mb-4 mb-lg-0">
+                            <div class="card mb-3" style="border-radius: .20rem;">
+                                <div class="row g-0">
+                                    {{-- <div class="card m-auto" style="width: 18rem; ">
                                     <div class="card-body"> --}}
-                                <h5 align='center'>Mohon Maaf {{ auth()->user()->name }}</h5>
-                                @if (date('Y-m-d H:i:s') < $jadwal->tanggal_awal)
+                                    <h5 align='center'>Mohon Maaf {{ auth()->user()->name }}</h5>
+                                    @if (date('Y-m-d H:i:s') < $jadwal->tanggal_awal)
+                                        <h5 align='center'>Pendaftaran Belum Dibuka</h5>
+                                    @else
+                                        <h5 align='center'>Pendaftaran Sudah Ditutup</h5>
+                                    @endif
+                                    {{-- <h5 align='center'>Pendaftaran akan dibuka pada {{$jadwal->zonasi}</h5> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </section>
+        @endif
+    @else
 
-                                <h5 align='center'>Pendaftaran Belum Dibuka</h5>
-                                @else
-                                <h5 align='center'>Pendaftaran Sudah Ditutup</h5>
 
-                                @endif
-                                {{-- <h5 align='center'>Pendaftaran akan dibuka pada {{$jadwal->zonasi}</h5> --}}
+            <div class="p-4 mt-5">
+                <div class="card shadow-sm mb-4 mt-5">
+
+                    <div class="card-body ">
+                        {{-- @foreach ($item as $lihatinfo) --}}
+                        <div class="card-body shadow-sm">
+                            <div class="col">
+                                <div class="row d-flex p-5 justify-content-center align-items-center h-100">
+                                    <div class="col-sm-4">
+
+                                        <h5 align='center'>Mohon Maaf {{ auth()->user()->name }}</h5>
+                                        <h5 align='center'>Rekap Nilai Belum Dapat Diakses</h5>
+                                        <h5 align='center'>Silahkan isi Formulir Pendaftaran Terlebih Dahulu</h5>
+
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             </div>
-            </div>
         </section>
     @endif
-@else
-<section style="background-color: #ffffff;">
-    <div class="container p-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col col-lg-6 mb-4 mb-lg-0">
-                <div class="card mb-3" style="border-radius: .20rem;">
-                    <div class="row g-0">
-                        {{-- <div class="card m-auto" style="width: 18rem; ">
-                            <div class="card-body"> --}}
-                        <h5 align='center'>Mohon Maaf {{ auth()->user()->name }}</h5>
-                        <h5 align='center'>Rekap Nilai Belum Dapat Diakses</h5>
-
-
-                        {{-- <h5 align='center'>Pendaftaran akan dibuka pada {{$jadwal->zonasi}</h5> --}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-</section>
-@endif
 @endsection

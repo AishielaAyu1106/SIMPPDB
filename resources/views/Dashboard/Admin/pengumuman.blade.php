@@ -50,7 +50,7 @@
                                                 </td>
                                                 <td style="width: 500px">{{ $form->form->status }}</td>
                                                 {{-- <td style="width: 500px" >{{ $form->NISN}}</td> --}}
-                                                <td class="text-center" style="width: 300px">
+                                                <td class="text-center" style="width: 500px">
                                                     <div class="row">
                                                         <form action="/pengumuman-delete/{{ $form->id }}" method="POST"
                                                             class="delete-data-swift-allert-example">
@@ -59,6 +59,11 @@
                                                             <a href="/data-pendaftar/show/{{ $form->id }}"
                                                                 class="btn btn-outline-success btn-sm"><i
                                                                     class="fa fa-info"></i> Lihat</a>
+
+                                                            <a href="/pengumuman-edit/{{ $form->id }}"
+                                                                class="btn btn-outline-success btn-sm"><i
+                                                                    class="fa fa-edit"></i> edit</a>
+
                                                             <button class="btn btn-outline-danger btn-sm"><i
                                                                     class="fa fa-trash"></i> Hapus</button>
                                                         </form>
@@ -103,7 +108,7 @@
                                                 {{-- <td style="width: 500px">{{ $form->kelas }}</td> --}}
                                                 <td style="width: 500px">{{ $form->form->status }}</td>
                                                 {{-- <td style="width: 500px" >{{ $form->NISN}}</td> --}}
-                                                <td style="width: 300px" class="text-center">
+                                                <td style="width: 500px" class="text-center">
                                                     <div class="row">
                                                         <form action="/pengumuman-delete/{{ $form->id }}"
                                                             method="POST" class="delete-data-swift-allert-example">
@@ -111,10 +116,14 @@
                                                             @csrf
                                                             <a href="/data-pendaftar/show/{{ $form->id }}"
                                                                 class="btn btn-outline-success btn-sm"><i
-                                                                class="fa fa-info"></i> Lihat</a>
+                                                                    class="fa fa-info"></i> Lihat</a>
+
+                                                                    <a href="/pengumuman-edit/{{ $form->id }}"
+                                                                        class="btn btn-outline-success btn-sm"><i
+                                                                            class="fa fa-edit"></i> edit</a>
 
                                                             <button class="btn btn-outline-danger btn-sm"><i
-                                                                class="fa fa-trash"></i> Hapus</button>
+                                                                    class="fa fa-trash"></i> Hapus</button>
 
                                                         </form>
                                                     </div>

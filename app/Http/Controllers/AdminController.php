@@ -210,9 +210,27 @@ class AdminController extends Controller
         }
         // return redirect('/status-berkas');
     }
+
+    public function editPengumuman($id)
+    {
+        $editPengumuman = Form::where('id',$id)->first();
+        // dd($editPengumuman);
+        return view('Dashboard.Admin.pengumuman-edit', compact('editPengumuman'));
+
+    }
+
+    public function updatePengumuman(Request $request, $id)
+    {
+        // DD($id);
+        $editPengumuman = Form::find($id);
+        $editPengumuman->status = $request->status;
+        $editPengumuman->save();
+            return redirect('/pengumuman');
+    }
+
     public function deletePengumuman($id)
     {
-        $hapuskelas = Pengumuman::find($id);
+        $hapuskelas = Form::find($id);
         $hapuskelas->delete();
         return redirect('/pengumuman');
     }

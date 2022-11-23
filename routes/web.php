@@ -86,6 +86,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/pengumuman', [AdminController::class, 'pengumuman'])->name('pengumuman');
     Route::post('/pengumuman-admin-diterima', [AdminController::class, 'pengumumanditerima'])->name('pengumumanditerima');
     Route::post('/pengumuman-admin-ditolak', [AdminController::class, 'pengumumanditolak'])->name('pengumumanditolak');
+    Route::get('/pengumuman-edit/{id}', [AdminController::class, 'editPengumuman'])->name('editPengumuman');
+    Route::post('/pengumuman-edit/{id}', [AdminController::class, 'updatePengumuman']);
     Route::post('/pengumuman-delete/{id}', [AdminController::class, 'deletePengumuman'])->name('deletePengumuman');
 
 

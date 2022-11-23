@@ -52,6 +52,7 @@ class FormController extends Controller
 
         if ($cekData) {
             return redirect('/formulir-pendaftaran-siswa');
+            
         } else {
             $validasi = Jadwal::where('Jalur_pendaftaran', $request->id)->first();
             return view('Dashboard.Calon-Siswa.tambah_formulir', compact('validasi'));
@@ -320,7 +321,5 @@ class FormController extends Controller
         $downloadpanduan = Panduan::all();
         return view('Dashboard.Calon-Siswa.download-panduan', compact('downloadpanduan'));
     }
-
-
 
 }

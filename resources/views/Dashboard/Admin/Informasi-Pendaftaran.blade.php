@@ -1,6 +1,7 @@
 @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
+@if($Infodaftar)
     <form action="/informasi-pendaftaran" method="post" enctype="multipart/form-data" class="submit-button-swift-allert-example">
         @csrf
         <section class="p-4 mt-4">
@@ -15,17 +16,16 @@
                             <div class="row g-3">
                                 <div class="col-sm-6">
                                     <label for="message-text" class="col-form-label">Syarat Usia</label>
-
-                                    <textarea class="form-control" id="message-text" name="syarat_usia">
-
+                                    <textarea class="form-control" id="message-text" name="syarat_usia" value="">
+                                        {{$Infodaftar->syarat_usia}}
                                     </textarea>
                                 </div>
 
                                 <div class="col-sm-6">
                                     <label for="message-text" class="col-form-label">Ijazah</label>
 
-                                    <textarea class="form-control" id="message-text" name="ijazah">
-
+                                    <textarea class="form-control" id="message-text" name="ijazah" value="">
+                                        {{$Infodaftar->ijazah}}
                                     </textarea>
                                 </div>
                             </div>
@@ -36,20 +36,17 @@
                                 <div class="col-sm-6">
                                     <label for="message-text" class="col-form-label">Surat</label>
 
-                                    <textarea class="form-control" id="message-text" name="surat">
-
+                                    <textarea class="form-control" id="message-text" name="surat" value="">
+                                        {{$Infodaftar->surat}}
                                     </textarea>
                                 </div>
 
                                 <div class="col-sm-6 mb-4">
                                     <label for="message-text" class="col-form-label ">Lainnya</label>
 
-                                    <textarea class="form-control" id="message-text" name="surat_lainnya">
-
+                                    <textarea class="form-control" id="message-text" name="surat_lainnya" value="">
+                                        {{$Infodaftar->surat_lainnya}}
                                     </textarea>
-                                    {{-- <textarea class="form-control mt-2" id="message-text" name="surat_lainnya">
-
-                                    </textarea> --}}
                                 </div>
                             </div>
 
@@ -63,16 +60,16 @@
             </div>
         </section>
     </form>
-
+@endif
 
     <section class="p-4 mt-4">
 
         {{-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> --}}
-            <div class="card shadow-sm">
+            {{-- <div class="card shadow-sm">
                 <div class="card-header py-3">
                     <h5 class="m-0 font-weight-bold text-dark">INFORMASI PENDAFTARAN</h5>
                 </div>
-                <div class="card-body">
+                <div class="card-body"> --}}
 
 
                     {{-- <div class="btn-list mb-2" >
@@ -80,7 +77,7 @@
                             Kelas</a>
                     </div> --}}
 
-                    <div class="table-responsive">
+                    {{-- <div class="table-responsive">
                         <table class="table table-sm">
                             <thead>
                                 <tr  class="text-dark">
@@ -91,21 +88,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($infodaftar as $item)
+                                @foreach ($Infodaftar as $item)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td style="width: 300px">{{ $item->syarat_usia }}</td>
                                         <td style="width: 500px">{{ $item->ijazah }}</td>
-                                        {{-- <td style="width: 100px"><a href="/data-pendaftar/show/{{ $form->id }}"
-                                                class="btn btn-success">Lihat</a></td> --}}
-                                        {{-- <td style="width: 100px"><a href="/edit-formulir-pendaftaran/{{$form->id}}" class="btn btn-primary">Edit</a></td> --}}
+
                                         <td style="width: 200px" class="text-center">
                                             <div class="row">
                                                 <form class="delete-data-swift-allert-example"
                                                     action="/info-pendaftaran/delete/{{$item->id }}" method="post">
                                                     <a href="/informasi-pendaftaran"
                                                         class="btn btn-outline-success btn-sm"><i class="fa fa-info"></i> Lihat</a>
-                                                    {{-- @method('DELETE') --}}
+
                                                     @csrf
                                                     <button class="col btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
                                                 </form>
@@ -118,7 +113,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                    </div>
+                    </div> --}}
                 </div>
 
             </div>
