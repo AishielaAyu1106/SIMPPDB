@@ -15,15 +15,18 @@ use App\Models\Auth;
 
 class AdminController extends Controller
 {
-    public function dashboardadmin()
-    {
-        return view('Dashboard.Admin.main');
-    }
+    // public function dashboardadmin()
+    // {
+
+    //     return ('oke');
+        // return view('Dashboard.Admin.main');
+    // }
 
     public function datapendaftarDashboard()
     {
         $dashboardData = Form::all();
-        return view('Dashboard.Admin.main', compact('dashboardData'));
+        // return view('Dashboard.Admin.table', compact('dashboardData'));
+        return view('Dashboard.Admin.main2', compact('dashboardData'));
     }
 
     public function cetakdata()
@@ -38,7 +41,7 @@ class AdminController extends Controller
         $afirmasi = Jadwal::where('Jalur_pendaftaran', 'Afirmasi')->first();
         $zonasi = Jadwal::where('Jalur_pendaftaran', 'zonasi')->first();
         $prestasi = Jadwal::where('Jalur_pendaftaran', 'prestasi')->first();
-        return view('Dashboard.Admin.Jadwal', compact('jadwal', 'afirmasi', 'zonasi', 'prestasi'));
+        return view('Dashboard.Admin.Jadwal2', compact('jadwal', 'afirmasi', 'zonasi', 'prestasi'));
     }
 
     public function updateData(Request $request)

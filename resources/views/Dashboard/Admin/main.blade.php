@@ -1,4 +1,4 @@
-@extends('Dashboard.Admin.Layout.index')
+@extends('Dashboard.Admin.Layout2.index')
 
 
 @section('container')
