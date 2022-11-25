@@ -80,14 +80,14 @@ class AdminController extends Controller
     public function dataPendaftar()
     {
         $data = Form::all();
-        return view('Dashboard.Admin.data-pendaftar', compact('data'));
+        return view('Dashboard.Admin.data-pendaftar2', compact('data'));
     }
 
     public function showData(Request $request, $id)
     {
 
         $lihatdata = Form::find($id);
-        return view('Dashboard.Admin.data-pendaftar-tolak-terima', compact('lihatdata'));
+        return view('Dashboard.Admin.data-pendaftar-tolak-terima2', compact('lihatdata'));
     }
 
     public function kelas($id)
@@ -104,7 +104,7 @@ class AdminController extends Controller
         }
         // dd($kelas);
         // $kuota_kelas =
-        return view('Dashboard.Admin.kelas-pendaftar', compact('siswaKelas'));
+        return view('Dashboard.Admin.kelas-pendaftar ', compact('siswaKelas'));
     }
 
     public function Kuota($data)
@@ -155,7 +155,7 @@ class AdminController extends Controller
                 ['total', 'desc'], //desc = descending Besar ke Kecil
             ]);
 
-        return view('Dashboard.Admin.rekap-nilai-admin', compact('Afirmasi', 'Prestasi', 'Zonasi'));
+        return view('Dashboard.Admin.rekap-nilai-admin2', compact('Afirmasi', 'Prestasi', 'Zonasi'));
     }
 
     public function hapusrekapadmin($id)
@@ -170,7 +170,7 @@ class AdminController extends Controller
         $pengumumanDiterima = Pengumuman::join('forms','forms.id','pengumuman.form_id')->where('forms.status','Berkas Diterima')->get();
         $pengumumanDitolak = Pengumuman::join('forms','forms.id','pengumuman.form_id')->where('forms.status','Berkas Ditolak')->get();
 
-        return view('Dashboard.Admin.pengumuman', compact('pengumumanDiterima','pengumumanDitolak'));
+        return view('Dashboard.Admin.pengumuman2', compact('pengumumanDiterima','pengumumanDitolak'));
     }
 
 
@@ -248,7 +248,7 @@ class AdminController extends Controller
 
     public function panduanpendaftaran(){
         $panduandaftar = Panduan::all();
-        return view('Dashboard.Admin.upload-panduan', compact('panduandaftar'));
+        return view('Dashboard.Admin.upload-panduan2', compact('panduandaftar'));
     }
 
 

@@ -1,4 +1,4 @@
-@extends('Dashboard.Calon-Siswa.Layout.index')
+@extends('Dashboard.Calon-Siswa.Layout2.index')
 
 @section('container')
     <h1 align="center">Rekap Nilai & Prestasi</h1>

@@ -1,10 +1,10 @@
-@extends('Dashboard.Calon-Siswa.Layout.index')
+@extends('Dashboard.Calon-Siswa.Layout2.index')
 
 @section('container')
 <section class="p-4 mt-4">
     <div class="card card-body mt-5 p-4 shadow-sm">
         <div class="card-body">
-        <h3 class="mt-4 ">Formulir Pendaftaran</h3>
+        <h3 class="m-0 font-weight-bold text-dark">Formulir Pendaftaran</h3>
         <hr class="mt-0">
 
                 <div class="btn-list  pt-2 pb-2">
@@ -37,11 +37,11 @@
                                                 class="delete-data-swift-allert-example">
                                                 @csrf
                                                 <a href="/formulir-pendaftaran-siswa/show/{{ $form->id }}"
-                                                    class="btn btn-success btn-sm"><i class="fa fa-info"></i></a>
-                                            <a href="/edit-formulir-pendaftaran/{{ $form->id }}" class="btn btn-warning btn-sm"><i
-                                                        class="fa fa-pen"></i></a>
+                                                    class="btn btn-outline-success btn-sm"><i class="fa fa-info"></i> Lihat</a>
+                                            <a href="/edit-formulir-pendaftaran/{{ $form->id }}" class="btn btn-outline-warning btn-sm"><i
+                                                        class="fa fa-pen"></i> Edit</a>
 
-                                                <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                <button class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
                                             </form>
 
                                     </div>

@@ -14,7 +14,7 @@
 
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
     <link href={{asset("vendor/fontawesome-free/css/all.min.css")}} rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -33,8 +33,8 @@
 
     {{-- <div class="container-fluid"> --}}
         {{-- <div class="row"> --}}
-            @include('Dashboard.Admin.Layout2.sidebar')
-            @include('Dashboard.Admin.Layout2.header')
+            @include('Dashboard.Calon-Siswa.Layout2.sidebar')
+            @include('Dashboard.Calon-Siswa.Layout2.header')
 
             {{-- <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"> --}}
                 @yield('container')

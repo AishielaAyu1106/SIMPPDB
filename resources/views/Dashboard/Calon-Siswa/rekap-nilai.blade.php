@@ -1,4 +1,4 @@
-@extends('Dashboard.Calon-Siswa.Layout.index')
+@extends('Dashboard.Calon-Siswa.Layout2.index')
 
 @section('container')
     {{-- @dd(date('Y-m-d H:i:s'), $jadwal->tanggal_awal , $jadwal->tanggal_akhir); --}}
@@ -11,12 +11,12 @@
                     <div class="card card-body mt-5 p-4 shadow-sm">
                         <div class="card-body">
                             {{-- @if (date('Y-m-d H:i:s') > $validasi->tanggal_awal && date('Y-m-d H:i:s') < $validasi->tanggal_akhir) --}}
-                            <h3 class="mt-4">Rekap Nilai</h3>
+                            <h3 class="m-0 font-weight-bold text-dark">Rekap Nilai</h3>
                             <hr>
 
                             <div class="card-body">
                                 <div class="row g-3">
-                                    <h6 align="center">
+                                    <h6 align="center" class="mb-4">
                                         Nilai Rata-Rata Mapel Kelompok A semester 1 - 5
                                     </h6>
 
@@ -42,7 +42,7 @@
                                             <div class="invalid-feedback">Isi Dengan benar</div>
                                         </div>
 
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-3 mb-3">
                                             <label class="form-label">Bahasa Inggris</label>
                                             <input type="text" name="basing" class="form-control" id="basing"
                                                 placeholder="0.00" value="{{ $rekap->basing ?? 0 }}">
@@ -52,13 +52,12 @@
 
 
 
-                                    <div class=" text-end">
-                                        <input name="status" type="hidden" value="uploadberkas">
-                                        <button type="submit" class="btn btn-outline-light"
-                                            style="background-color: rgb(255, 147, 163)">Submit</button>
-                                    </div>
-
                                 </div>
+
+                            </div>
+                            <div class="col-sm-3 mb-4 ">
+                                <input name="status" type="hidden" value="uploadberkas">
+                                <button type="submit" class="btn btn-outline-success btn-sm ">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -102,9 +101,9 @@
 
                     <div class="card-body ">
                         {{-- @foreach ($item as $lihatinfo) --}}
-                        <div class="card-body shadow-sm">
+                        <div class="card-body ">
                             <div class="col">
-                                <div class="row d-flex p-5 justify-content-center align-items-center h-100">
+                                <div class="row d-flex p-5 justify-content-center align-items-center h-100" style="border-radius: .20rem; background-color:khaki">
                                     <div class="col-sm-4">
 
                                         <h5 align='center'>Mohon Maaf {{ auth()->user()->name }}</h5>

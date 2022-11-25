@@ -1,12 +1,12 @@
 @extends('Dashboard.Admin.Layout.index')
 
 @section('container')
-<section class="p-4 mt-4">
-    {{-- @section('internal-content') --}}
+<section class="p-4">
     <div class="card card-body mt-5 p-4 shadow-sm">
-        <div class="card-header py-3">
-            <h5 class="m-0 font-weight-bold text-dark">DAFTAR USER</h5>
-        </div>
+        <div class="card-body">
+
+            <h3 class="m-0 font-weight-bold text-dark mb-2">Daftar User</h3>
+            <hr>
         {{-- <h3>Daftar User</h3> --}}
 
         <div class="row my-3">
@@ -43,7 +43,7 @@
                                 <button class="btn btn-outline-danger btn-sm delete-data" data-bs-toggle="modal"
                                     data-bs-target="#modalHapusData" data-name="user {{ $user->name }}"
                                     data-url=''><i class="fas fa-trash-alt"></i>
-                                    Delete</button>
+                                    Hapus</button>
                                 </form>
                             </td>
                         </tr>

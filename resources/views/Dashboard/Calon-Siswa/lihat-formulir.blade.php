@@ -1,10 +1,10 @@
-@extends('Dashboard.Calon-Siswa.Layout.index')
+@extends('Dashboard.Calon-Siswa.Layout2.index')
 
 @section('container')
     <section class="p-4 mt-4">
         <div class="card card-body mt-5 p-4 shadow-sm">
             <div class="card-body">
-                <h3 align='center'>Formulir Pendaftaran</h3>
+                <h3 align='center' class="m-0 font-weight-bold text-dark">Formulir Pendaftaran</h3>
                 <hr>
                 <div class="row mb-3">
                     <div class="col-md-6">

@@ -1,11 +1,12 @@
-@extends('Dashboard.Admin.Layout.index')
+@extends('Dashboard.Admin.Layout2.index')
 
 @section('container')
-    <section class="p-4 mt-4">
-        <div class="card card-body mt-5 p-4 shadow-sm ">
-            <div class="card-header py-3">
-                <h5 class="m-0 font-weight-bold text-dark ">EDIT STATUS PENGUMUMAN</h5>
-            </div>
+<section class="p-4">
+    <div class="card card-body mt-5 p-4 shadow-sm">
+        <div class="card-body">
+
+            <h3 class="m-0 font-weight-bold text-dark mb-2">Edit Status</h3>
+            <hr>
             {{-- <div class="card card-body mt-5">
         <h3>Edit User </h3> --}}
 

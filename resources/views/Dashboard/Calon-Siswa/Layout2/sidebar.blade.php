@@ -23,7 +23,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item " >
-        <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" href="/dashboard">
+        <a class="nav-link {{ Request::is('dashboard-siswa') ? 'active' : '' }}" href="/dashboard-siswa">
             <i class="fas fa-fw fa-home"></i>
             <span>Dashboard</span></a>
     </li>
@@ -40,24 +40,58 @@
 
 
     <li class="nav-item">
-        <a class="nav-link {{ Request::is('jadwal-pendaftaran') ? 'active' : '' }}" href="/jadwal-pendaftaran">
+        <a class="nav-link {{ Request::is('pengumuman-siswa') ? 'active' : '' }}" href="/pengumuman-siswa">
             <i class="fas fa-fw fa-save"></i>
-            <span>Jadwal Pendaftaran</span></a>
+            <span>Pengumuman</span></a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed {{ Request::is('formulir-pendaftaran-siswa') ? 'active' : '' }}" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+            aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-file"></i>
+            <span>Formulir Pendaftaran</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                {{-- <h6 class="collapse-header">Custom Utilities:</h6> --}}
+                <a class="collapse-item" href="/formulir-pendaftaran-siswa/formulir?id=Afirmasi">Afirmasi</a>
+                <a class="collapse-item" href="/formulir-pendaftaran-siswa/formulir?id=Prestasi">Prestasi</a>
+                <a class="collapse-item" href="/formulir-pendaftaran-siswa/formulir?id=Zonasi">Zonasi</a>
+                {{-- <a class="collapse-item" href="utilities-other.html">Other</a> --}}
+            </div>
+        </div>
+    </li>
+    {{-- <div class="btn-group">
+        <a class="nav-link dropdown-toggle {{ Request::is('formulir-pendaftaran-siswa') ? 'active' : '' }}"
+            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            href="">
+            <span data-feather="file-text" class="align-text-bottom"></span>
+
+        </a>
+        <div class="dropdown-menu">
+            <a href="/formulir-pendaftaran-siswa/formulir?id=Afirmasi" class="dropdown-item"
+                aria-labelledby="dropdownMenuButton">Afirmasi</a>
+            <a href="/formulir-pendaftaran-siswa/formulir?id=Prestasi" class="dropdown-item"
+                aria-labelledby="dropdownMenuButton">Prestasi</a>
+            <a href="/formulir-pendaftaran-siswa/formulir?id=Zonasi" class="dropdown-item"
+                aria-labelledby="dropdownMenuButton">Zonasi</a>
+
+        </div>
+    </div> --}}
 
     <li class="nav-item">
-        <a class="nav-link {{ Request::is('kuota-kelas') ? 'active' : '' }}" href="/kuota-kelas">
+        <a class="nav-link {{ Request::is('rekap-nilai-siswa') ? 'active' : '' }}" href="/rekap-nilai-siswa/formulir">
             <i class="fas fa-fw fa-clipboard"></i>
-            <span> Kuota Kelas</span></a>
+            <span> Rekap Nilai</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link {{ Request::is('data-pendaftar') ? 'active' : '' }}" href="/data-pendaftar">
+        <a class="nav-link {{ Request::is('download-panduan-siswa') ? 'active' : '' }}" href="/download-panduan-siswa">
             <i class="fas fa-fw fa-folder"></i>
-            <span> Data Pendaftaran</span></a>
+            <span> Download Panduan</span></a>
     </li>
 
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link {{ Request::is('rekap-nilai-admin') ? 'active' : '' }}" href="/rekap-nilai-admin">
             <i class="fas fa-fw fa-list"></i>
             <span> Rekap Nilai</span></a>
@@ -85,7 +119,7 @@
         <a class="nav-link {{ Request::is('info-pendaftaran') ? 'active' : '' }}" href="/info-pendaftaran">
             <i class="fas fa-fw fa-list"></i>
             <span> Informasi Pendaftaran</span></a>
-    </li>
+    </li> --}}
 
 
     {{-- <li class="nav-item">
@@ -176,37 +210,6 @@
 </ul>
 <!-- End of Sidebar -->
 
-
-{{-- <div id="content-wrapper" class="d-flex flex-column"> --}}
-
-    <!-- Main Content -->
-    {{-- <div id="content"> --}}
-
-        <!-- Topbar -->
-        {{-- <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"> --}}
-
-            <!-- Sidebar Toggle (Topbar) -->
-            {{-- <form class="form-inline">
-                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                    <i class="fa fa-bars"></i>
-                </button>
-            </form>
-        </nav>
-    </div> --}}
-
-            <!-- Topbar Search -->
-            {{-- <form
-                class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                        aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button">
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
-                    </div>
-                </div>
-            </form> --}}
 {{-- <nav id="sidebarMenu" class=" col-lg-2 d-md-block sidebar collapse" style="background-color:rgb(255, 243, 245)">
     <nav id="sidebar">
         <a href="#">

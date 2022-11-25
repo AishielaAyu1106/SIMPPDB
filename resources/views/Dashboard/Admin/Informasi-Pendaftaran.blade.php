@@ -1,13 +1,17 @@
-@extends('Dashboard.Admin.Layout.index')
+@extends('Dashboard.Admin.Layout2.index')
 
 @section('container')
 @if($Infodaftar)
     <form action="/informasi-pendaftaran" method="post" enctype="multipart/form-data" class="submit-button-swift-allert-example">
         @csrf
         <section class="p-4 mt-4">
-            <div class="card card-body mt-5 p-4 shadow-sm">
-                <div class="card-header py-3">
-                    <h5 class="m-0 font-weight-bold text-dark">INFORMASI PENDAFTARAN</h5>
+            <section class="p-4">
+                <div class="card card-body mt-5 p-4 shadow-sm">
+                    <div class="card-body">
+
+                        <h3 class="m-0 font-weight-bold text-dark mb-2">Informasi Pendaftaran</h3>
+                        <hr>
+                        <small id="passHelper" class="form-text text-muted font-weight-bold">Jika Ingin Mengubah, Silahkan Isi kembali Form Informasi Pendaftaran</small>
                 </div>
                 <div class="card-body">
 

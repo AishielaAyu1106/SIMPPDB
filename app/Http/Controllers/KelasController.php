@@ -11,7 +11,7 @@ class KelasController extends Controller
     {
         $kelas = kuota_kelas::all();
 
-        return view("Dashboard.Admin.kuota_kelas.index", compact("kelas"));
+        return view("Dashboard.Admin.kuota_kelas2.index", compact("kelas"));
     }
 
     public function destroy(kuota_kelas $kuota_kela)
@@ -24,12 +24,12 @@ class KelasController extends Controller
     public function create()
     {
         $Kelas = kuota_kelas::all();
-        return view('Dashboard.Admin.kuota_kelas.create', compact('Kelas'));
+        return view('Dashboard.Admin.kuota_kelas2.create', compact('Kelas'));
     }
 
     public function edit(kuota_kelas $kuota_kela)
     {
-        return view('Dashboard.Admin.kuota_kelas.edit', compact('kuota_kela'));
+        return view('Dashboard.Admin.kuota_kelas2.edit', compact('kuota_kela'));
     }
 
     public function store(Request $request){
@@ -48,7 +48,7 @@ class KelasController extends Controller
         $kuota_kela->Kuota_kelas = $request->Kuota_kelas;
         $kuota_kela->save();
 
-        return redirect()->route("kuota-kelas.index");
+        return redirect()->route("kuota-kelas2.index");
     }
 
     // public function Kelaslihat()

@@ -1,8 +1,49 @@
-@extends('Dashboard.Admin.Layout.index')
+@extends('Dashboard.Admin.Layout2.index')
 
 @section('container')
-    <section class="mt-5 p-4" style="background-color: #ffffff;">
-        {{-- <div class="card mt-5 p-4"> --}}
+
+<section class="vh-100">
+    <div class="container py-5 ">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-12 col-xl-4">
+
+                <div class="card border border-left-info" style="border-radius: 15px;">
+                    <h6 class="mt-4 font-weight-bold text-dark" align='center'>My Profile </h6>
+                    <div class="card-body text-center">
+                        <div class="mt-3 mb-4">
+                            <img src="{{ asset('css/profile (1).svg') }}" class="rounded-circle img-fluid"
+                                style="width: 100px;" />
+                        </div>
+                        <h4 class="mb-2">{{ auth()->user()->name }}</h4>
+                        <p class="text-muted mb-4">{{ Auth::user()->email }}<span class="mx-2">
+                            </span> <a href="/data-admin"></a></p>
+
+                        <a type="button" class="btn btn-primary btn-rounded btn-sm" href="/data-admin">
+                            Lihat Selengkapnya
+                        </a>
+                        {{-- <div class="d-flex justify-content-between text-center mt-5 mb-2">
+                            <div>
+                                <p class="mb-2 h5">8471</p>
+                                <p class="text-muted mb-0">Wallets Balance</p>
+                            </div>
+                            <div class="px-3">
+                                <p class="mb-2 h5">8512</p>
+                                <p class="text-muted mb-0">Income amounts</p>
+                            </div>
+                            <div>
+                                <p class="mb-2 h5">4751</p>
+                                <p class="text-muted mb-0">Total Transactions</p>
+                            </div>
+                        </div> --}}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+    {{-- <section class="mt-5 p-4" style="background-color: #ffffff;">
+
             <div class="container p-5 h-100 ">
                 <h3 >Profile Admin </h3>
                 <hr>
@@ -39,5 +80,5 @@
             </div>
         </div>
 
-    </section>
+    </section> --}}
 @endsection

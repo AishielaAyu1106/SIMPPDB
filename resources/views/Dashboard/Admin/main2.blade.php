@@ -33,7 +33,7 @@
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $dashboardData->count() }}</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                <i class="fas fa-list fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                                     {{ $dashboardData->where('Jalur_pendaftaran', 'Afirmasi')->count() }}</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                <i class="fas fa-file fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                                 </div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                <i class="fas fa-award fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
@@ -101,7 +101,7 @@
                                     {{ $dashboardData->where('Jalur_pendaftaran', 'Zonasi')->count() }}</div>
                             </div>
                             <div class="col-auto">
-                                <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                <i class="fas fa-city fa-2x text-gray-300"></i>
                             </div>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-sm" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th >No</th>
@@ -141,9 +141,12 @@
                                     <td style="width: 500px ">{{ $item->status }}</td>
 
                                     <td style="width: 200px">
-                                        <a href="/data-pendaftar/show/{{ $item->id }}">
-                                            <i class="col btn btn-outline-success btn-sm"><i class="fa fa-info-circle"></i> Detail</i>
+                                        <a href="/data-pendaftar/show/{{ $item->id }}" class="btn btn-outline-success btn-icon-split btn-sm">
+                                            <span class="text"><i class="fas fa-info-circle"></i> Detail</span>
                                         </a>
+                                        {{-- <a href="/data-pendaftar/show/{{ $item->id }}">
+                                            <i class="col btn btn-outline-success btn-sm"><i class="fa fa-info-circle"></i> Detail</i>
+                                        </a> --}}
                                     </td>
 
 

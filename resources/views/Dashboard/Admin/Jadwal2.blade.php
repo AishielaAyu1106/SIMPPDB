@@ -1,9 +1,9 @@
 @extends('Dashboard.Admin.Layout2.index')
 
 @section('container')
-    <section style="p-4 mt-4">
-        <div class="container-fluid">
-            <div class="card card-body mt-5 shadow-sm">
+    {{-- <section style="p-4 mt-5"> --}}
+        <section class="p-4">
+            <div class="card card-body mt-5 p-4 shadow-sm">
                 <div class="card-body">
                     <h3 class="m-0 font-weight-bold text-dark">Jadwal Pendaftaran</h3>
                     {{-- <div class=" mt-4"> --}}
@@ -122,5 +122,5 @@
             </div>
         </div>
         </div>
-    </section>
+    {{-- </section> --}}
 @endsection

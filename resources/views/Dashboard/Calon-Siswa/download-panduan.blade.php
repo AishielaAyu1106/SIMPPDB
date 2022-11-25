@@ -1,15 +1,15 @@
-@extends('Dashboard.Calon-Siswa.Layout.index')
+@extends('Dashboard.Calon-Siswa.Layout2.index')
 
 @section('container')
     <section class="p-4 mt-4">
         <div class="card card-body mt-5 p-4 shadow-sm">
             <div class="card-body">
-                <h3  class="mt-4">Panduan Pendaftaran</h3>
+                <h3  class="m-0 font-weight-bold text-dark">Panduan Pendaftaran</h3>
                 <hr>
                 <div class="table-responsive p-4">
                     <table class="table table-sm ">
                         <thead>
-                            <tr class="text-dark" style="background-color:rgb(255, 243, 245)">
+                            <tr class="text-dark" >
                                 <th scope="col">NO</th>
                                 <th scope="col">Nama Berkas</th>
                                 <th scope="col">Tanggal Berkas</th>
@@ -24,10 +24,13 @@
                                 <td style="width: 500px">{{ $panduan->created_at }}</td>
 
 
-                                <td style="width: 200px">
-                                    <a href="{{ asset('storage/' . $panduan->upload_panduan) }}">
-                                        <i class="col btn btn-outline-success btn-sm"><i class="fa fa-download"></i> Download</i>
+                                <td >
+                                    <a href="{{ asset('storage/' . $panduan->upload_panduan) }}" class="btn btn-outline-success btn-icon-split btn-sm">
+                                        <span class="text"><i class="fas fa-download"></i> Download</span>
                                     </a>
+                                    {{-- <a href="{{ asset('storage/' . $panduan->upload_panduan) }}">
+                                        <i class="col btn btn-outline-success btn-sm"><i class="fa fa-download"></i> Download</i>
+                                    </a> --}}
                                 </td>
 
 

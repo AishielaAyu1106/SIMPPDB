@@ -1,4 +1,4 @@
-@extends('Dashboard.Calon-Siswa.Layout.index')
+@extends('Dashboard.Calon-Siswa.Layout2.index')
 
 @section('container')
     <form action="{{ url('edit-profile-siswa') }}" method="GET">

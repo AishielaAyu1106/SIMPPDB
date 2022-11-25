@@ -1,11 +1,14 @@
-@extends('Dashboard.Admin.Layout.index')
+@extends('Dashboard.Admin.Layout2.index')
 
 @section('container')
-    <section class="p-4 mt-4">
-        <div class="card card-body mt-5 shadow-sm">
-            <div class="card-header py-3 mb-4">
-                <h5 class="m-0 font-weight-bold text-dark">TAMBAH USER</h5>
-            </div>
+<section class="p-4">
+    <div class="card card-body mt-5 p-4 shadow-sm">
+        <div class="card-body">
+
+            <h3 class="m-0 font-weight-bold text-dark mb-2">Tambah User</h3>
+            <hr>
+
+    </div>
 
             <form method="POST" action="/data-admin-create" class="submit-button-swift-allert-example">
                 @csrf
