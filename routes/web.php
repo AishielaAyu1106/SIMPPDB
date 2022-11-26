@@ -148,6 +148,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/jadwal-pendaftaran', [AdminController::class, 'store']);
     Route::get('/jadwal-pendaftaran', [AdminController::class, 'kategori'])->name('lihatjadwal');
     Route::get('/jadwal-pendaftaran/delete/{id}', [AdminController::class, 'destroy'])->name('hapusjadwal');
+
+
+
+    Route::get('kirim-email','App\Http\Controllers\PengumumanMailController@index');
 });
 
 require __DIR__ . '/auth.php';
