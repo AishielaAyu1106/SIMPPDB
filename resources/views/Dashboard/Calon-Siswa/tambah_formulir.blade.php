@@ -1,24 +1,22 @@
 @extends('Dashboard.Calon-Siswa.Layout2.index')
 
 @section('container')
-    <div class="container-fluid">
-        <div class="card card-body mt-5 p-4 shadow-sm mb-4 border border-bottom-info">
-            <div class="card-body">
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800 ">Hallo {{ auth()->user()->name }} !!</h1>
-                </div>
-
-                <div class="d-sm-flex align-items-center justify-content-between mt-2">
-                    <h6 class="d-sm-mb-0 text-gray-500">Anda Berada Di Halaman Formulir Pendaftaran, Silahkan Isi Data Dengan
-                        Benar</h6>
-                </div>
-            </div>
-
-        </div>
-
-
-
         @if (date('Y-m-d H:i:s') > $validasi->tanggal_awal && date('Y-m-d H:i:s') < $validasi->tanggal_akhir)
+
+        <div class="container-fluid">
+            <div class="card card-body mt-5 p-4 shadow-sm mb-4 border border-bottom-info">
+                <div class="card-body">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800 ">Hallo {{ auth()->user()->name }} !!</h1>
+                    </div>
+
+                    <div class="d-sm-flex align-items-center justify-content-between mt-2">
+                        <h6 class="d-sm-mb-0 text-gray-500">Anda Berada Di Halaman Formulir Pendaftaran, Silahkan Isi Data Dengan
+                            Benar</h6>
+                    </div>
+                </div>
+
+            </div>
             <section class="p-4 mt-4">
                 <div class="card card-body mt-5 p-4 shadow-sm ">
                     <div class="card-body">
@@ -243,14 +241,6 @@
 
                                             <div class="invalid-feedback">Silahkan Isi nama dengan benar</div>
                                         </div>
-                                        {{-- <div class="row g-3">
-                                            <div class="form-group">
-                                                <label for="address" class="form-label text-dark">Nama Ayah</label>
-                                                <input type="address" name="nama_ayah" class="form-control"
-                                                    id="address" value="{{ old('nama_ayah') }}" placeholder>
-                                                <div class="invalid-feedback">Tempat Lahir Dibutuhkan</div>
-                                            </div>
-                                        </div> --}}
                                         <div class="row g-3">
                                             <div class="col-sm-6">
                                                 <label for="address" class="form-label text-dark">Tempat Lahir</label>

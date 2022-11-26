@@ -84,11 +84,11 @@
                                         </div>
                                     </div>
 
-                                    @if ($pengumumansiswa->status == 'Berkas Diterima')
+                                    @if ($pengumumansiswa->status??0 == 'Berkas Diterima')
                                         <span class="badge text-light badge-primary mb-4"
                                             style="background-color:green">Selamat
                                             Anda Dinyatakan Telah Diterima Di SMAN 1 Bengalon </span>
-                                    @elseif ($pengumumansiswa->status == 'Berkas Ditolak')
+                                    @elseif ($pengumumansiswa->status??0 == 'Berkas Ditolak')
                                         <span class="badge text-black badge-primary mb-4" style="background-color:red">Mohon
                                             Maaf
                                             Anda Belum Diterima Di SMAN 1 Bengalon</span>
@@ -117,9 +117,9 @@
         </div>
     </div>
     </div>
-    {{-- @endforeach --}}
+    
     </div>
-    {{-- <hr> --}}
+
     </div>
     </div>
     </div>
