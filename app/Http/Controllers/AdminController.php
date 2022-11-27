@@ -15,12 +15,7 @@ use App\Models\Auth;
 
 class AdminController extends Controller
 {
-    // public function dashboardadmin()
-    // {
 
-    //     return ('oke');
-        // return view('Dashboard.Admin.main');
-    // }
 
     public function datapendaftarDashboard()
     {
@@ -80,7 +75,9 @@ class AdminController extends Controller
     public function dataPendaftar()
     {
         $data = Form::all();
-        return view('Dashboard.Admin.data-pendaftar2', compact('data'));
+        $verifikasi = Form::where('status','!=','Sedang Diproses')->get();
+        // dd($verifikasi);
+        return view('Dashboard.Admin.data-pendaftar2', compact('data', 'verifikasi'));
     }
 
     public function showData(Request $request, $id)

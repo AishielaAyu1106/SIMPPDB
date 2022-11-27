@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\InfoDaftarController;
 use App\Http\Controllers\ManajemenUserController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -152,6 +153,8 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::get('kirim-email','App\Http\Controllers\PengumumanMailController@index');
+
+    Route::get('/search', [SearchController::class, 'search'])->name('search');
 });
 
 require __DIR__ . '/auth.php';

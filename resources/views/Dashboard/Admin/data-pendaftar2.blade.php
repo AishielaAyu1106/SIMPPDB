@@ -19,11 +19,14 @@
                         <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
                             type="button" role="tab" aria-controls="contact" aria-selected="false">Zonasi</button>
                     </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="verifikasi-tab" data-bs-toggle="tab" data-bs-target="#verifikasi"
+                            type="button" role="tab" aria-controls="verifikasi" aria-selected="false">Terverifikasi</button>
+                    </li>
+
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
-
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table  table-sm">
@@ -38,7 +41,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data->where('Jalur_pendaftaran', 'Afirmasi') as $form)
+                                        @foreach ($data->where('Jalur_pendaftaran', 'Afirmasi')->where('status','Sedang diproses') as $form)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td class="text-center">{{ $form->Nomor_Pendaftaran }}</td>
@@ -76,9 +79,9 @@
 
 
                     </div>
+
+                    {{-- PRESTASI --}}
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
-
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-sm">
@@ -93,7 +96,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data->where('Jalur_pendaftaran', 'Prestasi') as $form)
+                                        @foreach ($data->where('Jalur_pendaftaran', 'Prestasi')->where('status',  'Sedang diproses') as $form)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td class="text-center">{{ $form->Nomor_Pendaftaran }}</td>
@@ -129,9 +132,9 @@
                             </div>
                         </div>
                     </div>
+
+                    {{-- ZONASI --}}
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-
-
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-sm">
@@ -146,7 +149,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($data->where('Jalur_pendaftaran', 'Zonasi') as $form)
+                                        @foreach ($data->where('Jalur_pendaftaran', 'Zonasi')->where('status', 'Sedang diproses') as $form)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td class="text-center">{{ $form->Nomor_Pendaftaran }}</td>
@@ -179,6 +182,62 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                        {{-- TERVERIFIKASI --}}
+                        <div class="tab-pane fade" id="verifikasi" role="tabpanel" aria-labelledby="verifikasi">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr class="text-dark">
+                                                <th scope="col">No</th>
+                                                <th class="text-center">Nomor Pendaftaran</th>
+                                                <th >Nama Lengkap</th>
+                                                <th >Jalur Pendaftaran</th>
+                                                <th >N I S N</th>
+                                                <th >Status</th>
+                                                <th >Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($verifikasi as $form)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td class="text-center">{{ $form->Nomor_Pendaftaran }}</td>
+                                                    <td >{{ $form->nama_lengkap }}</td>
+                                                    <td >{{ $form->Jalur_pendaftaran }}</td>
+                                                    <td >{{ $form->NISN }}</td>
+                                                    <td >{{ $form->status }}</td>
+                                                    <td class="text-center" style="width: 100px">
+                                                        <div class="row ">
+                                                            <form class="delete-data-swift-allert-example"
+                                                                action="/data-pendaftar/delete/{{ $form->id }}" method="post">
+                                                                @method('DELETE')
+                                                                @csrf
+                                                                {{-- <a href="/data-pendaftar/show/{{ $form->id }}" class="btn btn-outline-success btn-icon-split btn-sm">
+                                                                    <span class="text"><i class="fas fa-info"></i> Lihat</span>
+                                                                </a> --}}
+
+                                                                <button href="" class="btn btn-outline-danger btn-icon-split btn-sm">
+                                                                    <span class="text"><i class="fas fa-trash"></i> Hapus</span>
+                                                                </button>
+
+
+
+                                                            </form>
+
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
 

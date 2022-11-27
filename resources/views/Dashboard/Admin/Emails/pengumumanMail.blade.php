@@ -283,7 +283,7 @@
 
 
                                         <div style="line-height: 26px;">
-                                            <a href="" style="color: #ffffff; text-decoration: none;">Buka Disini</a>
+                                            <a href="#" style="color: #ffffff; text-decoration: none;">Buka Disini</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -422,7 +422,7 @@
                                     <td align="left" style="color: #aaaaaa; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 24px;">
                                         <div style="line-height: 24px;">
 
-                                            <span style="color: #333333;">Material Design for Bootstrap</span>
+                                            <span style="color: #333333;">Admin PPDB SMA Negeri 1 Bengalon</span>
 
                                         </div>
                                     </td>
@@ -442,7 +442,7 @@
                                         <table align="center" border="0" cellpadding="0" cellspacing="0">
                                             <tr>
                                                 <td align="center">
-                                                    <a style="font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 24px;color: #5caad2; text-decoration: none;font-weight:bold;">UNSUBSCRIBE</a>
+                                                    {{-- <a style="font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 24px;color: #5caad2; text-decoration: none;font-weight:bold;">UNSUBSCRIBE</a> --}}
                                                 </td>
                                             </tr>
                                         </table>

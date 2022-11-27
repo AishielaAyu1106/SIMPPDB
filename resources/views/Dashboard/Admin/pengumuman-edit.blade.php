@@ -19,9 +19,24 @@
 
 
                     <div class="col-md">
-                        <label for="password" class="form-label">Status</label>
-                        <div class="input-group">
-                            {{-- <label for="exampleFormControlInput1" class="form-label text-dark">Jenis Kelamin</label> --}}
+
+
+                        <div class="col-sm-6">
+                            <label for="password" class="form-label">Status</label>
+
+                            <select class="form-control" name="status" id="exampleFormControlInput1"
+                            value="{{ old('status') }}">
+                                <option selected>Pilih Status</option>
+                                <option value="Berkas Ditolak">Berkas Ditolak</option>
+                                <option value="Berkas Diterima">Berkas Diterima</option>
+                                <option value="Sedang Diproses">Sedang Diproses</option>
+                            </select>
+
+                            <small id="passHelper" class="form-text text-muted font-weight-bold">Isi jika ingin mengganti Status
+                                Pendaftaran</small>
+                        </div>
+                        {{-- <div class="input-group">
+
                             <select class="form-select" name="status" id="exampleFormControlInput1"
                                 value="{{ old('status') }}">
                                 <option selected>Pilih Status</option>
@@ -29,9 +44,8 @@
                                 <option value="Berkas Diterima">Berkas Diterima</option>
                                 <option value="Sedang Diproses">Sedang Diproses</option>
                             </select>
-                        </div>
-                        <small id="passHelper" class="form-text text-muted font-weight-bold">Isi jika ingin mengganti Status
-                            Pendaftaran</small>
+                        </div> --}}
+                        
                     </div>
                 </div>
 

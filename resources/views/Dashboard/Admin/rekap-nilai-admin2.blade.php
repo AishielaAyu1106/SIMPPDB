@@ -97,7 +97,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($Prestasi as $item1)
+                                        @foreach ($Prestasi->where('Jalur_pendaftaran', 'Prestasi') as $item1)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td  >{{ $item->name }}</td>
@@ -149,7 +149,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($Zonasi as $item3)
+                                        @foreach ($Zonasi->where('Jalur_pendaftaran', 'Zonasi') as $item3)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td  >{{ $item->name }}</td>
