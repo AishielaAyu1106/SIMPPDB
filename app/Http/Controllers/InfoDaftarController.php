@@ -16,6 +16,7 @@ class InfoDaftarController extends Controller
         } else {
             $Infodaftar = null;
         }
+
         return view('Dashboard.Admin.Informasi-Pendaftaran', compact('Infodaftar'));
     }
 

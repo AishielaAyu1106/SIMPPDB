@@ -399,156 +399,126 @@
 
                                         {{-- upload file --}}
 
+                                        {{-- <div class="row mb-3">
+                                            <div class="col-md">
+                                                <label for="formFile" class="form-label">Fotocopy Akta Kelahiran</label>
 
+                                                <div class="mt-1 ">
+                                                    <input class=" form-file" type="file" id="formFile" name="fcakta">
+                                                </div>
+                                            </div>
+
+
+                                            @error('upload_panduan')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div> --}}
                                         <div class="row g-3">
-                                            <div class="col-sm-4 mt-2">
-                                                <label>Fotocopy Akta Kelahiran</label>
-                                                <div class="">
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Upload</span>
-                                                        </div>
-                                                        <div class="custom-file">
-                                                            <input type="file" name="fcakta"
-                                                                class="custom-file-input" id="inputGroupFile01">
-                                                            <label class="custom-file-label" for="inputGroupFile01">Choose
-                                                                file</label>
-                                                        </div>
-
-                                                        @error('fcakta')
-                                                            <div class="alert alert-warning" role="alert">
-                                                                <strong>Peringatan!</strong>
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                            <div class="col-sm-4">
+                                                <label for="form-label" for="personal-data" class="text-dark">Fotocopy Akta
+                                                    Kelahiran</label>
+                                                <div class="input-group ">
+                                                    <div class="form-file">
+                                                        <input type="file" class="form-file-input form-control" name="fcakta">
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="col-sm-4 mt-2">
-                                                <label>Surat Keterangan Lulus Asli</label>
-                                                <div class="">
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Upload</span>
-                                                        </div>
-                                                        <div class="custom-file">
-                                                            <input type="file" name="SKLasli"
-                                                                class="custom-file-input" id="inputGroupFile01">
-                                                            <label class="custom-file-label" for="inputGroupFile01">Choose
-                                                                file</label>
-                                                        </div>
 
-                                                        @error('SKLasli')
-                                                            <div class="alert alert-warning" role="alert">
-                                                                <strong>Peringatan!</strong>
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+
+                                            <div class="col-sm-4">
+                                                <label for="form-label" for="personal-data" class="text-dark">Surat Keterangan
+                                                    Lulus
+                                                    Asli</label>
+                                                <div class="input-group">
+                                                    <div class="form-file">
+                                                        <input type="file" class="form-file-input form-control" name="SKLasli">
                                                     </div>
                                                 </div>
+                                                @error('SKLasli')
+                                                    <div class="alert alert-warning" role="alert">
+                                                        <strong>Peringatan!</strong>
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
 
                                             <div class="col-sm-4 mt-2">
-                                                <label>Fotocopy STTB legalisir <small>(jika ada)</small></label>
-                                                <div class="">
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Upload</span>
-                                                        </div>
-                                                        <div class="custom-file">
-                                                            <input type="file" name="fcSTTB"
-                                                                class="custom-file-input" id="inputGroupFile01">
-                                                            <label class="custom-file-label" for="inputGroupFile01">Choose
-                                                                file</label>
-                                                        </div>
-
-                                                        @error('fcSTTB')
-                                                            <div class="alert alert-warning" role="alert">
-                                                                <strong>Peringatan!</strong>
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                                <label for="form-label" for="personal-data" class="text-dark">Fotocopy STTB
+                                                    legalisir
+                                                    <small>(jika ada)</small></label>
+                                                <div class="input-group">
+                                                    <div class="form-file">
+                                                        <input type="file" class="form-file-input form-control" name="fcSTTB">
                                                     </div>
                                                 </div>
+                                                @error('fcSTTB')
+                                                    <div class="alert alert-warning" role="alert">
+                                                        <strong>Peringatan!</strong>
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
-
                                         </div>
 
                                         <div class="row g-3">
-                                            <div class="col-sm-4 mt-2">
-                                                <label>Fotocopy Raport <small>(Semester 1-5)</small></label>
-                                                <div class="">
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Upload</span>
-                                                        </div>
-                                                        <div class="custom-file">
-                                                            <input type="file" name="fcRaport"
-                                                                class="custom-file-input" id="inputGroupFile01">
-                                                            <label class="custom-file-label" for="inputGroupFile01">Choose
-                                                                file</label>
-                                                        </div>
-
-                                                        @error('fcRaport')
-                                                            <div class="alert alert-warning" role="alert">
-                                                                <strong>Peringatan!</strong>
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                            <div class="col-sm-4">
+                                                <label for="form-label" for="personal-data" class="text-dark">Fotocopy Raport
+                                                    Kelas<small>(Semester 1-5)</small></label>
+                                                <div class="input-group">
+                                                    <div class="form-file">
+                                                        <input type="file" class="form-file-input form-control" name="fcRaport">
                                                     </div>
                                                 </div>
+                                                @error('fcRaport')
+                                                    <div class="alert alert-warning" role="alert">
+                                                        <strong>Peringatan!</strong>
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <label for="form-label" for="personal-data" class="text-dark">Surat Keterangan
+                                                    Bebas
+                                                    Narkoba<small>(dari BNN)</small></label>
+                                                <div class="input-group">
+                                                    <div class="form-file">
+                                                        <input type="file" class="form-file-input form-control"
+                                                            name="suratnarkoba">
+                                                    </div>
+                                                </div>
+                                                @error('suratnarkoba')
+                                                    <div class="alert alert-warning" role="alert">
+                                                        <strong>Peringatan!</strong>
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <label for="form-label" for="personal-data" class="text-dark">Pas Foto Ukuran 3 x
+                                                    4
+                                                    <small>(dengan Latar Merah)</small></label>
+
+                                                <div class="input-group">
+                                                    <div class="form-file">
+                                                        <input type="file" class="form-file-input form-control" name="Foto">
+                                                    </div>
+                                                </div>
+                                                @error('Foto')
+                                                    <div class="alert alert-warning" role="alert">
+                                                        <strong>Peringatan!</strong>
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
 
 
-                                            <div class="col-sm-4 mt-2">
-                                                <label>Surat Keterangan Bebas Narkoba <small>(dari BNN)</small></label>
-                                                <div class="">
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Upload</span>
-                                                        </div>
-                                                        <div class="custom-file">
-                                                            <input type="file" name="suratnarkoba"
-                                                                class="custom-file-input" id="inputGroupFile01">
-                                                            <label class="custom-file-label" for="inputGroupFile01">Choose
-                                                                file</label>
-                                                        </div>
-
-                                                        @error('suratnarkoba')
-                                                            <div class="alert alert-warning" role="alert">
-                                                                <strong>Peringatan!</strong>
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                                            </div>
 
 
-                                            <div class="col-sm-4 mt-2">
-                                                <label>Pas Foto Ukuran 3 x 4 <small>(dengan latar merah)</small></label>
-                                                <div class="">
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Upload</span>
-                                                        </div>
-                                                        <div class="custom-file">
-                                                            <input type="file" name="Foto"
-                                                                class="custom-file-input" id="inputGroupFile01">
-                                                            <label class="custom-file-label" for="inputGroupFile01">Choose
-                                                                file</label>
-                                                        </div>
-
-                                                        @error('Foto')
-                                                            <div class="alert alert-warning" role="alert">
-                                                                <strong>Peringatan!</strong>
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                                            </div>
 
 
                                         </div>
@@ -561,76 +531,55 @@
                                         </h6>
                                         <div class="row g-3">
 
-                                            <div class="col-sm-4 mt-2">
-                                                <label>Fotocopy Kartu Indonesia Pintar <small>(KIP)</small></label>
-                                                <div class="">
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Upload</span>
-                                                        </div>
-                                                        <div class="custom-file">
-                                                            <input type="file" name="fcKIP"
-                                                                class="custom-file-input" id="inputGroupFile01">
-                                                            <label class="custom-file-label" for="inputGroupFile01">Choose
-                                                                file</label>
-                                                        </div>
-
-                                                        @error('fcKIP')
-                                                            <div class="alert alert-warning" role="alert">
-                                                                <strong>Peringatan!</strong>
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                            <div class="col-sm-4">
+                                                <label for="form-label" for="personal-data" class="text-dark">Fotocopy Kartu
+                                                    Indonesia
+                                                    Pintar <small>(KIP)</small></label>
+                                                <div class="input-group">
+                                                    <div class="form-file">
+                                                        <input type="file" class="form-file-input form-control" name="fcKIP">
                                                     </div>
                                                 </div>
+                                                @error('fcKIP')
+                                                    <div class="alert alert-warning" role="alert">
+                                                        <strong>Peringatan!</strong>
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
 
-                                            <div class="col-sm-4 mt-2">
-                                                <label>Fotocopy Kartu Pelindung Sosial <small>(KPS)</small></label>
-                                                <div class="">
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Upload</span>
-                                                        </div>
-                                                        <div class="custom-file">
-                                                            <input type="file" name="fcKPS"
-                                                                class="custom-file-input" id="inputGroupFile01">
-                                                            <label class="custom-file-label" for="inputGroupFile01">Choose
-                                                                file</label>
-                                                        </div>
-
-                                                        @error('fcKPS')
-                                                            <div class="alert alert-warning" role="alert">
-                                                                <strong>Peringatan!</strong>
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                            <div class="col-sm-4">
+                                                <label for="form-label" for="personal-data" class="text-dark">Fotocopy Kartu
+                                                    Pelindung
+                                                    Sosial <small>(KPS)</small></label>
+                                                <div class="input-group">
+                                                    <div class="form-file">
+                                                        <input type="file" class="form-file-input form-control" name="fcKPS">
                                                     </div>
                                                 </div>
+                                                @error('fcKPS')
+                                                    <div class="alert alert-warning" role="alert">
+                                                        <strong>Peringatan!</strong>
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
 
-                                            <div class="col-sm-4 mt-2">
-                                                <label>Fotocopy Program Keluarga Harapan <small>(PKH)</small></label>
-                                                <div class="">
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Upload</span>
-                                                        </div>
-                                                        <div class="custom-file">
-                                                            <input type="file" name="fcPKH"
-                                                                class="custom-file-input" id="inputGroupFile01">
-                                                            <label class="custom-file-label" for="inputGroupFile01">Choose
-                                                                file</label>
-                                                        </div>
-
-                                                        @error('fcPKHt')
-                                                            <div class="alert alert-warning" role="alert">
-                                                                <strong>Peringatan!</strong>
-                                                                {{ $message }}
-                                                            </div>
-                                                        @enderror
+                                            <div class="col-sm-4">
+                                                <label for="form-label" for="personal-data" class="text-dark">Fotocopy Program
+                                                    Keluarga
+                                                    Harapan <small>(PKH)</small></label>
+                                                <div class="input-group">
+                                                    <div class="form-file">
+                                                        <input type="file" class="form-file-input form-control" name="fcPKH">
                                                     </div>
                                                 </div>
+                                                @error('fcPKH')
+                                                    <div class="alert alert-warning" role="alert">
+                                                        <strong>Peringatan!</strong>
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
 
 
@@ -690,33 +639,19 @@
                                             </div>
 
                                             <div class="row g-3">
-
-                                                <div class="col-sm-4 mt-2">
-                                                    <label>Piagram Prestasi </label>
-
-                                                    <div class="">
+                                                <div class="row g-3">
+                                                    <div class="col">
+                                                        <label for="form-label" for="personal-data">Piagam Prestasi</label>
                                                         <small>(Jika Lebih Dari 1, Jadikan Satu PDF File)</small>
-                                                        <div class="input-group mb-3">
-                                                            <div class="input-group-prepend">
-                                                                <span class="input-group-text">Upload</span>
+                                                        <div class="input-group">
+                                                            <div class="form-file">
+                                                                <input type="file" class="form-file-input form-control"
+                                                                    name="piagam">
                                                             </div>
-                                                            <div class="custom-file">
-                                                                <input type="file" name="piagam"
-                                                                    class="custom-file-input" id="inputGroupFile01">
-                                                                <label class="custom-file-label"
-                                                                    for="inputGroupFile01">Choose
-                                                                    file</label>
-                                                            </div>
-
-                                                            @error('piagam')
-                                                                <div class="alert alert-warning" role="alert">
-                                                                    <strong>Peringatan!</strong>
-                                                                    {{ $message }}
-                                                                </div>
-                                                            @enderror
                                                         </div>
                                                     </div>
                                                 </div>
+                                                
 
                                             </div>
 

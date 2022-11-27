@@ -1,6 +1,9 @@
 @extends('Dashboard.Admin.Layout2.index')
 
 @section('container')
+<div class="container-fluid">
+
+
     <form action="/upload-panduan/store" method="POST" enctype="multipart/form-data"
         class="submit-button-swift-allert-example ">
         @csrf
@@ -15,7 +18,6 @@
                 <div class="card-body ">
 
                     <div class="row g-3">
-
                         <div class="col-sm-6">
                             <label for="form-label" for="personal-data" class="text-dark mb-2">Nama Berkas</label>
                             <input type="text" class="form-file-input form-control" name="nama_berkas">
@@ -26,23 +28,21 @@
                                 </div>
                             @enderror
                         </div>
-
-                        <div class="col-sm-4 ">
-                            <label>Upload Berkas </label>
-
+                        {{-- <div class="col-sm-4 ">
+                            <label>Upload Berkas</label>
                             <div class="">
-                                <div class="input-group mb-3">
+                                <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Upload</span>
                                     </div>
-                                    <div class="custom-file">
-                                        <input type="file" name="upload_panduan" class="custom-file-input"
-                                            id="inputGroupFile01">
-                                        <label class="custom-file-label" for="inputGroupFile01">Choose
-                                            file</label>
+                                    <div class="formFile">
+                                        <input type="file" name="upload_berkas" class="form-control"
+                                            id="formFile">
+
+                                        <label class="custom-file-label" for="formFile">Choose File</label>
                                     </div>
 
-                                    @error('upload_panduan')
+                                    @error('fcakta')
                                         <div class="alert alert-warning" role="alert">
                                             <strong>Peringatan!</strong>
                                             {{ $message }}
@@ -50,13 +50,14 @@
                                     @enderror
                                 </div>
                             </div>
-                        </div>
-                                {{-- <div class="col-sm-6">
+                        </div> --}}
+
+                        <div class="col-sm-6">
                             <label for="form-label" for="personal-data" class="text-dark mb-2">Upload Berkas</label>
-                            <input type="file" class="form-file-input form-control mb-2" name="upload_panduan">
                             <div class="input-group">
                                 <div class="form-file">
-
+                                    <input type="file" class="form-file-input form-control mb-2"
+                                        name="upload_panduan">
                                 </div>
                             </div>
                             @error('upload')
@@ -65,15 +66,18 @@
                                     {{ $message }}
                                 </div>
                             @enderror
-                        </div> --}}
-                                <div class="col-sm-4 mb-4 text-end">
-                                    <input name="status" type="hidden" value="uploadberkas">
-                                    <button type="submit" class="btn btn-outline-success btn-sm">Submit</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
+
+                    <div class="col-sm-4 mb-4 text-end">
+                        <input name="status" type="hidden" value="uploadberkas">
+                        <button type="submit" class="btn btn-outline-success btn-sm">Submit</button>
+                    </div>
                 </div>
+            </div>
+            </div>
+            </div>
+        </section>
 
     </form>
 
@@ -87,7 +91,7 @@
 
             </div>
             <div class="card-body">
-                <div class=" mt-">
+                <div class=" mt-1">
                     <div class="table-responsive">
                         <table class="table table-sm shadow-sm">
                             <thead>
@@ -105,7 +109,7 @@
                                         <td style="width: 500px">{{ $panduan->nama_berkas }}</td>
                                         <td style="width: 500px">{{ $panduan->created_at }}</td>
                                         <td style="width: 200px">
-                                            {{-- <td class="text-center" > --}}
+
                                             <form class="delete-data-swift-allert-example"
                                                 action="/upload-panduan/delete/{{ $panduan->id }}" method="POST"
                                                 class="delete-data-swift-allert-example">
@@ -134,4 +138,5 @@
         </div>
         </div>
     </section>
+</div>
 @endsection

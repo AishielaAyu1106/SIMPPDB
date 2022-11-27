@@ -1,8 +1,10 @@
 @extends('Dashboard.Admin.Layout2.index')
 
 @section('container')
-@if($Infodaftar)
-    <form action="/informasi-pendaftaran" method="post" enctype="multipart/form-data" class="submit-button-swift-allert-example">
+
+<div class="container-fluid">
+    @if($Infodaftar)
+    <form action="/info-pendaftaran" method="POST" enctype="multipart/form-data" class="submit-button-swift-allert-example">
         @csrf
         <section class="p-4 mt-4">
             <section class="p-4">
@@ -66,7 +68,9 @@
     </form>
 @endif
 
-    <section class="p-4 mt-4">
+{{-- </div> --}}
+
+    {{-- <section class="p-4 mt-4"> --}}
 
         {{-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> --}}
             {{-- <div class="card shadow-sm">
@@ -118,12 +122,12 @@
                             </tbody>
                         </table>
                     </div> --}}
-                </div>
+                {{-- </div> --}}
 
-            </div>
+            {{-- </div> --}}
 
             {{-- </form> --}}
-        </div>
-    </section>
+        {{-- </div> --}}
+    {{-- </section> --}}
 
 @endsection
