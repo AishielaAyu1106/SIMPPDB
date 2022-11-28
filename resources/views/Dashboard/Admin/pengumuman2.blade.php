@@ -72,7 +72,7 @@
                                                                         class="fa fa-info"></i> Lihat</a>
 
                                                                 <a href="/pengumuman-edit/{{ $form->id }}"
-                                                                    class="btn btn-outline-success btn-sm"><i
+                                                                    class="btn btn-outline-warning btn-sm"><i
                                                                         class="fa fa-edit"></i> edit</a>
 
                                                                 <button class="btn btn-outline-danger btn-sm"><i
@@ -130,7 +130,7 @@
                                                                         class="fa fa-info"></i> Lihat</a>
 
                                                                 <a href="/pengumuman-edit/{{ $form->id }}"
-                                                                    class="btn btn-outline-success btn-sm"><i
+                                                                    class="btn btn-outline-warning btn-sm"><i
                                                                         class="fa fa-edit"></i> edit</a>
 
                                                                 <button class="btn btn-outline-danger btn-sm"><i

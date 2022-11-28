@@ -20,6 +20,7 @@ class PengumumanMailController extends Controller
         $data = Form::join('users','users.id','forms.user_id')->where('forms.status', '!=', 'Sedang Diproses')->get();
         // dd($data);
         foreach ($data as $item) {
+            // dd('sukses');
             Mail::to($item->email)->send(new \App\Mail\PengumumanMail($pengumuman));
         }
         return back()->with('success','Email Berhasil Dikirim');

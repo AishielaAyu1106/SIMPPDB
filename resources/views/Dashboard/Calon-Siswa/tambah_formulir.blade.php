@@ -651,7 +651,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
 
                                             </div>
 
@@ -679,27 +679,31 @@
 
     </div>
 @else
-    <section style="background-color: #ffffff;">
-        <div class="container p-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center"
-                style="border-radius: .20rem; background-color:khaki">
-                <div class="col col-lg-6 mb-4 mb-lg-0">
-                    {{-- <div class="card mb-3"  > --}}
-                    <div class="row g-3">
-                        <h5>Mohon Maaf {{ auth()->user()->name }}</h5>
-                        @if (date('Y-m-d H:i:s') < $validasi->tanggal_awal)
-                            <h5>Pendaftaran Belum Dibuka</h5>
-                        @else
-                            <h5>Pendaftaran Sudah Ditutup</h5>
-                        @endif
-                        {{-- <h5 align='center'>Pendaftaran akan dibuka pada {{$jadwal->zonasi}</h5> --}}
-                    </div>
+    <section class="mt-5">
+<div class="container-fluid">
+    <div class="card card-body mt-5 p-4 shadow-sm mb-4 border border-bottom-warning">
+        <div class="card-body">
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800 ">Hallo {{ auth()->user()->name }} !!</h1>
+            </div>
+
+            <div class="col col-lg-6 mb-4 mb-lg-0">
+                {{-- <div class="card mb-3"  > --}}
+                <div class="row g-3">
+                    <h5>Mohon Maaf {{ auth()->user()->name }}</h5>
+                    @if (date('Y-m-d H:i:s') < $validasi->tanggal_awal)
+                        <h5>Pendaftaran Belum Dibuka</h5>
+                    @else
+                        <h5>Pendaftaran Sudah Ditutup</h5>
+                    @endif
+                    {{-- <h5 align='center'>Pendaftaran akan dibuka pada {{$jadwal->zonasi}</h5> --}}
                 </div>
             </div>
         </div>
-        </div>
-        </div>
-        </div>
+
+    </div>
+</div>
+
     </section>
     @endif
 

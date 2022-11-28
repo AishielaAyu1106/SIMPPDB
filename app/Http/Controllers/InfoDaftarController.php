@@ -10,12 +10,13 @@ class InfoDaftarController extends Controller
 {
     public function index(Request $request)
     {
-        $Infodaftar = Infodaftar::find(1);
-        if($Infodaftar){
-            $Infodaftar = Infodaftar::where('id', $Infodaftar->id)->first();
-        } else {
-            $Infodaftar = null;
-        }
+        $Infodaftar = Infodaftar::where('user_id', Auth::user()->id)->first();
+
+        // if($Infodaftar){
+        //     $Infodaftar = Infodaftar::where('id', $Infodaftar->id)->first();
+        // } else {
+        //     $Infodaftar = null;
+        // }
 
         return view('Dashboard.Admin.Informasi-Pendaftaran', compact('Infodaftar'));
     }
@@ -29,7 +30,9 @@ class InfoDaftarController extends Controller
             'surat_lainnya' => ['required']
         ]);
 
-        $Infodaftar = Infodaftar::where('id', 1)->first();
+        // Infodaftar::create($Infodaftar);
+
+        $Infodaftar = Infodaftar::where('user_id', Auth::user()->id)->first();
         if ($Infodaftar) {
 
             $Infodaftar->syarat_usia = $request->syarat_usia;
@@ -41,6 +44,7 @@ class InfoDaftarController extends Controller
         } else {
             Infodaftar::create(
                 ['id' => 1,
+                'user_id' => Auth::user()->id,
                 'syarat_usia' => $request->syarat_usia,
                 'ijazah' => $request->ijazah,
                 'surat' => $request->surat,

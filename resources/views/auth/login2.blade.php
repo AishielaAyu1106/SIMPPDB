@@ -24,6 +24,7 @@
     <!-- Custom styles for this template -->
     <link href="{{asset('css/dashboard.css')}}" rel="stylesheet">
     <link href="{{asset('bootstrap/sign-in/signin.css')}}" rel="stylesheet">
+    {{-- <link href="css/sb-admin-2.min.css" rel="stylesheet"> --}}
     {{-- <link href="{{asset('bootstrap/sign-in/registrasi.css')}}" rel="stylesheet"> --}}
   </head>
 
@@ -63,7 +64,9 @@
                         <input class="form-check-input" type="checkbox"
                             id="form1Example3" name="rememberme"/>
                         <label class="form-check-label" for="form1Example3"> Remember me </label>
+
                     </div>
+
                     <div class="text-end">
                         <button type="submit">Log in</button>
                     </div>
@@ -76,6 +79,10 @@
 
 
                 <small class="d-block text-center mt-3">Belum Memiliki akun? <a href="/register">Daftar Sekarang!</a></small>
+                <small><a class="small" href="forgot-password.html">Forgot Password?</a></small>
+                {{-- <div class="text-center"> --}}
+
+                {{-- </div> --}}
             </form>
         </div>
     </div>

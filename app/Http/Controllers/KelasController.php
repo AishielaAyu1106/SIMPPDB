@@ -48,7 +48,7 @@ class KelasController extends Controller
         $kuota_kela->Kuota_kelas = $request->Kuota_kelas;
         $kuota_kela->save();
 
-        return redirect()->route("kuota-kelas2.index");
+        return redirect("/kuota-kelas");
     }
 
     // public function Kelaslihat()

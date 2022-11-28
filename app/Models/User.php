@@ -47,4 +47,8 @@ class User extends Authenticatable
     public function rekap(){
         return $this->hasOne(Rekap::class);
     }
+
+    public function infodaftar(){
+        return $this->hasOne(Infodaftar::class);
+    }
 }

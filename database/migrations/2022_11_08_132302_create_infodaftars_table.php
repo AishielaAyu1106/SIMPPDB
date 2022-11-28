@@ -15,6 +15,7 @@ class CreateInfodaftarsTable extends Migration
     {
         Schema::create('infodaftars', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->text('syarat_usia');
             $table->text('ijazah');
             $table->text('surat');

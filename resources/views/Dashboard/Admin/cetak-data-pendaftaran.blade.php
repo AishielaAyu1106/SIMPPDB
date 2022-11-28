@@ -151,7 +151,7 @@
                                 {{-- <div class="thanks">Thank you!</div> --}}
                                 <div class="notices">
                                     <div>Note:</div>
-                                    <div class="notice"> pengumuman ini adalah resmi dari SMAN 1 Bengalon</div>
+                                    <div class="notice"> Pengumuman ini adalah resmi dari SMAN 1 Bengalon</div>
                                 </div>
                             </main>
                             <footer>
