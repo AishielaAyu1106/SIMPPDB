@@ -129,7 +129,7 @@
                     'Tidak, Kembali',
                     'Ya, Update'
                 ],
-                dangerMode: true,
+                primaryMode: true,
             }).then(function(isConfirm) {
                 if (isConfirm) {
                     swal({
@@ -179,6 +179,37 @@
     </script>
     @stack('scripts')
 
+    <script>
+        $('.pengumuman-data-swift-allert-example').bind('submit', function(e) {
+            var form = this;
+
+            e.preventDefault(); // <--- prevent form from submitting
+
+            swal({
+                title: "Apakah anda yakin?",
+                text: "Pengumuman Akan Dikirimkan Ke Email Siswa",
+                icon: "warning",
+                buttons: [
+                    'Tidak, Kembali',
+                    'Ya, Hapus'
+                ],
+                successMode: true,
+            }).then(function(isConfirm) {
+                if (isConfirm) {
+                    swal({
+                        title: 'Sukses',
+                        text: 'Pengumuman Telah Terkirim',
+                        icon: 'success'
+                    }).then(function() {
+                        form.submit(); // <--- submit form programmatically
+                    });
+                } else {
+                    swal("Dibatalkan", "Data anda tersimpan :)", "error");
+                }
+            })
+        });
+    </script>
+    @stack('scripts')
 
     <script src={{asset("vendor/jquery/jquery.min.js")}}></script>
     <script src={{asset("vendor/bootstrap/js/bootstrap.bundle.min.js")}}></script>

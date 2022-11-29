@@ -10861,21 +10861,21 @@ a:focus {
 }
 
 .bg-login-image {
-  /* background: ({{asset("css/Logo SMAN 1 Bengalon.png")}}); */
+  background: url('Login\ fiks.png');
   background-position: center;
-  background-size: cover;
+  background-size: 570px;
 }
 
 .bg-register-image {
-  background: url("https://source.unsplash.com/Mv9hjnEUHR4/600x800");
+  background: url('Login\ fiks.png');
   background-position: center;
-  background-size: cover;
+  background-size: 570px;
 }
 
 .bg-password-image {
-  background: url("https://source.unsplash.com/oWTW-jNGl9I/600x800");
+  background: url('Login\ fiks.png');
   background-position: center;
-  background-size: cover;
+  background-size: 570px;
 }
 
 form.user .custom-checkbox.small label {

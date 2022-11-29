@@ -9,9 +9,15 @@
 
                 <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
                     {{-- <div class=""> --}}
-                        <h3 class="m-0 font-weight-bold text-dark mb-2">Pengumuman</h3>
-                    <a href="kirim-email" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
-                        class="fas fa-bell fa-sm text-white-50"></i> Notifikasi Pengumuman</a>
+                    <h3 class="m-0 font-weight-bold text-dark mb-2">Pengumuman</h3>
+                    <form action="kirim-email" method="POST" class="pengumuman-data-swift-allert-example">
+                        @csrf
+                        <div class="">
+                            <button class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm" ><i
+                                class="fas fa-bell fa-sm text-white-50"></i> Notifikasi Pengumuman</button>
+                        </div>
+                    </form>
+
                     {{-- <a href="/cetak-data-pendaftaran" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
                             class="fas fa-download fa-sm text-white-50"></i> Cetak Data Pendaftaran</a> --}}
                 </div>

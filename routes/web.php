@@ -28,7 +28,7 @@ use App\Http\Controllers\SearchController;
 // })->middleware(['auth'])->name('dashboard');
 
 Route::get('/', function () {
-    return view('auth.login2');
+    return view('auth.login3');
 });
 Route::middleware(['auth'])->group(function () {
     Route::post('/updateJadwal', [AdminController::class, 'updateData'])->name("updateJadwal");
