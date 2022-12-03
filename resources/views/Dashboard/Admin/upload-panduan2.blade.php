@@ -115,7 +115,7 @@
                                                 class="delete-data-swift-allert-example">
                                                 @csrf
                                                 <a href='{{ asset('storage/' . $panduan->upload_panduan) }}'
-                                                    class="btn btn-outline-success btn-sm"><i class="fa fa-info"></i>
+                                                    class="btn btn-outline-success btn-sm" target="_blank"><i class="fa fa-info"></i>
                                                     Lihat</a>
 
                                                 <button class="btn btn-outline-danger btn-sm delete-data"

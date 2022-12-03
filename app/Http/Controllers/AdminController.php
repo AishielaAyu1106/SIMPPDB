@@ -99,8 +99,7 @@ class AdminController extends Controller
                 'siswa_kuota' => $item->Kuota_kelas - $jumlahSiswa
             ];
         }
-        // dd($kelas);
-        // $kuota_kelas =
+
         return view('Dashboard.Admin.kelas-pendaftar ', compact('siswaKelas'));
     }
 

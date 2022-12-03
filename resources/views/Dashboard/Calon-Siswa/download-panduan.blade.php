@@ -25,7 +25,7 @@
 
 
                                 <td >
-                                    <a href="{{ asset('storage/' . $panduan->upload_panduan) }}" class="btn btn-outline-success btn-icon-split btn-sm">
+                                    <a href="{{ asset('storage/' . $panduan->upload_panduan) }}" class="btn btn-outline-success btn-icon-split btn-sm" target="_blank">
                                         <span class="text"><i class="fas fa-download"></i> Download</span>
                                     </a>
                                     {{-- <a href="{{ asset('storage/' . $panduan->upload_panduan) }}">
