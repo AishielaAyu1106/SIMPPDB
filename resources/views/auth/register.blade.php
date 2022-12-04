@@ -6,7 +6,7 @@
     </div>
 
     <form method="POST" action="{{ route('register') }}">
-        <img class="mb-4" src="{{asset('css/Logo SMAN 1 Bengalon.PNG')}}" alt="" width="150" height="150">
+        <img class="mb-4" src="{{asset('css/Logo SMAN 1 Bengalon.png')}}" alt="" width="150" height="150">
         <h3>Form Registrasi</h3>
         @csrf
         <div class="floating-label">

@@ -12,7 +12,7 @@
 
 <!-- Sidebar - Brand -->
     <a href="#">
-        <img src="{{ url('css/Logo SMAN 1 Bengalon.PNG') }}" alt="itk" class="d-block w-50 m-auto p-2">
+        <img src="{{ url('css/Logo SMAN 1 Bengalon.png') }}" alt="itk" class="d-block w-50 m-auto p-2">
     </a>
 
     <h6 class="text-center">Sistem Informasi PPDB</h6>
