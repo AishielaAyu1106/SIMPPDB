@@ -20,7 +20,7 @@ class ManajemenUserController extends Controller
     public function manajemenusercreate()
     {
         $role = User::where('role', Auth::user()->role)->get();
-        return view('Dashboard.admin.manajemen-user-create', compact('role'));
+        return view('Dashboard.Admin.manajemen-user-create', compact('role'));
     }
 
     public function store(Request $request){
