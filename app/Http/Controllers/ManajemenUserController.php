@@ -12,7 +12,7 @@ class ManajemenUserController extends Controller
 
     public function manajemenuser(){
 
-        return view('Dashboard.admin.manajemen-user-index2', [
+        return view('Dashboard.Admin.manajemen-user-index2', [
             'user' => User::where('role', 'admin')->get()
         ]);
     }
