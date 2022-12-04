@@ -75,7 +75,7 @@ class AdminController extends Controller
     public function dataPendaftar()
     {
         $data = Form::all();
-        $verifikasi = Form::where('status','!=','Sedang Diproses')->get();
+        $verifikasi = Form::where('status','!=','Sedang diproses')->get();
         // dd($verifikasi);
         return view('Dashboard.Admin.data-pendaftar2', compact('data', 'verifikasi'));
     }

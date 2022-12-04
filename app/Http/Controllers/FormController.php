@@ -52,12 +52,13 @@ class FormController extends Controller
 
         if ($cekData) {
             return redirect('/formulir-pendaftaran-siswa');
-            
+
         } else {
             $validasi = Jadwal::where('Jalur_pendaftaran', $request->id)->first();
             return view('Dashboard.Calon-Siswa.tambah_formulir', compact('validasi'));
         }
     }
+
 
 
     public function store(Request $request)
@@ -177,6 +178,8 @@ class FormController extends Controller
     public function edit($id)
     {
         $edit = Form::find($id);
+
+        // $edit = Form::where('status','!=',"Sedang diproses")->first();
         return view('Dashboard.Calon-Siswa.edit-formulir', compact('edit'));
     }
 
@@ -215,6 +218,7 @@ class FormController extends Controller
         $rekap = Rekap::where('user_id', Auth::user()->id)->first();
 
         $cariForm = Form::where('user_id', Auth::id())->latest()->first();
+        // $rekapstatus = Form::where('status','!=','Sedang diproses')->first();
         // dd($cariForm, Auth::id());
         if($cariForm){
             $jadwal = Jadwal::where('Jalur_pendaftaran', $cariForm->Jalur_pendaftaran)->first();

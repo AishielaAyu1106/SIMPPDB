@@ -40,8 +40,11 @@
                                                 @csrf
                                                 <a href="/formulir-pendaftaran-siswa/show/{{ $form->id }}"
                                                     class="btn btn-outline-success btn-sm"><i class="fa fa-info"></i> Lihat</a>
+                                            @if ($form->status=='Sedang diproses')
                                             <a href="/edit-formulir-pendaftaran/{{ $form->id }}" class="btn btn-outline-warning btn-sm"><i
-                                                        class="fa fa-pen"></i> Edit</a>
+                                                class="fa fa-pen"></i> Edit</a>
+                                            @endif
+
 
                                                 <button class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
                                             </form>

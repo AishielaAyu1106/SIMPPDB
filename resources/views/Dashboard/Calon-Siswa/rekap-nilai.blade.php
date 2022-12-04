@@ -57,7 +57,10 @@
                             </div>
                             <div class="col-sm-3 mb-4 ">
                                 <input name="status" type="hidden" value="uploadberkas">
-                                <button type="submit" class="btn btn-outline-success btn-sm ">Submit</button>
+                                {{-- @if ($rekapstatus->status == 'Sedang diproses') --}}
+                                    <button type="submit" class="btn btn-outline-success btn-sm ">Submit</button>
+                                {{-- @endif --}}
+
                             </div>
                         </div>
                     </div>
@@ -94,31 +97,30 @@
             </section>
         @endif
     @else
+        <div class="p-4 mt-5">
+            <div class="card shadow-sm mb-4 mt-5">
 
-
-            <div class="p-4 mt-5">
-                <div class="card shadow-sm mb-4 mt-5">
-
+                <div class="card-body ">
+                    {{-- @foreach ($item as $lihatinfo) --}}
                     <div class="card-body ">
-                        {{-- @foreach ($item as $lihatinfo) --}}
-                        <div class="card-body ">
-                            <div class="col">
-                                <div class="row d-flex p-5 justify-content-center align-items-center h-100" style="border-radius: .20rem; background-color:khaki">
-                                    <div class="col-sm-4">
+                        <div class="col">
+                            <div class="row d-flex p-5 justify-content-center align-items-center h-100"
+                                style="border-radius: .20rem; background-color:khaki">
+                                <div class="col-sm-4">
 
-                                        <h5 align='center'>Mohon Maaf {{ auth()->user()->name }}</h5>
-                                        <h5 align='center'>Rekap Nilai Belum Dapat Diakses</h5>
-                                        <h5 align='center'>Silahkan isi Formulir Pendaftaran Terlebih Dahulu</h5>
+                                    <h5 align='center'>Mohon Maaf {{ auth()->user()->name }}</h5>
+                                    <h5 align='center'>Rekap Nilai Belum Dapat Diakses</h5>
+                                    <h5 align='center'>Silahkan isi Formulir Pendaftaran Terlebih Dahulu</h5>
 
 
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
+        </div>
         </section>
     @endif
 @endsection
