@@ -77,7 +77,7 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <img class="mb-4" src="{{ asset('css/Logo SMAN 1 Bengalon.PNG') }}" alt=""
+                                        <img class="mb-4" src="{{ asset('css/Logo SMAN 1 Bengalon.png') }}" alt=""
                                         width="150">
                                         <h1 class="h4 text-gray-900 mb-2">Lupa Kata Sandi Anda?</h1>
                                         <p class="mb-4">Silahkan isi email anda. Link reset password akan dikirim ke email Anda!</p>
