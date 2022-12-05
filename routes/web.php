@@ -152,7 +152,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-    Route::get('kirim-email','App\Http\Controllers\PengumumanMailController@index');
+    Route::post('kirim-email','App\Http\Controllers\PengumumanMailController@index');
 
     Route::get('/search', [SearchController::class, 'search'])->name('search');
 });

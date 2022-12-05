@@ -191,7 +191,7 @@
                 icon: "warning",
                 buttons: [
                     'Tidak, Kembali',
-                    'Ya, Hapus'
+                    'Ya, Kirim'
                 ],
                 successMode: true,
             }).then(function(isConfirm) {

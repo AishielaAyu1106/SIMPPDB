@@ -283,7 +283,7 @@
 
 
                                         <div style="line-height: 26px;">
-                                            <a href="#" style="color: #ffffff; text-decoration: none;">Buka Disini</a>
+                                            <a href="https://ppdb.smansabengalon.sch.id" style="color: #ffffff; text-decoration: none;">Buka Disini</a>
                                         </div>
                                     </td>
                                 </tr>
