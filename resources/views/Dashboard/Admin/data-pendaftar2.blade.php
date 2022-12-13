@@ -61,8 +61,8 @@
                                                 <td class="text-center" style="width: 150px">
                                                     <div class="row ">
                                                         <form class="delete-data-swift-allert-example"
-                                                            action="/data-pendaftar/delete/{{ $form->id }}" method="post">
-                                                            @method('DELETE')
+                                                            action="/data-pendaftar/delete/{{ $form->id }}" method="POST">
+                                                            {{-- @method('DELETE') --}}
                                                             @csrf
                                                             <a href="/data-pendaftar/show/{{ $form->id }}" class="btn btn-outline-success btn-icon-split btn-sm">
                                                                 <span class="text"><i class="fas fa-info"></i> Lihat</span>
@@ -116,8 +116,8 @@
                                                 <td class="text-center" style="width: 150px">
                                                     <div class="row ">
                                                         <form class="delete-data-swift-allert-example"
-                                                            action="/data-pendaftar/delete/{{ $form->id }}" method="post">
-                                                            @method('DELETE')
+                                                            action="/data-pendaftar/delete/{{ $form->id }}" method="POSt">
+                                                            {{-- @method('DELETE') --}}
                                                             @csrf
                                                             <a href="/data-pendaftar/show/{{ $form->id }}" class="btn btn-outline-success btn-icon-split btn-sm">
                                                                 <span class="text"><i class="fas fa-info"></i> Lihat</span>
@@ -169,7 +169,7 @@
                                                 <td class="text-center" style="width: 150px">
                                                     <div class="row ">
                                                         <form class="delete-data-swift-allert-example"
-                                                            action="/data-pendaftar/delete/{{ $form->id }}" method="post">
+                                                            action="/data-pendaftar/delete/{{ $form->id }}" method="POST">
                                                             {{-- @method('DELETE') --}}
                                                             @csrf
                                                             <a href="/data-pendaftar/show/{{ $form->id }}" class="btn btn-outline-success btn-icon-split btn-sm">
@@ -225,8 +225,8 @@
                                                     <td class="text-center" style="width: 100px">
                                                         <div class="row ">
                                                             <form class="delete-data-swift-allert-example"
-                                                                action="/data-pendaftar/delete/{{ $form->id }}" method="post">
-                                                                @method('DELETE')
+                                                                action="/data-pendaftar/delete/{{ $form->id }}" method="POST">
+                                                                {{-- @method('DELETE') --}}
                                                                 @csrf
                                                                 {{-- <a href="/data-pendaftar/show/{{ $form->id }}" class="btn btn-outline-success btn-icon-split btn-sm">
                                                                     <span class="text"><i class="fas fa-info"></i> Lihat</span>
