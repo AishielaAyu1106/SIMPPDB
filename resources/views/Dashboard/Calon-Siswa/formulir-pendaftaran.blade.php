@@ -5,8 +5,8 @@
     <div class="card card-body mt-5 p-4 shadow-sm">
         <div class="card-body">
             <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
-                {{-- <div class=""> --}}
-                    <h3 class=" mb-2 m-0 font-weight-bold text-dark">Formulir Pendaftaran</h3>
+
+                <h3 class=" mb-2 m-0 font-weight-bold text-dark">Formulir Pendaftaran</h3>
                 <a href="/cetak-bukti-siswa" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
                     class="fas fa-download fa-sm text-white-50"></i> Cetak Bukti Pendaftaran</a>
                 {{-- <a href="/cetak-data-pendaftaran" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i

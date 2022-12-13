@@ -27,7 +27,7 @@ class ManajemenRekapNilaiTest extends TestCase
         $calonsiswa = User::where('role', 'calon-siswa')->first();
 
         $response = $this->actingAs($calonsiswa)
-        ->get(('/rekap-nilai-siswa/formulir'), [
+        ->get(('/rekap-nilai-siswa'), [
             'mtk'=>'90',
             'ipa'=>'90',
             'ips'=>'90',
@@ -40,7 +40,7 @@ class ManajemenRekapNilaiTest extends TestCase
     public function test_hapus_rekap_nilai() {
         $admin = User::where('role', 'admin')->first();
 
-        $response = $this->actingAs($admin)->post(url('/rekap-nilai-admin/delete/2'));
-        $response->assertStatus(200);
+        $response = $this->actingAs($admin)->post(url('/rekap-nilai-admin/delete/1'));
+        $response->assertStatus(302);
     }
 }

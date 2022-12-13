@@ -41,7 +41,7 @@ class ManajemenUserTest extends TestCase
         $admin = User::where('role', 'admin')->first();
 
         $response = $this->actingAs($admin)
-            ->post(('/data-admin-edit/4'), [
+            ->post(('/data-admin-edit/1'), [
             'name'=>'Admin2',
             'email'=>'admin2@gmail.com',
             'password'=>'123123123'
@@ -53,7 +53,7 @@ class ManajemenUserTest extends TestCase
     public function test_hapus_data_user() {
         $admin = User::where('role', 'admin')->first();
 
-        $response = $this->actingAs($admin)->post(url('/data-admin-delete/4'));
+        $response = $this->actingAs($admin)->post(url('/data-admin-delete/1'));
         $response->assertStatus(302);
     }
 }

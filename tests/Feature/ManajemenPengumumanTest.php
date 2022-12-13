@@ -27,19 +27,18 @@ class ManajemenPengumumanTest extends TestCase
         $admin = User::where('role', 'admin')->first();
 
         $response = $this->actingAs($admin)
-        ->post(('/pengumuman'), [
-            'nama_lengkap'=>'aishiela',
+        ->post(('/kuota-kelas'), [
             'Jalur_pendaftaran'=>'Afirmasi',
             'kelas'=>'Kelas A'
         ]);
 
-        $response->assertStatus(200);
+        $response->assertStatus(302);
     }
 
-    // public function test_hapus_pengumuman() {
-    //     $admin = User::where('role', 'admin')->first();
+    public function test_hapus_pengumuman() {
+        $admin = User::where('role', 'admin')->first();
 
-    //     $response = $this->actingAs($admin)->post(('/pengumuman-delete/3'));
-    //     $response->assertStatus(200);
-    // }
+        $response = $this->actingAs($admin)->post(('/pengumuman-delete/1'));
+        $response->assertStatus(302);
+    }
 }
