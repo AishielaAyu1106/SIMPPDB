@@ -116,7 +116,7 @@
                 {{-- <div class=""> --}}
                 <h6 class="m-0 font-weight-bold text-primary">Data Pendaftaran</h6>
                 <a href="/cetak-data-pendaftaran" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
-                    class="fas fa-download fa-sm text-white-50"></i> Cetak Data Pendaftaran</a>
+                    class="fas fa-download fa-sm text-white-50"></i> Cetak Pengumuman</a>
                 {{-- <a href="/cetak-data-pendaftaran" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
                         class="fas fa-download fa-sm text-white-50"></i> Cetak Data Pendaftaran</a> --}}
             </div>

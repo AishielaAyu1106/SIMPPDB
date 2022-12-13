@@ -135,6 +135,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/cetak-data-pendaftaran', [AdminController::class, 'cetakdata']);
 
 
+    Route::get('/export-data-pendaftaran', [AdminController::class, 'exportdata']);
+
+
     Route::get('/download-panduan-siswa', [FormController::class, 'downloadpanduan']);
 
 

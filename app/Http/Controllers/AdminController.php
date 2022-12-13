@@ -79,6 +79,12 @@ class AdminController extends Controller
         // dd($verifikasi);
         return view('Dashboard.Admin.data-pendaftar2', compact('data', 'verifikasi'));
     }
+    
+    public function exportdata()
+    {
+        $exportdata = Form::All();
+        return view('Dashboard.Admin.export-data-pendaftaran', compact('exportdata'));
+    }
 
     public function showData(Request $request, $id)
     {
@@ -103,11 +109,6 @@ class AdminController extends Controller
         return view('Dashboard.Admin.kelas-pendaftar ', compact('siswaKelas'));
     }
 
-    public function Kuota($data)
-    {
-        // $KuotaKelas = kuota_kelas::where('');
-
-    }
 
     public function hapusdata($id)
     {
@@ -160,6 +161,9 @@ class AdminController extends Controller
         $rekap->delete();
         return redirect('/rekap-nilai-admin');
     }
+
+
+    // PENGUMUMAN
 
     public function pengumuman(Request $request)
     {
@@ -280,9 +284,5 @@ class AdminController extends Controller
     }
 
 
-    // Manajemen User
-    // public function manajemenuser()
-    // {
-    //     $manajemenuser =
-    // }
+
 }
