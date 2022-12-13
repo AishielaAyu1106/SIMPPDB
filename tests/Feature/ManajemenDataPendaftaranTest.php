@@ -26,7 +26,7 @@ class ManajemenDataPendaftaranTest extends TestCase
     {
         $admin = User::where('role', 'admin')->first();
 
-        $response = $this->actingAs($admin)->get('/data-pendaftar/show/3');
+        $response = $this->actingAs($admin)->get('/data-pendaftar/show/1');
         $response->assertStatus(200);
     }
 
@@ -34,7 +34,7 @@ class ManajemenDataPendaftaranTest extends TestCase
     {
         $admin = User::where('role', 'admin')->first();
 
-        $response = $this->actingAs($admin)->get('/data-pendaftar/show/3');
+        $response = $this->actingAs($admin)->get('/data-pendaftar/show/1');
         $response->assertStatus(200);
     }
 
@@ -42,7 +42,7 @@ class ManajemenDataPendaftaranTest extends TestCase
     {
         $admin = User::where('role', 'admin')->first();
 
-        $response = $this->actingAs($admin)->get('/data-pendaftar/delete/3');
-        $response->assertStatus(200);
+        $response = $this->actingAs($admin)->post('/data-pendaftar/delete/1');
+        $response->assertStatus(302);
     }
 }

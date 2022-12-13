@@ -66,36 +66,36 @@ class FormController extends Controller
         $form = $request->validate([
             'Nomor_Pendaftaran'  => [''],
             'Jalur_pendaftaran'  => [''],
-            'nama_lengkap'  => ['required'],
-            'Jenis_kelamin'  => ['required'],
-            'NISN'  => ['required'],
-            'tempat_lahir_siswa'  => ['required'],
-            'tanggal_lahir_siswa'  => ['required'],
-            'agama_siswa'  => ['required'],
-            'Sekolah_asal' => ['required'],
-            'Tahun_lulus' => ['required'],
-            'dusun'  => ['required'],
-            'Rt'  => ['required'],
-            'rw'  => ['required'],
-            'kelurahan_desa'  => ['required'],
-            'kode_pos'  => ['required'],
-            'kecamatan'  => ['required'],
-            'kabupaten_kota'  => ['required'],
-            'provinsi'  => ['required'],
-            'nomor_hp_siswa'  => ['required'],
-            'email_siswa'  => ['required'],
-            'nama_ayah'  => ['required'],
-            'tempat_lahir_ayah'  => ['required'],
-            'tanggal_lahir_ayah'  => ['required'],
-            'NIK_ayah'  => ['required'],
-            'pekerjaan_ayah'  => ['required'],
-            'nomor_hp_ayah'  => ['required'],
-            'nama_ibu'  => ['required'],
-            'tempat_lahir_ibu'  => ['required'],
-            'tanggal_lahir_ibu'  => ['required'],
-            'NIK_ibu'  => ['required'],
-            'pekerjaan_ibu'  => ['required'],
-            'nomor_hp_ibu'  => ['required'],
+            'nama_lengkap'  => [''],
+            'Jenis_kelamin'  => [''],
+            'NISN'  => [''],
+            'tempat_lahir_siswa'  => [''],
+            'tanggal_lahir_siswa'  => [''],
+            'agama_siswa'  => [''],
+            'Sekolah_asal' => [''],
+            'Tahun_lulus' => [''],
+            'dusun'  => [''],
+            'Rt'  => [''],
+            'rw'  => [''],
+            'kelurahan_desa'  => [''],
+            'kode_pos'  => [''],
+            'kecamatan'  => [''],
+            'kabupaten_kota'  => [''],
+            'provinsi'  => [''],
+            'nomor_hp_siswa'  => [''],
+            'email_siswa'  => [''],
+            'nama_ayah'  => [''],
+            'tempat_lahir_ayah'  => [''],
+            'tanggal_lahir_ayah'  => [''],
+            'NIK_ayah'  => [''],
+            'pekerjaan_ayah'  => [''],
+            'nomor_hp_ayah'  => [''],
+            'nama_ibu'  => [''],
+            'tempat_lahir_ibu'  => [''],
+            'tanggal_lahir_ibu'  => [''],
+            'NIK_ibu'  => [''],
+            'pekerjaan_ibu'  => [''],
+            'nomor_hp_ibu'  => [''],
             'fcakta' => ['file'],
             'SKLasli' => ['file'],
             'fcSTTB' => ['file'],
@@ -154,6 +154,7 @@ class FormController extends Controller
 
         $latestOrder = User::orderBy('created_at', 'DESC')->first();
         $Nomor_Pendaftaran = '' . str_pad($latestOrder->id ??0 + 1, 3, "0", STR_PAD_LEFT);
+        $Jalur_pendaftaran = 
         // dd($Nomor_Pendaftaran);
 
         Form::create($form + ['user_id' => Auth::user()->id, 'Nomor_Pendaftaran' => $Nomor_Pendaftaran]);
@@ -183,17 +184,11 @@ class FormController extends Controller
         return view('Dashboard.Calon-Siswa.edit-formulir', compact('edit'));
     }
 
-    public function cetakbukti()
-    {
-        $cetakbukti = Form::where('user_id', Auth::id())->first();
-        return view('Dashboard.Calon-Siswa.cetak-bukti', compact('cetakbukti'));
-    }
-
     public function update(Request $request, Form $form, $id)
     {
         // dd($request->all());
         $edit = Form::find($id);
-        $edit->Nomor_Pendaftaran = $request->Nomor_Pendaftaran;
+        // $edit->Nomor_Pendaftaran = $request->Nomor_Pendaftaran;
         // $edit->Jalur_pendaftaran = $request->Jalur_pendaftaran;
         $edit->nama_lengkap = $request->nama_lengkap;
         $edit->Jenis_kelamin = $request->Jenis_kelamin;
@@ -202,11 +197,19 @@ class FormController extends Controller
         $edit->tanggal_lahir_siswa = $request->tanggal_lahir_siswa;
         $edit->agama_siswa = $request->agama_siswa;
         $edit->Sekolah_asal = $request->Sekolah_asal;
-        $edit->status = $request->status;
+        // $edit->status = $request->status;
         $edit->save();
         // $edit->update($request->all());
         return redirect('/formulir-pendaftaran-siswa')->with('success', 'Pendaftaran Telah Dilakukan');
     }
+
+    public function cetakbukti()
+    {
+        $cetakbukti = Form::where('user_id', Auth::id())->first();
+        return view('Dashboard.Calon-Siswa.cetak-bukti', compact('cetakbukti'));
+    }
+
+
 
 
 

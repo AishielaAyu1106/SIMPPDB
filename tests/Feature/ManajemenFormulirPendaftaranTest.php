@@ -22,8 +22,7 @@ class ManajemenFormulirPendaftaranTest extends TestCase
 
         $response = $this->actingAs($calonsiswa)
             ->post(('/formulir-pendaftaran-siswa'), [
-                'Nomor_Pendaftaran' => '001',
-                'Jalur_pendaftaran' => 'Afirmasi',
+                'Nomor_Pendaftaran' => '005',
                 'nama_lengkap' => 'Aishiela',
                 'Jenis_kelamin' => 'perempuan',
                 'NISN' => '12345678',
@@ -37,6 +36,7 @@ class ManajemenFormulirPendaftaranTest extends TestCase
         $response->assertStatus(302);
     }
 
+
     public function test_lihat_formulir_pendaftaran()
     {
         $calonsiswa = User::where('role', 'calon-siswa')->first();
@@ -45,32 +45,4 @@ class ManajemenFormulirPendaftaranTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_ubah_formulir_pendaftaran()
-    {
-        $calonsiswa = User::where('role', 'calon-siswa')->first();
-
-        $response = $this->actingAs($calonsiswa)
-            ->post(('/edit-formulir-pendaftaran/2'), [
-                'Nomor_Pendaftaran' => '003',
-                'Jalur_pendaftaran' => 'Afirmasi',
-                'nama_lengkap' => 'Permata',
-                'Jenis_kelamin' => 'Perempuan',
-                'NISN' => '11223344',
-                'tempat_lahir_siswa' => 'kediri',
-                'tanggal_lahir_siswa' => '2020-12-30',
-                'agama_siswa' => 'protestan',
-                'Sekolah_asal' => 'MTSN 8 Kediri',
-                'Tahun_lulus' => '2019',
-                'status'=>'Berkas Ditolak'
-
-            ]);
-        $response->assertStatus(200);
-    }
-
-    public function test_hapus_formulir_pendaftaran() {
-        $calonsiswa = User::where('role', 'calon-siswa')->first();
-
-        $response = $this->actingAs($calonsiswa)->post(url('/formulir-pendaftaran-siswa/delete/2'));
-        $response->assertStatus(200);
-    }
 }

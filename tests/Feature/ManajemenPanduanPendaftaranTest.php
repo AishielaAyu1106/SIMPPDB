@@ -14,6 +14,22 @@ class ManajemenPanduanPendaftaranTest extends TestCase
      *
      * @return void
      */
+
+     public function test_tambah_panduan()
+    {
+        $admin = User::where('role', 'admin')->first();
+
+        // $file = new Panduan()
+
+        $response = $this->actingAs($admin)
+        ->post(Route('uploadpanduan'), [
+            'nama_berkas'=>'panduan afirmasi',
+            // 'upload_berkas'=>'file'
+
+        ]);
+
+         $response->assertStatus(302);
+    }
     public function test_lihat_panduan()
     {
         $admin = User::where('role', 'admin')->first();
@@ -22,25 +38,8 @@ class ManajemenPanduanPendaftaranTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_tambah_panduan()
-    {
-        $admin = User::where('role', 'admin')->first();
 
-        $response = $this->actingAs($admin)
-        ->get(('/upload-panduan/store'), [
-            'nama_berkas'=>'panduan afirmasi',
-            'upload_berkas'=>'file'
-        ]);
 
-        $response->assertStatus(405);
-    }
-
-    public function test_hapus_panduan() {
-        $admin = User::where('role', 'admin')->first();
-
-        $response = $this->actingAs($admin)->post(url('/upload-panduan/delete/2'));
-        $response->assertStatus(302);
-    }
 
     public function test_download_panduan_siswa()
     {
