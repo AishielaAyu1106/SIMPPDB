@@ -4,14 +4,22 @@
 <section class="p-4 mt-4">
     <div class="card card-body mt-5 p-4 shadow-sm">
         <div class="card-body">
-        <h3 class="m-0 font-weight-bold text-dark">Formulir Pendaftaran</h3>
+            <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-4">
+                {{-- <div class=""> --}}
+                    <h3 class=" mb-2 m-0 font-weight-bold text-dark">Formulir Pendaftaran</h3>
+                <a href="/cetak-bukti-siswa" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
+                    class="fas fa-download fa-sm text-white-50"></i> Cetak Bukti Pendaftaran</a>
+                {{-- <a href="/cetak-data-pendaftaran" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
+                        class="fas fa-download fa-sm text-white-50"></i> Cetak Data Pendaftaran</a> --}}
+            </div>
+        {{-- <h3 class="m-0 font-weight-bold text-dark">Formulir Pendaftaran</h3> --}}
         <hr class="mt-0">
 
-                <div class="btn-list  pt-2 pb-2">
+                {{-- <div class="btn-list  pt-2 pb-2">
                     <a href="/cetak-bukti-siswa" target="_blank" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
-                        class="fas fa-download fa-sm text-white-50"></i> Cetak Bukti Pendaftaran</a>
+                        class="fas fa-download fa-sm text-white-50"></i> Cetak Bukti Pendaftaran</a> --}}
                     {{-- <a href="/cetak-bukti-siswa" class="btn btn-success btn-sm"><i class="fa fa-download"></i> Cetak Bukti Pendaftaran</a> --}}
-                </div>
+                {{-- </div> --}}
                 <div class="table-responsive">
                     <table class="table table-sm">
                         <thead>
@@ -43,10 +51,8 @@
                                             @if ($form->status=='Sedang diproses')
                                             <a href="/edit-formulir-pendaftaran/{{ $form->id }}" class="btn btn-outline-warning btn-sm"><i
                                                 class="fa fa-pen"></i> Edit</a>
+                                            <button class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
                                             @endif
-
-
-                                                <button class="btn btn-outline-danger btn-sm"><i class="fa fa-trash"></i> Hapus</button>
                                             </form>
 
                                     </div>
