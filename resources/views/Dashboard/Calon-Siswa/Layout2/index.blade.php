@@ -7,9 +7,10 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>Dashboard</title>
+    <title>SIM PPDB smansabengalon</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/e9/46/d3/e946d375dcc9a8dd88a61828e65d45c0.png">
 
 
 
