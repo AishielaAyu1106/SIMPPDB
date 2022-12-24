@@ -26,7 +26,7 @@
 
                         <div class="col-sm-6">
                             <label for="form-label" for="personal-data" class="text-dark mb-2">Kuota Kelas</label>
-                            <input type="number" class="form-file-input form-control" name="Kuota_kelas" value="{{ $kuota_kela->Kuota_kelas }}">
+                            <input type="number" min="0" class="form-file-input form-control" name="Kuota_kelas" value="{{ $kuota_kela->Kuota_kelas }}">
                             @error('Kuota_kelas')
                                 <div class="alert alert-warning" role="alert">
                                     <strong>Peringatan!</strong>

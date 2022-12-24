@@ -10,6 +10,8 @@
     <meta name="author" content="">
 
     <title>PPDB smansabengalon - Login</title>
+    <link rel="shortcut icon" href="https://i.pinimg.com/originals/e9/46/d3/e946d375dcc9a8dd88a61828e65d45c0.png">
+    {{-- <img src="https://i.pinimg.com/originals/e9/46/d3/e946d375dcc9a8dd88a61828e65d45c0.png" alt=""> --}}
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
