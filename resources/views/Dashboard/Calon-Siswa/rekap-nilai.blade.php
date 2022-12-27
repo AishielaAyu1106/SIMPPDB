@@ -24,29 +24,57 @@
                                     <div class="row g-3">
                                         <div class="col-sm-3">
                                             <label class="form-label">Matematika</label>
-                                            <input type="text" name="mtk" min="0" class="form-control" id="mtk"
+                                            <input type="number" name="mtk" min="0" class="form-control" id="mtk"
                                                 placeholder="0.00" value="{{ $rekap->mtk ?? 0 }}">
-                                            <div class="invalid-feedback">Isi Dengan benar</div>
+                                                <div>
+                                                    @error('mtk')
+                                                        <div class="alert alert-warning" role="alert">
+                                                            <strong>Peringatan!</strong>
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <label class="form-label">Ilmu Pengetahuan Alam</label>
-                                            <input type="text" name="ipa" min="0" class="form-control" id="ipa"
+                                            <input type="number" name="ipa" min="0" class="form-control" id="ipa"
                                                 placeholder="0.00" value="{{ $rekap->ipa ?? 0 }}">
-                                            <div class="invalid-feedback">Isi Dengan benar</div>
+                                                <div>
+                                                    @error('ipa')
+                                                        <div class="alert alert-warning" role="alert">
+                                                            <strong>Peringatan!</strong>
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
                                         </div>
 
                                         <div class="col-sm-3">
                                             <label class="form-label">Ilmu Pengetahuan Sosial</label>
-                                            <input type="text" name="ips" min="0" class="form-control" id="ips"
+                                            <input type="number" name="ips" min="0" class="form-control" id="ips"
                                                 placeholder="0.00" value="{{ $rekap->ips ?? 0 }}">
-                                            <div class="invalid-feedback">Isi Dengan benar</div>
+                                                <div>
+                                                    @error('ips')
+                                                        <div class="alert alert-warning" role="alert">
+                                                            <strong>Peringatan!</strong>
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
                                         </div>
 
                                         <div class="col-sm-3 mb-3">
                                             <label class="form-label">Bahasa Inggris</label>
-                                            <input type="text" name="basing" min="0" class="form-control" id="basing"
+                                            <input type="number" name="basing" min="0" class="form-control" id="basing"
                                                 placeholder="0.00" value="{{ $rekap->basing ?? 0 }}">
-                                            <div class="invalid-feedback">Isi Dengan benar</div>
+                                                <div>
+                                                    @error('basing')
+                                                        <div class="alert alert-warning" role="alert">
+                                                            <strong>Peringatan!</strong>
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
                                         </div>
                                     </div>
 
